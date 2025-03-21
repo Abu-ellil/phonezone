@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  --foreground-light: #171717;
+  --foreground-dark: #e0e0e0;
+
+  --color-primary: #f7941d;
+  --color-secondary: #333333;
+  --color-accent: #3498db;
+}
+
+html {
+  color: var(--foreground-light);
+}
+
+html.dark {
+  color: var(--foreground-dark);
+}
+
+body {
+  color: var(--foreground-light);
+  transition: background-color 0.3s, color 0.3s;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background-light);
+  background-image: linear-gradient(
+      30deg,
+      #80808009 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #80808009 87.5%,
+      #80808009
+    ),
+    linear-gradient(
+      150deg,
+      #80808009 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #80808009 87.5%,
+      #80808009
+    ),
+    linear-gradient(
+      30deg,
+      #80808009 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #80808009 87.5%,
+      #80808009
+    ),
+    linear-gradient(
+      150deg,
+      #80808009 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #80808009 87.5%,
+      #80808009
+    ),
+    linear-gradient(
+      60deg,
+      #80808009 25%,
+      transparent 25.5%,
+      transparent 75%,
+      #80808009 75%,
+      #80808009
+    ),
+    linear-gradient(
+      60deg,
+      #80808009 25%,
+      transparent 25.5%,
+      transparent 75%,
+      #80808009 75%,
+      #80808009
+    );
+  background-size: 80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+  background-repeat: repeat;
+}
+
+body.dark {
+  color: var(--foreground-dark);
+  background-color: var(--background-dark);
+}
+
+/* Base styles for components */
+.component-base {
+  @apply rounded-lg bg-blue-500 text-white shadow-md transition-all duration-300 hover:bg-blue-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ;
+}
+
+/* Button Variants */
+.component-base.primary {
+  @apply bg-blue-500 hover:bg-blue-600;
+}
+
+.component-base.secondary {
+  @apply bg-gray-500 hover:bg-gray-600;
+}
+
+.component-base.success {
+  @apply bg-green-500 hover:bg-green-600;
+}
+
+.component-base.warning {
+  @apply bg-yellow-500 hover:bg-yellow-600 text-gray-900;
+}
+
+.component-base.danger {
+  @apply bg-red-500 hover:bg-red-600;
+}
+
+/* Dark mode styles for components */
+.dark .component-base {
+  @apply shadow-none border border-gray-600;
+}
+
+body.dark {
+  color: var(--foreground-dark);
+}
+
+/* Tailwind's dark mode class */
+.dark {
+  color: var(--foreground-dark);
+}

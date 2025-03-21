@@ -1,0 +1,13 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      // Allow read access from any origin
+      allow read;
+      // Allow write access without authentication for now to fix CORS issues
+      // In production, you should restrict this to authenticated users
+      allow write;
+    }
+  }
+}
