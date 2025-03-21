@@ -187,16 +187,16 @@ export default function CartPage() {
                           >
                             <div className="flex-1 text-right">
                               <div className="font-medium">أرامكس</div>
-                            </div>
+                            </div>   <div className="flex items-center p-2 text-blue-500 text-3xl">
+                            <div className="flex-1 text-right">45 د.إ</div>
+                          </div>
                             <div className="flex items-center justify-center w-5 h-5 border border-gray-300 rounded-full mr-2">
                               {shippingMethod === "aramex" && (
                                 <div className="w-3 h-3 bg-primary rounded-full bg-blue-500"></div>
                               )}
                             </div>
                           </div>
-                          <div className="flex items-center p-2 text-blue-500 text-3xl">
-                            <div className="flex-1 text-right">45 د.إ</div>
-                          </div>
+                       
                         </div>
 
                         <div className="flex gap-4 items-center">

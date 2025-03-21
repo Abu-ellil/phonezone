@@ -61,8 +61,8 @@ export default function Header() {
 
             {/* Logo */}
 
-            <Link href="/" className="flex items-center">
-              <Image src="/LOGO-TEXT.png" alt="Logo" width={160} height={60} />
+            <Link href="/" className="flex items-center mr-4">
+              <Image src="/logoo.png" alt="Logo" width={90} height={40} />
             </Link>
             {/* Category Navigation Bar */}
             <div className="hidden md:block text-white">
@@ -234,6 +234,7 @@ export default function Header() {
                     onClick={() => toggleCategory(category.name)}
                     className="flex items-center justify-between w-full py-2 text-gray-700 hover:text-[#3498db]"
                   >
+                    <span>{category.name}</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className={`h-4 w-4 transform transition-transform ${
@@ -250,7 +251,6 @@ export default function Header() {
                         d="M19 9l-7 7-7-7"
                       />
                     </svg>
-                    <span>{category.name}</span>
                   </button>
                   {isDropdownOpen === category.name && (
                     <div className="mt-2 space-y-2 pr-4">

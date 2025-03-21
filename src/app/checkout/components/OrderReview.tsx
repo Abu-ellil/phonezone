@@ -6,7 +6,6 @@ type OrderReviewProps = {
   shippingInfo: {
     fullName: string;
     address: string;
-    city: string;
     postalCode: string;
     phone: string;
     email: string;
@@ -37,9 +36,6 @@ export default function OrderReview({
           </p>
           <p className="mb-1">
             <span className="font-medium">العنوان:</span> {shippingInfo.address}
-          </p>
-          <p className="mb-1">
-            <span className="font-medium">المدينة:</span> {shippingInfo.city}
           </p>
           <p className="mb-1">
             <span className="font-medium">الرمز البريدي:</span>{" "}

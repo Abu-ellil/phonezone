@@ -16,6 +16,7 @@ import img3 from "../../public/images/00 (3).jpg";
 import img4 from "../../public/images/00 (4).jpg";
 import img5 from "../../public/images/00 (5).jpg";
 import HeroBanner from "@/components/HeroBanner";
+import Testimonials from "@/components/Testimonials";
 
 export default async function Home() {
   const featuredProducts = await getFeaturedProductsFromFirebase(8);
@@ -69,13 +70,22 @@ export default async function Home() {
         <HeroBanner />
 
         <div className="container mx-auto px-4 space-y-6">
-          <BannerImage src={img3} alt="Banner 3" />
+          <BannerImage src={img1} alt="Banner 1" />
 
           <Section
             title=" هواتف آيفون 16 برو ماكس"
             products={iPhoneProMaxProducts}
             link="/category/الهواتف%20الذكية/ابل%20ايفون%2016%20برو%20ماكس"
           />
+          <BannerImage src={img2} alt="Banner 2" />
+
+          <Section
+            title="هواتف سامسونج"
+            products={samsungProductsFromFirebase}
+            link="/category/samsung"
+          />
+
+          <BannerImage src={img4} alt="Banner 4" />
 
           <Section
             title="  هواتف آيفون 16 برو"
@@ -89,23 +99,7 @@ export default async function Home() {
             link="/category/الهواتف%20الذكية/ابل%20ايفون%2016%20بلس"
           />
 
-          <BannerImage src={img1} alt="Banner 1" />
-
-          <Section
-            title="هواتف سامسونج"
-            products={samsungProductsFromFirebase}
-            link="/category/samsung"
-          />
-
-          <BannerImage src={img2} alt="Banner 2" />
-
-          <Section
-            title="أحدث المنتجات"
-            products={newestProducts}
-            link="/category/new"
-          />
-
-          <BannerImage src={img4} alt="Banner 4" />
+          <BannerImage src={img3} alt="Banner 3" />
 
           <Section
             title="منتجات مميزة"
@@ -114,6 +108,12 @@ export default async function Home() {
           />
 
           <BannerImage src={img5} alt="Banner 5" />
+          <Section
+            title="أحدث المنتجات"
+            products={newestProducts}
+            link="/category/new"
+          />
+          <Testimonials/>
         </div>
       </main>
 
