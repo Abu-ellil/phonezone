@@ -5,7 +5,6 @@ interface OrderData {
   shippingInfo: {
     fullName: string;
     address: string;
-    city: string;
     phone: string;
     email: string;
     houseDescription?: string;
@@ -46,7 +45,6 @@ export async function sendOrderToTelegram(
   if (
     !orderData.shippingInfo?.fullName ||
     !orderData.shippingInfo?.address ||
-    !orderData.shippingInfo?.city ||
     !orderData.shippingInfo?.phone ||
     !orderData.shippingInfo?.email ||
     !orderData.shippingMethod ||
@@ -88,9 +86,6 @@ export async function sendOrderToTelegram(
     )}\n`;
     message += `العنوان: ${removeMarkdownFormatting(
       orderData.shippingInfo.address
-    )}\n`;
-    message += `المدينة: ${removeMarkdownFormatting(
-      orderData.shippingInfo.city
     )}\n`;
     message += `الهاتف: ${removeMarkdownFormatting(
       orderData.shippingInfo.phone

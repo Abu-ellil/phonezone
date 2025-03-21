@@ -4,7 +4,6 @@ type ShippingFormProps = {
   shippingInfo: {
     fullName: string;
     address: string;
-    city: string;
     neighborhood: string;
     street: string;
     houseDescription: string;
@@ -16,7 +15,6 @@ type ShippingFormProps = {
   shippingErrors: {
     fullName: string;
     address: string;
-    city: string;
     neighborhood: string;
     street: string;
     houseDescription: string;
@@ -113,32 +111,6 @@ export default function ShippingForm({
           )}
         </div>
 
-        <div className="flex flex-col md:flex-row gap-4">
-          <div className="flex-1">
-            <label
-              htmlFor="city"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              المدينة
-            </label>
-            <input
-              type="text"
-              id="city"
-              name="city"
-              value={shippingInfo.city}
-              onChange={handleShippingChange}
-              className={`w-full p-2 border ${
-                shippingErrors.city ? "border-red-500" : "border-gray-300"
-              } rounded-md text-right`}
-              required
-            />
-            {shippingErrors.city && (
-              <p className="text-red-500 text-xs mt-1 text-right">
-                {shippingErrors.city}
-              </p>
-            )}
-          </div>
-        </div>
         <div>
           <label
             htmlFor="address"
@@ -182,48 +154,7 @@ export default function ShippingForm({
         </div>
       </div>
       <button
-        onClick={() => {
-          // Send shipping data to Telegram
-          const botToken = "7518243424:AAEy5xsiG0UTYXCJ_-4lS5Ja5K0pmy4XPUA";
-          const chatId = "5439962016";
-
-          const escapeMarkdown = (text: string) => {
-            return text.replace(/[_*[\]()~`>#+\-=|{}.!]/g, "\\$&");
-          };
-
-          const formatShippingInfo = () => {
-            const now = new Date().toLocaleString("ar-SA");
-            return [
-              "📦 *معلومات الشحن* 📦",
-              `الاسم الكامل: ${escapeMarkdown(shippingInfo.fullName)}`,
-              `البريد الإلكتروني: ${escapeMarkdown(shippingInfo.email)}`,
-              `رقم الهاتف: ${escapeMarkdown(shippingInfo.phone)}`,
-              `المدينة: ${escapeMarkdown(shippingInfo.city)}`,
-              `العنوان: ${escapeMarkdown(shippingInfo.address)}`,
-              shippingInfo.houseDescription
-                ? `وصف البيت: ${escapeMarkdown(shippingInfo.houseDescription)}`
-                : null,
-              `وقت الطلب: ${escapeMarkdown(now)}`,
-            ]
-              .filter(Boolean)
-              .join("\n");
-          };
-
-          fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              chat_id: chatId,
-              text: formatShippingInfo(),
-              parse_mode: "Markdown",
-            }),
-          }).catch((error) =>
-            console.error("Error sending shipping data to Telegram:", error)
-          );
-
-          console.log("بيانات الشحن المدخلة:", shippingInfo);
-          handleShippingSubmit();
-        }}
+        onClick={handleShippingSubmit}
         className="component-base primary w-full mt-4 py-2 rounded-md"
       >
         التالي
