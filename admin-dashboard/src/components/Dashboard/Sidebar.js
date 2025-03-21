@@ -34,6 +34,17 @@ const Sidebar = ({
               Add Product
             </button>
           </li>
+          <li>
+            <button
+              className={`nav-item ${
+                activeView === "settings" ? "active" : ""
+              }`}
+              onClick={() => setActiveView("settings")}
+            >
+              <span className="nav-icon">⚙️</span>
+              Settings
+            </button>
+          </li>
         </ul>
       </nav>
 

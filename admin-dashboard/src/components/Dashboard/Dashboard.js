@@ -5,6 +5,7 @@ import Sidebar from "./Sidebar";
 import ProductList from "../Products/ProductList";
 import ProductForm from "../Products/ProductForm";
 import ProductFilter from "../Products/ProductFilter";
+import Settings from "../Settings/Settings";
 import "./Dashboard.css";
 
 const Dashboard = ({ user, onLogout }) => {
@@ -138,6 +139,8 @@ const Dashboard = ({ user, onLogout }) => {
             onCancel={() => setActiveView("products")}
           />
         );
+      case "settings":
+        return <Settings />;
       default:
         return <div>Select an option from the sidebar</div>;
     }

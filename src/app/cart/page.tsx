@@ -8,6 +8,7 @@ import PaymentMethodRadio from "./components/PaymentMethodRadio";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
+import { getAppSettings } from "@/firebase/settingsService";
 
 export default function CartPage() {
   const { cartItems, removeFromCart, updateQuantity } = useCart();
@@ -20,7 +21,22 @@ export default function CartPage() {
   const [monthlyInstallment, setMonthlyInstallment] = useState("0.00");
 
   useEffect(() => {
-    setLoading(false);
+    const fetchSettings = async () => {
+      try {
+        const settings = await getAppSettings();
+        if (settings.installmentDefaults) {
+          setInstallmentMonths(settings.installmentDefaults.months);
+          setDownPayment(settings.installmentDefaults.downPayment);
+        }
+      } catch (error) {
+        console.error("Error fetching installment defaults:", error);
+        // Fallback to default values if Firebase fetch fails
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchSettings();
   }, []);
   if (loading) {
     return <Loading size="large" text="جاري تحميل السلة..." />;
