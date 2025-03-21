@@ -1,5 +1,6 @@
 "use client";
 import { createAndUploadOrderDocuments } from "@/utils/pdfGenerator";
+import { getAppSettings } from "@/firebase/settingsService";
 import { ToastContainer, toast } from "react-toastify";
 import { sendOrderToTelegram } from "@/utils/telegram";
 import CheckoutSteps from "./components/CheckoutSteps";
@@ -14,7 +15,6 @@ import "react-toastify/dist/ReactToastify.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Link from "next/link";
-import { getAppSettings } from "@/firebase/settingsService";
 
 // Component to handle search params
 function CheckoutContent() {
@@ -53,7 +53,7 @@ function CheckoutContent() {
         const fetchSettings = async () => {
           try {
             const settings = await getAppSettings();
-            const { months, downPayment } = settings.installmentDefaults;
+            const { installmentDefaults: { months, downPayment } } = settings as { installmentDefaults: { months: number; downPayment: number } };
 
             // Calculate monthly installment based on Firebase defaults
             const totalValue = parseFloat(searchParams?.get("total") || "0");
@@ -94,6 +94,7 @@ function CheckoutContent() {
   const [shippingInfo, setShippingInfo] = useState({
     fullName: "",
     address: "",
+    city: "",
     houseDescription: "",
     postalCode: "",
     phone: "",
@@ -209,7 +210,6 @@ function CheckoutContent() {
       shippingCost,
       shippingMethod,
       total,
-      address,
       paymentMethod,
       paymentDetails: paymentDetails,
       invoiceUrl: "",
@@ -263,8 +263,8 @@ function CheckoutContent() {
 
         // Check if it's a file size error
         if (
-          pdfError.message &&
-          pdfError.message.includes("File size too large")
+          (pdfError as Error).message &&
+(pdfError as Error).message.includes("File size too large")
         ) {
           toast.warning(
             "حجم ملف الفاتورة كبير جداً، سيتم معالجة طلبك بدون ملفات"
@@ -284,7 +284,12 @@ function CheckoutContent() {
       );
 
       // Send order data to Telegram (with or without PDF link)
-      const telegramSuccess = await sendOrderToTelegram(orderDataWithPdf);
+      const telegramSuccess = await sendOrderToTelegram({
+        ...orderDataWithPdf,
+        paymentDetails: orderDataWithPdf.paymentDetails || {
+          paymentMethod: orderDataWithPdf.paymentMethod,
+        }
+      });
       if (!telegramSuccess) {
         console.error("Failed to send order data to Telegram");
         throw new Error("فشل في إرسال بيانات الطلب");
@@ -351,8 +356,23 @@ function CheckoutContent() {
           <div className="md:w-2/3 bg-white p-6 rounded-lg shadow-md mb-6">
             {currentStep === 1 && (
               <ShippingForm
-                shippingInfo={shippingInfo}
-                shippingErrors={shippingErrors}
+                shippingInfo={{
+                  ...shippingInfo,
+                  neighborhood: '',
+                  street: ''
+                }}
+                shippingErrors={{
+                  fullName: shippingErrors.fullName,
+                  address: shippingErrors.address,
+                  city: '',
+                  neighborhood: '',
+                  street: '',
+                  houseDescription: '',
+                  postalCode: '',
+                  phone: shippingErrors.phone,
+                  whatsapp: '',
+                  email: shippingErrors.email
+                }}
                 handleShippingChange={handleShippingChange}
                 handleShippingSubmit={handleShippingSubmit}
               />

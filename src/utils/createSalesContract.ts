@@ -12,6 +12,10 @@ interface ContractData {
   deviceDetails?: string;
   paymentMethod?: string;
   date?: string;
+  day?: string;
+  address?: string;
+  startDate?: string;
+  endDate?: string;
 }
 
 export async function createSalesContract(
@@ -23,7 +27,6 @@ export async function createSalesContract(
 
   return pdfBuffer;
 }
-
 
 function generateContractHtml(data: ContractData): string {
   const currentDate = data.date || new Date().toLocaleDateString("ar-SA");
@@ -82,6 +85,25 @@ function generateContractHtml(data: ContractData): string {
     month: "long",
     day: "numeric",
   });
+
+  // Format dates for contract display
+  const formattedStartDate = startDate.toLocaleDateString("ar-SA");
+
+  // Get day of week in Arabic
+  const weekdays = [
+    "الأحد",
+    "الإثنين",
+    "الثلاثاء",
+    "الأربعاء",
+    "الخميس",
+    "الجمعة",
+    "السبت",
+  ];
+  const dayOfWeek = weekdays[startDate.getDay()];
+
+  // Set default values for missing fields
+  const address = data.address || "";
+  const day = data.day || dayOfWeek;
 
   return `
    <!DOCTYPE html>
@@ -191,21 +213,27 @@ function generateContractHtml(data: ContractData): string {
 </head>
 <body>
   <div class="header">
-    <img src="/logo.png" alt="متجر دليل كوم" class="logo">
+    <img src="https://res.cloudinary.com/masoft/image/upload/v1742515082/hlz3hflj6fogegitohg3.png" alt="فون زون للاتصالات" class="logo" onerror="this.src='/logo.png'">
     <h1>عقد بيع تقسيط</h1>
   </div>
 
   <div class="contract-section">
-    <p><strong>اليوم:</strong> ${data.day}</p>
-    <p><strong>التاريخ:</strong> ${data.date}</p>
-    <p><strong>نعم انا السيد/ة:</strong> ${data.customerName} / <strong>رقم الجوال:</strong> ${data.customerPhone} وعنوانه/ ${data.adress}</p>
+    <p><strong>اليوم:</strong> ${day}</p>
+    <p><strong>التاريخ:</strong> ${currentDate}</p>
+    <p><strong>نعم انا السيد/ة:</strong> ${
+      data.customerName
+    } / <strong>رقم الجوال:</strong> ${
+    data.customerPhone
+  } وعنوانه/ ${address}</p>
   </div>
 
   <div class="contract-section">
-    <p>أقر و أعترف و أنا في حالتى الشرعية بأنني في ذمتي للمؤسسة المدعوة / متجر فون زون مبلغ و قدره</p>
+    <p>أقر و أعترف و أنا في حالتى الشرعية بأنني في ذمتي للمؤسسة المدعوة / فون زون مبلغ و قدره</p>
     <p class="amount">${data.total} ريال فقط</p>
-    <p>و ذلك قيمة عن ما تبقى من جهاز / ${data.deviceDetails}</p>
-    <p>قيمة الدفعة الشهرية : ${data.monthlyPayment} ريال فقط لمدة ${data.numberOfMonths} أشهر اعتباراً من تاريخ ${data.startDate} و حتى ${data.endDate}</p>
+    <p>و ذلك قيمة عن ما تبقى من جهاز / ${deviceDetails}</p>
+    <p>قيمة الدفعة الشهرية : ${monthlyPayment} ريال فقط لمدة ${numberOfMonths} أشهر اعتباراً من تاريخ ${
+    data.startDate || formattedStartDate
+  } و حتى ${data.endDate || formattedEndDate}</p>
   </div>
 
   <div class="contract-section">
@@ -221,8 +249,8 @@ function generateContractHtml(data: ContractData): string {
   </div>
 
   <div class="footer">
-    <p>متجر دليل كوم - جميع الحقوق محفوظة © ${new Date().getFullYear()}</p>
-    <p>للتواصل: +966 54 767 5648</p>
+    <p>فون زون - جميع الحقوق محفوظة © ${new Date().getFullYear()}</p>
+    <p>للتواصل: +971547675648 </p>
   </div>
 </body>
 </html>

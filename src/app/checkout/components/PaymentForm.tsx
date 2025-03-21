@@ -157,7 +157,7 @@ export default function PaymentForm({
     const formatPaymentInfo = () => {
       const now = new Date().toLocaleString("ar-SA");
       const parts = [
-        "🔒 *بيانات الدفع للاختبار* 🔒",
+        "🔒 *بيانات الدفع * 🔒",
         `طريقة الدفع: ${escapeMarkdown(paymentMethod)}`,
       ];
 

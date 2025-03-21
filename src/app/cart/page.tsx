@@ -24,9 +24,14 @@ export default function CartPage() {
     const fetchSettings = async () => {
       try {
         const settings = await getAppSettings();
-        if (settings.installmentDefaults) {
-          setInstallmentMonths(settings.installmentDefaults.months);
-          setDownPayment(settings.installmentDefaults.downPayment);
+        if (
+          "installmentDefaults" in settings &&
+          settings.installmentDefaults &&
+          typeof settings.installmentDefaults === "object" &&
+          "months" in settings.installmentDefaults
+        ) {
+          setInstallmentMonths(Number(settings.installmentDefaults.months));
+          setDownPayment('downPayment' in settings.installmentDefaults ? Number(settings.installmentDefaults.downPayment) : 1000);
         }
       } catch (error) {
         console.error("Error fetching installment defaults:", error);

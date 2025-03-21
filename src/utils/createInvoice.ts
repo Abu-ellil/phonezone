@@ -22,6 +22,17 @@ interface InvoiceData {
   shippingCost?: number;
   total?: string;
   paymentMethod?: string;
+  customerName?: string;
+  customerPhone?: string;
+  customerAddress?: string;
+  deviceName?: string;
+  devicePrice?: string;
+  downPayment?: string;
+  remainingAmount?: string;
+  paymentSchedule?: Array<{
+    amount: string;
+    dueDate: string;
+  }>;
 }
 
 // Function to generate the invoice as a PDF
@@ -40,205 +51,211 @@ export async function createInvoice(
 // Function to dynamically generate the HTML for the invoice
 function generateInvoiceHtml(data: InvoiceData): string {
   return `
-    <!DOCTYPE html>
-    <html dir="rtl" lang="ar">
-    <head>
-      <meta charset="UTF-8">
-      <title>فاتورة طلب</title>
-      <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>فاتورة طلب</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
 
-        :root {
-          --primary-color: #0066cc;
-          --secondary-color: #4a4a4a;
-          --border-color: #e0e0e0;
-        }
+    :root {
+      --primary-color: #0066cc;
+      --secondary-color: #4a4a4a;
+      --border-color: #e0e0e0;
+    }
 
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-          font-family: 'Cairo', Arial, sans-serif;
-          direction: rtl;
-          text-align: right;
-          width: 210mm;
-          min-height: 297mm;
-          margin: auto;
-          padding: 10mm;
-          background-color: white;
-          color: var(--secondary-color);
-          line-height: 1.4;
-        }
+    body {
+      font-family: 'Cairo', Arial, sans-serif;
+      direction: rtl;
+      text-align: right;
+      width: 210mm;
+      min-height: 297mm;
+      margin: auto;
+      padding: 10mm;
+      background-color: white;
+      color: var(--secondary-color);
+      line-height: 1.4;
+    }
 
-        .header {
-          text-align: center;
-          margin-bottom: 20px;
-        }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-        .logo {
-          max-width: 100px;
-          margin-bottom: 10px;
-        }
+    .logo {
+      max-width: 100px;
+      margin-bottom: 10px;
+    }
 
-        h1 {
-          color: var(--primary-color);
-          font-size: 20px;
-          margin-bottom: 10px;
-        }
+    h1 {
+      color: var(--primary-color);
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
 
-        h2 {
-          color: var(--primary-color);
-          font-size: 16px;
-          margin: 15px 0 10px;
-          border-bottom: 1px solid var(--border-color);
-          padding-bottom: 5px;
-        }
+    h2 {
+      color: var(--primary-color);
+      font-size: 16px;
+      margin: 15px 0 10px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 5px;
+    }
 
-        .info-section {
-          margin: 15px 0;
-          padding: 10px;
-          background-color: #f8f9fa;
-          border-radius: 6px;
-        }
+    .info-section {
+      margin: 15px 0;
+      padding: 10px;
+      background-color: #f8f9fa;
+      border-radius: 6px;
+    }
 
-        .info-section p {
-          margin: 5px 0;
-          font-size: 12px;
-        }
+    .info-section p {
+      margin: 5px 0;
+      font-size: 12px;
+    }
 
-        table {
-          width: 100%;
-          border-collapse: collapse;
-          margin: 10px 0;
-          table-layout: fixed;
-          font-size: 11px;
-        }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+      table-layout: fixed;
+      font-size: 11px;
+    }
 
-        th {
-          background-color: var(--primary-color);
-          color: white;
-          font-size: 12px;
-          padding: 8px;
-          font-weight: 600;
-        }
+    th {
+      background-color: var(--primary-color);
+      color: white;
+      font-size: 12px;
+      padding: 8px;
+      font-weight: 600;
+    }
 
-        td {
-          font-size: 11px;
-          padding: 6px;
-          border-bottom: 1px solid var(--border-color);
-          word-wrap: break-word;
-          max-width: 200px;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
+    td {
+      font-size: 11px;
+      padding: 6px;
+      border-bottom: 1px solid var(--border-color);
+      word-wrap: break-word;
+      max-width: 200px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
-        tr:last-child td {
-          border-bottom: none;
-        }
+    tr:last-child td {
+      border-bottom: none;
+    }
 
-        .summary {
-          margin-top: 20px;
-          padding: 15px;
-          background-color: #f8f9fa;
-          border-radius: 6px;
-        }
+    .summary {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #f8f9fa;
+      border-radius: 6px;
+    }
 
-        .total {
-          font-size: 14px;
-          font-weight: 700;
-          color: var(--primary-color);
-          margin-top: 10px;
-          padding-top: 10px;
-          border-top: 2px solid var(--border-color);
-        }
+    .total {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 2px solid var(--border-color);
+    }
 
-        .footer {
-          margin-top: 20px;
-          padding-top: 10px;
-          border-top: 1px solid var(--border-color);
-          text-align: center;
-          font-size: 10px;
-          color: #666;
-        }
+    .footer {
+      margin-top: 20px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      font-size: 10px;
+      color: #666;
+    }
 
-        @media print {
-          body {
-            width: 210mm;
-            height: 297mm;
-            margin: 0;
-            padding: 0;
-          }
-          table {
-            page-break-inside: auto;
-          }
-          tr {
-            page-break-inside: avoid;
-            page-break-after: auto;
-          }
-        }
-      </style>
-    </head>
-    <body>
-      <div class="header">
-        <img src="https://res.cloudinary.com/masoft/image/upload/v1742515082/hlz3hflj6fogegitohg3.png" alt="متجر فون زون" class="logo">
-        <h1>فاتورة طلب</h1>
-      </div>
+    @media print {
+      body {
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        padding: 0;
+      }
+      table {
+        page-break-inside: auto;
+      }
+      tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="https://res.cloudinary.com/masoft/image/upload/v1742515082/hlz3hflj6fogegitohg3.png" alt="فون زون" class="logo" onerror="this.src='/logo.png'">
+    <h1>فاتورة طلب</h1>
+  </div>
 
-      <div class="info-section">
-        <h2>معلومات العميل</h2>
-        <p>اسم العميل: ${data.shippingInfo.fullName}</p>
-        <p>رقم الهاتف: ${data.shippingInfo.phone}</p>
-        ${
-          data.shippingInfo.address
-            ? `<p>العنوان: ${data.shippingInfo.address}</p>`
-            : ""
-        }
-        ${
-          data.shippingInfo.city
-            ? `<p>المدينة: ${data.shippingInfo.city}</p>`
-            : ""
-        }
-      </div>
+  <div class="info-section">
+    <h2>معلومات العميل</h2>
+    <p>اسم العميل: ${data.customerName}</p>
+    <p>رقم الجوال: ${data.customerPhone}</p>
+    <p>العنوان: ${data.customerAddress}</p>
+  </div>
 
-      <h2>المنتجات</h2>
-      <table>
-        <tr>
-          <th>المنتج</th>
-          <th>الكمية</th>
-          <th>السعر</th>
-        </tr>
-        ${
-          data.cartItems
-            ?.map(
-              (item) => `
-          <tr>
-            <td>${item.name}</td>
-            <td>${item.quantity}</td>
-            <td>${item.price} د.إ</td>
-          </tr>
-        `
-            )
-            .join("") || ""
-        }
-      </table>
+  <h2>تفاصيل الفاتورة</h2>
+  <table>
+    <tr>
+      <th>#</th>
+      <th>اسم الجوال</th>
+      <th>السعر</th>
+      <th>الكمية</th>
+      <th>الإجمالي</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>${data.deviceName}</td>
+      <td>${data.devicePrice} ريال</td>
+      <td>1</td>
+      <td>${data.devicePrice} ريال</td>
+    </tr>
+  </table>
 
-      <div class="summary">
-        <h2>ملخص الطلب</h2>
-        <p>المجموع الفرعي: ${data.subtotal?.toFixed(2)} د.إ</p>
-        <p>رسوم الشحن: ${data.shippingCost?.toFixed(2)} د.إ</p>
-        <p class="total">الإجمالي: ${data.total} د.إ</p>
-        <p>طريقة الدفع: ${getPaymentMethodName(data.paymentMethod || "")}</p>
-      </div>
+  <div class="summary">
+    <h2>ملخص الطلب</h2>
+    <p>الإجمالي: ${data.total} ريال</p>
+    <p>الدفعة المقدمة: ${data.downPayment} ريال</p>
+    <p class="total">المتبقي: ${data.remainingAmount} ريال</p>
+  </div>
 
-      <div class="footer">
-        <p>شكراً لتسوقكم من متجر فون زون</p>
-        <p>للتواصل: +971 54 767 5648</p>
-      </div>
-    </body>
-    </html>
+  <h2>جدول الدفعات</h2>
+  <table>
+    <tr>
+      <th>#</th>
+      <th>الدفعة</th>
+      <th>تاريخ الاستحقاق</th>
+    </tr>
+    ${data.paymentSchedule
+      ?.map(
+        (payment, index) => `
+    <tr>
+      <td>${index + 1}</td>
+      <td>${payment.amount} ريال</td>
+      <td>${payment.dueDate}</td>
+    </tr>
+    `
+      )
+      .join("")}
+  </table>
+
+  <div class="footer">
+    <p>فون زون - جميع الحقوق محفوظة © ${new Date().getFullYear()}</p>
+    <p>للتواصل: +966 54 767 5648</p>
+  </div>
+</body>
+</html>
   `;
 }
 

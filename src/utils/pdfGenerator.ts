@@ -36,7 +36,27 @@ export async function createAndUploadOrderDocuments(
 ): Promise<{ invoiceUrl: string; contractUrl: string }> {
   try {
     // Create invoice
-    const invoicePdfBytes = await createInvoice(orderData);
+    // Map OrderData to InvoiceData with additional fields needed for the template
+    const invoiceData = {
+      ...orderData,
+      customerName: orderData.shippingInfo.fullName,
+      customerPhone: orderData.shippingInfo.phone,
+      customerAddress: `${orderData.shippingInfo.address}, ${orderData.shippingInfo.city}`,
+      // If there's only one item, use it as the device
+      deviceName: orderData.cartItems[0]?.name || "",
+      devicePrice: orderData.cartItems[0]?.price || "",
+      // These fields would need to be calculated or provided elsewhere
+      downPayment: "0", // Default value, should be updated with actual down payment if available
+      remainingAmount: orderData.total, // Default to total if no down payment
+      paymentSchedule: [
+        {
+          amount: orderData.total,
+          dueDate: new Date().toLocaleDateString("ar-SA"),
+        },
+      ],
+    };
+
+    const invoicePdfBytes = await createInvoice(invoiceData);
 
     // Create sales contract
     const contractData = {
@@ -44,7 +64,9 @@ export async function createAndUploadOrderDocuments(
       customerPhone: orderData.shippingInfo.phone,
       orderNumber: orderData.orderNumber,
       total: orderData.total || "",
-      
+      address: orderData.shippingInfo.city
+        ? `${orderData.shippingInfo.address}, ${orderData.shippingInfo.city}`
+        : orderData.shippingInfo.address || "",
       paymentMethod: orderData.paymentMethod,
       date: new Date().toLocaleDateString("ar-SA"),
     };
