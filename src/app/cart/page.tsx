@@ -177,6 +177,9 @@ export default function CartPage() {
                       </div>
                       <div className="space-y-2">
                         <div className="flex gap-4 items-center">
+                        <div className="flex items-center p-2 text-blue-500 text-xl">
+                            <div className="flex-1 text-right">45 د.إ</div>
+                          </div>
                           <div
                             className={`flex w-40 items-center p-2 border rounded-md cursor-pointer ${
                               shippingMethod === "aramex"
@@ -187,19 +190,20 @@ export default function CartPage() {
                           >
                             <div className="flex-1 text-right">
                               <div className="font-medium">أرامكس</div>
-                            </div>   <div className="flex items-center p-2 text-blue-500 text-3xl">
-                            <div className="flex-1 text-right">45 د.إ</div>
-                          </div>
+                            </div>
                             <div className="flex items-center justify-center w-5 h-5 border border-gray-300 rounded-full mr-2">
                               {shippingMethod === "aramex" && (
                                 <div className="w-3 h-3 bg-primary rounded-full bg-blue-500"></div>
                               )}
                             </div>
                           </div>
-                       
+                         
                         </div>
 
                         <div className="flex gap-4 items-center">
+                        <div className="flex items-center p-2 text-blue-500 text-xl">
+                            <div className="flex-1 text-right">24 د.إ</div>
+                          </div>
                           <div
                             className={`flex w-40 items-center p-2 border rounded-md cursor-pointer ${
                               shippingMethod === "smsa"
@@ -217,9 +221,7 @@ export default function CartPage() {
                               )}
                             </div>
                           </div>
-                          <div className="flex items-center p-2 text-blue-500 text-3xl">
-                            <div className="flex-1 text-right">24 د.إ</div>
-                          </div>
+                         
                         </div>
                       </div>
                       <button
@@ -360,7 +362,7 @@ export default function CartPage() {
                           onClick={() =>
                             updateQuantity(item.id, item.quantity - 1)
                           }
-                          className="px-2 py-1 text-gray-600 hover:bg-gray-100 border border-gray-300 rounded-l-md"
+                          className="px-2 py-1 text-gray-600 hover:bg-gray-100 border border-gray-300 rounded-r-md"
                         >
                           -
                         </button>
@@ -371,7 +373,7 @@ export default function CartPage() {
                           onClick={() =>
                             updateQuantity(item.id, item.quantity + 1)
                           }
-                          className="px-2 py-1 text-gray-600 hover:bg-gray-100 border border-gray-300 rounded-r-md"
+                          className="px-2 py-1 text-gray-600 hover:bg-gray-100 border border-gray-300 rounded-l-md"
                         >
                           +
                         </button>
