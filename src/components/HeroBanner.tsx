@@ -9,6 +9,7 @@ const images = [
   "https://res.cloudinary.com/masoft/image/upload/v1742340091/Banner4_qisert.jpg",
   "https://res.cloudinary.com/masoft/image/upload/v1742340091/Banner1_uir2hs.jpg",
   "https://res.cloudinary.com/masoft/image/upload/v1742340090/Banner2_sleqgq.jpg",
+  "https://res.cloudinary.com/masoft/image/upload/v1742340091/Banner3_ib99zt.jpg",
 ];
 
 const responsive = {

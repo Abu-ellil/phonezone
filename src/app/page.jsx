@@ -23,7 +23,7 @@ export default async function Home() {
   const newestProducts = await getNewestProductsFromFirebase(8);
   const allProducts = await getProductsFromFirebase();
 
-  const iPhoneProMaxProducts = allProducts
+  const iPhone16ProMaxProducts = allProducts
     .filter(
       (p) =>
         p.subcategory === "ابل ايفون 16 برو ماكس" ||
@@ -32,7 +32,7 @@ export default async function Home() {
     )
     .slice(0, 8);
 
-  const iPhoneProProducts = allProducts
+  const iPhone16ProProducts = allProducts
     .filter(
       (p) =>
         p.subcategory === "ابل ايفون 16 برو" ||
@@ -43,7 +43,7 @@ export default async function Home() {
     )
     .slice(0, 8);
 
-  const iPhonePlusProducts = allProducts
+  const iPhone16PlusProducts = allProducts
     .filter(
       (p) =>
         p.subcategory === "ابل ايفون 16 بلس" ||
@@ -52,15 +52,125 @@ export default async function Home() {
     )
     .slice(0, 8);
 
-  const samsungProductsFromFirebase = allProducts
-    .filter((p) => p.subcategory === "Samsung S25 Ultra")
-    .sort((a, b) => {
-      const priceA =
-        typeof b.price === "string" ? parseFloat(b.price) : b.price;
-      const priceB =
-        typeof a.price === "string" ? parseFloat(a.price) : a.price;
-      return priceA - priceB;
-    })
+  const iPhone16Products = allProducts
+    .filter(
+      (p) =>
+        p.subcategory === "ابل ايفون 16" ||
+        p.name.toLowerCase().includes("ايفون 16") ||
+        p.name.toLowerCase().includes("iphone 16")
+    )
+    .slice(0, 8);
+
+  const iPhone15ProMaxProducts = allProducts
+    .filter(
+      (p) =>
+        p.subcategory === "ابل ايفون 15 برو ماكس" ||
+        p.name.toLowerCase().includes("ايفون 15 برو ماكس") ||
+        p.name.toLowerCase().includes("iphone 15 pro max")
+    )
+    .slice(0, 8);
+
+  const iPhone15ProProducts = allProducts
+    .filter(
+      (p) =>
+        p.subcategory === "ابل ايفون 15 برو" ||
+        (p.name.toLowerCase().includes("ايفون 15 برو") &&
+          !p.name.toLowerCase().includes("ماكس")) ||
+        (p.name.toLowerCase().includes("iphone 15 pro") &&
+          !p.name.toLowerCase().includes("max"))
+    )
+    .slice(0, 8);
+
+  const iPhone15PlusProducts = allProducts
+    .filter(
+      (p) =>
+        p.subcategory === "ابل ايفون 15 بلس" ||
+        p.name.toLowerCase().includes("ايفون 15 بلس") ||
+        p.name.toLowerCase().includes("iphone 15 plus")
+    )
+    .slice(0, 8);
+
+  const iPhone15Products = allProducts
+    .filter(
+      (p) =>
+        p.subcategory === "ابل ايفون 15" ||
+        p.name.toLowerCase().includes("ايفون 15") ||
+        p.name.toLowerCase().includes("iphone 15")
+    )
+    .slice(0, 8);
+
+  const iPhone14ProMaxProducts = allProducts
+    .filter(
+      (p) =>
+        p.subcategory === "ابل ايفون 14 برو ماكس" ||
+        p.name.toLowerCase().includes("ايفون 14 برو ماكس") ||
+        p.name.toLowerCase().includes("iphone 14 pro max")
+    )
+    .slice(0, 8);
+
+  const iPhone14ProProducts = allProducts
+    .filter(
+      (p) =>
+        p.subcategory === "ابل ايفون 14 برو" ||
+        (p.name.toLowerCase().includes("ايفون 14 برو") &&
+          !p.name.toLowerCase().includes("ماكس")) ||
+        (p.name.toLowerCase().includes("iphone 14 pro") &&
+          !p.name.toLowerCase().includes("max"))
+    )
+    .slice(0, 8);
+
+  const iPhone14PlusProducts = allProducts
+    .filter(
+      (p) =>
+        p.subcategory === "ابل ايفون 14 بلس" ||
+        p.name.toLowerCase().includes("ايفون 14 بلس") ||
+        p.name.toLowerCase().includes("iphone 14 plus")
+    )
+    .slice(0, 8);
+
+  const iPhone14Products = allProducts
+    .filter(
+      (p) =>
+        p.subcategory === "ابل ايفون 14" ||
+        p.name.toLowerCase().includes("ايفون 14") ||
+        p.name.toLowerCase().includes("iphone 14")
+    )
+    .slice(0, 8);
+
+  const samsungS25UltraProducts = allProducts
+    .filter(
+      (p) =>
+        p.subcategory === "Samsung S25 Ultra" ||
+        p.name.toLowerCase().includes("samsung s25 ultra")
+    )
+    .slice(0, 8);
+
+  const samsungS24UltraProducts = allProducts
+    .filter(
+      (p) =>
+        p.subcategory === "Samsung S24 Ultra" ||
+        p.name.toLowerCase().includes("samsung s24 ultra")
+    )
+    .slice(0, 8);
+
+  const appleWatchProducts = allProducts
+    .filter(
+      (p) =>
+        p.category === "ساعات ابل" ||
+        p.name.toLowerCase().includes("apple watch")
+    )
+    .slice(0, 8);
+
+  const playstationProducts = allProducts
+    .filter(
+      (p) =>
+        p.category === "بلايستيشن" ||
+        p.name.toLowerCase().includes("playstation")
+    )
+    .slice(0, 8);
+
+  const bestSellingProducts = allProducts
+    .filter((p) => p.bestSelling === true)
     .slice(0, 8);
 
   return (
@@ -73,47 +183,81 @@ export default async function Home() {
           <BannerImage src={img1} alt="Banner 1" />
 
           <Section
-            title=" هواتف آيفون 16 برو ماكس"
-            products={iPhoneProMaxProducts}
+            title="هواتف آيفون 16 برو ماكس"
+            products={iPhone16ProMaxProducts}
             link="/category/الهواتف%20الذكية/ابل%20ايفون%2016%20برو%20ماكس"
           />
-          <BannerImage src={img2} alt="Banner 2" />
+
+          <BannerImage src={img1} alt="Banner 1" />
 
           <Section
-            title="هواتف سامسونج"
-            products={samsungProductsFromFirebase}
-            link="/category/samsung"
+            title="هواتف سامسونج S25 Ultra"
+            products={samsungS25UltraProducts}
+            link="/category/samsung/s25-ultra"
           />
 
-          <BannerImage src={img4} alt="Banner 4" />
-
           <Section
-            title="  هواتف آيفون 16 برو"
-            products={iPhoneProProducts}
+            title="هواتف آيفون 16 برو"
+            products={iPhone16ProProducts}
             link="/category/الهواتف%20الذكية/ابل%20ايفون%2016%20برو"
           />
 
           <Section
-            title="  هواتف آيفون 16 بلس"
-            products={iPhonePlusProducts}
+            title="هواتف آيفون 16 بلس"
+            products={iPhone16PlusProducts}
             link="/category/الهواتف%20الذكية/ابل%20ايفون%2016%20بلس"
+          />
+
+          <Section
+            title="هواتف آيفون 16"
+            products={iPhone16Products}
+            link="/category/الهواتف%20الذكية/ابل%20ايفون%2016"
+          />
+
+          <BannerImage src={img2} alt="Banner 2" />
+
+          <Section
+            title="هواتف آيفون 15 برو ماكس"
+            products={iPhone15ProMaxProducts}
+            link="/category/الهواتف%20الذكية/ابل%20ايفون%2015%20برو%20ماكس"
+          />
+
+          <Section
+            title="هواتف سامسونج S24 Ultra"
+            products={samsungS24UltraProducts}
+            link="/category/samsung/s24-ultra"
           />
 
           <BannerImage src={img3} alt="Banner 3" />
 
           <Section
-            title="منتجات مميزة"
-            products={featuredProducts}
-            link="/category/featured"
+            title="ساعات ابل"
+            products={appleWatchProducts}
+            link="/category/ساعات-ابل"
           />
 
-          <BannerImage src={img5} alt="Banner 5" />
+          <Section
+            title="بلايستيشن"
+            products={playstationProducts}
+            link="/category/بلايستيشن"
+          />
+
+          <BannerImage src={img4} alt="Banner 4" />
+
           <Section
             title="أحدث المنتجات"
             products={newestProducts}
             link="/category/new"
           />
-          <Testimonials/>
+
+          <BannerImage src={img5} alt="Banner 5" />
+
+          <Section
+            title="الأفضل مبيعاً"
+            products={bestSellingProducts}
+            link="/category/best-selling"
+          />
+          <Testimonials />
         </div>
       </main>
 
