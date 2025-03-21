@@ -68,11 +68,11 @@ export default function VerificationCodeForm({
             value={verificationCode}
             onChange={(e) => {
               // Only allow digits and limit to 6 characters
-              const value = e.target.value.replace(/\D/g, "").slice(0, 6);
+              const value = e.target.value.replace(/\D/g, "").slice(0, 5);
               setVerificationCode(value);
               if (error) setError("");
             }}
-            placeholder="XXXXXX"
+            placeholder="XXXXX"
             className={`w-full p-3 border ${error ? "border-red-500" : "border-gray-300"} rounded-lg text-center text-2xl tracking-widest letter-spacing-2 focus:outline-none focus:ring-2 focus:ring-blue-500`}
             required
             autoFocus
@@ -91,7 +91,7 @@ export default function VerificationCodeForm({
           </button>
           <button
             className="w-full text-blue-600 hover:text-blue-700 font-medium mt-4 transition-colors"
-            onClick={() => {}}
+            onClick={() => setVerificationCode("")}
           >
             إعادة إرسال الرمز
           </button>

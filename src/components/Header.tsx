@@ -62,7 +62,7 @@ export default function Header() {
             {/* Logo */}
 
             <Link href="/" className="flex items-center">
-              <Image src="/logo-text.png" alt="Logo" width={160} height={60} />
+              <Image src="/LOGO-TEXT.png" alt="Logo" width={160} height={60} />
             </Link>
             {/* Category Navigation Bar */}
             <div className="hidden md:block text-white">
@@ -195,82 +195,84 @@ export default function Header() {
           />
 
           {/* Mobile Menu */}
-          <div 
-            className={`md:hidden fixed top-[80px] right-0 bottom-0 w-3/4 bg-white z-50 border-l border-gray-200 shadow-lg transform transition-transform duration-300 ease-in-out overflow-y-auto ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
-            style={{ direction: 'rtl' }}
+          <div
+            className={`md:hidden fixed top-[80px] right-0 bottom-0 w-3/4 bg-white z-50 border-l border-gray-200 shadow-lg transform transition-transform duration-300 ease-in-out overflow-y-auto ${
+              isMenuOpen ? "translate-x-0" : "translate-x-full"
+            }`}
+            style={{ direction: "rtl" }}
           >
-              <div className="relative w-full mb-4">
-                <input
-                  type="text"
-                  placeholder="ابحث عن منتجات..."
-                  className="w-full py-2 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3498db] text-right"
-                />
-                <button className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <nav className="flex flex-col space-y-4 text-right">
-                {categories.map((category) => (
-                  <div
-                    key={category.name}
-                    className="border-b border-gray-200 pb-2"
-                  >
-                    <button
-                      onClick={() => toggleCategory(category.name)}
-                      className="flex items-center justify-between w-full py-2 text-gray-700 hover:text-[#3498db]"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className={`h-4 w-4 transform transition-transform ${
-                          isDropdownOpen === category.name ? "rotate-180" : ""
-                        }`}
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                      <span>{category.name}</span>
-                    </button>
-                    {isDropdownOpen === category.name && (
-                      <div className="mt-2 space-y-2 pr-4">
-                        {category.subcategories.map((subcategory) => (
-                          <Link
-                            key={subcategory.name}
-                            href={`/category/${encodeURIComponent(
-                              category.name
-                            )}/${encodeURIComponent(subcategory.name)}`}
-                            className="block py-1 text-gray-600 hover:text-[#3498db]"
-                          >
-                            {subcategory.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </nav>
+            <div className="relative w-full mb-4">
+              <input
+                type="text"
+                placeholder="ابحث عن منتجات..."
+                className="w-full py-2 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3498db] text-right"
+              />
+              <button className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+              </button>
             </div>
+            <nav className="flex flex-col space-y-4 text-right">
+              {categories.map((category) => (
+                <div
+                  key={category.name}
+                  className="border-b border-gray-200 pb-2"
+                >
+                  <button
+                    onClick={() => toggleCategory(category.name)}
+                    className="flex items-center justify-between w-full py-2 text-gray-700 hover:text-[#3498db]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={`h-4 w-4 transform transition-transform ${
+                        isDropdownOpen === category.name ? "rotate-180" : ""
+                      }`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                    <span>{category.name}</span>
+                  </button>
+                  {isDropdownOpen === category.name && (
+                    <div className="mt-2 space-y-2 pr-4">
+                      {category.subcategories.map((subcategory) => (
+                        <Link
+                          key={subcategory.name}
+                          href={`/category/${encodeURIComponent(
+                            category.name
+                          )}/${encodeURIComponent(subcategory.name)}`}
+                          className="block py-1 text-gray-600 hover:text-[#3498db]"
+                        >
+                          {subcategory.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </nav>
           </div>
         </div>
+      </div>
     </header>
   );
 }

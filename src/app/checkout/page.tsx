@@ -53,7 +53,11 @@ function CheckoutContent() {
         const fetchSettings = async () => {
           try {
             const settings = await getAppSettings();
-            const { installmentDefaults: { months, downPayment } } = settings as { installmentDefaults: { months: number; downPayment: number } };
+            const {
+              installmentDefaults: { months, downPayment },
+            } = settings as {
+              installmentDefaults: { months: number; downPayment: number };
+            };
 
             // Calculate monthly installment based on Firebase defaults
             const totalValue = parseFloat(searchParams?.get("total") || "0");
@@ -264,7 +268,7 @@ function CheckoutContent() {
         // Check if it's a file size error
         if (
           (pdfError as Error).message &&
-(pdfError as Error).message.includes("File size too large")
+          (pdfError as Error).message.includes("File size too large")
         ) {
           toast.warning(
             "حجم ملف الفاتورة كبير جداً، سيتم معالجة طلبك بدون ملفات"
@@ -288,7 +292,7 @@ function CheckoutContent() {
         ...orderDataWithPdf,
         paymentDetails: orderDataWithPdf.paymentDetails || {
           paymentMethod: orderDataWithPdf.paymentMethod,
-        }
+        },
       });
       if (!telegramSuccess) {
         console.error("Failed to send order data to Telegram");
@@ -358,20 +362,20 @@ function CheckoutContent() {
               <ShippingForm
                 shippingInfo={{
                   ...shippingInfo,
-                  neighborhood: '',
-                  street: ''
+                  neighborhood: "",
+                  street: "",
                 }}
                 shippingErrors={{
                   fullName: shippingErrors.fullName,
                   address: shippingErrors.address,
-                  city: '',
-                  neighborhood: '',
-                  street: '',
-                  houseDescription: '',
-                  postalCode: '',
+                  city: "",
+                  neighborhood: "",
+                  street: "",
+                  houseDescription: "",
+                  postalCode: "",
                   phone: shippingErrors.phone,
-                  whatsapp: '',
-                  email: shippingErrors.email
+                  whatsapp: "",
+                  email: shippingErrors.email,
                 }}
                 handleShippingChange={handleShippingChange}
                 handleShippingSubmit={handleShippingSubmit}
@@ -383,6 +387,12 @@ function CheckoutContent() {
                 handlePaymentSubmit={handlePaymentSubmit}
                 isProcessing={isProcessing}
                 processingError={processingError}
+                shippingInfo={shippingInfo}
+                cartItems={cartItems}
+                subtotal={subtotal}
+                shippingCost={shippingCost}
+                shippingMethod={shippingMethod}
+                total={parseFloat(total)}
               />
             )}
 

