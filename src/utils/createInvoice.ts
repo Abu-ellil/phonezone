@@ -194,7 +194,7 @@ function generateInvoiceHtml(data: InvoiceData): string {
 </head>
 <body>
   <div class="header">
-    <img src="https://res.cloudinary.com/masoft/image/upload/v1742515082/hlz3hflj6fogegitohg3.png" alt="فون زون" class="logo" onerror="this.src='/logo.png'">
+    <img src="/logo.png" alt="فون زون" class="logo">
     <h1>فاتورة طلب</h1>
   </div>
 

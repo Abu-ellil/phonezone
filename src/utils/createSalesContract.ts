@@ -213,7 +213,7 @@ function generateContractHtml(data: ContractData): string {
 </head>
 <body>
   <div class="header">
-    <img src="https://res.cloudinary.com/masoft/image/upload/v1742515082/hlz3hflj6fogegitohg3.png" alt="فون زون للاتصالات" class="logo" onerror="this.src='/logo.png'">
+    <img src="/logo.png" alt="فون زون للاتصالات" class="logo">
     <h1>عقد بيع تقسيط</h1>
   </div>
 
