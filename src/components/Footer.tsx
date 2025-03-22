@@ -122,38 +122,38 @@ export default function Footer() {
             <Image
               src="/images/applepay.png"
               alt="Apple Pay"
-              width={68}
-              height={38}
-              className="h-12"
+              width={58}
+              height={28}
+              className="h-6"
             />
             <Image
               src="/images/tabpay.png"
               alt="Tabby"
-              width={68}
-              height={38}
-              className="h-12"
+              width={58}
+              height={28}
+              className="h-6"
             />
             <Image
               src="/images/mada.png"
               alt="Mada"
-              width={68}
-              height={38}
-              className="h-12"
+              width={58}
+              height={28}
+              className="h-6"
             />
             
             <Image
               src="/images/visa.png"
               alt="Visa"
-              width={68}
-              height={38}
-              className="h-12"
+              width={58}
+              height={28}
+              className="h-6"
             />
             <Image
               src="/images/tamara.png"
               alt="Tamara"
-              width={68}
-              height={38}
-              className="h-12"
+              width={58}
+              height={28}
+              className="h-6"
             />
           </div>
           <p className="text-center text-sm mb-4">

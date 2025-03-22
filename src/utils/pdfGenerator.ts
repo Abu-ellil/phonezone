@@ -27,6 +27,8 @@ interface OrderData {
   shippingCost: number;
   total: string;
   paymentMethod: string;
+  installmentMonths?: number | string;
+  downPayment?: number | string;
   invoiceUrl?: string;
   contractUrl?: string;
 }
@@ -37,23 +39,61 @@ export async function createAndUploadOrderDocuments(
   try {
     // Create invoice
     // Map OrderData to InvoiceData with additional fields needed for the template
+    let downPayment = "0";
+    let remainingAmount = orderData.total;
+    let paymentSchedule = [];
+
+    // Check if installment information is available
+    if (
+      orderData.paymentMethod === "tabby" ||
+      orderData.paymentMethod === "cash_on_delivery_installment"
+    ) {
+      // If installment details are provided
+      if (orderData.installmentMonths && orderData.downPayment) {
+        downPayment = orderData.downPayment.toString();
+        const downPaymentNum = parseFloat(downPayment);
+        const totalNum = parseFloat(orderData.total);
+        remainingAmount = (totalNum - downPaymentNum).toString();
+
+        // Create payment schedule based on installment months
+        const months = parseInt(orderData.installmentMonths.toString());
+        const monthlyAmount = (parseFloat(remainingAmount) / months).toFixed(2);
+
+        // Generate payment dates
+        const today = new Date();
+        for (let i = 0; i < months; i++) {
+          const dueDate = new Date(today);
+          dueDate.setMonth(today.getMonth() + i + 1);
+          paymentSchedule.push({
+            amount: monthlyAmount,
+            dueDate: dueDate.toLocaleDateString("ar-SA"),
+          });
+        }
+      }
+    } else {
+      // For non-installment payments, just show the full amount due now
+      paymentSchedule = [
+        {
+          amount: orderData.total,
+          dueDate: new Date().toLocaleDateString("ar-SA"),
+        },
+      ];
+    }
+
     const invoiceData = {
       ...orderData,
       customerName: orderData.shippingInfo.fullName,
       customerPhone: orderData.shippingInfo.phone,
       customerAddress: `${orderData.shippingInfo.address}, ${orderData.shippingInfo.city}`,
-      // If there's only one item, use it as the device
+      // Pass all cart items for the invoice
+      cartItems: orderData.cartItems,
+      // Keep these for backward compatibility
       deviceName: orderData.cartItems[0]?.name || "",
       devicePrice: orderData.cartItems[0]?.price || "",
-      // These fields would need to be calculated or provided elsewhere
-      downPayment: "0", // Default value, should be updated with actual down payment if available
-      remainingAmount: orderData.total, // Default to total if no down payment
-      paymentSchedule: [
-        {
-          amount: orderData.total,
-          dueDate: new Date().toLocaleDateString("ar-SA"),
-        },
-      ],
+      // Payment details
+      downPayment,
+      remainingAmount,
+      paymentSchedule,
     };
 
     const invoicePdfBytes = await createInvoice(invoiceData);

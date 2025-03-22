@@ -27,7 +27,7 @@ export default function FloatingWhatsAppButton() {
       onClick={handleWhatsAppClick}
     >
       <div className="bg-white rounded-full shadow-lg p-2 flex items-center gap-3 cursor-pointer hover:bg-gray-50">
-        <div className="relative w-12 h-12">
+        <div className="relative w-6 h-6">
           <div className="absolute inset-0 bg-green-500 rounded-full animate-pulse opacity-75"></div>
           <div className="absolute inset-0 flex items-center justify-center bg-green-600 rounded-full">
             <svg

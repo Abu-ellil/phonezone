@@ -22,6 +22,7 @@ interface InvoiceData {
   shippingCost?: number;
   total?: string;
   paymentMethod?: string;
+  shippingMethod?: string;
   customerName?: string;
   customerPhone?: string;
   customerAddress?: string;
@@ -205,29 +206,56 @@ function generateInvoiceHtml(data: InvoiceData): string {
     <p>اسم العميل: ${data.customerName}</p>
     <p>رقم الجوال: +971${data.customerPhone}</p>
     <p>العنوان: ${data.customerAddress}</p>
+    ${
+      data.shippingMethod
+        ? `<p>شركة التوصيل: ${
+            data.shippingMethod === "aramex" ? "أرامكس" : "سمسا"
+          }</p>`
+        : ""
+    }
+    ${
+      data.shippingCost ? `<p>تكلفة التوصيل: ${data.shippingCost} ريال</p>` : ""
+    }
   </div>
 
   <h2>تفاصيل الفاتورة</h2>
   <table>
     <tr>
       <th>#</th>
-      <th>اسم الجوال</th>
+      <th>اسم المنتج</th>
       <th>السعر</th>
       <th>الكمية</th>
       <th>الإجمالي</th>
     </tr>
+    ${
+      data.cartItems && data.cartItems.length > 0
+        ? data.cartItems
+            .map(
+              (item, index) => `
     <tr>
-      <td>1</td>
-      <td>${data.deviceName}</td>
-      <td>${data.devicePrice} ريال</td>
-      <td>1</td>
-      <td>${data.devicePrice} ريال</td>
+      <td>${index + 1}</td>
+      <td>${item.name}</td>
+      <td>${item.price} ريال</td>
+      <td>${item.quantity}</td>
+      <td>${parseFloat(item.price) * item.quantity} ريال</td>
     </tr>
+    `
+            )
+            .join("")
+        : `<tr>
+      <td>1</td>
+      <td>${data.deviceName || "غير محدد"}</td>
+      <td>${data.devicePrice || "0"} ريال</td>
+      <td>1</td>
+      <td>${data.devicePrice || "0"} ريال</td>
+    </tr>`
+    }
   </table>
 
   <div class="summary">
     <h2>ملخص الطلب</h2>
     <p>الإجمالي: ${data.total} ريال</p>
+    <p>طريقة الدفع: ${getPaymentMethodName(data.paymentMethod || "")}</p>
     <p>الدفعة المقدمة: ${data.downPayment} ريال</p>
     <p class="total">المتبقي: ${data.remainingAmount} ريال</p>
   </div>
@@ -238,7 +266,20 @@ function generateInvoiceHtml(data: InvoiceData): string {
       <th>#</th>
       <th>الدفعة</th>
       <th>تاريخ الاستحقاق</th>
+      <th>الحالة</th>
     </tr>
+    ${
+      data.downPayment && parseFloat(data.downPayment) > 0
+        ? `
+    <tr>
+      <td>0</td>
+      <td>${data.downPayment} ريال</td>
+      <td>${new Date().toLocaleDateString("ar-SA")}</td>
+      <td>تم الدفع</td>
+    </tr>
+    `
+        : ""
+    }
     ${data.paymentSchedule
       ?.map(
         (payment, index) => `
@@ -246,6 +287,13 @@ function generateInvoiceHtml(data: InvoiceData): string {
       <td>${index + 1}</td>
       <td>${payment.amount} ريال</td>
       <td>${payment.dueDate}</td>
+      <td>${
+        index === 0 &&
+        data.paymentMethod !== "tabby" &&
+        data.paymentMethod !== "cash_on_delivery_installment"
+          ? "تم الدفع"
+          : "مستحق"
+      }</td>
     </tr>
     `
       )
@@ -323,10 +371,16 @@ function getPaymentMethodName(method: string): string {
       return "بطاقة ائتمان";
     case "debit_card":
       return "بطاقة خصم";
+    case "cash":
+      return "الدفع نقداً";
     case "tabby":
       return "تقسيط (تابي)";
     case "cash_on_delivery":
       return "الدفع عند الاستلام";
+    case "cash_on_delivery_cash":
+      return "الدفع نقداً عند الاستلام";
+    case "cash_on_delivery_installment":
+      return "الدفع بالتقسيط عند الاستلام";
     default:
       return method;
   }

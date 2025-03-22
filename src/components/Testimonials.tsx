@@ -16,7 +16,7 @@ const testimonials: Testimonial[] = [
   {
     id: 1,
     name: "امنه عبيد",
-    location: "جدة",
+    location: "",
     rating: 5,
     comment: "مره حلوه سماعه",
     image: "/images/avatar_male.png",
@@ -30,7 +30,7 @@ const testimonials: Testimonial[] = [
   {
     id: 3,
     name: "عمر عيسوي",
-    location: "المدينة المنورة",
+    location: " ",
     rating: 5,
     comment: "توصيل سريع وخدمة ممتازة وسعر منافس بإختصار من افضل المتاجر الي تعاملت معهم",
   },
@@ -49,7 +49,7 @@ const testimonials: Testimonial[] = [
   {
     id: 6,
     name: "Nawaf ALshamrani",
-    location: "جدة",
+    location: "",
     rating: 5,
     comment: "Nawaf ALshamrani",
   },
@@ -62,7 +62,7 @@ const testimonials: Testimonial[] = [
   {
     id: 8,
     name: "Nuha A",
-    location: "نوته (عسير)",
+    location: "",
     rating: 5,
     comment: "ممتاز واتعامل معاهم من اربع سنين ثقة واغلب اجوني منهم",
   },
@@ -75,7 +75,7 @@ const testimonials: Testimonial[] = [
   {
     id: 10,
     name: "Abdulrhman Alghamdi",
-    location: "جدة",
+    location: "",
     rating: 5,
     comment: "مضمون وسريع في التسليم واسعاره جداً مناسبه",
   },
