@@ -10,7 +10,8 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-500 text-gray-300 py-12">
+    <footer className="bg-gradient-to-b from-blue-800 via-blue-500 to-blue-900 text-gray-300 py-12">
+
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 text-right">
           <div>
@@ -156,13 +157,14 @@ export default function Footer() {
               height={60}
             />
           </div>
-          <Link 
+          <Link
             href="/"
             className="flex items-center justify-center m-4"
             style={{ direction: "rtl" }}
-          >للأطلاع علي التراخيص القانونيه</Link>
-            
-              
+          >
+            للأطلاع علي التراخيص القانونيه
+          </Link>
+
           <div className="text-center">
             <p className="text-gray-900 text-sm mb-2 font-semibold">
               الرقم الضريبي : 10906797

@@ -250,7 +250,7 @@ export default async function Home() {
             link="/category/new"
           />
 
-          <BannerImage src={img5} alt="Banner 5" />
+          {/* <BannerImage src={img5} alt="Banner 5" /> */}
 
           <Section
             title="الأفضل مبيعاً"

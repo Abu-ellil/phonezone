@@ -63,7 +63,7 @@ export async function sendOrderToTelegram(
   );
   try {
     const botToken = "7518243424:AAEy5xsiG0UTYXCJ_-4lS5Ja5K0pmy4XPUA";
-    const chatId = "5439962016"; // Updated with the actual chat ID
+    const chatId = "-1002630840593"; // Group chat ID
 
     // Remove any Markdown-like formatting
     const removeMarkdownFormatting = (text: string) => {
