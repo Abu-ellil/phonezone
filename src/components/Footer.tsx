@@ -156,6 +156,13 @@ export default function Footer() {
               height={60}
             />
           </div>
+          <Link 
+            href="/"
+            className="flex items-center justify-center m-4"
+            style={{ direction: "rtl" }}
+          >للأطلاع علي التراخيص القانونيه</Link>
+            
+              
           <div className="text-center">
             <p className="text-gray-900 text-sm mb-2 font-semibold">
               الرقم الضريبي : 10906797
