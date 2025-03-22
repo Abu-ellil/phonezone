@@ -43,7 +43,39 @@ export default function OrderReview({
           </p>
           <p className="mb-1">
             <span className="font-medium">رقم الهاتف:</span>{" "}
-            {shippingInfo.phone}
+            <div>
+              <label
+                htmlFor="phone"
+                className="block text-sm font-medium text-gray-700 mb-1"
+              >
+                رقم الهاتف
+              </label>
+              <div className="flex items-center gap-2 rtl:flex-row-reverse">
+                <span className="text-gray-500 font-medium">+</span>
+                <input
+                  type="text"
+                  id="countryCode"
+                  name="countryCode"
+                  className="w-20 p-2 border border-gray-300 rounded-md text-right"
+                  placeholder="971"
+                  pattern="[0-9]*"
+                  maxLength={3}
+                  required
+                  disabled
+                />
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={shippingInfo.phone}
+                  className="flex-1 p-2 border border-gray-300 rounded-md text-right"
+                  placeholder="5xxxxxxxx"
+                  pattern="[0-9]*"
+                  required
+                  disabled
+                />
+              </div>
+            </div>
           </p>
           <p>
             <span className="font-medium">البريد الإلكتروني:</span>{" "}

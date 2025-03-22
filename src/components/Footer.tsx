@@ -16,9 +16,8 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">من نحن</h3>
             <p className="mb-4 text-sm">
-              مؤسسة روني هي شركة سعودية رائدة تقدم خدماتها في مجال الاتصالات
-              والهواتف المحمولة منذ 2016 كموزع معتمد من شركة آبل في المملكة
-              العربية السعودية.
+              مؤسسة فون زون هي شركة رائدة تقدم خدماتها في مجال الاتصالات
+              والهواتف المحمولة منذ 2016 كموزع معتمد من شركة آبل في الامارات العربية المتحدة.
             </p>
           </div>
           <div>
@@ -123,43 +122,37 @@ export default function Footer() {
             <Image
               src="/images/applepay.png"
               alt="Apple Pay"
-              width={48}
-              height={48}
+              width={68}
+              height={38}
               className="h-12"
             />
             <Image
               src="/images/tabpay.png"
               alt="Tabby"
-              width={48}
-              height={48}
+              width={68}
+              height={38}
               className="h-12"
             />
             <Image
               src="/images/mada.png"
               alt="Mada"
-              width={48}
-              height={48}
+              width={68}
+              height={38}
               className="h-12"
             />
-            <Image
-              src="/images/pay.png"
-              alt="Mastercard"
-              width={48}
-              height={48}
-              className="h-12"
-            />
+            
             <Image
               src="/images/visa.png"
               alt="Visa"
-              width={48}
-              height={48}
+              width={68}
+              height={38}
               className="h-12"
             />
             <Image
               src="/images/tamara.png"
               alt="Tamara"
-              width={48}
-              height={48}
+              width={68}
+              height={38}
               className="h-12"
             />
           </div>

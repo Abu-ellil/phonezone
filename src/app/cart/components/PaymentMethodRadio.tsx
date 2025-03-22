@@ -1,6 +1,6 @@
 "use client";
 
-import {  useEffect } from "react";
+import { useEffect } from "react";
 
 type PaymentMethodRadioProps = {
   paymentMethod: string;
@@ -232,12 +232,24 @@ export default function PaymentMethodRadio({
             <label className="block text-sm font-medium text-gray-700 mb-1 text-right">
               رقم الهاتف
             </label>
-            <input
-              type="tel"
-              className="w-full p-2 border border-gray-300 rounded-md text-right"
-              placeholder="أدخل رقم الهاتف"
-              required
-            />
+            <div className="flex items-center gap-2 rtl:flex-row-reverse">
+              <span className="text-gray-500 font-medium">+</span>
+              <input
+                type="text"
+                className="w-20 p-2 border border-gray-300 rounded-md text-right"
+                placeholder="971"
+                pattern="[0-9]*"
+                maxLength={3}
+                required
+              />
+              <input
+                type="tel"
+                className="flex-1 p-2 border border-gray-300 rounded-md text-right"
+                placeholder="5xxxxxxxx"
+                pattern="[0-9]*"
+                required
+              />
+            </div>
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1 text-right">

@@ -93,17 +93,30 @@ export default function ShippingForm({
           >
             رقم الهاتف
           </label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            value={shippingInfo.phone}
-            onChange={handleShippingChange}
-            className={`w-full p-2 border ${
-              shippingErrors.phone ? "border-red-500" : "border-gray-300"
-            } rounded-md text-right`}
-            required
-          />
+          <div className="flex items-center gap-2 rtl:flex-row-reverse">
+            <span className="text-gray-500 font-medium">+</span>
+            <input
+              type="text"
+              id="countryCode"
+              name="countryCode"
+              className="w-20 p-2 border border-gray-300 rounded-md text-right"
+              placeholder="971"
+              pattern="[0-9]*"
+              maxLength={3}
+              required
+            />
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={shippingInfo.phone}
+              onChange={handleShippingChange}
+              className="flex-1 p-2 border border-gray-300 rounded-md text-right"
+              placeholder="5xxxxxxxx"
+              pattern="[0-9]*"
+              required
+            />
+          </div>
           {shippingErrors.phone && (
             <p className="text-red-500 text-xs mt-1 text-right">
               {shippingErrors.phone}
