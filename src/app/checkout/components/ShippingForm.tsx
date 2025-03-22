@@ -1,5 +1,7 @@
 "use client";
 
+import { toast } from "react-toastify";
+
 type ShippingFormProps = {
   shippingInfo: {
     fullName: string;
@@ -34,6 +36,101 @@ export default function ShippingForm({
   handleShippingChange,
   handleShippingSubmit,
 }: ShippingFormProps) {
+  const validateForm = () => {
+    const requiredFields = [
+      "fullName",
+      "email",
+      "phone",
+      "countryCode",
+      "address",
+    ];
+
+    // التحقق من إدخال جميع الحقول المطلوبة
+    const allFieldsFilled = requiredFields.every((field) =>
+shippingInfo[field as keyof typeof shippingInfo]?.trim()
+    );
+
+    // التحقق من صحة صيغة البريد الإلكتروني
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const isEmailValid = emailRegex.test(shippingInfo.email);
+
+    // التحقق من أن رقم الهاتف ورمز البلد يحتويان على أرقام فقط
+    const phoneNumberRegex = /^[0-9]+$/;
+    const isPhoneValid = phoneNumberRegex.test(shippingInfo.phone);
+    const isCountryCodeValid = phoneNumberRegex.test(shippingInfo.countryCode);
+
+    return (
+      allFieldsFilled && isEmailValid && isPhoneValid && isCountryCodeValid
+    );
+  };
+
+  const onSubmit = () => {
+    const requiredFields = [
+      { field: "fullName", label: "الاسم الكامل" },
+      { field: "email", label: "البريد الإلكتروني" },
+      { field: "phone", label: "رقم الهاتف" },
+      { field: "countryCode", label: "رمز البلد" },
+      { field: "address", label: "العنوان" },
+    ];
+
+    const missingFields = requiredFields.filter(
+({ field }) => !shippingInfo[field as keyof typeof shippingInfo]?.trim()
+    );
+
+    if (missingFields.length > 0) {
+      missingFields.forEach(({ label }) => {
+        toast.error(`الرجاء إدخال ${label}`, {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          rtl: true,
+        });
+      });
+      return;
+    }
+
+    // التحقق من صحة صيغة البريد الإلكتروني
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(shippingInfo.email)) {
+      toast.error("الرجاء إدخال بريد إلكتروني صحيح", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        rtl: true,
+      });
+      return;
+    }
+
+    // التحقق من أن رقم الهاتف يحتوي على أرقام فقط
+    const phoneNumberRegex = /^[0-9]+$/;
+    if (!phoneNumberRegex.test(shippingInfo.phone)) {
+      toast.error("الرجاء إدخال أرقام فقط في رقم الهاتف", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        rtl: true,
+      });
+      return;
+    }
+
+    // التحقق من أن رمز البلد يحتوي على أرقام فقط
+    if (!phoneNumberRegex.test(shippingInfo.countryCode)) {
+      toast.error("الرجاء إدخال أرقام فقط في رمز البلد", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        rtl: true,
+      });
+      return;
+    }
+
+    handleShippingSubmit();
+  };
+
   return (
     <div className="text-right">
       <h2 className="text-lg font-bold mb-4">معلومات الشحن</h2>
@@ -79,6 +176,7 @@ export default function ShippingForm({
               shippingErrors.email ? "border-red-500" : "border-gray-300"
             } rounded-md text-right`}
             required
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
           />
           {shippingErrors.email && (
             <p className="text-red-500 text-xs mt-1 text-right">
@@ -95,15 +193,14 @@ export default function ShippingForm({
             رقم الهاتف
           </label>
           <div className="flex items-center gap-2 rtl:flex-row-reverse">
-            <span className="text-gray-500 font-medium">+</span>
             <input
               type="text"
               id="countryCode"
               name="countryCode"
               value={shippingInfo.countryCode}
               onChange={handleShippingChange}
-              className="w-20 p-2 border border-gray-300 rounded-md text-right"
-              placeholder="971"
+              className="w-14 p-2 border border-gray-300 rounded-md text-right"
+              placeholder="971+"
               pattern="[0-9]*"
               maxLength={3}
               required
@@ -170,7 +267,7 @@ export default function ShippingForm({
         </div>
       </div>
       <button
-        onClick={handleShippingSubmit}
+        onClick={onSubmit}
         className="component-base primary w-full mt-4 py-2 rounded-md"
       >
         التالي

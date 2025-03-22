@@ -272,7 +272,7 @@ function generateInvoiceHtml(data: InvoiceData): string {
       data.downPayment && parseFloat(data.downPayment) > 0
         ? `
     <tr>
-      <td>0</td>
+      <td>1</td>
       <td>${data.downPayment} ريال</td>
       <td>${new Date().toLocaleDateString("ar-SA")}</td>
       <td>تم الدفع</td>
@@ -284,13 +284,18 @@ function generateInvoiceHtml(data: InvoiceData): string {
       ?.map(
         (payment, index) => `
     <tr>
-      <td>${index + 1}</td>
+      <td>${
+        data.downPayment && parseFloat(data.downPayment) > 0
+          ? index + 2
+          : index + 1
+      }</td>
       <td>${payment.amount} ريال</td>
       <td>${payment.dueDate}</td>
       <td>${
-        index === 0 &&
-        data.paymentMethod !== "tabby" &&
-        data.paymentMethod !== "cash_on_delivery_installment"
+        (data.paymentMethod === "credit_card" ||
+          data.paymentMethod === "debit_card" ||
+          data.paymentMethod === "cash") &&
+        index === 0
           ? "تم الدفع"
           : "مستحق"
       }</td>

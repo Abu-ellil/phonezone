@@ -29,7 +29,7 @@ export default function CashOnDeliveryOptions({
         <PaymentMethodOption
           method="cash_on_delivery_cash"
           currentMethod={paymentMethod}
-          label="الدفع نقداً عند الاستلام"
+          label="دفع كامل المبلغ "
           onSelect={setPaymentMethod}
         />
 

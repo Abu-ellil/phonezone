@@ -222,40 +222,7 @@ export default function PaymentForm({
             </div>
             <Image src={visa} alt="Visa" className="w-full" />
           </div>
-          <div
-            className={`p-4 border rounded-lg cursor-pointer ${
-              paymentMethod === "tabby"
-                ? "border-primary bg-blue-50"
-                : "border-gray-300"
-            }`}
-            onClick={() => setPaymentMethod("tabby")}
-          >
-            <div className="flex justify-between items-center mb-2">
-              <div className="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center">
-                {paymentMethod === "tabby" && (
-                  <div className="w-3 h-3 bg-primary rounded-full"></div>
-                )}
-              </div>
-            </div>
-            <Image src={tabpay} alt="tabpay" className="w-full" />
-          </div>
-          <div
-            className={`p-4 border rounded-lg cursor-pointer ${
-              paymentMethod === "tamara"
-                ? "border-primary bg-blue-50"
-                : "border-gray-300"
-            }`}
-            onClick={() => setPaymentMethod("tamara")}
-          >
-            <div className="flex justify-between items-center mb-2">
-              <div className="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center">
-                {paymentMethod === "tamara" && (
-                  <div className="w-3 h-3 bg-primary rounded-full"></div>
-                )}
-              </div>
-            </div>
-            <Image src={tamara} alt="Tamara" className="w-full" />
-          </div>
+         
           <div
             className={`p-4 border rounded-lg cursor-pointer ${
               paymentMethod === "apple_pay"

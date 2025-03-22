@@ -1,12 +1,13 @@
 // Utility to load data from Firebase
 import {
-  getFirebaseProducts,
-  getFirebaseFeaturedProducts,
-  getFirebaseNewestProducts,
-  getFirebaseProductsByCategory,
-  getFirebaseProductsBySubcategory,
-  getFirebaseProductById,
-} from "@/firebase/services";
+  getProducts,
+  getFeaturedProducts,
+  getNewestProducts,
+  getProductsByCategory,
+  getProductsBySubcategory,
+  getProductById,
+  searchProducts,
+} from "@/firebase/productsService";
 
 // Fallback to local data if Firebase fetch fails
 import {
@@ -24,7 +25,7 @@ import {
  */
 export async function getProductsFromFirebase() {
   try {
-    const products = await getFirebaseProducts();
+    const products = await getProducts();
     return products.length > 0 ? products : getLocalProducts();
   } catch (error) {
     console.error("Error fetching products from Firebase:", error);
@@ -39,7 +40,7 @@ export async function getProductsFromFirebase() {
  */
 export async function getFeaturedProductsFromFirebase(limit = 8) {
   try {
-    const products = await getFirebaseFeaturedProducts(limit);
+    const products = await getFeaturedProducts(limit);
     return products.length > 0 ? products : getLocalFeaturedProducts(limit);
   } catch (error) {
     console.error("Error fetching featured products from Firebase:", error);
@@ -54,7 +55,7 @@ export async function getFeaturedProductsFromFirebase(limit = 8) {
  */
 export async function getNewestProductsFromFirebase(limit = 8) {
   try {
-    const products = await getFirebaseNewestProducts(limit);
+    const products = await getNewestProducts(limit);
     return products.length > 0 ? products : getLocalNewestProducts(limit);
   } catch (error) {
     console.error("Error fetching newest products from Firebase:", error);
@@ -69,7 +70,7 @@ export async function getNewestProductsFromFirebase(limit = 8) {
  */
 export async function getProductsByCategoryFromFirebase(categoryName: string) {
   try {
-    const products = await getFirebaseProductsByCategory(categoryName);
+    const products = await getProductsByCategory(categoryName);
     return products.length > 0
       ? products
       : getLocalProductsByCategory(categoryName);
@@ -93,7 +94,7 @@ export async function getProductsBySubcategoryFromFirebase(
   subcategoryName: string
 ) {
   try {
-    const products = await getFirebaseProductsBySubcategory(
+    const products = await getProductsBySubcategory(
       categoryName,
       subcategoryName
     );
@@ -116,10 +117,28 @@ export async function getProductsBySubcategoryFromFirebase(
  */
 export async function getProductByIdFromFirebase(id: string) {
   try {
-    const product = await getFirebaseProductById(id);
+    const product = await getProductById(id);
     return product || getLocalProductById(id);
   } catch (error) {
     console.error(`Error fetching product ${id} from Firebase:`, error);
     return getLocalProductById(id);
+  }
+}
+
+/**
+ * Search products by name or description from Firebase
+ * @param searchTerm Search term
+ * @returns Promise resolving to array of matching products
+ */
+export async function searchProductsFromFirebase(searchTerm: string) {
+  try {
+    const products = await searchProducts(searchTerm);
+    return products.length > 0 ? products : [];
+  } catch (error) {
+    console.error(
+      `Error searching products with term "${searchTerm}" from Firebase:`,
+      error
+    );
+    return [];
   }
 }

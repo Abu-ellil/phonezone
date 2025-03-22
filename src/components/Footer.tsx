@@ -10,14 +10,15 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-12 mb-6">
+    <footer className="bg-blue-500 text-gray-300 py-12">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 text-right">
           <div>
             <h3 className="text-lg font-semibold mb-4">من نحن</h3>
             <p className="mb-4 text-sm">
               مؤسسة فون زون هي شركة رائدة تقدم خدماتها في مجال الاتصالات
-              والهواتف المحمولة منذ 2016 كموزع معتمد من شركة آبل في الامارات العربية المتحدة.
+              والهواتف المحمولة منذ 2016 كموزع معتمد من شركة آبل في الامارات
+              العربية المتحدة.
             </p>
           </div>
           <div>
@@ -117,49 +118,50 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="border-t border-gray-700 mt-8 pt-6">
+        <div className="mt-8 py-6">
           <div className="flex flex-wrap justify-center items-center gap-6 mb-4">
             <Image
               src="/images/applepay.png"
               alt="Apple Pay"
-              width={58}
-              height={28}
-              className="h-6"
+              width={120}
+              height={60}
             />
             <Image
               src="/images/tabpay.png"
               alt="Tabby"
-              width={58}
-              height={28}
-              className="h-6"
+              width={120}
+              height={60}
             />
-            <Image
-              src="/images/mada.png"
-              alt="Mada"
-              width={58}
-              height={28}
-              className="h-6"
-            />
-            
-            <Image
-              src="/images/visa.png"
-              alt="Visa"
-              width={58}
-              height={28}
-              className="h-6"
-            />
+            <Image src="/images/mada.png" alt="Mada" width={120} height={60} />
+            <Image src="/images/visa.png" alt="Visa" width={120} height={60} />
             <Image
               src="/images/tamara.png"
               alt="Tamara"
-              width={58}
-              height={28}
-              className="h-6"
+              width={120}
+              height={60}
             />
           </div>
-          <p className="text-center text-sm mb-4">
-            الرقم الضريبي : 10906797
-          </p>
-          <p className="text-center text-sm">© 2016 فون زون</p>
+          <div className="text-center flex flex-wrap justify-center items-center gap-6 mb-4">
+            <Image
+              src="/images/government-ae-logo-arabic2.webp"
+              alt="UAE Government"
+              width={120}
+              height={60}
+            />
+
+            <Image
+              src="/images/TDRALogo.webp"
+              alt="TDRA"
+              width={120}
+              height={60}
+            />
+          </div>
+          <div className="text-center">
+            <p className="text-gray-900 text-sm mb-2 font-semibold">
+              الرقم الضريبي : 10906797
+            </p>
+            <p className="text-gray-900 text-sm">© 2016 فون زون</p>
+          </div>
         </div>
       </div>
     </footer>

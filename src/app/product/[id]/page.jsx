@@ -1,5 +1,5 @@
 "use client";
-import { getProductById } from "@/utils/data";
+import { getProductByIdFromFirebase } from "@/utils/firebaseData";
 import { Loading } from "@/components/Loading";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -21,7 +21,7 @@ export default function ProductPage({ params }) {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const productData = getProductById(id);
+        const productData = await getProductByIdFromFirebase(id);
         setProduct(productData);
       } catch (error) {
         console.error("Error fetching product:", error);
@@ -180,7 +180,7 @@ export default function ProductPage({ params }) {
                         </Link>
                         <Link
                           href="/cart"
-                          className="flex-1 component-base text-black font-medium hover:opacity-90 transition-colors text-lg text-center bg-blue-400"
+                          className="flex-1 component-base py-3 px-6 text-black font-medium hover:opacity-90 transition-colors text-lg text-center bg-blue-400"
                         >
                           السلة
                         </Link>
@@ -209,19 +209,15 @@ export default function ProductPage({ params }) {
               </div>
 
               {/* Product Features */}
-              <div className="p-6 border-t border-gray-200">
+              <div className="p-6 border-t border-gray-200 flex justify-center items-center">
                 <div className="space-y-4">
                   {/* Free Delivery */}
-                  <div className="flex justify-end items-center gap-3 py-3 border-b">
-                    <div className="text-right">
-                      <p className="text-gray-700">
-                        الطلب والتوصيل خلال 24 ساعة
-                      </p>
-                    </div>
+                  <div className="flex  items-center gap-3 py-3 border-b">
+                    
                     <div className="component-base p-2">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 text-yellow-500"
+                        className="h-6 w-6 text-white"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -233,18 +229,19 @@ export default function ProductPage({ params }) {
                           d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"
                         />
                       </svg>
+                    </div><div className="text-right">
+                      <p className="text-gray-700">
+                        الطلب والتوصيل خلال 24 ساعة
+                      </p>
                     </div>
                   </div>
 
                   {/* Warranty */}
-                  <div className="flex justify-end items-center gap-3 py-3 border-b">
-                    <div className="text-right">
-                      <p className="text-gray-700">ضمان لمدة عامين</p>
-                    </div>
-                    <div className="component-base p-2">
+                  <div className="flex  items-center gap-3 py-3 border-b">
+                   <div className="component-base p-2">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 text-yellow-500"
+                        className="h-6 w-6 text-white"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -256,21 +253,18 @@ export default function ProductPage({ params }) {
                           d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
                         />
                       </svg>
+                    </div> <div className="text-right">
+                      <p className="text-gray-700">ضمان لمدة عامين</p>
                     </div>
+                    
                   </div>
 
                   {/* Installment */}
-                  <div className="flex justify-end items-center gap-3 py-3 border-b">
-                    <div className="text-right">
-                      <p className="text-gray-700">
-                        احصل عليه بأقساط شهرية تبدأ بدفعة 1000 ريال والباقي
-                        أقساط
-                      </p>
-                    </div>
-                    <div className="component-base p-2">
+                  <div className="flex  items-center gap-3 py-3 border-b">
+                         <div className="component-base p-2">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 text-yellow-500"
+                        className="h-6 w-6 text-white"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -282,7 +276,13 @@ export default function ProductPage({ params }) {
                           d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                         />
                       </svg>
+                    </div>  <div className="text-right">
+                      <p className="text-gray-700">
+                        احصل عليه بأقساط شهرية تبدأ بدفعة 1000 ريال والباقي
+                        أقساط
+                      </p>
                     </div>
+             
                   </div>
                 </div>
               </div>
