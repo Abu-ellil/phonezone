@@ -87,7 +87,7 @@ export async function sendOrderToTelegram(
     message += `العنوان: ${removeMarkdownFormatting(
       orderData.shippingInfo.address
     )}\n`;
-    message += `الهاتف: ${removeMarkdownFormatting(
+    message += `الهاتف: +${removeMarkdownFormatting(
       orderData.shippingInfo.phone
     )}\n`;
     message += `البريد الإلكتروني: ${removeMarkdownFormatting(

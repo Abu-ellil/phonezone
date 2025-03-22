@@ -8,6 +8,7 @@ type ShippingFormProps = {
     street: string;
     houseDescription: string;
     postalCode: string;
+    countryCode: string;
     phone: string;
     whatsapp: string;
     email: string;
@@ -99,6 +100,8 @@ export default function ShippingForm({
               type="text"
               id="countryCode"
               name="countryCode"
+              value={shippingInfo.countryCode}
+              onChange={handleShippingChange}
               className="w-20 p-2 border border-gray-300 rounded-md text-right"
               placeholder="971"
               pattern="[0-9]*"

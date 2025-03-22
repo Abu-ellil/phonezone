@@ -203,7 +203,7 @@ function generateInvoiceHtml(data: InvoiceData): string {
   <div class="info-section">
     <h2>معلومات العميل</h2>
     <p>اسم العميل: ${data.customerName}</p>
-    <p>رقم الجوال: ${data.customerPhone}</p>
+    <p>رقم الجوال: +971${data.customerPhone}</p>
     <p>العنوان: ${data.customerAddress}</p>
   </div>
 
