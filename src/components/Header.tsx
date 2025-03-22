@@ -192,7 +192,7 @@ export default function Header() {
                 >
                   <button
                     onClick={() => toggleCategory(category.name)}
-                    className="flex items-center justify-between w-full py-2 text-gray-700 hover:text-[#3498db]"
+                    className="flex items-center justify-between w-full py-2 text-gray-700 hover:text-[#3498db] pr-20 pl-4"
                   >
                     <span>{category.name}</span>
                     <svg
