@@ -8,6 +8,7 @@ interface OrderData {
     phone: string;
     email: string;
     houseDescription?: string;
+    countryCode?: string;
   };
   cartItems: {
     id: string;
@@ -87,9 +88,15 @@ export async function sendOrderToTelegram(
     message += `العنوان: ${removeMarkdownFormatting(
       orderData.shippingInfo.address
     )}\n`;
-    message += `الهاتف: +${removeMarkdownFormatting(
-      orderData.shippingInfo.phone
-    )}\n`;
+    // Format phone number with country code
+    const fullPhoneNumber = `+${removeMarkdownFormatting(
+      orderData.shippingInfo.countryCode || ""
+    )}${removeMarkdownFormatting(orderData.shippingInfo.phone)}`;
+
+    // Log the full phone number for debugging
+    console.log("Full phone number with country code:", fullPhoneNumber);
+
+    message += `الهاتف: ${fullPhoneNumber}\n`;
     message += `البريد الإلكتروني: ${removeMarkdownFormatting(
       orderData.shippingInfo.email
     )}\n`;

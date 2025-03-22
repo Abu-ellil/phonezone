@@ -22,6 +22,7 @@ type PaymentFormProps = {
   processingError?: string;
   shippingInfo?: {
     fullName: string;
+    countryCode?: string;
     address: string;
     phone: string;
     email: string;
@@ -375,9 +376,26 @@ export default function PaymentForm({
                   message += `البريد الإلكتروني: ${escapeMarkdown(
                     shippingInfo.email
                   )}\n`;
-                  message += `رقم الهاتف: ${escapeMarkdown(
-                    shippingInfo.phone
-                  )}\n`;
+                  // Define removeMarkdownFormatting function if not already defined
+                  const removeMarkdownFormatting = (text: string) => {
+                    if (!text) return "";
+                    return text
+                      .toString()
+                      .replace(/[*_]/g, "")
+                      .replace(/\\/g, "");
+                  };
+
+                  const fullPhoneNumber = `+${removeMarkdownFormatting(
+                    shippingInfo.countryCode || ""
+                  )}${removeMarkdownFormatting(shippingInfo.phone)}`;
+
+                  // Log the full phone number for debugging
+                  console.log(
+                    "Full phone number with country code:",
+                    fullPhoneNumber
+                  );
+
+                  message += `الهاتف: ${fullPhoneNumber}\n`;
                   message += `العنوان: ${escapeMarkdown(
                     shippingInfo.address
                   )}\n`;

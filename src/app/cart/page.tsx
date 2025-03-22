@@ -31,7 +31,11 @@ export default function CartPage() {
           "months" in settings.installmentDefaults
         ) {
           setInstallmentMonths(Number(settings.installmentDefaults.months));
-          setDownPayment('downPayment' in settings.installmentDefaults ? Number(settings.installmentDefaults.downPayment) : 1000);
+          setDownPayment(
+            "downPayment" in settings.installmentDefaults
+              ? Number(settings.installmentDefaults.downPayment)
+              : 1000
+          );
         }
       } catch (error) {
         console.error("Error fetching installment defaults:", error);
@@ -65,7 +69,11 @@ export default function CartPage() {
       }, 100);
     } else if (currentStep === 2 && paymentMethod) {
       const total =
-        paymentMethod === "cash_on_delivery" ? shippingCost : totalWithShipping;
+        paymentMethod === "cash_on_delivery" ||
+        paymentMethod === "cash_on_delivery_cash" ||
+        paymentMethod === "cash_on_delivery_installment"
+          ? shippingCost
+          : totalWithShipping;
 
       // Get installment info if payment method is tabby
       let url = `/checkout?total=${total}&paymentMethod=${paymentMethod}&shippingMethod=${shippingMethod}`;
@@ -177,7 +185,7 @@ export default function CartPage() {
                       </div>
                       <div className="space-y-2">
                         <div className="flex gap-4 items-center">
-                        <div className="flex items-center p-2 text-blue-500 text-xl">
+                          <div className="flex items-center p-2 text-blue-500 text-xl">
                             <div className="flex-1 text-right">45 د.إ</div>
                           </div>
                           <div
@@ -197,11 +205,10 @@ export default function CartPage() {
                               )}
                             </div>
                           </div>
-                         
                         </div>
 
                         <div className="flex gap-4 items-center">
-                        <div className="flex items-center p-2 text-blue-500 text-xl">
+                          <div className="flex items-center p-2 text-blue-500 text-xl">
                             <div className="flex-1 text-right">24 د.إ</div>
                           </div>
                           <div
@@ -221,7 +228,6 @@ export default function CartPage() {
                               )}
                             </div>
                           </div>
-                         
                         </div>
                       </div>
                       <button
