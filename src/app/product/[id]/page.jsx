@@ -18,6 +18,7 @@ export default function ProductPage({ params }) {
   const [product, setProduct] = useState(null);
   const [isAddedToCart, setIsAddedToCart] = useState(false);
   const [selectedVariant, setSelectedVariant] = useState(null);
+  const [selectedVersion, setSelectedVersion] = useState("me"); // me = Middle East, us = US Version
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -138,6 +139,33 @@ export default function ProductPage({ params }) {
                         </div>
                       </div>
                     )}
+                    <div className="mb-4">
+                      <label className="block text-gray-700 text-right mb-2">
+                        اختر النسخة:
+                      </label>
+                      <div className="flex gap-3 justify-end">
+                        <button
+                          onClick={() => setSelectedVersion("me")}
+                          className={`px-4 py-2 rounded-lg ${
+                            selectedVersion === "me"
+                              ? "bg-blue-500 text-white"
+                              : "bg-gray-200 text-gray-700"
+                          } hover:opacity-90 transition-colors`}
+                        >
+                          نسخة الشرق الأوسط
+                        </button>
+                        <button
+                          onClick={() => setSelectedVersion("us")}
+                          className={`px-4 py-2 rounded-lg ${
+                            selectedVersion === "us"
+                              ? "bg-blue-500 text-white"
+                              : "bg-gray-200 text-gray-700"
+                          } hover:opacity-90 transition-colors`}
+                        >
+                          النسخة الامريكية
+                        </button>
+                      </div>
+                    </div>
                     <div className="flex justify-end items-center gap-3 mb-2">
                       {product.original_price &&
                         (selectedVariant?.price || product.price) !==
@@ -359,9 +387,7 @@ export default function ProductPage({ params }) {
                       </Link>
                     </div>
                   )}
-                  <div className="text-right">
-                    
-                  </div>
+                  <div className="text-right"></div>
                 </div>
               </div>
             </div>
