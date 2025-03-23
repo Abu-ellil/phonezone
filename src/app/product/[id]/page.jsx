@@ -77,6 +77,8 @@ export default function ProductPage({ params }) {
     );
   };
 
+  console.log(product);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -139,14 +141,14 @@ export default function ProductPage({ params }) {
                         </div>
                       </div>
                     )}
-                    <div className="mb-4">
+              {product.variants && product.variants.length > 0 && (      <div className="mb-4">
                       <label className="block text-gray-700 text-right mb-2">
                         اختر النسخة:
                       </label>
                       <div className="flex gap-3 justify-end">
                         <button
                           onClick={() => setSelectedVersion("me")}
-                          className={`px-4 py-2 rounded-lg ${
+                          className={`px-3 py-1.5 rounded-lg text-xs ${
                             selectedVersion === "me"
                               ? "bg-blue-500 text-white"
                               : "bg-gray-200 text-gray-700"
@@ -156,7 +158,7 @@ export default function ProductPage({ params }) {
                         </button>
                         <button
                           onClick={() => setSelectedVersion("us")}
-                          className={`px-4 py-2 rounded-lg ${
+                          className={`px-3 py-1.5 rounded-lg text-xs ${
                             selectedVersion === "us"
                               ? "bg-blue-500 text-white"
                               : "bg-gray-200 text-gray-700"
@@ -165,10 +167,10 @@ export default function ProductPage({ params }) {
                           النسخة الامريكية
                         </button>
                       </div>
-                    </div>
+                    </div>)}
                     <div className="flex justify-end items-center gap-3 mb-2">
                       {product.original_price &&
-                        (selectedVariant?.price || product.price) !==
+                        (product.price || selectedVariant?.price) !==
                           product.original_price && (
                           <span className="text-lg text-gray-500 line-through">
                             {getDualCurrencyPrice(product.original_price).aed}

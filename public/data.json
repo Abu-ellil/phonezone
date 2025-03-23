@@ -1749,24 +1749,7 @@
     "category": [
       "ابل"
     ],
-    "base_price": 1700.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 1700.0
   },
   {
     "url": "https://noonestare-ua.com/product/66",
@@ -1778,24 +1761,7 @@
     "category": [
       "ابل"
     ],
-    "base_price": 1750.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 1750.0
   },
   {
     "url": "https://noonestare-ua.com/product/67",
@@ -1807,24 +1773,7 @@
     "category": [
       "العاب بلايستيشن 5"
     ],
-    "base_price": 150.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 150.0
   },
   {
     "url": "https://noonestare-ua.com/product/68",
@@ -1836,24 +1785,7 @@
     "category": [
       "العاب بلايستيشن 5"
     ],
-    "base_price": 130.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 130.0
   },
   {
     "url": "https://noonestare-ua.com/product/69",
@@ -1865,24 +1797,7 @@
     "category": [
       "العاب بلايستيشن 5"
     ],
-    "base_price": 150.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 150.0
   },
   {
     "url": "https://noonestare-ua.com/product/70",
@@ -1894,24 +1809,7 @@
     "category": [
       "العاب بلايستيشن 5"
     ],
-    "base_price": 100.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 100.0
   },
   {
     "url": "https://noonestare-ua.com/product/71",
@@ -1923,24 +1821,7 @@
     "category": [
       "العاب بلايستيشن 5"
     ],
-    "base_price": 90.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 90.0
   },
   {
     "url": "https://noonestare-ua.com/product/72",
@@ -1952,24 +1833,7 @@
     "category": [
       "العاب بلايستيشن 5"
     ],
-    "base_price": 180.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 180.0
   },
   {
     "url": "https://noonestare-ua.com/product/73",
@@ -1981,24 +1845,7 @@
     "category": [
       "العاب بلايستيشن 5"
     ],
-    "base_price": 180.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 180.0
   },
   {
     "url": "https://noonestare-ua.com/product/74",
@@ -2010,24 +1857,7 @@
     "category": [
       "الشواحن و البطاريات"
     ],
-    "base_price": 150.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 150.0
   },
   {
     "url": "https://noonestare-ua.com/product/75",
@@ -2039,24 +1869,7 @@
     "category": [
       "الشواحن و البطاريات"
     ],
-    "base_price": 40.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 40.0
   },
   {
     "url": "https://noonestare-ua.com/product/76",
@@ -2068,24 +1881,7 @@
     "category": [
       "الشواحن و البطاريات"
     ],
-    "base_price": 50.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 50.0
   },
   {
     "url": "https://noonestare-ua.com/product/77",
@@ -2097,24 +1893,7 @@
     "category": [
       "ابل"
     ],
-    "base_price": 80.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 80.0
   },
   {
     "url": "https://noonestare-ua.com/product/78",
@@ -2126,24 +1905,7 @@
     "category": [
       "الشواحن و البطاريات"
     ],
-    "base_price": 120.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 120.0
   },
   {
     "url": "https://noonestare-ua.com/product/79",
@@ -2155,24 +1917,7 @@
     "category": [
       "اكسسوارات-الايفون"
     ],
-    "base_price": 15.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 15.0
   },
   {
     "url": "https://noonestare-ua.com/product/80",
@@ -2184,24 +1929,7 @@
     "category": [
       "اكسسوارات-الايفون"
     ],
-    "base_price": 15.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 15.0
   },
   {
     "url": "https://noonestare-ua.com/product/81",
@@ -2213,24 +1941,7 @@
     "category": [
       "اكسسوارات-الايفون"
     ],
-    "base_price": 20.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 20.0
   },
   {
     "url": "https://noonestare-ua.com/product/82",
@@ -2242,24 +1953,7 @@
     "category": [
       "اكسسوارات-الايفون"
     ],
-    "base_price": 25.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 25.0
   },
   {
     "url": "https://noonestare-ua.com/product/83",
@@ -2271,24 +1965,7 @@
     "category": [
       "الشاشات والتلفزيون"
     ],
-    "base_price": 1500.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 1500.0
   },
   {
     "url": "https://noonestare-ua.com/product/84",
@@ -2300,24 +1977,7 @@
     "category": [
       "الشاشات والتلفزيون"
     ],
-    "base_price": 1300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 1300.0
   },
   {
     "url": "https://noonestare-ua.com/product/85",
@@ -2329,24 +1989,7 @@
     "category": [
       "الشاشات والتلفزيون"
     ],
-    "base_price": 1700.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 1700.0
   },
   {
     "url": "https://noonestare-ua.com/product/86",
@@ -2358,24 +2001,7 @@
     "category": [
       "الشاشات والتلفزيون"
     ],
-    "base_price": 1000.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 1000.0
   },
   {
     "url": "https://noonestare-ua.com/product/87",
@@ -2387,24 +2013,7 @@
     "category": [
       "الشاشات والتلفزيون"
     ],
-    "base_price": 2000.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 2000.0
   },
   {
     "url": "https://noonestare-ua.com/product/88",
@@ -2416,24 +2025,7 @@
     "category": [
       "الشاشات والتلفزيون"
     ],
-    "base_price": 1200.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 1200.0
   },
   {
     "url": "https://noonestare-ua.com/product/89",
@@ -2445,24 +2037,7 @@
     "category": [
       "الشاشات والتلفزيون"
     ],
-    "base_price": 1300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 1300.0
   },
   {
     "url": "https://noonestare-ua.com/product/90",
@@ -2474,24 +2049,7 @@
     "category": [
       "اعتني بصحتك"
     ],
-    "base_price": 20.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 20.0
   },
   {
     "url": "https://noonestare-ua.com/product/91",
@@ -2503,24 +2061,7 @@
     "category": [
       "اعتني بصحتك"
     ],
-    "base_price": 20.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 20.0
   },
   {
     "url": "https://noonestare-ua.com/product/92",
@@ -2532,24 +2073,7 @@
     "category": [
       "اعتني بصحتك"
     ],
-    "base_price": 20.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 20.0
   },
   {
     "url": "https://noonestare-ua.com/product/93",
@@ -2561,24 +2085,7 @@
     "category": [
       "ابل"
     ],
-    "base_price": 150.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 150.0
   },
   {
     "url": "https://noonestare-ua.com/product/94",
@@ -2590,24 +2097,7 @@
     "category": [
       "اعتني بصحتك"
     ],
-    "base_price": 2300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 2300.0
   },
   {
     "url": "https://noonestare-ua.com/product/95",
@@ -2619,24 +2109,7 @@
     "category": [
       "اعتني بصحتك"
     ],
-    "base_price": 400.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 400.0
   },
   {
     "url": "https://noonestare-ua.com/product/96",
@@ -2648,24 +2121,7 @@
     "category": [
       "اعتني بصحتك"
     ],
-    "base_price": 60.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 60.0
   },
   {
     "url": "https://noonestare-ua.com/product/97",
@@ -2677,24 +2133,7 @@
     "category": [
       "المنزلية-الاجهزة"
     ],
-    "base_price": 100.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 100.0
   },
   {
     "url": "https://noonestare-ua.com/product/98",
@@ -2706,24 +2145,7 @@
     "category": [
       "المنزلية-الاجهزة"
     ],
-    "base_price": 150.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 150.0
   },
   {
     "url": "https://noonestare-ua.com/product/99",
@@ -2735,24 +2157,7 @@
     "category": [
       "ابل"
     ],
-    "base_price": 300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 300.0
   },
   {
     "url": "https://noonestare-ua.com/product/100",
@@ -2764,24 +2169,7 @@
     "category": [
       "المنزلية-الاجهزة"
     ],
-    "base_price": 200.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 200.0
   },
   {
     "url": "https://noonestare-ua.com/product/101",
@@ -2793,24 +2181,7 @@
     "category": [
       "المنزلية-الاجهزة"
     ],
-    "base_price": 700.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 700.0
   },
   {
     "url": "https://noonestare-ua.com/product/102",
@@ -2822,24 +2193,7 @@
     "category": [
       "الساعات"
     ],
-    "base_price": 120.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 120.0
   },
   {
     "url": "https://noonestare-ua.com/product/103",
@@ -2851,24 +2205,7 @@
     "category": [
       "الساعات"
     ],
-    "base_price": 120.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 120.0
   },
   {
     "url": "https://noonestare-ua.com/product/104",
@@ -2880,24 +2217,7 @@
     "category": [
       "الساعات"
     ],
-    "base_price": 135.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 135.0
   },
   {
     "url": "https://noonestare-ua.com/product/105",
@@ -2909,24 +2229,7 @@
     "category": [
       "الساعات"
     ],
-    "base_price": 200.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
+    "base_price": 200.0
   },
   {
     "url": "https://noonestare-ua.com/product/106",
