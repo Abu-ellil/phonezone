@@ -127,20 +127,9 @@ export default function Footer() {
               width={120}
               height={60}
             />
-            <Image
-              src="/images/tabpay.png"
-              alt="Tabby"
-              width={120}
-              height={60}
-            />
-            <Image src="/images/mada.png" alt="Mada" width={120} height={60} />
+            
             <Image src="/images/visa.png" alt="Visa" width={120} height={60} />
-            <Image
-              src="/images/tamara.png"
-              alt="Tamara"
-              width={120}
-              height={60}
-            />
+            
           </div>
           <div className="text-center flex flex-wrap justify-center items-center gap-6 mb-4">
             <Image

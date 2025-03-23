@@ -29,20 +29,29 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   // Load cart from localStorage on initial render
   useEffect(() => {
-    const savedCart = localStorage.getItem("cart");
-    if (savedCart) {
-      try {
+    try {
+      const savedCart = localStorage.getItem("cart");
+      if (savedCart) {
         const parsedCart = JSON.parse(savedCart);
-        setCartItems(parsedCart);
-        setCartCount(
-          parsedCart.reduce(
-            (total: number, item: CartItem) => total + item.quantity,
-            0
-          )
-        );
-      } catch (error) {
-        console.error("Failed to parse cart from localStorage", error);
+        if (Array.isArray(parsedCart)) {
+          setCartItems(parsedCart);
+          setCartCount(
+            parsedCart.reduce(
+              (total: number, item: CartItem) => total + (item?.quantity || 0),
+              0
+            )
+          );
+        } else {
+          console.warn("Invalid cart data format");
+          setCartItems([]);
+          setCartCount(0);
+        }
       }
+    } catch (error) {
+      console.error("Failed to load cart data:", error);
+      setCartItems([]);
+      setCartCount(0);
+      localStorage.removeItem("cart");
     }
   }, []);
 

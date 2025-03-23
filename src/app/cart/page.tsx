@@ -11,7 +11,8 @@ import Link from "next/link";
 import { getAppSettings } from "@/firebase/settingsService";
 
 export default function CartPage() {
-  const { cartItems, removeFromCart, updateQuantity } = useCart();
+  const [error, setError] = useState<string | null>(null);
+  const [isClient, setIsClient] = useState(false);
   const [loading, setLoading] = useState(true);
   const [shippingMethod, setShippingMethod] = useState("aramex");
   const [paymentMethod, setPaymentMethod] = useState<string>("credit_card");
@@ -19,6 +20,21 @@ export default function CartPage() {
   const [installmentMonths, setInstallmentMonths] = useState(3);
   const [downPayment, setDownPayment] = useState(1000);
   const [monthlyInstallment, setMonthlyInstallment] = useState("0.00");
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const cartData = useCart();
+  const { cartItems, removeFromCart, updateQuantity } = cartData;
+
+  // Handle cart data loading
+  useEffect(() => {
+    if (!cartData) {
+      console.error("Cart context error");
+      setError("Failed to load cart data. Please refresh the page.");
+    }
+  }, [cartData]);
 
   useEffect(() => {
     const fetchSettings = async () => {

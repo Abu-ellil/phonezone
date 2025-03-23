@@ -34,7 +34,7 @@ interface Category {
 }
 
 export function getProducts(): Product[] {
-  return storeData.map((product) => ({
+  return storeData.map((product: any) => ({
     ...product,
     category: Array.isArray(product.category)
       ? product.category
@@ -42,6 +42,7 @@ export function getProducts(): Product[] {
     createdAt: new Date().toISOString(),
     price: product.base_price,
     original_price: product.base_price,
+    variants: Array.isArray(product.variants) ? product.variants : [],
   }));
 }
 
