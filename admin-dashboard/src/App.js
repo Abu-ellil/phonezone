@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import "./App.css";
 import AuthContainer from "./components/Auth/AuthContainer";
 import Dashboard from "./components/Dashboard/Dashboard";
+import EditProduct from "./components/Products/EditProduct";
 import { initializeApp } from "firebase/app";
 import { firebaseConfig } from "./firebaseConfig";
 
@@ -42,13 +49,21 @@ function App() {
   }
 
   return (
-    <div className="App">
-      {user ? (
-        <Dashboard user={user} onLogout={handleLogout} />
-      ) : (
-        <AuthContainer onLogin={handleLogin} />
-      )}
-    </div>
+    <Router>
+      <div className="App">
+        {user ? (
+          <Routes>
+            <Route
+              path="/"
+              element={<Dashboard user={user} onLogout={handleLogout} />}
+            />
+            <Route path="/product/:id" element={<EditProduct />} />
+          </Routes>
+        ) : (
+          <AuthContainer onLogin={handleLogin} />
+        )}
+      </div>
+    </Router>
   );
 }
 

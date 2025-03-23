@@ -19,156 +19,124 @@ import HeroBanner from "@/components/HeroBanner";
 import Testimonials from "@/components/Testimonials";
 
 export default async function Home() {
-  const featuredProducts = await getFeaturedProductsFromFirebase(8);
-  const newestProducts = await getNewestProductsFromFirebase(8);
-  const allProducts = await getProductsFromFirebase();
+  let featuredProducts = [];
+  let newestProducts = [];
+  let allProducts = [];
 
-  const iPhone16ProMaxProducts = allProducts
-    .filter(
-      (p) =>
-        p.subcategory === "ابل ايفون 16 برو ماكس" ||
-        p.name.toLowerCase().includes("ايفون 16 برو ماكس") ||
-        p.name.toLowerCase().includes("iphone 16 pro max")
-    )
-    .slice(0, 8);
+  try {
+    [featuredProducts, newestProducts, allProducts] = await Promise.all([
+      getFeaturedProductsFromFirebase(8),
+      getNewestProductsFromFirebase(8),
+      getProductsFromFirebase(),
+    ]);
 
-  const iPhone16ProProducts = allProducts
-    .filter(
-      (p) =>
-        p.subcategory === "ابل ايفون 16 برو" ||
-        (p.name.toLowerCase().includes("ايفون 16 برو") &&
-          !p.name.toLowerCase().includes("ماكس")) ||
-        (p.name.toLowerCase().includes("iphone 16 pro") &&
-          !p.name.toLowerCase().includes("max"))
-    )
-    .slice(0, 8);
+    // Sort products by name
+    allProducts.sort((a, b) => a.name.localeCompare(b.name));
+  } catch (error) {
+    console.error("Error loading products:", error);
+  }
 
-  const iPhone16PlusProducts = allProducts
-    .filter(
-      (p) =>
-        p.subcategory === "ابل ايفون 16 بلس" ||
-        p.name.toLowerCase().includes("ايفون 16 بلس") ||
-        p.name.toLowerCase().includes("iphone 16 plus")
-    )
-    .slice(0, 8);
+  // Helper function to filter products by category and subcategory
+  const filterProductsByCategory = (
+    products,
+    category,
+    subcategory = null,
+    limit = 8
+  ) => {
+    return products
+      .filter((p) => {
+        if (subcategory) {
+          return p.category.includes(category) && p.name.includes(subcategory);
+        }
+        return p.category.includes(category);
+      })
+      .slice(0, limit);
+  };
 
-  const iPhone16Products = allProducts
-    .filter(
-      (p) =>
-        p.subcategory === "ابل ايفون 16" ||
-        p.name.toLowerCase().includes("ايفون 16") ||
-        p.name.toLowerCase().includes("iphone 16")
-    )
-    .slice(0, 8);
+  // Filter Apple iPhone products
+  const iPhone16ProMaxProducts = filterProductsByCategory(
+    allProducts,
+    "ابل",
+    "ايفون 16 بروماكس"
+  );
+  const iPhone16ProProducts = filterProductsByCategory(
+    allProducts,
+    "ابل",
+    "ايفون 16 برو"
+  );
+  const iPhone16PlusProducts = filterProductsByCategory(
+    allProducts,
+    "ابل",
+    "ايفون 16 بلس"
+  );
+  const iPhone16Products = filterProductsByCategory(
+    allProducts,
+    "ابل",
+    "ايفون 16"
+  );
 
-  const iPhone15ProMaxProducts = allProducts
-    .filter(
-      (p) =>
-        p.subcategory === "ابل ايفون 15 برو ماكس" ||
-        p.name.toLowerCase().includes("ايفون 15 برو ماكس") ||
-        p.name.toLowerCase().includes("iphone 15 pro max")
-    )
-    .slice(0, 8);
+  const iPhone15ProMaxProducts = filterProductsByCategory(
+    allProducts,
+    "ابل",
+    "ايفون 15 برو ماكس"
+  );
+  const iPhone15ProProducts = filterProductsByCategory(
+    allProducts,
+    "ابل",
+    "ايفون 15 برو"
+  );
+  const iPhone15PlusProducts = filterProductsByCategory(
+    allProducts,
+    "ابل",
+    "ايفون 15 بلس"
+  );
+  const iPhone15Products = filterProductsByCategory(
+    allProducts,
+    "ابل",
+    "ايفون 15"
+  );
 
-  const iPhone15ProProducts = allProducts
-    .filter(
-      (p) =>
-        p.subcategory === "ابل ايفون 15 برو" ||
-        (p.name.toLowerCase().includes("ايفون 15 برو") &&
-          !p.name.toLowerCase().includes("ماكس")) ||
-        (p.name.toLowerCase().includes("iphone 15 pro") &&
-          !p.name.toLowerCase().includes("max"))
-    )
-    .slice(0, 8);
+  const iPhone14ProMaxProducts = filterProductsByCategory(
+    allProducts,
+    "ابل",
+    "ايفون 14 برو ماكس"
+  );
+  const iPhone14ProProducts = filterProductsByCategory(
+    allProducts,
+    "ابل",
+    "ايفون 14 برو"
+  );
+  const iPhone14PlusProducts = filterProductsByCategory(
+    allProducts,
+    "ابل",
+    "ايفون 14 بلس"
+  );
+  const iPhone14Products = filterProductsByCategory(
+    allProducts,
+    "ابل",
+    "ايفون 14"
+  );
 
-  const iPhone15PlusProducts = allProducts
-    .filter(
-      (p) =>
-        p.subcategory === "ابل ايفون 15 بلس" ||
-        p.name.toLowerCase().includes("ايفون 15 بلس") ||
-        p.name.toLowerCase().includes("iphone 15 plus")
-    )
-    .slice(0, 8);
+  // Filter Samsung products
+  const samsungS25UltraProducts = filterProductsByCategory(
+    allProducts,
+    "سامسونج",
+    "S25 Ultra"
+  );
+  const samsungS24UltraProducts = filterProductsByCategory(
+    allProducts,
+    "سامسونج",
+    "S24 Ultra"
+  );
 
-  const iPhone15Products = allProducts
-    .filter(
-      (p) =>
-        p.subcategory === "ابل ايفون 15" ||
-        p.name.toLowerCase().includes("ايفون 15") ||
-        p.name.toLowerCase().includes("iphone 15")
-    )
-    .slice(0, 8);
+  // Filter other categories
+  const appleWatchProducts = filterProductsByCategory(allProducts, "ساعات ابل");
+  const playstationProducts = filterProductsByCategory(
+    allProducts,
+    "بلايستيشن"
+  );
 
-  const iPhone14ProMaxProducts = allProducts
-    .filter(
-      (p) =>
-        p.subcategory === "ابل ايفون 14 برو ماكس" ||
-        p.name.toLowerCase().includes("ايفون 14 برو ماكس") ||
-        p.name.toLowerCase().includes("iphone 14 pro max")
-    )
-    .slice(0, 8);
-
-  const iPhone14ProProducts = allProducts
-    .filter(
-      (p) =>
-        p.subcategory === "ابل ايفون 14 برو" ||
-        (p.name.toLowerCase().includes("ايفون 14 برو") &&
-          !p.name.toLowerCase().includes("ماكس")) ||
-        (p.name.toLowerCase().includes("iphone 14 pro") &&
-          !p.name.toLowerCase().includes("max"))
-    )
-    .slice(0, 8);
-
-  const iPhone14PlusProducts = allProducts
-    .filter(
-      (p) =>
-        p.subcategory === "ابل ايفون 14 بلس" ||
-        p.name.toLowerCase().includes("ايفون 14 بلس") ||
-        p.name.toLowerCase().includes("iphone 14 plus")
-    )
-    .slice(0, 8);
-
-  const iPhone14Products = allProducts
-    .filter(
-      (p) =>
-        p.subcategory === "ابل ايفون 14" ||
-        p.name.toLowerCase().includes("ايفون 14") ||
-        p.name.toLowerCase().includes("iphone 14")
-    )
-    .slice(0, 8);
-
-  const samsungS25UltraProducts = allProducts
-    .filter(
-      (p) =>
-        p.subcategory === "Samsung S25 Ultra" ||
-        p.name.toLowerCase().includes("samsung s25 ultra")
-    )
-    .slice(0, 8);
-
-  const samsungS24UltraProducts = allProducts
-    .filter(
-      (p) =>
-        p.subcategory === "Samsung S24 Ultra" ||
-        p.name.toLowerCase().includes("samsung s24 ultra")
-    )
-    .slice(0, 8);
-
-  const appleWatchProducts = allProducts
-    .filter(
-      (p) =>
-        p.category === "ساعات ابل" ||
-        p.name.toLowerCase().includes("apple watch")
-    )
-    .slice(0, 8);
-
-  const playstationProducts = allProducts
-    .filter(
-      (p) =>
-        p.category === "بلايستيشن" ||
-        p.name.toLowerCase().includes("playstation")
-    )
-    .slice(0, 8);
-
+  // Filter best selling products
   const bestSellingProducts = allProducts
     .filter((p) => p.bestSelling === true)
     .slice(0, 8);

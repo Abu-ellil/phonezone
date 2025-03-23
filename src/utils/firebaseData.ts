@@ -4,7 +4,6 @@ import {
   getFeaturedProducts,
   getNewestProducts,
   getProductsByCategory,
-  getProductsBySubcategory,
   getProductById,
   searchProducts,
 } from "@/firebase/productsService";
@@ -15,7 +14,6 @@ import {
   getFeaturedProducts as getLocalFeaturedProducts,
   getNewestProducts as getLocalNewestProducts,
   getProductsByCategory as getLocalProductsByCategory,
-  getProductsBySubcategory as getLocalProductsBySubcategory,
   getProductById as getLocalProductById,
 } from "./data";
 
@@ -84,33 +82,6 @@ export async function getProductsByCategoryFromFirebase(categoryName: string) {
 }
 
 /**
- * Get products by subcategory from Firebase
- * @param categoryName Category name
- * @param subcategoryName Subcategory name
- * @returns Promise resolving to array of products in the subcategory
- */
-export async function getProductsBySubcategoryFromFirebase(
-  categoryName: string,
-  subcategoryName: string
-) {
-  try {
-    const products = await getProductsBySubcategory(
-      categoryName,
-      subcategoryName
-    );
-    return products.length > 0
-      ? products
-      : getLocalProductsBySubcategory(categoryName, subcategoryName);
-  } catch (error) {
-    console.error(
-      `Error fetching products for subcategory ${subcategoryName} from Firebase:`,
-      error
-    );
-    return getLocalProductsBySubcategory(categoryName, subcategoryName);
-  }
-}
-
-/**
  * Get product by ID from Firebase
  * @param id Product ID
  * @returns Promise resolving to product object or null if not found
@@ -118,10 +89,10 @@ export async function getProductsBySubcategoryFromFirebase(
 export async function getProductByIdFromFirebase(id: string) {
   try {
     const product = await getProductById(id);
-    return product || getLocalProductById(id);
+    return product || getLocalProductById(parseInt(id));
   } catch (error) {
     console.error(`Error fetching product ${id} from Firebase:`, error);
-    return getLocalProductById(id);
+    return getLocalProductById(parseInt(id));
   }
 }
 

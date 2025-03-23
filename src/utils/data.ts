@@ -1,69 +1,95 @@
 // Utility to load the store data
 import storeData from "../../public/data.json";
 
+interface Variant {
+  type: string;
+  size: string;
+  price: number;
+}
+
 interface Product {
   url: string;
-  route: string;
-  id: string;
+  id: number;
   name: string;
-  original_price?: string;
-  price?: string;
+  warranty: string;
+  stock_status: string;
   image_url: string;
-  category: string;
+  category: string[];
+  base_price: number;
+  variants: Variant[];
   subcategory?: string;
+  featured?: boolean;
+  bestSelling?: boolean;
+  createdAt?: string;
+  price?: number;
+  original_price?: number;
 }
 
 interface Category {
   name: string;
   url: string;
   route: string;
-  subcategories: {
-    name: string;
-    products: Product[];
-  }[];
+  products: Product[];
+  subcategories: { name: string; products: Product[] }[];
 }
 
-type RawStoreData = {
-  [category: string]: {
-    [subcategory: string]: Product[];
-  };
-};
-
 export function getProducts(): Product[] {
-  const rawData = storeData as RawStoreData;
-  const allProducts: Product[] = [];
-
-  Object.entries(rawData).forEach(([category, subcategories]) => {
-    Object.entries(subcategories).forEach(([subcategory, products]) => {
-      products.forEach((product) => {
-        allProducts.push({
-          ...product,
-          category,
-          subcategory,
-        });
-      });
-    });
-  });
-
-  return allProducts;
+  return storeData.map((product) => ({
+    ...product,
+    category: Array.isArray(product.category)
+      ? product.category
+      : [product.category],
+    createdAt: new Date().toISOString(),
+    price: product.base_price,
+    original_price: product.base_price,
+  }));
 }
 
 export function getCategories(): Category[] {
-  const rawData = storeData as RawStoreData;
+  const products = getProducts();
+  const categoriesMap = new Map<
+    string,
+    { products: Product[]; subcategories: Map<string, Product[]> }
+  >();
 
-  return Object.entries(rawData).map(([categoryName, subcategories]) => ({
-    name: categoryName,
-    url: `/category/${encodeURIComponent(categoryName)}`,
-    route: `/category/${encodeURIComponent(categoryName)}`,
-    subcategories: Object.entries(subcategories).map(([name, products]) => ({
+  products.forEach((product) => {
+    if (Array.isArray(product.category)) {
+      product.category.forEach((cat) => {
+        if (!categoriesMap.has(cat)) {
+          categoriesMap.set(cat, { products: [], subcategories: new Map() });
+        }
+        const category = categoriesMap.get(cat)!;
+        category.products.push(product);
+
+        if (product.subcategory) {
+          if (!category.subcategories.has(product.subcategory)) {
+            category.subcategories.set(product.subcategory, []);
+          }
+          category.subcategories.get(product.subcategory)?.push(product);
+        }
+      });
+    }
+  });
+
+  return Array.from(categoriesMap.entries()).map(
+    ([name, { products, subcategories }]) => ({
       name,
+      url: `/category/${encodeURIComponent(name)}`,
+      route: `/category/${encodeURIComponent(name)}`,
       products,
-    })),
-  }));
+      subcategories: Array.from(subcategories.entries()).map(
+        ([subName, subProducts]) => ({
+          name: subName,
+          products: subProducts,
+        })
+      ),
+    })
+  );
 }
 
 export function getFeaturedProducts(limit: number = 8): Product[] {
   const products = getProducts();
+  // Since we don't have featured flag in local data, return first n products
   return products.slice(0, limit);
 }
 
@@ -74,14 +100,12 @@ export function getFeaturedProducts(limit: number = 8): Product[] {
  */
 export function getNewestProducts(limit: number = 8): Product[] {
   const products = getProducts();
-  // In a real application, products would be sorted by date
-  // Here we're simulating newest products by reversing the array
   return [...products].reverse().slice(0, limit);
 }
 
 export function getProductsByCategory(categoryName: string): Product[] {
   const products = getProducts();
-  return products.filter((product) => product.category === categoryName);
+  return products.filter((product) => product.category.includes(categoryName));
 }
 
 export function getProductsBySubcategory(
@@ -91,12 +115,12 @@ export function getProductsBySubcategory(
   const products = getProducts();
   return products.filter(
     (product) =>
-      product.category === categoryName &&
+      product.category.includes(categoryName) &&
       product.subcategory === subcategoryName
   );
 }
 
-export function getProductById(id: string): Product | null {
+export function getProductById(id: number): Product | null {
   const products = getProducts();
   return products.find((product) => product.id === id) || null;
 }

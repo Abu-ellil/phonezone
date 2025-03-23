@@ -11,12 +11,16 @@ interface SearchModalProps {
 }
 
 interface Product {
-  id: string;
+  id: number;
   name: string;
   image_url: string;
-  price?: string;
-  original_price?: string;
-  category?: string;
+  base_price: number;
+  variants?: {
+    type: string;
+    size: string;
+    price: number;
+  }[];
+  category: string[];
   subcategory?: string;
 }
 
@@ -37,7 +41,9 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
       return (
         product.name.toLowerCase().includes(searchLower) ||
         (product.category &&
-          product.category.toLowerCase().includes(searchLower)) ||
+          product.category.some((cat) =>
+            cat.toLowerCase().includes(searchLower)
+          )) ||
         (product.subcategory &&
           product.subcategory.toLowerCase().includes(searchLower))
       );
@@ -106,15 +112,20 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                       {product.name}
                     </h3>
                     <div className="mt-1 flex items-center justify-end gap-2">
-                      {product.original_price &&
-                        product.price !== product.original_price && (
-                          <span className="text-sm text-gray-500 line-through">
-                            {getDualCurrencyPrice(product.original_price).aed}
-                          </span>
-                        )}
-                      {product.price && (
+                      {product.variants ? (
                         <span className="text-sm font-medium text-primary">
-                          {getDualCurrencyPrice(product.price).aed}
+                          {
+                            getDualCurrencyPrice(
+                              product.variants[0].price.toString()
+                            ).aed
+                          }
+                        </span>
+                      ) : (
+                        <span className="text-sm font-medium text-primary">
+                          {
+                            getDualCurrencyPrice(product.base_price.toString())
+                              .aed
+                          }
                         </span>
                       )}
                     </div>

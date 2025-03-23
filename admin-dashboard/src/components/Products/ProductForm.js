@@ -104,11 +104,22 @@ const ProductForm = ({ product, onSave, onCancel }) => {
         throw new Error("Invalid price format. Please enter a valid number.");
       }
 
+      // التحقق من صحة البيانات قبل التحديث
+      if (!formData.name.trim()) {
+        throw new Error("اسم المنتج مطلوب");
+      }
+      if (!formData.category.trim()) {
+        throw new Error("فئة المنتج مطلوبة");
+      }
+      if (parsedPrice <= 0) {
+        throw new Error("يجب أن يكون السعر أكبر من صفر");
+      }
+
       const productData = {
-        name: formData.name,
-        description: formData.description,
+        name: formData.name.trim(),
+        description: formData.description.trim(),
         price: parsedPrice,
-        category: formData.category,
+        category: formData.category.trim(),
         inStock: formData.inStock,
         imageUrl,
         imagePublicId: imageFile
@@ -117,32 +128,57 @@ const ProductForm = ({ product, onSave, onCancel }) => {
         updatedAt: new Date().toISOString(),
       };
 
+      console.log("بيانات المنتج المراد تحديثها:", productData);
+
       if (isEditing) {
         try {
           // Update existing product
           if (!product?.id) {
             setError("لا يمكن تحديث المنتج: معرف المنتج غير موجود");
+            console.error("محاولة تحديث منتج بدون معرف");
             return;
           }
 
-          // Ensure the ID is a string and trim any whitespace
+          // التحقق من صحة معرف المنتج
+          if (!/^[a-zA-Z0-9-_]+$/.test(product.id)) {
+            setError("معرف المنتج غير صالح. يجب أن يحتوي على أحرف وأرقام فقط");
+            console.error("معرف المنتج غير صالح:", product.id);
+            return;
+          }
+
+          // تنظيف وتحقق من معرف المنتج
           const productId = String(product.id).trim();
-          console.log("جاري تحديث المنتج بمعرف:", productId);
+          console.log("جاري التحقق من المنتج بمعرف:", productId);
 
           const productRef = doc(db, "products", productId);
 
-          // Check if the document exists before updating
+          // التحقق من وجود المنتج قبل التحديث
           const docSnap = await getDoc(productRef);
           if (!docSnap.exists()) {
-            setError(`لا يمكن العثور على المنتج بمعرف ${productId}`);
+            const errorMessage = `لا يمكن العثور على المنتج بمعرف ${productId}. يرجى التأكد من صحة المعرف والمحاولة مرة أخرى.`;
+            setError(errorMessage);
+            console.error(`محاولة تحديث منتج غير موجود:`, {
+              productId,
+              formData,
+              timestamp: new Date().toISOString(),
+            });
             return;
           }
+
+          console.log("تم العثور على المنتج، جاري التحديث...", {
+            productId,
+            currentData: docSnap.data(),
+            newData: productData,
+          });
 
           await updateDoc(productRef, productData);
           console.log("تم تحديث المنتج بنجاح");
         } catch (updateError) {
           console.error("خطأ في تحديث المنتج:", updateError);
-          setError("حدث خطأ أثناء تحديث المنتج. يرجى المحاولة مرة أخرى.");
+          setError(
+            "حدث خطأ أثناء تحديث المنتج. يرجى التحقق من صحة البيانات والمحاولة مرة أخرى."
+          );
+          console.error("تفاصيل الخطأ:", updateError);
           return;
         }
       } else {
@@ -265,7 +301,8 @@ const ProductForm = ({ product, onSave, onCancel }) => {
             </div>
           </div>
         </div>
-
+<img src={formData.image_Url} alt="Product" />
+{console.log(formData)}
         <div className="form-group">
           <label htmlFor="image">Product Image</label>
           <div className="image-upload-container">

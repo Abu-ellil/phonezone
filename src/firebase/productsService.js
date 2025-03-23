@@ -23,15 +23,27 @@ export const getProducts = async () => {
     const productsRef = collection(db, "products");
     const snapshot = await getDocs(productsRef);
 
-    return snapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-      category: doc.data().category || "",
-      subcategory: doc.data().subcategory || "",
-      createdAt: doc.data().createdAt
-        ? doc.data().createdAt.toDate().toISOString()
-        : new Date().toISOString(),
-    }));
+    return snapshot.docs.map((doc) => {
+      const data = doc.data();
+      let createdAt;
+      try {
+        createdAt =
+          data.createdAt?.toDate?.() instanceof Date
+            ? data.createdAt.toDate().toISOString()
+            : data.createdAt instanceof Date
+            ? data.createdAt.toISOString()
+            : new Date().toISOString();
+      } catch {
+        createdAt = new Date().toISOString();
+      }
+      return {
+        id: doc.id,
+        ...data,
+        category: data.category || "",
+        subcategory: data.subcategory || "",
+        createdAt,
+      };
+    });
   } catch (error) {
     console.error("Error getting products:", error);
     return [];
@@ -54,15 +66,20 @@ export const getFeaturedProducts = async (limitCount = 8) => {
 
     const snapshot = await getDocs(featuredQuery);
 
-    return snapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-      category: doc.data().category || "",
-      subcategory: doc.data().subcategory || "",
-      createdAt: doc.data().createdAt
-        ? doc.data().createdAt.toDate().toISOString()
-        : new Date().toISOString(),
-    }));
+    return snapshot.docs.map((doc) => {
+      const data = doc.data();
+      const createdAt =
+        data.createdAt && typeof data.createdAt.toDate === "function"
+          ? data.createdAt.toDate().toISOString()
+          : new Date().toISOString();
+      return {
+        id: doc.id,
+        ...data,
+        category: data.category || "",
+        subcategory: data.subcategory || "",
+        createdAt,
+      };
+    });
   } catch (error) {
     console.error("Error getting featured products:", error);
     return [];
@@ -85,15 +102,20 @@ export const getNewestProducts = async (limitCount = 8) => {
 
     const snapshot = await getDocs(newestQuery);
 
-    return snapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-      category: doc.data().category || "",
-      subcategory: doc.data().subcategory || "",
-      createdAt: doc.data().createdAt
-        ? doc.data().createdAt.toDate().toISOString()
-        : new Date().toISOString(),
-    }));
+    return snapshot.docs.map((doc) => {
+      const data = doc.data();
+      const createdAt =
+        data.createdAt && typeof data.createdAt.toDate === "function"
+          ? data.createdAt.toDate().toISOString()
+          : new Date().toISOString();
+      return {
+        id: doc.id,
+        ...data,
+        category: data.category || "",
+        subcategory: data.subcategory || "",
+        createdAt,
+      };
+    });
   } catch (error) {
     console.error("Error getting newest products:", error);
     return [];
@@ -115,15 +137,20 @@ export const getProductsByCategory = async (categoryName) => {
 
     const snapshot = await getDocs(categoryQuery);
 
-    return snapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-      category: doc.data().category || "",
-      subcategory: doc.data().subcategory || "",
-      createdAt: doc.data().createdAt
-        ? doc.data().createdAt.toDate().toISOString()
-        : new Date().toISOString(),
-    }));
+    return snapshot.docs.map((doc) => {
+      const data = doc.data();
+      const createdAt =
+        data.createdAt && typeof data.createdAt.toDate === "function"
+          ? data.createdAt.toDate().toISOString()
+          : new Date().toISOString();
+      return {
+        id: doc.id,
+        ...data,
+        category: data.category || "",
+        subcategory: data.subcategory || "",
+        createdAt,
+      };
+    });
   } catch (error) {
     console.error("Error getting products by category:", error);
     return [];
@@ -150,15 +177,20 @@ export const getProductsBySubcategory = async (
 
     const snapshot = await getDocs(subcategoryQuery);
 
-    return snapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-      category: doc.data().category || "",
-      subcategory: doc.data().subcategory || "",
-      createdAt: doc.data().createdAt
-        ? doc.data().createdAt.toDate().toISOString()
-        : new Date().toISOString(),
-    }));
+    return snapshot.docs.map((doc) => {
+      const data = doc.data();
+      const createdAt =
+        data.createdAt && typeof data.createdAt.toDate === "function"
+          ? data.createdAt.toDate().toISOString()
+          : new Date().toISOString();
+      return {
+        id: doc.id,
+        ...data,
+        category: data.category || "",
+        subcategory: data.subcategory || "",
+        createdAt,
+      };
+    });
   } catch (error) {
     console.error("Error getting products by subcategory:", error);
     return [];
@@ -183,7 +215,7 @@ export const getProductById = async (id) => {
         category: data.category || "",
         subcategory: data.subcategory || "",
         createdAt: data.createdAt
-          ? data.createdAt.toDate().toISOString()
+          ? data.createdAt?.toDate().toISOString()
           : new Date().toISOString(),
       };
     } else {
@@ -275,7 +307,7 @@ export const searchProducts = async (searchTerm) => {
         category: doc.data().category || "",
         subcategory: doc.data().subcategory || "",
         createdAt: doc.data().createdAt
-          ? doc.data().createdAt.toDate().toISOString()
+          ? doc.data().createdAt?.toDate().toISOString()
           : new Date().toISOString(),
       }))
       .filter((product) => {
