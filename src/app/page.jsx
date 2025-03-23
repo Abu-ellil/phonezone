@@ -45,6 +45,38 @@ export default async function Home() {
   ) => {
     return products
       .filter((p) => {
+        if (category === "سامسونج") {
+          const searchTerms =
+            subcategory === "S25 Ultra"
+              ? [
+                  "s25 الترا",
+                  "s25 ultra",
+                  "S25 Ultra",
+                  "S25 الترا",
+                  "اس 25 الترا",
+                  "S25الترا",
+                  "s25 الترا",
+                ]
+              : subcategory === "S24 Ultra"
+              ? [
+                  "s24 الترا",
+                  "s24 ultra",
+                  "S24 Ultra",
+                  "S24 الترا",
+                  "اس 24 الترا",
+                ]
+              : [subcategory];
+          return (
+            (p.category === "سامسونج" ||
+              p.name.toLowerCase().includes("سامسونج") ||
+              p.name.toLowerCase().includes("samsung")) &&
+            (subcategory
+              ? searchTerms.some((term) =>
+                  p.name.toLowerCase().includes(term.toLowerCase())
+                )
+              : true)
+          );
+        }
         if (subcategory) {
           return p.category.includes(category) && p.name.includes(subcategory);
         }

@@ -94,9 +94,10 @@ export default function CartPage() {
   const calculateTotal = () => {
     return cartItems
       .reduce((total, item) => {
-        const price = parseFloat(
-          item.price.replace(" ر.س", "").replace(",", "")
-        );
+        let price =
+          typeof item.price === "string"
+            ? parseFloat(item.price.replace(" ر.س", "").replace(",", ""))
+            : parseFloat(item.price);
         return total + price * item.quantity;
       }, 0)
       .toFixed(2);

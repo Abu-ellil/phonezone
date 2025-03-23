@@ -16,6 +16,8 @@ interface OrderData {
     price: string;
     quantity: number;
     image_url: string;
+    variant?: string;
+    version?: string;
   }[];
   subtotal: number;
   shippingCost: number;
@@ -111,11 +113,38 @@ export async function sendOrderToTelegram(
     // Order items
     message += "المنتجات\n";
     orderData.cartItems.forEach((item, index) => {
-      message += `${index + 1}. ${removeMarkdownFormatting(
-        item.name
-      )} - الكمية: ${removeMarkdownFormatting(
+      message += `${index + 1}. ${removeMarkdownFormatting(item.name)}
+`;
+      if (item.variant) {
+        message += `   مساحة التخزين: ${removeMarkdownFormatting(item.variant)}
+`;
+      }
+      if (item.version) {
+        message += `   النسخة: ${
+          item.version === "me" ? "الشرق الأوسط" : "الأمريكية"
+        }
+`;
+      }
+      message += `   الكمية: ${removeMarkdownFormatting(
         item.quantity.toString()
-      )} - السعر: ${removeMarkdownFormatting(item.price)}\n`;
+      )}
+   السعر: ${removeMarkdownFormatting(item.price)}
+`;
+      if (item.variant) {
+        message += `   مساحة التخزين: ${removeMarkdownFormatting(item.variant)}
+`;
+      }
+      if (item.version) {
+        message += `   النسخة: ${
+          item.version === "me" ? "الشرق الأوسط" : "الأمريكية"
+        }
+`;
+      }
+      message += `   الكمية: ${removeMarkdownFormatting(
+        item.quantity.toString()
+      )}
+   السعر: ${removeMarkdownFormatting(item.price)}
+`;
     });
 
     // Order summary

