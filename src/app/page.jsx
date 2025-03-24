@@ -1,9 +1,9 @@
 import Link from "next/link";
 import {
-  getFeaturedProductsFromFirebase,
-  getProductsFromFirebase,
-  getNewestProductsFromFirebase,
-} from "@/utils/firebaseData";
+  getFeaturedProducts,
+  getProducts,
+  getNewestProducts,
+} from "@/utils/data";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
@@ -24,9 +24,9 @@ export default async function Home() {
 
   try {
     [featuredProducts, newestProducts, allProducts] = await Promise.all([
-      getFeaturedProductsFromFirebase(8),
-      getNewestProductsFromFirebase(8),
-      getProductsFromFirebase(),
+      getFeaturedProducts(8),
+      getNewestProducts(8),
+      getProducts(),
     ]);
 
     // Sort products by name
@@ -55,6 +55,7 @@ export default async function Home() {
             : "";
         const productNameLower =
           typeof p.name === "string" ? p.name.toLowerCase() : "";
+        const productSubcategory = p.subcategory;
 
         if (category === "سامسونج") {
           const searchTerms =
@@ -98,15 +99,39 @@ export default async function Home() {
             "ابل ووتش",
             "watch",
           ];
+          return (
+            productCategory === "ساعات ابل" ||
+            productSubcategory === "ساعات ابل" ||
+            watchTerms.some(
+              (term) =>
+                productNameLower.includes(term.toLowerCase()) ||
+                productCategoryLower.includes(term.toLowerCase())
+            )
+          );
           return watchTerms.some(
             (term) =>
               productNameLower.includes(term.toLowerCase()) ||
               productCategoryLower.includes(term.toLowerCase())
           );
         }
+        if (category === "ابل") {
+          const iPhoneTerms = ["ايفون", "آيفون", "iphone", "أيفون"];
+          return (
+            (productCategory === "ابل" ||
+              productCategory === "الهواتف الذكية" ||
+              iPhoneTerms.some((term) =>
+                productNameLower.includes(term.toLowerCase())
+              )) &&
+            (subcategory
+              ? productNameLower.includes(subcategory.toLowerCase())
+              : true)
+          );
+        }
         if (subcategory) {
           return (
-            productCategory?.includes(category) && p.name?.includes(subcategory)
+            productCategory?.includes(category) &&
+            (p.name?.toLowerCase().includes(subcategory.toLowerCase()) ||
+              p.subcategory?.toLowerCase().includes(subcategory.toLowerCase()))
           );
         }
         return productCategory?.includes(category);

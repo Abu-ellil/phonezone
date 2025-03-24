@@ -1,5 +1,5 @@
 "use client";
-import { getProductByIdFromFirebase } from "@/utils/firebaseData";
+import { getProductById } from "@/utils/data";
 import { Loading } from "@/components/Loading";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -23,7 +23,7 @@ export default function ProductPage({ params }) {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const productData = await getProductByIdFromFirebase(id);
+        const productData = await getProductById(parseInt(id));
         setProduct(productData);
         if (productData?.variants?.length > 0) {
           setSelectedVariant(productData.variants[0]);
@@ -141,33 +141,35 @@ export default function ProductPage({ params }) {
                         </div>
                       </div>
                     )}
-              {product.variants && product.variants.length > 0 && (      <div className="mb-4">
-                      <label className="block text-gray-700 text-right mb-2">
-                        اختر النسخة:
-                      </label>
-                      <div className="flex gap-3 justify-end">
-                        <button
-                          onClick={() => setSelectedVersion("me")}
-                          className={`px-3 py-1.5 rounded-lg text-xs ${
-                            selectedVersion === "me"
-                              ? "bg-blue-500 text-white"
-                              : "bg-gray-200 text-gray-700"
-                          } hover:opacity-90 transition-colors`}
-                        >
-                          نسخة الشرق الأوسط
-                        </button>
-                        <button
-                          onClick={() => setSelectedVersion("us")}
-                          className={`px-3 py-1.5 rounded-lg text-xs ${
-                            selectedVersion === "us"
-                              ? "bg-blue-500 text-white"
-                              : "bg-gray-200 text-gray-700"
-                          } hover:opacity-90 transition-colors`}
-                        >
-                          النسخة الامريكية
-                        </button>
+                    {product.variants && product.variants.length > 0 && (
+                      <div className="mb-4">
+                        <label className="block text-gray-700 text-right mb-2">
+                          اختر النسخة:
+                        </label>
+                        <div className="flex gap-3 justify-end">
+                          <button
+                            onClick={() => setSelectedVersion("me")}
+                            className={`px-3 py-1.5 rounded-lg text-xs ${
+                              selectedVersion === "me"
+                                ? "bg-blue-500 text-white"
+                                : "bg-gray-200 text-gray-700"
+                            } hover:opacity-90 transition-colors`}
+                          >
+                            نسخة الشرق الأوسط
+                          </button>
+                          <button
+                            onClick={() => setSelectedVersion("us")}
+                            className={`px-3 py-1.5 rounded-lg text-xs ${
+                              selectedVersion === "us"
+                                ? "bg-blue-500 text-white"
+                                : "bg-gray-200 text-gray-700"
+                            } hover:opacity-90 transition-colors`}
+                          >
+                            النسخة الامريكية
+                          </button>
+                        </div>
                       </div>
-                    </div>)}
+                    )}
                     <div className="flex justify-end items-center gap-3 mb-2">
                       {product.original_price &&
                         (product.price || selectedVariant?.price) !==

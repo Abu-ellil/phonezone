@@ -1,6 +1,6 @@
 "use client";
-import Link from "next/link";
 import { useState } from "react";
+import Link from "next/link";
 import { getCategories } from "@/utils/data";
 import Image from "next/image";
 import { useCart } from "@/contexts/CartContext";
@@ -95,11 +95,7 @@ export default function Header() {
                         </Link>
                       </div>
                       {isDropdownOpen === category.name && (
-                        <div
-                          className=""
-                          style={{ touchAction: "none" }}
-                          
-                        >
+                        <div className="" style={{ touchAction: "none" }}>
                           {category.subcategories.map((subcategory) => (
                             <Link
                               key={subcategory.name}
