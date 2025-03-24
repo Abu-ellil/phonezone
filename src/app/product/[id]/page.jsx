@@ -232,13 +232,13 @@ export default function ProductPage({ params }) {
                       <div className="flex gap-3">
                         <Link
                           href="/"
-                          className="flex-1 component-base primary py-3 px-6 font-medium text-lg text-center"
+                          className="flex-1 component-base primary py-2 px-4 font-medium text-sm text-center"
                         >
                           متابعة التسوق
                         </Link>
                         <Link
                           href="/cart"
-                          className="flex-1 component-base py-3 px-6 text-black font-medium hover:opacity-90 transition-colors text-lg text-center bg-blue-400"
+                          className="flex-1 component-base py-2 px-4 text-black font-xs hover:opacity-90 transition-colors text-lg text-center bg-blue-400"
                         >
                           السلة
                         </Link>
@@ -383,7 +383,7 @@ export default function ProductPage({ params }) {
                       </Link>
                       <Link
                         href="/cart"
-                        className="component-base  py-3 px-6 font-medium hover:opacity-90 transition-colors text-lg text-center"
+                        className="component-base  py-2 px-4 font-medium hover:opacity-90 transition-colors text-lg text-center"
                       >
                         السلة
                       </Link>
