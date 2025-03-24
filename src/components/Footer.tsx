@@ -81,7 +81,7 @@ export default function Footer() {
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">تابعنا على</h3>
-            <div className="flex space-x-4 space-x-reverse">
+            <div className="flex space-x-reverse">
               <a
                 href="https://www.facebook.com"
                 className="text-gray-300 hover:text-white transition-colors duration-200"
