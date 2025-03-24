@@ -35,30 +35,6 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/payment"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  طرق الدفع والاقساط
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/shipping"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  الشحن والتوصيل
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/returns"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  آلية الاسترجاع
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/contact"
                   className="hover:text-white transition-colors duration-200"
                 >
@@ -122,25 +98,27 @@ export default function Footer() {
         <div className="mt-8 py-6">
           <div className="flex flex-wrap justify-center items-center gap-6 mb-4">
             <Image
-              src="/images/applepay.png"
+              src="/images/applepay.png" // Ensure this path is correct
               alt="Apple Pay"
               width={120}
               height={60}
             />
-            
-            <Image src="/images/visa.png" alt="Visa" width={120} height={60} />
-            
+            <Image
+              src="/images/visa.png" // Ensure this path is correct
+              alt="Visa"
+              width={120}
+              height={60}
+            />
           </div>
           <div className="text-center flex flex-wrap justify-center items-center gap-6 mb-4">
             <Image
-              src="/images/government-ae-logo-arabic2.webp"
+              src="/images/government-ae-logo-arabic2.webp" // Ensure this path is correct
               alt="UAE Government"
               width={120}
               height={60}
             />
-
             <Image
-              src="/images/TDRALogo.webp"
+              src="/images/TDRALogo.webp" // Ensure this path is correct
               alt="TDRA"
               width={120}
               height={60}
