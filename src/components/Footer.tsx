@@ -49,6 +49,14 @@ export default function Footer() {
                   خدمة العملاء
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/payment-methods"
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  طرق الدفع
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
