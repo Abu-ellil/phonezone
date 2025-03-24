@@ -31,7 +31,7 @@ export default function PaymentMethodOption({
         )}
       </div>
       <div className="flex items-center justify-center w-6 h-6 border border-gray-300 rounded-full mr-3">
-        {isSelected && <div className="w-4 h-4 bg-primary rounded-full"></div>}
+        {isSelected && <div className="w-4 h-4 bg-blue-500 rounded-full"></div>}
       </div>
     </div>
   );
