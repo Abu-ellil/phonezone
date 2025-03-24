@@ -160,16 +160,21 @@ export default async function Home() {
     "S24 Ultra"
   );
 
-  // Filter other categories
-  const appleWatchProducts = filterProductsByCategory(allProducts, "ساعات ابل");
+  // Filter Apple Watch products under Watches category
+  const appleWatchProducts = filterProductsByCategory(
+    allProducts,
+    "الساعات",
+    "ساعات ابل"
+  );
   const playstationProducts = filterProductsByCategory(
     allProducts,
     "بلايستيشن"
   );
 
-  // Filter best selling products
+  // Filter best selling products with random selection
   const bestSellingProducts = allProducts
     .filter((p) => p.bestSelling === true)
+    .sort(() => Math.random() - 0.5)
     .slice(0, 8);
 
   return (
@@ -184,7 +189,7 @@ export default async function Home() {
           <Section
             title="هواتف آيفون 16 برو ماكس"
             products={iPhone16ProMaxProducts}
-            link="/category/الهواتف%20الذكية/ابل%20ايفون%2016%20برو%20ماكس"
+            link="/category/ابل/ايفون-16-برو-ماكس"
           />
 
           <BannerImage src={img2} alt="Banner 2" />
@@ -192,25 +197,25 @@ export default async function Home() {
           <Section
             title="هواتف سامسونج S25 Ultra"
             products={samsungS25UltraProducts}
-            link="/category/samsung/s25-ultra"
+            link="/category/سامسونج/s25-ultra"
           />
 
           <Section
             title="هواتف آيفون 16 برو"
             products={iPhone16ProProducts}
-            link="/category/الهواتف%20الذكية/ابل%20ايفون%2016%20برو"
+            link="/category/ابل/ايفون-16-برو"
           />
 
           <Section
             title="هواتف آيفون 16 بلس"
             products={iPhone16PlusProducts}
-            link="/category/الهواتف%20الذكية/ابل%20ايفون%2016%20بلس"
+            link="/category/ابل/ايفون-16-بلس"
           />
 
           <Section
             title="هواتف آيفون 16"
             products={iPhone16Products}
-            link="/category/الهواتف%20الذكية/ابل%20ايفون%2016"
+            link="/category/ابل/ايفون-16"
           />
 
           <BannerImage src={img3} alt="Banner 3" />
@@ -218,19 +223,19 @@ export default async function Home() {
           <Section
             title="هواتف آيفون 15 برو ماكس"
             products={iPhone15ProMaxProducts}
-            link="/category/الهواتف%20الذكية/ابل%20ايفون%2015%20برو%20ماكس"
+            link="/category/ابل/ايفون-15-برو-ماكس"
           />
 
           <Section
             title="هواتف سامسونج S24 Ultra"
             products={samsungS24UltraProducts}
-            link="/category/samsung/s24-ultra"
+            link="/category/سامسونج/s24-ultra"
           />
 
           <BannerImage src={img4} alt="Banner 4" />
 
           <Section
-            title="ساعات ابل"
+            title="ساعات آبل"
             products={appleWatchProducts}
             link="/category/ساعات-ابل"
           />
@@ -244,13 +249,13 @@ export default async function Home() {
           <Section
             title="أحدث المنتجات"
             products={newestProducts}
-            link="/category/new"
+            link="/category/احدث-المنتجات"
           />
 
           <Section
             title="الأفضل مبيعاً"
             products={bestSellingProducts}
-            link="/category/best-selling"
+            link="/category/الافضل-مبيعا"
           />
           <Testimonials />
         </div>
