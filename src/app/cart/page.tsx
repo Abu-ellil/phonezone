@@ -414,11 +414,7 @@ export default function CartPage() {
                             <span className="text-lg font-bold text-primary">
                               {getDualCurrencyPrice(item.price).aed}
                             </span>
-                            {item.original_price && (
-                              <span className="text-sm text-gray-500 line-through mr-2">
-                                {getDualCurrencyPrice(item.original_price).aed}
-                              </span>
-                            )}
+                            
                           </div>
                         </div>
                         <div className="w-20 h-20 relative">
