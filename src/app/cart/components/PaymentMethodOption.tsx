@@ -6,6 +6,7 @@ type PaymentMethodOptionProps = {
   label: string;
   description?: string;
   onSelect: (method: string) => void;
+  className?: string;
 };
 
 export default function PaymentMethodOption({
@@ -14,15 +15,19 @@ export default function PaymentMethodOption({
   label,
   description,
   onSelect,
+  className,
 }: PaymentMethodOptionProps) {
   const isSelected = currentMethod === method;
 
   return (
     <div
       onClick={() => onSelect(method)}
-      className={`flex items-center p-3 border rounded-md hover:border-primary cursor-pointer ${
-        isSelected ? "border-primary bg-blue-50" : "border-gray-300"
-      }`}
+      className={
+        className ||
+        `flex items-center p-3 border rounded-md hover:border-primary cursor-pointer ${
+          isSelected ? "border-2 border-primary bg-blue-50" : "border-gray-300"
+        }`
+      }
     >
       <div className="flex-1 text-right">
         <div className="font-medium">{label}</div>

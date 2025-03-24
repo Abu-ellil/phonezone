@@ -17,7 +17,7 @@ export const getAppSettings = async () => {
       const defaultSettings = {
         installmentDefaults: {
           months: 3,
-          downPayment: 1000,
+          downPayment: 420,
         },
         createdAt: new Date().toISOString(),
       };
@@ -31,7 +31,7 @@ export const getAppSettings = async () => {
     return {
       installmentDefaults: {
         months: 3,
-        downPayment: 1000,
+        downPayment: 420,
       },
     };
   }

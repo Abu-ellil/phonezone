@@ -33,7 +33,7 @@ export default function PaymentMethodRadio({
   onPayNowClick,
   installmentMonths = 3, // Changed default from 1 to 3 months
   setInstallmentMonths = () => {},
-  downPayment = 1000,
+  downPayment = 420,
   setDownPayment = () => {},
   setMonthlyInstallment = () => {},
 }: PaymentMethodRadioProps) {
@@ -52,7 +52,7 @@ export default function PaymentMethodRadio({
   const handleDownPaymentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseFloat(e.target.value);
     if (!isNaN(value) && value >= 0 && value <= totalAmount) {
-      setDownPayment(value);
+      setDownPayment(420);
     }
   };
 
@@ -107,7 +107,7 @@ export default function PaymentMethodRadio({
       </div>
 
       {/* Cash on Delivery Options */}
-      {paymentMethod === "cash_on_delivery" && (
+      { (
         <CashOnDeliveryOptions
           paymentMethod={paymentMethod}
           setPaymentMethod={setPaymentMethod}
@@ -116,7 +116,7 @@ export default function PaymentMethodRadio({
       )}
 
       {/* Cash on Delivery Cash Form */}
-      {paymentMethod === "cash_on_delivery_cash" && (
+      { (
         <CashOnDeliveryCashForm
           shippingCost={shippingCost}
           onDeliveryInfoSubmit={onDeliveryInfoSubmit}

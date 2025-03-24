@@ -26,7 +26,7 @@ function CheckoutContent() {
   // State for installment information
   const [installmentInfo, setInstallmentInfo] = useState({
     months: 3, // Default values that will be overridden by Firebase settings
-    downPayment: 1000, // Default values that will be overridden by Firebase settings
+    downPayment: 420, // Default values that will be overridden by Firebase settings
     monthlyInstallment: "0.00",
   });
 

@@ -31,6 +31,11 @@ export default function CashOnDeliveryOptions({
           currentMethod={paymentMethod}
           label="دفع كامل المبلغ "
           onSelect={setPaymentMethod}
+          className={`p-4 border rounded-md cursor-pointer ${
+            paymentMethod === "cash_on_delivery_cash"
+              ? "border-primary bg-blue-50"
+              : "border-gray-300"
+          }`}
         />
 
         <PaymentMethodOption
@@ -38,6 +43,11 @@ export default function CashOnDeliveryOptions({
           currentMethod={paymentMethod}
           label="الدفع بالتقسيط عند الاستلام"
           onSelect={setPaymentMethod}
+          className={`p-4 border rounded-md cursor-pointer ${
+            paymentMethod === "cash_on_delivery_installment"
+              ? "border-primary bg-blue-50"
+              : "border-gray-300"
+          }`}
         />
       </div>
     </div>

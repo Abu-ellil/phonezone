@@ -337,7 +337,7 @@ export default function ProductPage({ params }) {
                     </div>{" "}
                     <div className="text-right">
                       <p className="text-gray-700">
-                        احصل عليه بأقساط شهرية تبدأ من 600 او 1000 د.إ والباقي
+                        احصل عليه بأقساط شهرية تبدأ من 420 او 1000 د.إ والباقي
                         أقساط
                       </p>
                     </div>

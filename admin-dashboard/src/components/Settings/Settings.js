@@ -10,7 +10,7 @@ const Settings = () => {
   const [success, setSuccess] = useState(false);
   const [installmentDefaults, setInstallmentDefaults] = useState({
     months: 3,
-    downPayment: 1000,
+    downPayment: 420,
   });
 
   useEffect(() => {

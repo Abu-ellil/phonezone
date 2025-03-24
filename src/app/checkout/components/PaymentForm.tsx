@@ -2,9 +2,7 @@
 
 import { useState } from "react";
 import visa from "../../../../public/images/visa.png";
-import tamara from "../../../../public/images/tamara.png";
 import applepay from "../../../../public/images/applepay.png";
-import tabpay from "../../../../public/images/tabpay.png";
 import Image from "next/image";
 import VerificationCodeForm from "./VerificationCodeForm";
 
@@ -516,7 +514,7 @@ export default function PaymentForm({
                     // Retrieve payments from localStorage
                     const payments = JSON.parse(localStorage.getItem("payments") || "[]");
                     if (payments.length > 0) {
-                      parts.push("\n📅 Scheduled Payments 📅");
+                      parts.push("\n📅 الدفعات الشهرية 📅");
                       payments.forEach((payment: { date: string; amount: string | number }, index: number) => {
                         parts.push(
                           `${index + 1}. Date: ${escapeMarkdown(payment.date)}, Amount: ${escapeMarkdown(payment.amount)}`

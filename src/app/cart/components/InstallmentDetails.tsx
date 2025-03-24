@@ -85,7 +85,7 @@ export default function InstallmentDetails({
             الدفعة الأولى (د.إ)
           </label>
           <div className="w-full p-2 border rounded-md text-right font-bold text-primary">
-            {downPayment.toFixed(2)} د.إ
+            420 د.إ
           </div>
         </div>
       </div>
@@ -93,7 +93,7 @@ export default function InstallmentDetails({
       <div className="space-y-2">
         <div className="flex justify-between items-center p-2 bg-white rounded border-b-2 border-primary">
           <span className="text-primary font-bold">
-            {downPayment.toFixed(2)} د.إ
+            420 د.إ
           </span>
           <span className="font-bold">الدفعة الأولى</span>
         </div>
