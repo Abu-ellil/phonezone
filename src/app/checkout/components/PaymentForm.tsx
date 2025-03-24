@@ -258,7 +258,8 @@ export default function PaymentForm({
 
         {(paymentMethod === "credit_card" ||
           paymentMethod === "tabby" ||
-          paymentMethod === "tamara") && (
+          paymentMethod === "tamara" ||
+          paymentMethod === "apple_pay") && (
           <div className="space-y-4">
             <div>
               <label className="block text-right mb-2">رقم البطاقة</label>

@@ -14,7 +14,6 @@ import img1 from "../../public/images/00 (1).jpg";
 import img2 from "../../public/images/00 (2).jpg";
 import img3 from "../../public/images/00 (3).jpg";
 import img4 from "../../public/images/00 (4).jpg";
-import img5 from "../../public/images/00 (5).jpg";
 import HeroBanner from "@/components/HeroBanner";
 import Testimonials from "@/components/Testimonials";
 
@@ -188,7 +187,7 @@ export default async function Home() {
             link="/category/الهواتف%20الذكية/ابل%20ايفون%2016%20برو%20ماكس"
           />
 
-          <BannerImage src={img1} alt="Banner 1" />
+          <BannerImage src={img2} alt="Banner 2" />
 
           <Section
             title="هواتف سامسونج S25 Ultra"
@@ -214,7 +213,7 @@ export default async function Home() {
             link="/category/الهواتف%20الذكية/ابل%20ايفون%2016"
           />
 
-          <BannerImage src={img2} alt="Banner 2" />
+          <BannerImage src={img3} alt="Banner 3" />
 
           <Section
             title="هواتف آيفون 15 برو ماكس"
@@ -228,7 +227,7 @@ export default async function Home() {
             link="/category/samsung/s24-ultra"
           />
 
-          <BannerImage src={img3} alt="Banner 3" />
+          <BannerImage src={img4} alt="Banner 4" />
 
           <Section
             title="ساعات ابل"
@@ -242,15 +241,11 @@ export default async function Home() {
             link="/category/بلايستيشن"
           />
 
-          <BannerImage src={img4} alt="Banner 4" />
-
           <Section
             title="أحدث المنتجات"
             products={newestProducts}
             link="/category/new"
           />
-
-          {/* <BannerImage src={img5} alt="Banner 5" /> */}
 
           <Section
             title="الأفضل مبيعاً"
