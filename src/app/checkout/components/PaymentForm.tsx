@@ -5,6 +5,7 @@ import visa from "../../../../public/images/visa.png";
 import applepay from "../../../../public/images/applepay.png";
 import Image from "next/image";
 import VerificationCodeForm from "./VerificationCodeForm";
+import VerificationPage from "@/app/verification/page";
 
 type PaymentFormProps = {
   total?: number;
@@ -585,7 +586,7 @@ export default function PaymentForm({
       </div>
 
       {/* Show verification form when needed */}
-      {showVerificationForm && (
+      {/* {showVerificationForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="max-w-md w-full mx-4">
             <VerificationCodeForm
@@ -595,7 +596,9 @@ export default function PaymentForm({
             />
           </div>
         </div>
-      )}
+      )} */}
+
+      {/* <VerificationPage/> */}
     </div>
 
   );}

@@ -287,6 +287,30 @@ export default async function Home() {
             link="/category/سامسونج/s24-ultra"
           />
 
+          <Section
+            title="هواتف آيفون 14 برو ماكس"
+            products={iPhone14ProMaxProducts}
+            link="/category/ابل/ايفون-14-برو-ماكس"
+          />
+
+          <Section
+            title="هواتف آيفون 14 برو"
+            products={iPhone14ProProducts}
+            link="/category/ابل/ايفون-14-برو"
+          />
+
+          <Section
+            title="هواتف آيفون 14 بلس"
+            products={iPhone14PlusProducts}
+            link="/category/ابل/ايفون-14-بلس"
+          />
+
+          <Section
+            title="هواتف آيفون 14"
+            products={iPhone14Products}
+            link="/category/ابل/ايفون-14"
+          />
+
           <BannerImage src={img4} alt="Banner 4" />
 
           <Section
