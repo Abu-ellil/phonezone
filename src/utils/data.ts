@@ -121,7 +121,19 @@ export function getProductsBySubcategory(
   );
 }
 
-export function getProductById(id: number): Product | null {
+export function getProductById(id: string | number): Product | null {
   const products = getProducts();
-  return products.find((product) => product.id === id) || null;
+  const product = products.find((product) => {
+    const productId =
+      typeof product.id === "string" ? product.id : product.id.toString();
+    const searchId = typeof id === "string" ? id : id.toString();
+    return productId === searchId;
+  });
+
+  if (!product) {
+    console.warn(`Product with id ${id} not found`);
+    return null;
+  }
+
+  return product;
 }
