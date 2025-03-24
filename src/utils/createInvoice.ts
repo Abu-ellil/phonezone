@@ -214,7 +214,7 @@ function generateInvoiceHtml(data: InvoiceData): string {
         : ""
     }
     ${
-      data.shippingCost ? `<p>تكلفة التوصيل: ${data.shippingCost} ريال</p>` : ""
+      data.shippingCost ? `<p>تكلفة التوصيل: ${data.shippingCost} د.إ</p>` : ""
     }
   </div>
 
@@ -235,9 +235,9 @@ function generateInvoiceHtml(data: InvoiceData): string {
     <tr>
       <td>${index + 1}</td>
       <td>${item.name}</td>
-      <td>${item.price} ريال</td>
+      <td>${item.price} د.إ</td>
       <td>${item.quantity}</td>
-      <td>${parseFloat(item.price) * item.quantity} ريال</td>
+      <td>${parseFloat(item.price) * item.quantity} د.إ</td>
     </tr>
     `
             )
@@ -245,19 +245,19 @@ function generateInvoiceHtml(data: InvoiceData): string {
         : `<tr>
       <td>1</td>
       <td>${data.deviceName || "غير محدد"}</td>
-      <td>${data.devicePrice || "0"} ريال</td>
+      <td>${data.devicePrice || "0"} د.إ</td>
       <td>1</td>
-      <td>${data.devicePrice || "0"} ريال</td>
+      <td>${data.devicePrice || "0"} د.إ</td>
     </tr>`
     }
   </table>
 
   <div class="summary">
     <h2>ملخص الطلب</h2>
-    <p>الإجمالي: ${data.total} ريال</p>
+    <p>الإجمالي: ${data.total} د.إ</p>
     <p>طريقة الدفع: ${getPaymentMethodName(data.paymentMethod || "")}</p>
-    <p>الدفعة المقدمة: ${data.downPayment} ريال</p>
-    <p class="total">المتبقي: ${data.remainingAmount} ريال</p>
+    <p>الدفعة المقدمة: ${data.downPayment} د.إ</p>
+    <p class="total">المتبقي: ${data.remainingAmount} د.إ</p>
   </div>
 
   <h2>جدول الدفعات</h2>
@@ -273,7 +273,7 @@ function generateInvoiceHtml(data: InvoiceData): string {
         ? `
     <tr>
       <td>1</td>
-      <td>${data.downPayment} ريال</td>
+      <td>${data.downPayment} د.إ</td>
       <td>${new Date().toLocaleDateString("ar-SA")}</td>
       <td>تم الدفع</td>
     </tr>
@@ -289,7 +289,7 @@ function generateInvoiceHtml(data: InvoiceData): string {
           ? index + 2
           : index + 1
       }</td>
-      <td>${payment.amount} ريال</td>
+      <td>${payment.amount} د.إ</td>
       <td>${payment.dueDate}</td>
       <td>${
         (data.paymentMethod === "credit_card" ||

@@ -231,9 +231,9 @@ function generateContractHtml(data: ContractData): string {
 
   <div class="contract-section">
     <p>أقر و أعترف و أنا في حالتى الشرعية بأنني في ذمتي للمؤسسة المدعوة / فون زون مبلغ و قدره</p>
-    <p class="amount">${data.total} ريال فقط</p>
+    <p class="amount">${data.total} د.إ فقط</p>
     <p>و ذلك قيمة عن ما تبقى من جهاز / ${deviceDetails}</p>
-    <p>قيمة الدفعة الشهرية : ${monthlyPayment} ريال فقط لمدة ${numberOfMonths} أشهر اعتباراً من تاريخ ${
+    <p>قيمة الدفعة الشهرية : ${monthlyPayment} د.إ فقط لمدة ${numberOfMonths} أشهر اعتباراً من تاريخ ${
     data.startDate || formattedStartDate
   } و حتى ${data.endDate || formattedEndDate}</p>
   </div>
