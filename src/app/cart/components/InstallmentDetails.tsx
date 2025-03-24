@@ -21,21 +21,34 @@ export default function InstallmentDetails({
 }: InstallmentDetailsProps) {
   const calculateInstallmentDates = () => {
     const today = new Date();
-    const installmentDates = Array.from({ length: installmentMonths }, (_, i) => {
-      const date = new Date(today);
-      date.setMonth(today.getMonth() + i + 1);
-      return date.toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' });
-    });
+    const installmentDates = Array.from(
+      { length: installmentMonths },
+      (_, i) => {
+        const date = new Date(today);
+        date.setMonth(today.getMonth() + i + 1);
+        return {
+          date: date.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          }),
+          amount: monthlyInstallment, // Include the amount
+        };
+      }
+    );
+    console.log("Installment Details:", installmentDates); // Log the installment details
+    localStorage.setItem("payments", JSON.stringify(installmentDates)); // Save to localStorage
     return installmentDates;
   };
 
   const saveInstallmentSchedule = () => {
-    const installmentSchedule = calculateInstallmentDates().map((date, index) => ({
-      month: index + 1,
-      date,
-      amount: monthlyInstallment,
-    }));
-    localStorage.setItem("installmentSchedule", JSON.stringify(installmentSchedule));
+    const installmentSchedule = calculateInstallmentDates().map(
+      (date, index) => ({
+        month: index + 1,
+        date,
+        amount: monthlyInstallment,
+      })
+    );
   };
 
   const handleMonthChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -84,19 +97,20 @@ export default function InstallmentDetails({
           </span>
           <span className="font-bold">الدفعة الأولى</span>
         </div>
-        {Array.from({ length: installmentMonths }, (_, i) => i + 1).map(
-          (month) => (
-            <div
-              key={month}
-              className="flex justify-between items-center p-2 bg-white rounded"
-            >
+        {calculateInstallmentDates().map((entry, index) => (
+          <div
+            key={index + 1}
+            className="flex justify-between items-center p-2 bg-white rounded"
+          >
+            <div>
               <span className="text-primary font-medium">
-                {monthlyInstallment} د.إ
+                {entry.amount} د.إ
               </span>
-              <span>الشهر {month}</span>
+              <div className="text-sm text-gray-500">{entry.date}</div>
             </div>
-          )
-        )}
+            <span>الشهر {index + 1}</span>
+          </div>
+        ))}
       </div>
       <div className="mt-3 pt-3 border-t border-gray-200 flex justify-between items-center">
         <span className="font-bold text-primary">
