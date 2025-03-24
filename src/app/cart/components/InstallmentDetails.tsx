@@ -19,6 +19,31 @@ export default function InstallmentDetails({
   monthlyInstallment,
   remainingAmount,
 }: InstallmentDetailsProps) {
+  const calculateInstallmentDates = () => {
+    const today = new Date();
+    const installmentDates = Array.from({ length: installmentMonths }, (_, i) => {
+      const date = new Date(today);
+      date.setMonth(today.getMonth() + i + 1);
+      return date.toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' });
+    });
+    return installmentDates;
+  };
+
+  const saveInstallmentSchedule = () => {
+    const installmentSchedule = calculateInstallmentDates().map((date, index) => ({
+      month: index + 1,
+      date,
+      amount: monthlyInstallment,
+    }));
+    localStorage.setItem("installmentSchedule", JSON.stringify(installmentSchedule));
+  };
+
+  const handleMonthChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const months = parseInt(e.target.value);
+    setInstallmentMonths(months);
+    saveInstallmentSchedule(); // Automatically save the schedule
+  };
+
   return (
     <div className="mt-3 p-4 border rounded-md bg-gray-50">
       <div className="space-y-4">
@@ -28,7 +53,7 @@ export default function InstallmentDetails({
           </label>
           <select
             className="w-full p-2 border rounded-md text-right"
-            onChange={(e) => setInstallmentMonths(parseInt(e.target.value))}
+            onChange={handleMonthChange}
             value={installmentMonths}
           >
             {Array.from({ length: 24 }, (_, i) => i + 1).map((month) => (
@@ -47,10 +72,8 @@ export default function InstallmentDetails({
             الدفعة الأولى (د.إ)
           </label>
           <div className="w-full p-2 border rounded-md text-right font-bold text-primary">
-
-          1000 د.إ
+            {downPayment.toFixed(2)} د.إ
           </div>
-          
         </div>
       </div>
       <h4 className="font-medium mb-3 text-right mt-4">جدول الأقساط الشهرية</h4>
