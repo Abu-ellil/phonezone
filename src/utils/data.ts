@@ -9,7 +9,7 @@ interface Variant {
 
 interface Product {
   url: string;
-  id: string | number;
+  id: number;
   name: string;
   warranty: string;
   stock_status: string;
@@ -121,9 +121,7 @@ export function getProductsBySubcategory(
   );
 }
 
-export function getProductById(id: string | number): Product | null {
+export function getProductById(id: number): Product | null {
   const products = getProducts();
-  return (
-    products.find((product) => product.id.toString() === id.toString()) || null
-  );
+  return products.find((product) => product.id === id) || null;
 }
