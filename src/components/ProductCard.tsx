@@ -22,7 +22,7 @@ export default function ProductCard({
   subcategory,
 }: ProductCardProps) {
   return (
-    <Link href={`/product/${id}`} className="group bg-white h-56">
+    <Link href={`/product/${id.toString()}`} className="group bg-white h-56">
       <div className="bg-gray-50 h-80  overflow-hidden transition-transform duration-300 hover:shadow-md hover:-translate-y-1 border border-gray-100 radius-md ">
         <div className="relative h-48 w-full ">
           <Image

@@ -23,7 +23,7 @@ export default function ProductPage({ params }) {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const productData = await getProductById(parseInt(id));
+        const productData = await getProductById(id);
         setProduct(productData);
         if (productData?.variants?.length > 0) {
           setSelectedVariant(productData.variants[0]);
