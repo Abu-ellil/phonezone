@@ -39,11 +39,23 @@ export default async function Home() {
   const filterProductsByCategory = (
     products,
     category,
+    name,
     subcategory = null,
     limit = 8
   ) => {
     return products
       .filter((p) => {
+        // Ensure category exists and convert to string if it's an array
+        const productCategory = Array.isArray(p.category)
+          ? p.category[0]
+          : p.category;
+        const productCategoryLower =
+          typeof productCategory === "string"
+            ? productCategory.toLowerCase()
+            : "";
+        const productNameLower =
+          typeof p.name === "string" ? p.name.toLowerCase() : "";
+
         if (category === "سامسونج") {
           const searchTerms =
             subcategory === "S25 Ultra"
@@ -66,20 +78,38 @@ export default async function Home() {
                 ]
               : [subcategory];
           return (
-            (p.category === "سامسونج" ||
-              p.name.toLowerCase().includes("سامسونج") ||
-              p.name.toLowerCase().includes("samsung")) &&
+            (productCategory === "سامسونج" ||
+              productNameLower.includes("سامسونج") ||
+              productNameLower.includes("samsung")) &&
             (subcategory
               ? searchTerms.some((term) =>
-                  p.name.toLowerCase().includes(term.toLowerCase())
+                  productNameLower.includes(term.toLowerCase())
                 )
               : true)
           );
         }
-        if (subcategory) {
-          return p.category.includes(category) && p.name.includes(subcategory);
+        if (category === "ساعات ابل") {
+          const watchTerms = [
+            "ساعات ابل",
+            "ساعة ابل",
+            "apple watch",
+            "ساعة آبل",
+            "ساعات آبل",
+            "ابل ووتش",
+            "watch",
+          ];
+          return watchTerms.some(
+            (term) =>
+              productNameLower.includes(term.toLowerCase()) ||
+              productCategoryLower.includes(term.toLowerCase())
+          );
         }
-        return p.category.includes(category);
+        if (subcategory) {
+          return (
+            productCategory?.includes(category) && p.name?.includes(subcategory)
+          );
+        }
+        return productCategory?.includes(category);
       })
       .slice(0, limit);
   };
@@ -163,12 +193,12 @@ export default async function Home() {
   // Filter Apple Watch products under Watches category
   const appleWatchProducts = filterProductsByCategory(
     allProducts,
-    "الساعات",
-    "ساعات ابل"
+    "ساعات ابل",
+    null
   );
   const playstationProducts = filterProductsByCategory(
     allProducts,
-    "بلايستيشن"
+    "بلاي ستيشن "
   );
 
   // Filter best selling products with random selection

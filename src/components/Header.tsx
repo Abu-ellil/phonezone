@@ -96,10 +96,9 @@ export default function Header() {
                       </div>
                       {isDropdownOpen === category.name && (
                         <div
-                          className="absolute right-0 z-10 w-48 py-2 bg-white rounded-lg shadow-xl border border-gray-200 
-               max-h-60 overflow-y-auto"
+                          className=""
                           style={{ touchAction: "none" }}
-                          onClick={(e) => e.stopPropagation()}
+                          
                         >
                           {category.subcategories.map((subcategory) => (
                             <Link

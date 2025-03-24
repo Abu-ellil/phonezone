@@ -18,7 +18,7 @@ export default function CartPage() {
   const [paymentMethod, setPaymentMethod] = useState<string>("credit_card");
   const [currentStep, setCurrentStep] = useState(1);
   const [installmentMonths, setInstallmentMonths] = useState(3);
-  const [downPayment, setDownPayment] = useState(1000);
+  const [downPayment, setDownPayment] = useState(420);
   const [monthlyInstallment, setMonthlyInstallment] = useState("0.00");
 
   useEffect(() => {

@@ -49,48 +49,18 @@ function CheckoutContent() {
           monthlyInstallment: monthlyInstallment,
         });
       } else {
-        // Fetch default values from Firebase if URL parameters are missing
-        const fetchSettings = async () => {
-          try {
-            const settings = await getAppSettings();
-            const {
-              installmentDefaults: { months, downPayment },
-            } = settings as {
-              installmentDefaults: { months: number; downPayment: number };
-            };
+        // Use hardcoded default values
+        const totalValue = parseFloat(searchParams?.get("total") || "0");
+        const defaultDownPayment = Math.min(420, totalValue * 0.2);
+        const remainingAmount = totalValue - defaultDownPayment;
+        const defaultMonthlyInstallment =
+          remainingAmount > 0 ? (remainingAmount / 3).toFixed(2) : "0.00";
 
-            // Calculate monthly installment based on Firebase defaults
-            const totalValue = parseFloat(searchParams?.get("total") || "0");
-            const defaultDownPayment = Math.min(downPayment, totalValue * 0.2); // Use Firebase value or 20% of total, whichever is less
-            const remainingAmount = totalValue - defaultDownPayment;
-            const defaultMonthlyInstallment =
-              remainingAmount > 0
-                ? (remainingAmount / months).toFixed(2)
-                : "0.00";
-
-            setInstallmentInfo({
-              months,
-              downPayment: defaultDownPayment,
-              monthlyInstallment: defaultMonthlyInstallment,
-            });
-          } catch (error) {
-            console.error("Error fetching installment defaults:", error);
-            // Fallback to hardcoded defaults if Firebase fetch fails
-            const totalValue = parseFloat(searchParams?.get("total") || "0");
-            const defaultDownPayment = Math.min(1000, totalValue * 0.2);
-            const remainingAmount = totalValue - defaultDownPayment;
-            const defaultMonthlyInstallment =
-              remainingAmount > 0 ? (remainingAmount / 3).toFixed(2) : "0.00";
-
-            setInstallmentInfo({
-              months: 3,
-              downPayment: defaultDownPayment,
-              monthlyInstallment: defaultMonthlyInstallment,
-            });
-          }
-        };
-
-        fetchSettings();
+        setInstallmentInfo({
+          months: 3,
+          downPayment: defaultDownPayment,
+          monthlyInstallment: defaultMonthlyInstallment,
+        });
       }
     }
   }, [searchParams]);
