@@ -7,6 +7,8 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import Image from "next/image";
+import trda from "../../public/images/TDRALogo.webp";
+import government from "../../public/images/government-ae-logo-arabic2.webp";
 
 export default function Footer() {
   return (
@@ -120,13 +122,13 @@ export default function Footer() {
           </div>
           <div className="text-center flex flex-wrap justify-center items-center gap-6 mb-4">
             <Image
-              src="/images/government-ae-logo-arabic2.webp" // Ensure this path is correct
+              src={government} // Ensure this path is correct
               alt="UAE Government"
               width={120}
               height={60}
             />
             <Image
-              src="/images/TDRALogo.webp" // Ensure this path is correct
+              src={trda} // Ensure this path is correct
               alt="TDRA"
               width={120}
               height={60}
