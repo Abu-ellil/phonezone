@@ -131,7 +131,7 @@ function CheckoutContent() {
       .reduce((total, item) => {
         const price =
           typeof item.price === "string"
-            ? parseFloat(item.price.replace(" ر.س", "").replace(",", ""))
+            ? parseFloat(item.price.replace(" د.إ", "").replace(",", ""))
             : parseFloat(item.price);
         return total + price * item.quantity;
       }, 0)

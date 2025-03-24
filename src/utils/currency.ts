@@ -5,7 +5,7 @@ const SAR_TO_AED_RATE = 0.98;
 
 /**
  * Extracts the numeric value from a price string or number
- * @param price Price value (can be string like "2788.00 ر.س" or number)
+ * @param price Price value (can be string like "2788.00 د.إ" or number)
  * @returns The numeric value
  */
 export function extractNumericValue(
@@ -24,7 +24,7 @@ export function extractNumericValue(
 
 /**
  * Converts a price from SAR to AED
- * @param sarPrice Price in SAR (can be a string like "2788.00 ر.س" or a number)
+ * @param sarPrice Price in SAR (can be a string like "2788.00 د.إ" or a number)
  * @returns The price in AED
  */
 export function convertSARtoAED(sarPrice: string | number): number {
@@ -49,12 +49,12 @@ export function formatAEDPrice(price: number): string {
  * @returns Formatted price string
  */
 export function formatSARPrice(price: number): string {
-  return `${price.toFixed(2)} ر.س`;
+  return `${price.toFixed(2)} د.إ`;
 }
 
 /**
  * Gets AED formatted price from a SAR price string or number
- * @param sarPrice Original SAR price (can be string like "2788.00 ر.س" or number)
+ * @param sarPrice Original SAR price (can be string like "2788.00 د.إ" or number)
  * @returns Object with formatted AED price
  */
 export function getDualCurrencyPrice(sarPrice: string | number | undefined): {

@@ -112,7 +112,7 @@ export default function CartPage() {
       .reduce((total, item) => {
         let price =
           typeof item.price === "string"
-            ? parseFloat(item.price.replace(" ر.س", "").replace(",", ""))
+            ? parseFloat(item.price.replace(" د.إ", "").replace(",", ""))
             : parseFloat(item.price);
         return total + price * item.quantity;
       }, 0)
@@ -188,7 +188,7 @@ export default function CartPage() {
                 <div className="p-4">
                   <div className="flex justify-between items-center mb-4">
                     <span className="text-gray-900 font-medium">
-                      {getDualCurrencyPrice(calculateTotal() + " ر.س").aed}
+                      {getDualCurrencyPrice(calculateTotal() + " د.إ").aed}
                     </span>
                     <span className="text-gray-700">مجموع المنتجات</span>
                   </div>

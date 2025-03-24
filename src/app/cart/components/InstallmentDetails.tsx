@@ -46,15 +46,11 @@ export default function InstallmentDetails({
           <label className="block text-right mb-2 font-medium">
             الدفعة الأولى (د.إ)
           </label>
-          <input
-            type="number"
-            className="w-full p-2 border rounded-md text-right"
-            value={downPayment}
-            onChange={handleDownPaymentChange}
-            min="0"
-            max={totalAmount}
-            step="100"
-          />
+          <div className="w-full p-2 border rounded-md text-right font-bold text-primary">
+
+          1000 د.إ
+          </div>
+          
         </div>
       </div>
       <h4 className="font-medium mb-3 text-right mt-4">جدول الأقساط الشهرية</h4>

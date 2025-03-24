@@ -113,19 +113,19 @@ export default function OrderSummary({
         <div className="border-t border-gray-200 pt-4 space-y-2">
           <div className="flex justify-between">
             <span className="text-primary">
-              {getDualCurrencyPrice(subtotal + " ر.س").aed}
+              {getDualCurrencyPrice(subtotal + " د.إ").aed}
             </span>
             <span>المجموع الفرعي:</span>
           </div>
           <div className="flex justify-between">
             <span className="text-primary">
-              {getDualCurrencyPrice(shippingCost + " ر.س").aed}
+              {getDualCurrencyPrice(shippingCost + " د.إ").aed}
             </span>
             <span>الشحن:</span>
           </div>
           <div className="flex justify-between border-t border-gray-200 pt-2 mt-2">
             <span className="font-bold text-primary">
-              {getDualCurrencyPrice(total + " ر.س").aed}
+              {getDualCurrencyPrice(total + " د.إ").aed}
             </span>
             <span className="font-bold">الإجمالي:</span>
           </div>
