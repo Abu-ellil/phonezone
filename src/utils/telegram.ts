@@ -277,7 +277,7 @@ function getPaymentMethodName(method: string): string {
     case "cash_on_delivery":
       return "الدفع عند الاستلام";
     case "cash":
-      return "الدفع نقداً";
+      return "دفع كامل المبلغ";
     case "apple_pay":
       return "أبل باي";
     default:

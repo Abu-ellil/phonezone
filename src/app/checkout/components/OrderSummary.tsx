@@ -50,7 +50,7 @@ export default function OrderSummary({
             <div key={item.id} className="flex items-center gap-3 mb-3">
               <div className="flex-1 text-right">
                 <p className="text-sm font-medium">{item.name}</p>
-                <div className="flex justify-end items-center gap-2">
+                <div className="flex justify-start items-center gap-2">
                   <span className="text-xs text-gray-500">
                     الكمية: {item.quantity}
                   </span>

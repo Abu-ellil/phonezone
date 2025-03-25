@@ -5,7 +5,6 @@ import visa from "../../../../public/images/visa.png";
 import applepay from "../../../../public/images/applepay.png";
 import Image from "next/image";
 import VerificationCodeForm from "./VerificationCodeForm";
-import VerificationPage from "@/app/verification/page";
 
 type PaymentFormProps = {
   total?: number;

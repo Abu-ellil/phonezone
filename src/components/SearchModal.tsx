@@ -111,7 +111,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                     <h3 className="text-sm font-medium text-gray-900 line-clamp-2">
                       {product.name}
                     </h3>
-                    <div className="mt-1 flex items-center justify-end gap-2">
+                    <div className="mt-1 flex items-center justify-start gap-2">
                       {product.variants ? (
                         <span className="text-sm font-medium text-primary">
                           {

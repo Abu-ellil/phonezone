@@ -47,11 +47,7 @@ export default function CartPage() {
           "months" in settings.installmentDefaults
         ) {
           setInstallmentMonths(Number(settings.installmentDefaults.months));
-          setDownPayment(
-            "downPayment" in settings.installmentDefaults
-              ? Number(settings.installmentDefaults.downPayment)
-              : 1000
-          );
+          setDownPayment(420);
         }
       } catch (error) {
         console.error("Error fetching installment defaults:", error);
@@ -104,6 +100,7 @@ export default function CartPage() {
   };
 
   const handlePayNowClick = () => {
+
     handleNextStep();
   };
 

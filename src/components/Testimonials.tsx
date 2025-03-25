@@ -25,14 +25,16 @@ const testimonials: Testimonial[] = [
     id: 2,
     name: "علي العربي",
     rating: 5,
-    comment: "افضل متجر تعاملت معه والله افخم متجر و ما قد معي ثلث ايام الا و المنتج واصلني و جوده جدا جيده والسعر رخيص انصح بالتعامل معه",
+    comment:
+      "افضل متجر تعاملت معه والله افخم متجر و ما قد معي ثلث ايام الا و المنتج واصلني و جوده جدا جيده والسعر رخيص انصح بالتعامل معه",
   },
   {
     id: 3,
     name: "عمر عيسوي",
     location: " ",
     rating: 5,
-    comment: "توصيل سريع وخدمة ممتازة وسعر منافس بإختصار من افضل المتاجر الي تعاملت معهم",
+    comment:
+      "توصيل سريع وخدمة ممتازة وسعر منافس بإختصار من افضل المتاجر الي تعاملت معهم",
   },
   {
     id: 4,
@@ -44,7 +46,8 @@ const testimonials: Testimonial[] = [
     id: 5,
     name: "عبدالرحمن الرشود",
     rating: 5,
-    comment: "للامانه موقع جميل ما توقعت اني يطلب منكم بدل زيرو و ما تحدث ما كملت 24 ساعه الا والطلبيه وطلبتي للامانه توصيل سريع و حاله ممتازه ما شكرا لكم",
+    comment:
+      "للامانه موقع جميل ما توقعت اني يطلب منكم بدل زيرو و ما تحدث ما كملت 24 ساعه الا والطلبيه وطلبتي للامانه توصيل سريع و حاله ممتازه ما شكرا لكم",
   },
   {
     id: 6,
@@ -166,59 +169,63 @@ export default function Testimonials() {
           </button>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {getCurrentSlideTestimonials().map((testimonial) => (
-            <div
-              key={testimonial.id}
-              className="bg-white rounded-lg shadow-lg p-6 text-right transition-all duration-300 transform hover:scale-105"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center">
-                  {testimonial.image ? (
-                    <div className="relative h-12 w-12 rounded-full overflow-hidden">
-                      <Image
-                        src={testimonial.image}
-                        alt={testimonial.name}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  ) : (
-                    <div className="h-12 w-12 rounded-full bg-gray-200 flex items-center justify-center">
-                      <span className="text-gray-500 text-xl">
-                        {testimonial.name.charAt(0)}
-                      </span>
-                    </div>
-                  )}
+              <div
+                key={testimonial.id}
+                className="bg-white rounded-lg shadow-lg p-6 text-right transition-all duration-300 transform hover:scale-105"
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center">
+                    {testimonial.image ? (
+                      <div className="relative h-12 w-12 rounded-full overflow-hidden">
+                        <Image
+                          src={testimonial.image}
+                          alt={testimonial.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    ) : (
+                      <div className="h-12 w-12 rounded-full bg-gray-200 flex items-center justify-center">
+                        <span className="text-gray-500 text-xl">
+                          {testimonial.name.charAt(0)}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                  <div className="text-right">
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      {testimonial.name}
+                    </h3>
+                    {testimonial.location && (
+                      <p className="text-sm text-gray-500">
+                        {testimonial.location}
+                      </p>
+                    )}
+                  </div>
                 </div>
-                <div className="text-right">
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    {testimonial.name}
-                  </h3>
-                  {testimonial.location && (
-                    <p className="text-sm text-gray-500">
-                      {testimonial.location}
-                    </p>
-                  )}
+                <div className="flex justify-start mb-4">
+                  <div className="flex">{renderStars(testimonial.rating)}</div>
                 </div>
+                <p className="text-gray-600 text-right">
+                  {testimonial.comment}
+                </p>
               </div>
-              <div className="flex justify-end mb-4">
-                <div className="flex">{renderStars(testimonial.rating)}</div>
-              </div>
-              <p className="text-gray-600 text-right">{testimonial.comment}</p>
-            </div>
-          ))}
-        </div>
-          </div>
-          <div className="flex justify-center mt-8 gap-2">
-            {Array.from({ length: totalSlides }, (_, index) => (
-              <button
-                key={index}
-                onClick={() => goToTestimonial(index)}
-                className={`h-2 w-2 rounded-full transition-colors duration-300 ${index === currentIndex ? 'bg-blue-600' : 'bg-gray-300'}`}
-                aria-label={`Go to testimonial ${index + 1}`}
-              />
             ))}
           </div>
         </div>
+        <div className="flex justify-center mt-8 gap-2">
+          {Array.from({ length: totalSlides }, (_, index) => (
+            <button
+              key={index}
+              onClick={() => goToTestimonial(index)}
+              className={`h-2 w-2 rounded-full transition-colors duration-300 ${
+                index === currentIndex ? "bg-blue-600" : "bg-gray-300"
+              }`}
+              aria-label={`Go to testimonial ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
+    </div>
   );
 }

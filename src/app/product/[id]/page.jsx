@@ -124,7 +124,7 @@ export default function ProductPage({ params }) {
                         <label className="block text-gray-700 text-right mb-2">
                           اختر مساحة التخزين:
                         </label>
-                        <div className="flex gap-3 justify-end">
+                        <div className="flex gap-3 justify-start">
                           {product.variants.map((variant) => (
                             <button
                               key={variant.size}
@@ -146,7 +146,7 @@ export default function ProductPage({ params }) {
                         <label className="block text-gray-700 text-right mb-2">
                           اختر النسخة:
                         </label>
-                        <div className="flex gap-3 justify-end">
+                        <div className="flex gap-3 justify-start">
                           <button
                             onClick={() => setSelectedVersion("me")}
                             className={`px-3 py-1.5 rounded-lg text-xs ${
@@ -170,7 +170,7 @@ export default function ProductPage({ params }) {
                         </div>
                       </div>
                     )}
-                    <div className="flex justify-end items-center gap-3 mb-2">
+                    <div className="flex justify-start items-center gap-3 mb-2">
                       {product.original_price &&
                         (product.price || selectedVariant?.price) !==
                           product.original_price && (
@@ -189,7 +189,7 @@ export default function ProductPage({ params }) {
                     {product.original_price &&
                       (selectedVariant?.price || product.price) !==
                         product.original_price && (
-                        <div className="flex justify-end">
+                        <div className="flex justify-start">
                           <span className="component-base text-green-800 text-xs font-medium px-2.5 py-0.5">
                             خصم
                           </span>
@@ -198,12 +198,12 @@ export default function ProductPage({ params }) {
                   </div>
 
                   <div className="space-y-4">
-                    <div className="flex justify-end items-center gap-2">
+                    <div className="flex justify-start items-center gap-2">
                       <span className="text-gray-700">متوفر</span>
                       <span className="w-3 h-3 bg-green-500 rounded-full"></span>
                     </div>
 
-                    <div className="flex justify-end items-center gap-2">
+                    <div className="flex justify-start items-center gap-2">
                       <span className="text-gray-700">شحن سريع</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

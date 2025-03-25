@@ -13,7 +13,6 @@ import government from "../../public/images/government-ae-logo-arabic2.webp";
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-b from-blue-800 via-blue-500 to-blue-900 text-gray-300 py-12">
-
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 text-right">
           <div>
@@ -64,7 +63,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">تواصل معنا</h3>
             <ul className="space-y-3">
-              <li className="flex items-center justify-end">
+              <li className="flex items-center justify-start">
                 <a
                   href="http://wa.me//971547675648"
                   className="hover:text-white transition-colors duration-200 flex items-center"
@@ -73,10 +72,10 @@ export default function Footer() {
                   <span>WhatsApp</span>
                 </a>
               </li>
-              <li className="flex items-center justify-end">
+              <li className="flex items-center justify-start">
                 <span>+971 54 767 5648</span>
               </li>
-              <li className="flex items-center justify-end">
+              <li className="flex items-center justify-start">
                 <span>Phonezonemobile3@gmail.com</span>
               </li>
             </ul>
