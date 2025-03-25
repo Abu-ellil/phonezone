@@ -209,14 +209,15 @@ export default function Header() {
                     </Link>
                   </button>
                   {isDropdownOpen === category.name && (
-                    <div className="mt-2 space-y-2 pr-4">
+                    <div className="mt-2 space-y-2 pr-4 bg-gray-50 rounded-md">
                       {category.subcategories.map((subcategory) => (
                         <Link
                           key={subcategory.name}
                           href={`/category/${encodeURIComponent(
                             category.name
                           )}/${encodeURIComponent(subcategory.name)}`}
-                          className="block py-1 text-gray-600 hover:text-[#3498db]"
+                          className="block py-2 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-100 rounded-md transition-colors"
+                          onClick={() => setIsMenuOpen(false)}
                         >
                           {subcategory.name}
                         </Link>
