@@ -47,7 +47,12 @@ export default function NotFound() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {randomProducts.map((product) => (
-              <ProductCard key={product.id.toString()} {...product} />
+              <ProductCard
+                key={product.id.toString()}
+                {...product}
+                id={product.id.toString()}
+                price={product.price?.toString()}
+              />
             ))}
           </div>
         </div>
