@@ -264,7 +264,6 @@ function CheckoutContent() {
             invoiceUrl,
             contractUrl,
           });
-          toast.success("تم إنشاء مستندات الطلب بنجاح");
         } else {
           console.warn(
             "PDF uploads failed, continuing without PDF attachments"
