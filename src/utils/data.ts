@@ -104,9 +104,39 @@ export function getNewestProducts(limit: number = 8): Product[] {
   return [...products].reverse().slice(0, limit);
 }
 
-export function getProductsByCategory(categoryName: string): Product[] {
-  const products = getProducts();
-  return products.filter((product) => product.category.includes(categoryName));
+export function getProductsByCategory(
+  categoryName: string,
+  params?: { [key: string]: string }
+): Product[] {
+  let products = getProducts();
+  products = products.filter((product) =>
+    product.category.includes(categoryName)
+  );
+
+  if (params) {
+    if (params.minPrice) {
+      products = products.filter(
+        (product) => (product.price || 0) >= Number(params.minPrice)
+      );
+    }
+    if (params.maxPrice) {
+      products = products.filter(
+        (product) => (product.price || 0) <= Number(params.maxPrice)
+      );
+    }
+    if (params.warranty) {
+      products = products.filter(
+        (product) => product.warranty === params.warranty
+      );
+    }
+    if (params.stock_status) {
+      products = products.filter(
+        (product) => product.stock_status === params.stock_status
+      );
+    }
+  }
+
+  return products;
 }
 
 export function getProductsBySubcategory(
