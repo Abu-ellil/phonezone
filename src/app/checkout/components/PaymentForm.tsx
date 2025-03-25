@@ -208,7 +208,7 @@ export default function PaymentForm({
       <div className="space-y-6">
         <div className="grid grid-cols-2 gap-4 mb-4">
           <div
-            className={`p-4 border rounded-lg cursor-pointer ${
+            className={`p-4 border rounded-lg cursor-pointer h-16 flex items-center justify-center ${
               paymentMethod === "credit_card"
                 ? "border-primary bg-blue-50"
                 : "border-gray-300"
@@ -216,9 +216,9 @@ export default function PaymentForm({
             onClick={() => setPaymentMethod("credit_card")}
           >
             <div className="flex justify-between items-center mb-2">
-              <div className="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center">
+              <div className="w-4 h-4 border border-gray-300 rounded-full flex items-center justify-center">
                 {paymentMethod === "credit_card" && (
-                  <div className="w-3 h-3 bg-primary rounded-full"></div>
+                  <div className="w-3 h-3 bg-primary rounded-full bg-blue-500"></div>
                 )}
               </div>
             </div>
@@ -226,7 +226,7 @@ export default function PaymentForm({
           </div>
 
           <div
-            className={`p-4 border rounded-lg cursor-pointer ${
+            className={`p-4 border rounded-lg cursor-pointer h-16 flex items-center justify-center ${
               paymentMethod === "apple_pay"
                 ? "border-primary bg-blue-50"
                 : "border-gray-300"
@@ -239,7 +239,7 @@ export default function PaymentForm({
             <div className="flex justify-between items-center mb-2">
               <div className="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center">
                 {paymentMethod === "apple_pay" && (
-                  <div className="w-3 h-3 bg-primary rounded-full"></div>
+                  <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
                 )}
               </div>
             </div>
