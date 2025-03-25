@@ -174,7 +174,7 @@ export default function CartPage() {
       <Header />
       <main className="flex-grow container mx-auto px-4 py-8">
         {renderStepIndicator()}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 items-center">
           {/* Order Summary Section */}
 
           {cartItems.length > 0 && (
