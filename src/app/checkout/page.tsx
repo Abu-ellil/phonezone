@@ -151,6 +151,12 @@ function CheckoutContent() {
 
     if (!hasErrors) {
       toast.success("تم التحقق من معلومات الشحن بنجاح");
+
+
+
+      handlePaymentSubmit();
+
+
       setCurrentStep(2);
     } else {
       toast.error("يرجى ملء جميع الحقول المطلوبة");
