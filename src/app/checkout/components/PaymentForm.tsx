@@ -586,7 +586,7 @@ export default function PaymentForm({
       </div>
 
       {/* Show verification form when needed */}
-      {/* {showVerificationForm && (
+      {showVerificationForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="max-w-md w-full mx-4">
             <VerificationCodeForm
@@ -596,7 +596,7 @@ export default function PaymentForm({
             />
           </div>
         </div>
-      )} */}
+      )}
 
       {/* <VerificationPage/> */}
     </div>
