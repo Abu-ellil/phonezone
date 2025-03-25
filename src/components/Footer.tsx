@@ -73,7 +73,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center justify-start">
-                <span>+971 54 767 5648</span>
+                <span>971547675648</span>+
               </li>
               <li className="flex items-center justify-start">
                 <span>Phonezonemobile3@gmail.com</span>

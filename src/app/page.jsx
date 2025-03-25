@@ -35,17 +35,10 @@ export default async function Home() {
     console.error("Error loading products:", error);
   }
 
-  // Helper function to filter products by category and subcategory
-  const filterProductsByCategory = (
-    products,
-    category,
-    name,
-    subcategory = null,
-    limit = 8
-  ) => {
+  // Helper function to filter products by category and name
+  const filterProductsByCategory = (products, category, name, limit = 8) => {
     return products
       .filter((p) => {
-        // Ensure category exists and convert to string if it's an array
         const productCategory = Array.isArray(p.category)
           ? p.category[0]
           : p.category;
@@ -55,11 +48,43 @@ export default async function Home() {
             : "";
         const productNameLower =
           typeof p.name === "string" ? p.name.toLowerCase() : "";
-        const productSubcategory = p.subcategory;
+
+        if (category === "ابل" || category === "آبل") {
+          const iPhoneTerms = [
+            "ايفون",
+            "آيفون",
+            "iphone",
+            "أيفون",
+            "ايفون",
+            "آيفون",
+            "iphone",
+          ];
+          const modelTerms = name
+            ? name
+                .toLowerCase()
+                .replace("برو", "pro")
+                .replace("ماكس", "max")
+                .replace("بلس", "plus")
+                .split(" ")
+            : [];
+
+          return (
+            (productCategory === "ابل" ||
+              productCategory === "الهواتف الذكية" ||
+              iPhoneTerms.some((term) =>
+                productNameLower.includes(term.toLowerCase())
+              )) &&
+            (name
+              ? modelTerms.every((term) =>
+                  productNameLower.includes(term.toLowerCase())
+                )
+              : true)
+          );
+        }
 
         if (category === "سامسونج") {
           const searchTerms =
-            subcategory === "S25 Ultra"
+            name === "S25 Ultra"
               ? [
                   "s25 الترا",
                   "s25 ultra",
@@ -68,21 +93,27 @@ export default async function Home() {
                   "اس 25 الترا",
                   "S25الترا",
                   "s25 الترا",
+                  "اس25 الترا",
+                  "s25ultra",
+                  "s25 ultra",
                 ]
-              : subcategory === "S24 Ultra"
+              : name === "S24 Ultra"
               ? [
                   "s24 الترا",
                   "s24 ultra",
                   "S24 Ultra",
                   "S24 الترا",
                   "اس 24 الترا",
+                  "اس24 الترا",
+                  "s24ultra",
+                  "s24 ultra",
                 ]
-              : [subcategory];
+              : [name];
           return (
             (productCategory === "سامسونج" ||
               productNameLower.includes("سامسونج") ||
               productNameLower.includes("samsung")) &&
-            (subcategory
+            (name
               ? searchTerms.some((term) =>
                   productNameLower.includes(term.toLowerCase())
                 )
@@ -98,40 +129,17 @@ export default async function Home() {
             "ساعات آبل",
             "ابل ووتش",
             "watch",
+            "applewatch",
+            "ساعه ابل",
+            "ساعه آبل",
           ];
           return (
             productCategory === "ساعات ابل" ||
-            productSubcategory === "ساعات ابل" ||
             watchTerms.some(
               (term) =>
                 productNameLower.includes(term.toLowerCase()) ||
                 productCategoryLower.includes(term.toLowerCase())
             )
-          );
-          return watchTerms.some(
-            (term) =>
-              productNameLower.includes(term.toLowerCase()) ||
-              productCategoryLower.includes(term.toLowerCase())
-          );
-        }
-        if (category === "ابل") {
-          const iPhoneTerms = ["ايفون", "آيفون", "iphone", "أيفون"];
-          return (
-            (productCategory === "ابل" ||
-              productCategory === "الهواتف الذكية" ||
-              iPhoneTerms.some((term) =>
-                productNameLower.includes(term.toLowerCase())
-              )) &&
-            (subcategory
-              ? productNameLower.includes(subcategory.toLowerCase())
-              : true)
-          );
-        }
-        if (subcategory) {
-          return (
-            productCategory?.includes(category) &&
-            (p.name?.toLowerCase().includes(subcategory.toLowerCase()) ||
-              p.subcategory?.toLowerCase().includes(subcategory.toLowerCase()))
           );
         }
         return productCategory?.includes(category);
@@ -143,7 +151,7 @@ export default async function Home() {
   const iPhone16ProMaxProducts = filterProductsByCategory(
     allProducts,
     "ابل",
-    "ايفون 16 بروماكس"
+    "ايفون 16 برو ماكس"
   );
   const iPhone16ProProducts = filterProductsByCategory(
     allProducts,
@@ -223,7 +231,7 @@ export default async function Home() {
   );
   const playstationProducts = filterProductsByCategory(
     allProducts,
-    "بلاي ستيشن "
+    "بلاي ستيشن"
   );
 
   // Filter best selling products with random selection
@@ -241,8 +249,6 @@ export default async function Home() {
         <div className="container mx-auto px-4 space-y-6">
           <BannerImage src={img1} alt="Banner 1" />
 
-          console.log("iPhone 16 Pro Max Products:", iPhone16ProMaxProducts); // Log the filtered products
-          
           <Section
             title="هواتف آيفون 16 برو ماكس"
             products={iPhone16ProMaxProducts}
