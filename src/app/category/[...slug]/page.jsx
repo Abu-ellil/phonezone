@@ -118,7 +118,7 @@ function getProductsBySubcategory(categoryName, subcategoryName, params) {
     }
 
     return (
-      product.name.toLowerCase().includes(subcategoryLower) ||
+      productNameLower.includes(subcategoryLower) ||
       (product.subcategory &&
         product.subcategory.toLowerCase().includes(subcategoryLower))
     );

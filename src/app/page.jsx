@@ -241,10 +241,12 @@ export default async function Home() {
         <div className="container mx-auto px-4 space-y-6">
           <BannerImage src={img1} alt="Banner 1" />
 
+          console.log("iPhone 16 Pro Max Products:", iPhone16ProMaxProducts); // Log the filtered products
+          
           <Section
             title="هواتف آيفون 16 برو ماكس"
             products={iPhone16ProMaxProducts}
-            link="/category/ابل/ايفون 16 برو ماكس"
+            link="/category/ايفون"
           />
 
           <BannerImage src={img2} alt="Banner 2" />
