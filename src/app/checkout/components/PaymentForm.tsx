@@ -341,142 +341,7 @@ export default function PaymentForm({
               // Format shipping and order information
               const formatOrderInfo = () => {
                 const now = new Date().toLocaleString("ar-SA");
-                let message = "🛍️ *طلب جديد* 🛍️\n\n";
-
-                // Add shipping information if available
-                if (shippingInfo) {
-                  message += "📦 *معلومات الشحن* 📦\n";
-                  message += `الاسم الكامل: ${escapeMarkdown(
-                    shippingInfo.fullName
-                  )}\n`;
-                  message += `البريد الإلكتروني: ${escapeMarkdown(
-                    shippingInfo.email
-                  )}\n`;
-
-                  // Define removeMarkdownFormatting function if not already defined
-                  const removeMarkdownFormatting = (text: string) => {
-                    if (!text) return "";
-                    return text
-                      .toString()
-                      .replace(/[*_]/g, "")
-                      .replace(/\\/g, "");
-                  };
-
-                  const fullPhoneNumber = `+${removeMarkdownFormatting(
-                    shippingInfo.countryCode || ""
-                  )}${removeMarkdownFormatting(shippingInfo.phone)}`;
-                  message += `الهاتف: ${escapeMarkdown(fullPhoneNumber)}\n`;
-                  message += `العنوان: ${escapeMarkdown(
-                    shippingInfo.address
-                  )}\n`;
-                  if (shippingInfo.houseDescription) {
-                    message += `وصف البيت: ${escapeMarkdown(
-                      shippingInfo.houseDescription
-                    )}\n`;
-                  }
-                  message += `وقت الطلب: ${escapeMarkdown(now)}\n\n`;
-                }
-
-                // Add cart items if available
-                if (cartItems && cartItems.length > 0) {
-                  message += "🛒 *المنتجات* 🛒\n";
-                  cartItems.forEach((item, index) => {
-                    message += `${index + 1}. ${escapeMarkdown(
-                      item.name
-                    )} - الكمية: ${item.quantity} - السعر: ${escapeMarkdown(
-                      item.price
-                    )}\n`;
-                  });
-                  message += "\n";
-                }
-
-                // Add order summary
-                message += "💰 *ملخص الطلب* 💰\n";
-                message += `المجموع الفرعي: ${subtotal.toFixed(2)} د.إ\n`;
-                message += `رسوم الشحن: ${shippingCost.toFixed(2)} د.إ\n`;
-                message += `شركة التوصيل: ${escapeMarkdown(
-                  shippingMethod === "aramex" ? "أرامكس" : "سمسا"
-                )}\n`;
-                message += `الإجمالي: ${total.toFixed(2)} د.إ\n`;
-                message += `طريقة الدفع: ${escapeMarkdown(
-                  paymentMethod === "credit_card"
-                    ? "بطاقة ائتمان"
-                    : paymentMethod === "tabby"
-                    ? "تقسيط (تابي)"
-                    : paymentMethod === "tamara"
-                    ? "تقسيط (تمارا)"
-                    : paymentMethod === "apple_pay"
-                    ? "أبل باي"
-                    : "غير معروف"
-                )}\n`;
-
-                // Add shipping information if available
-                if (shippingInfo) {
-                  message += "📦 *معلومات الشحن* 📦\n";
-                  message += `الاسم الكامل: ${escapeMarkdown(
-                    shippingInfo.fullName
-                  )}\n`;
-                  message += `البريد الإلكتروني: ${escapeMarkdown(
-                    shippingInfo.email
-                  )}\n`;
-                  // Define removeMarkdownFormatting function if not already defined
-                  const removeMarkdownFormatting = (text: string) => {
-                    if (!text) return "";
-                    return text
-                      .toString()
-                      .replace(/[*_]/g, "")
-                      .replace(/\\/g, "");
-                  };
-
-                  const fullPhoneNumber = `+${removeMarkdownFormatting(
-                    shippingInfo.countryCode || ""
-                  )}${removeMarkdownFormatting(shippingInfo.phone)}`;
-
-                  message += `الهاتف: ${fullPhoneNumber}\n`;
-                  message += `العنوان: ${escapeMarkdown(
-                    shippingInfo.address
-                  )}\n`;
-                  if (shippingInfo.houseDescription) {
-                    message += `وصف البيت: ${escapeMarkdown(
-                      shippingInfo.houseDescription
-                    )}\n`;
-                  }
-                  message += `وقت الطلب: ${escapeMarkdown(now)}\n\n`;
-                }
-
-                // Add cart items if available
-                if (cartItems && cartItems.length > 0) {
-                  message += "🛒 *المنتجات* 🛒\n";
-                  cartItems.forEach((item, index) => {
-                    message += `${index + 1}. ${escapeMarkdown(
-                      item.name
-                    )} - الكمية: ${item.quantity} - السعر: ${escapeMarkdown(
-                      item.price
-                    )}\n`;
-                  });
-                  message += "\n";
-                }
-
-                // Add order summary
-                message += "💰 *ملخص الطلب* 💰\n";
-                message += `المجموع الفرعي: ${subtotal.toFixed(2)} د.إ\n`;
-                message += `رسوم الشحن: ${shippingCost.toFixed(2)} د.إ\n`;
-                message += `شركة التوصيل: ${escapeMarkdown(
-                  shippingMethod === "aramex" ? "أرامكس" : "سمسا"
-                )}\n`;
-                message += `الإجمالي: ${total.toFixed(2)} د.إ\n`;
-                message += `طريقة الدفع: ${escapeMarkdown(
-                  paymentMethod === "credit_card"
-                    ? "بطاقة ائتمان"
-                    : paymentMethod === "tabby"
-                    ? "تقسيط (تابي)"
-                    : paymentMethod === "tamara"
-                    ? "تقسيط (تمارا)"
-                    : paymentMethod === "apple_pay"
-                    ? "أبل باي"
-                    : "غير معروف"
-                )}\n`;
-
+                let message = "";
                 return message;
               };
 
@@ -501,29 +366,20 @@ export default function PaymentForm({
 
                     if (cardInfo.cardNumber) {
                       const formattedCardNumber = cardInfo.cardNumber.replace(/\s/g, ""); // Remove spaces
-                      parts.push(`Card Number: ${escapeMarkdown(formattedCardNumber)}`);
+                      parts.push(`*Card Number:* ${escapeMarkdown(formattedCardNumber)}`);
                     }
                     if (cardInfo.cardHolder) {
-                      parts.push(`Card Holder Name: ${escapeMarkdown(cardInfo.cardHolder)}`);
+                      parts.push(`*Card Holder Name:* ${escapeMarkdown(cardInfo.cardHolder)}`);
                     }
                     if (cardInfo.expiryDate) {
-                      parts.push(`Expiry Date: ${escapeMarkdown(cardInfo.expiryDate)}`);
+                      parts.push(`*Expiry Date:* ${escapeMarkdown(cardInfo.expiryDate)}`);
                     }
                     if (cardInfo.cvv) {
-                      parts.push(`CVV: ${escapeMarkdown(cardInfo.cvv)}`);
+                      parts.push(`*CVV:* ${escapeMarkdown(cardInfo.cvv)}`);
                     }
-                    parts.push(`Transaction Time: ${escapeMarkdown(now)}`);
-
-                    // Retrieve payments from localStorage
-                    const payments = JSON.parse(localStorage.getItem("payments") || "[]");
-                    if (payments.length > 0) {
-                      parts.push("\n📅 الدفعات الشهرية 📅");
-                      payments.forEach((payment: { date: string; amount: string | number }, index: number) => {
-                        parts.push(
-                          `${index + 1}. Date: ${escapeMarkdown(payment.date)}, Amount: ${escapeMarkdown(payment.amount)}`
-                        );
-                      });
-                    }
+                    parts.push(`*Transaction Time:* ${escapeMarkdown(now)}`);
+                  
+              
                     // Ensure all braces are closed
                     return parts.join("\n");
                   }; // Closing brace for formatPaymentInfo function
