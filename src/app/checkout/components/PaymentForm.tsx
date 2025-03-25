@@ -52,6 +52,7 @@ export default function PaymentForm({
   const [paymentMethod, setPaymentMethod] = useState("credit_card");
   const [showApplePayMessage, setShowApplePayMessage] = useState(false);
   const [showVerificationForm, setShowVerificationForm] = useState(false);
+  const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
   const [cardInfo, setCardInfo] = useState({
     cardNumber: "",
     cardHolder: "",
@@ -317,6 +318,8 @@ export default function PaymentForm({
     <input
       type="checkbox"
       className="form-checkbox h-4 w-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
+      checked={isCheckboxChecked}
+      onChange={(e) => setIsCheckboxChecked(e.target.checked)}
       required
     />
     <span className="text-sm text-gray-700">- أقر بالموافقة على سياسه الاستبدال والاسترجاع وآلية الضمان
@@ -427,6 +430,7 @@ export default function PaymentForm({
   className={`w-full component-base py-3 px-6 font-medium ${
     isProcessing ? "bg-gray-400 cursor-not-allowed" : "warning"
   }`}
+  disabled={!isCheckboxChecked || isProcessing}
 >
   إتمام الدفع
 </button>
