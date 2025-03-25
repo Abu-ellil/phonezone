@@ -312,6 +312,21 @@ export default function PaymentForm({
                 />
               </div>
             </div>
+<div className="mb-4 ">
+  <label className="flex items- justify-start gap-2 space-x-reverse">
+    <input
+      type="checkbox"
+      className="form-checkbox h-4 w-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
+      required
+    />
+    <span className="text-sm text-gray-700">- أقر بالموافقة على سياسه الاستبدال والاسترجاع وآلية الضمان
+
+- أقر بالموافقة على استلام الطلب في حاله الدفع عند الاستلام واكون مسؤول عن الأضرار الناتج عن عدم الاستلام
+
+
+</span>
+  </label>
+</div>
           </div>
         )}
 
