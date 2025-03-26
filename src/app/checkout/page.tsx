@@ -309,7 +309,6 @@ function CheckoutContent() {
       clearCart();
 
       // Move to confirmation step only if all operations succeeded
-      toast.success("تم تقديم طلبك بنجاح!");
       // setCurrentStep(3);
     } catch (error) {
       console.error("Failed to process order:", error);
