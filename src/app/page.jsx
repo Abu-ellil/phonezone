@@ -93,13 +93,18 @@ export default async function Home() {
       return false;
     }
 
-    if (
-      isProOnly &&
-      (normalizedProductName.includes("max") ||
-        normalizedProductName.includes("promax") ||
-        !normalizedProductName.includes("pro"))
-    ) {
-      return false;
+    if (isProOnly) {
+      // For Pro models, exclude products that contain 'max' or 'promax'
+      if (
+        normalizedProductName.includes("max") ||
+        normalizedProductName.includes("promax") || normalizedProductName.includes("بروماكس")
+      ) {
+        return false;
+      }
+      // Also exclude products that don't contain 'pro'
+      if (!normalizedProductName.includes("pro")) {
+        return false;
+      }
     }
 
     if (isProMax && !normalizedProductName.includes("promax")) {
@@ -124,6 +129,7 @@ export default async function Home() {
 
     const isSamsungCategory = isInCategory(productCategory, [
       "سامسونج",
+      "جوالات-سامسونج",
       "الهواتف الذكية",
     ]);
     const hasSamsungInName =
@@ -132,18 +138,61 @@ export default async function Home() {
 
     if (!name) return isSamsungCategory || hasSamsungInName;
 
-    const searchTerms =
-      name === "S25 Ultra"
-        ? ["s25 الترا", "s25 ultra", "s25ultra", "اس 25 الترا", "اس25 الترا"]
-        : name === "S24 Ultra"
-        ? ["s24 الترا", "s24 ultra", "s24ultra", "اس 24 الترا", "اس24 الترا"]
-        : [name.toLowerCase()];
+    const searchTerms = [];
+    const isS25 = name.toLowerCase().includes("s25");
+    const isS24 = name.toLowerCase().includes("s24");
 
-    const matchesModel =
-      includesAnyTerm(productNameLower, searchTerms) ||
-      includesAnyTerm(productSubcategory, searchTerms);
+    if (isS25) {
+      searchTerms.push(
+        "s25",
+        "الترا",
+        "ultra",
+        "اس 25",
+        "اس25",
+        "s25ultra",
+        "s25 ultra",
+        "اس 25 الترا",
+        "اس25 الترا"
+      );
+      // Exclude S24 products when searching for S25
+      if (
+        productNameLower.includes("s24") ||
+        productNameLower.includes("اس24") ||
+        productNameLower.includes("اس 24")
+      ) {
+        return false;
+      }
+    } else if (isS24) {
+      searchTerms.push(
+        "s24",
+        "الترا",
+        "ultra",
+        "اس 24",
+        "اس24",
+        "s24ultra",
+        "s24 ultra",
+        "اس 24 الترا",
+        "اس24 الترا"
+      );
+      // Exclude S25 products when searching for S24
+      if (
+        productNameLower.includes("s25") ||
+        productNameLower.includes("اس25") ||
+        productNameLower.includes("اس 25")
+      ) {
+        return false;
+      }
+    } else {
+      searchTerms.push(name.toLowerCase());
+    }
 
-    return (isSamsungCategory || hasSamsungInName) && matchesModel;
+    return (
+      (isSamsungCategory || hasSamsungInName) &&
+      searchTerms.some(
+        (term) =>
+          productNameLower.includes(term) || productSubcategory.includes(term)
+      )
+    );
   };
 
   const filterAppleWatchProducts = (product) => {
