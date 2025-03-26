@@ -9,11 +9,6 @@ const nextConfig: NextConfig = {
         hostname: "rawnaqstoore.com",
         pathname: "/**",
       },
-      {
-        protocol: "https",
-        hostname: "res.cloudinary.com",
-        pathname: "/masoft/image/upload/**",
-      },
     ],
   },
   experimental: {
@@ -46,7 +41,6 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
-
 
 // const nextConfig: NextConfig = {
 //   images: {

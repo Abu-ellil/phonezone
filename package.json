@@ -20,6 +20,7 @@
     "cloudinary": "^2.6.0",
     "cors": "^2.8.5",
     "express": "^4.21.2",
+    "firebase": "^11.4.0",
     "formidable": "^2.1.2",
     "googleapis": "^146.0.0",
     "html-pdf-node": "^1.0.8",
