@@ -144,11 +144,58 @@ export function getProductsBySubcategory(
   subcategoryName: string
 ): Product[] {
   const products = getProducts();
-  return products.filter(
-    (product) =>
+  return products.filter((product) => {
+    const productNameLower = product.name.toLowerCase();
+    const productSubcategory = product.subcategory?.toLowerCase() || "";
+    const normalizedSubcategory = subcategoryName
+      .toLowerCase()
+      .replace("برو", "pro")
+      .replace("بروماكس", "promax")
+      .replace("ماكس", "max")
+      .replace("بلس", "plus");
+
+    // Handle iPhone models
+    if (categoryName === "ابل" || categoryName === "آبل") {
+      const iPhoneTerms = ["ايفون", "آيفون", "iphone", "أيفون"];
+      const hasIPhoneInName = iPhoneTerms.some((term) =>
+        productNameLower.includes(term.toLowerCase())
+      );
+      const modelTerms = normalizedSubcategory.split(" ");
+
+      const normalizedProductName = productNameLower
+        .replace("برو", "pro")
+        .replace("بروماكس", "promax")
+        .replace("ماكس", "max")
+        .replace("بلس", "plus");
+
+      return (
+        product.category.includes(categoryName) &&
+        hasIPhoneInName &&
+        modelTerms.every((term) => normalizedProductName.includes(term))
+      );
+    }
+
+    // Handle Samsung models
+    if (categoryName === "سامسونج") {
+      const hasSamsungInName =
+        productNameLower.includes("سامسونج") ||
+        productNameLower.includes("samsung");
+
+      return (
+        product.category.includes(categoryName) &&
+        hasSamsungInName &&
+        (productNameLower.includes(normalizedSubcategory.toLowerCase()) ||
+          productSubcategory.includes(normalizedSubcategory.toLowerCase()))
+      );
+    }
+
+    // Default case for other categories
+    return (
       product.category.includes(categoryName) &&
-      product.subcategory === subcategoryName
-  );
+      (product.subcategory === subcategoryName ||
+        productNameLower.includes(subcategoryName.toLowerCase()))
+    );
+  });
 }
 
 export function getProductById(id: string | number): Product | null {
