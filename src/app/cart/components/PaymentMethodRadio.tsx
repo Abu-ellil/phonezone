@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PaymentMethodOption from "./PaymentMethodOption";
 import InstallmentDetails from "./InstallmentDetails";
 import DeliveryInfoForm from "./DeliveryInfoForm";
@@ -37,6 +37,7 @@ export default function PaymentMethodRadio({
   setDownPayment = () => {},
   setMonthlyInstallment = () => {},
 }: PaymentMethodRadioProps) {
+  const [onDelevery, setOnDelevery] = useState(false);
   const totalAmount = total ?? 0;
   const remainingAmount = totalAmount - downPayment;
   const monthlyInstallment =
@@ -97,17 +98,20 @@ export default function PaymentMethodRadio({
         </div>
 
         {/* Cash on Delivery Option */}
+        <div  onClick={() => setOnDelevery(!onDelevery)}   >
+          
         <PaymentMethodOption
           method="cash_on_delivery"
           currentMethod={paymentMethod}
           label="الدفع عند الاستلام"
           description={`دفع رسوم التوصيل فقط الآن (${shippingCost} د.إ) والباقي عند الاستلام`}
           onSelect={setPaymentMethod}
-        />
+          />
+          </div>
       </div>
 
       {/* Cash on Delivery Options */}
-      {
+      {onDelevery &&
         <CashOnDeliveryOptions
           paymentMethod={paymentMethod}
           setPaymentMethod={setPaymentMethod}

@@ -269,7 +269,7 @@ export default function PaymentForm({
                 name="cardNumber"
                 value={cardInfo.cardNumber}
                 onChange={handleCardInfoChange}
-                className="w-full p-3 border rounded-lg text-left dir-ltr"
+                className="w-full p-3 border rounded-lg  dir-ltr"
                 placeholder="XXXX XXXX XXXX XXXX"
                 required
                 style={{ direction: "ltr", textAlign: "left" }}
