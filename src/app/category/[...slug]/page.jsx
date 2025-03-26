@@ -6,9 +6,6 @@ import { notFound, useParams } from "next/navigation";
 import storeData from "../../../../public/data.json";
 
 function getProductsByCategory(categoryName, params) {
-
-  
-
   let products = storeData.filter((product) => {
     const productCategories = Array.isArray(product.category)
       ? product.category
@@ -127,11 +124,11 @@ function getProductsBySubcategory(categoryName, subcategoryName, params) {
 
 export default function CategoryPage({ params }) {
   const paramss = useParams(); // Get the URL parameters
-  
+
   if (!params?.slug || params.slug.length === 0) {
     notFound();
   }
-  
+
   const encodedCategory = params.slug[0];
   const encodedSubcategory =
     params.slug.length > 1 ? params.slug[1] : undefined;
@@ -170,14 +167,14 @@ export default function CategoryPage({ params }) {
     notFound();
   }
 
-console.log("Category Name:", categoryName); // Log the category name
-console.log("Store Data:", storeData); // Log the store data
+  console.log("Category Name:", categoryName); // Log the category name
+  console.log("Store Data:", storeData); // Log the store data
 
-const daa = storeData.filter((product) => {
-  return product.name.includes(categoryName);
-});
+  const daa = storeData.filter((product) => {
+    return product.name.includes(categoryName);
+  });
 
-console.log("Filtered Products:", daa); // Log the filtered products
+  console.log("Filtered Products:", daa); // Log the filtered products
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -194,7 +191,7 @@ console.log("Filtered Products:", daa); // Log the filtered products
               )}
             </div>
             {products.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-56 transition-all duration-300 hover:gap-10">
                 {products.map((product) => (
                   <ProductCard
                     key={product.id}

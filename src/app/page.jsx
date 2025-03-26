@@ -35,206 +35,156 @@ export default async function Home() {
     console.error("Error loading products:", error);
   }
 
-  // Helper function to filter products by category and name
+  // Utility functions for string normalization
+  const normalizeString = (str) => {
+    return str
+      .toLowerCase()
+      .replace("برو ماكس", "promax")
+      .replace("بروماكس", "promax")
+      .replace("برو", "pro")
+      .replace("ماكس", "max")
+      .replace("بلس", "plus");
+  };
+
+  // Helper function to check if product belongs to a category
+  const isInCategory = (productCategory, categoryNames) => {
+    return productCategory.some((cat) => categoryNames.includes(cat));
+  };
+
+  // Helper function to check if product name includes any of the terms
+  const includesAnyTerm = (productName, terms) => {
+    return terms.some((term) => productName.includes(term.toLowerCase()));
+  };
+
+  // Filter functions for different product types
+  const filterAppleProducts = (product, name) => {
+    const productCategory = Array.isArray(product.category)
+      ? product.category
+      : [];
+    const productNameLower = (product.name || "").toLowerCase();
+    const productSubcategory = (product.subcategory || "").toLowerCase();
+
+    const iPhoneTerms = ["ايفون", "آيفون", "iphone", "أيفون"];
+    const isAppleCategory = isInCategory(productCategory, [
+      "ابل",
+      "آبل",
+      "الهواتف الذكية",
+    ]);
+    const hasIPhoneInName = includesAnyTerm(productNameLower, iPhoneTerms);
+
+    if (!name) return isAppleCategory || hasIPhoneInName;
+
+    const normalizedName = normalizeString(name);
+    const normalizedProductName = normalizeString(productNameLower);
+    const normalizedSubcategory = normalizeString(productSubcategory);
+    const modelTerms = normalizedName.split(" ");
+
+    const isProMax = name.includes("برو ماكس");
+    const isProOnly = name.includes("برو") && !name.includes("ماكس");
+    const isRegular = !name.includes("برو") && !name.includes("بلس");
+
+    // Exclude Pro Max and Plus models from regular iPhone
+    if (
+      isRegular &&
+      (normalizedProductName.includes("promax") ||
+        normalizedProductName.includes("pro") ||
+        normalizedProductName.includes("plus"))
+    ) {
+      return false;
+    }
+
+    if (
+      isProOnly &&
+      (normalizedProductName.includes("max") ||
+        normalizedProductName.includes("promax") ||
+        !normalizedProductName.includes("pro"))
+    ) {
+      return false;
+    }
+
+    if (isProMax && !normalizedProductName.includes("promax")) {
+      return false;
+    }
+
+    const matchesModel = modelTerms.every(
+      (term) =>
+        normalizedProductName.includes(term) ||
+        normalizedSubcategory.includes(term)
+    );
+
+    return (isAppleCategory || hasIPhoneInName) && matchesModel;
+  };
+
+  const filterSamsungProducts = (product, name) => {
+    const productCategory = Array.isArray(product.category)
+      ? product.category
+      : [];
+    const productNameLower = (product.name || "").toLowerCase();
+    const productSubcategory = (product.subcategory || "").toLowerCase();
+
+    const isSamsungCategory = isInCategory(productCategory, [
+      "سامسونج",
+      "الهواتف الذكية",
+    ]);
+    const hasSamsungInName =
+      productNameLower.includes("سامسونج") ||
+      productNameLower.includes("samsung");
+
+    if (!name) return isSamsungCategory || hasSamsungInName;
+
+    const searchTerms =
+      name === "S25 Ultra"
+        ? ["s25 الترا", "s25 ultra", "s25ultra", "اس 25 الترا", "اس25 الترا"]
+        : name === "S24 Ultra"
+        ? ["s24 الترا", "s24 ultra", "s24ultra", "اس 24 الترا", "اس24 الترا"]
+        : [name.toLowerCase()];
+
+    const matchesModel =
+      includesAnyTerm(productNameLower, searchTerms) ||
+      includesAnyTerm(productSubcategory, searchTerms);
+
+    return (isSamsungCategory || hasSamsungInName) && matchesModel;
+  };
+
+  const filterAppleWatchProducts = (product) => {
+    const productCategory = Array.isArray(product.category)
+      ? product.category
+      : [];
+    const productNameLower = (product.name || "").toLowerCase();
+    const productSubcategory = (product.subcategory || "").toLowerCase();
+
+    const watchTerms = [
+      "ساعات ابل",
+      "ساعة ابل",
+      "apple watch",
+      "ساعة آبل",
+      "ساعات آبل",
+      "ابل ووتش",
+      "watch",
+    ];
+
+    return (
+      isInCategory(productCategory, ["ساعات ابل", "ساعات آبل"]) ||
+      includesAnyTerm(productNameLower, watchTerms) ||
+      includesAnyTerm(productSubcategory, watchTerms)
+    );
+  };
+
+  // Main filter function
   const filterProductsByCategory = (products, category, name, limit = 8) => {
-    return products
-      .filter((p) => {
-        const productCategory = Array.isArray(p.category) ? p.category : [];
-        const productSubcategory = p.subcategory || "";
+    const filterFunction =
+      category === "ابل" || category === "آبل"
+        ? (p) => filterAppleProducts(p, name)
+        : category === "سامسونج"
+        ? (p) => filterSamsungProducts(p, name)
+        : category === "ساعات ابل"
+        ? filterAppleWatchProducts
+        : (p) =>
+            isInCategory(Array.isArray(p.category) ? p.category : [], [
+              category,
+            ]);
 
-        const productNameLower =
-          typeof p.name === "string" ? p.name.toLowerCase() : "";
-
-        if (category === "ابل" || category === "آبل") {
-          const iPhoneTerms = [
-            "ايفون",
-            "آيفون",
-            "iphone",
-            "أيفون",
-            "ايفون",
-            "آيفون",
-            "iphone",
-          ];
-
-          // تحسين التعامل مع أسماء الموديلات
-          let modelTerms = [];
-          if (name) {
-            // تعديل الاسم للتعامل مع الاختلافات في الكتابة
-            const normalizedName = name
-              .toLowerCase()
-              .replace("برو ماكس", "promax")
-              .replace("بروماكس", "promax")
-              .replace("برو", "pro")
-              .replace("ماكس", "max")
-              .replace("بلس", "plus");
-
-            modelTerms = normalizedName.split(" ");
-          }
-
-          // التحقق من وجود المنتج في فئة آبل أو الهواتف الذكية
-          const isAppleCategory = productCategory.some(
-            (cat) => cat === "ابل" || cat === "آبل" || cat === "الهواتف الذكية"
-          );
-
-          // التحقق من وجود كلمة آيفون في اسم المنتج
-          const hasIPhoneInName = iPhoneTerms.some((term) =>
-            productNameLower.includes(term.toLowerCase())
-          );
-
-          // التحقق من وجود الموديل المطلوب في اسم المنتج أو الفئة الفرعية
-          const hasModelInName =
-            !name ||
-            modelTerms.every((term) => {
-              const normalizedProductName = productNameLower
-                .replace("برو", "pro")
-                .replace("بروماكس", "promax")
-                .replace("ماكس", "max")
-                .replace("بلس", "plus");
-              // استبعاد المنتجات التي تحتوي على كلمة ماكس إذا كان المنتج المطلوب هو برو
-              if (
-                (name.includes("برو") &&
-                  !name.includes("ماكس") &&
-                  (normalizedProductName.includes("max") ||
-                    normalizedProductName.includes("ماكس") ||
-                    normalizedProductName.includes("promax"))) ||
-                (name.includes("برو ماكس") &&
-                  !(normalizedProductName.includes("promax") ||
-                    (normalizedProductName.includes("pro") &&
-                      (normalizedProductName.includes("max") ||
-                        normalizedProductName.includes("ماكس"))))
-              )) {
-                return false;
-              }
-              return normalizedProductName.includes(term);
-            });
-
-          // التحقق من وجود الموديل في الفئة الفرعية
-          const hasModelInSubcategory =
-            !name ||
-            (productSubcategory &&
-              modelTerms.every((term) => {
-                const normalizedSubcategory = productSubcategory
-                  .toLowerCase()
-                  .replace("برو", "pro")
-                  .replace("بروماكس", "promax")
-                  .replace("ماكس", "max")
-                  .replace("بلس", "plus");
-                return (
-                  normalizedSubcategory.includes(term) ||
-                  term.includes(normalizedSubcategory)
-                );
-              }));
-
-          return (
-            (isAppleCategory || hasIPhoneInName) &&
-            (hasModelInName || hasModelInSubcategory)
-          );
-        }
-
-        if (category === "سامسونج") {
-          const searchTerms =
-            name === "S25 Ultra"
-              ? [
-                  "s25 الترا",
-                  "s25 ultra",
-                  "S25 Ultra",
-                  "S25 الترا",
-                  "اس 25 الترا",
-                  "S25الترا",
-                  "s25 الترا",
-                  "اس25 الترا",
-                  "s25ultra",
-                  "s25 ultra",
-                ]
-              : name === "S24 Ultra"
-              ? [
-                  "s24 الترا",
-                  "s24 ultra",
-                  "S24 Ultra",
-                  "S24 الترا",
-                  "اس 24 الترا",
-                  "اس24 الترا",
-                  "s24ultra",
-                  "s24 ultra",
-                ]
-              : [name];
-
-          // التحقق من وجود المنتج في فئة سامسونج
-          const isSamsungCategory = productCategory.some(
-            (cat) => cat === "سامسونج" || cat === "الهواتف الذكية"
-          );
-
-          // التحقق من وجود كلمة سامسونج في اسم المنتج
-          const hasSamsungInName =
-            productNameLower.includes("سامسونج") ||
-            productNameLower.includes("samsung");
-
-          // التحقق من وجود الموديل المطلوب في اسم المنتج أو الفئة الفرعية
-          const hasModelInName =
-            !name ||
-            searchTerms.some((term) =>
-              productNameLower.includes(term.toLowerCase())
-            );
-
-          // التحقق من وجود الموديل في الفئة الفرعية
-          const productSubcategory = p.subcategory || "";
-          const hasModelInSubcategory =
-            !name ||
-            (productSubcategory &&
-              searchTerms.some((term) =>
-                productSubcategory.toLowerCase().includes(term.toLowerCase())
-              ));
-
-          return (
-            (isSamsungCategory || hasSamsungInName) &&
-            (hasModelInName || hasModelInSubcategory)
-          );
-        }
-        if (category === "ساعات ابل") {
-          const watchTerms = [
-            "ساعات ابل",
-            "ساعة ابل",
-            "apple watch",
-            "ساعة آبل",
-            "ساعات آبل",
-            "ابل ووتش",
-            "watch",
-            "applewatch",
-            "ساعه ابل",
-            "ساعه آبل",
-          ];
-
-          // التحقق من وجود المنتج في فئة ساعات آبل
-          const isAppleWatchCategory = productCategory.some(
-            (cat) => cat === "ساعات ابل" || cat === "ساعات آبل"
-          );
-
-          // التحقق من وجود مصطلحات ساعات آبل في اسم المنتج
-          const hasWatchTermInName = watchTerms.some((term) =>
-            productNameLower.includes(term.toLowerCase())
-          );
-
-          // التحقق من وجود مصطلحات ساعات آبل في الفئة الفرعية
-          const productSubcategory = p.subcategory || "";
-          const hasWatchTermInSubcategory =
-            productSubcategory &&
-            watchTerms.some((term) =>
-              productSubcategory.toLowerCase().includes(term.toLowerCase())
-            );
-
-          return (
-            isAppleWatchCategory ||
-            hasWatchTermInName ||
-            hasWatchTermInSubcategory
-          );
-        }
-
-        // للفئات الأخرى، تحقق من وجود الفئة في مصفوفة الفئات
-        return Array.isArray(productCategory)
-          ? productCategory.includes(category)
-          : false;
-      })
-      .slice(0, limit);
+    return products.filter(filterFunction).slice(0, limit);
   };
 
   // Filter Apple iPhone products
