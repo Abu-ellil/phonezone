@@ -1,6 +1,6 @@
 export default function Privacy() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8" dir="rtl">
       <h1 className="text-2xl font-bold mb-4">سياسة الخصوصية وإتفاقية الإستخدام</h1>
       <p>سياسة الخصوصية وسرية المعلومات</p>
       <p>
