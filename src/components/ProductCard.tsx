@@ -22,9 +22,9 @@ export default function ProductCard({
   subcategory,
 }: ProductCardProps) {
   return (
-    <Link href={`/product/${id.toString()}`} className="group bg-white h-56">
-      <div className="bg-gray-50 h-80  overflow-hidden transition-transform duration-300 hover:shadow-md hover:-translate-y-1 border border-gray-100 radius-md ">
-        <div className="relative h-48 w-full ">
+    <Link href={`/product/${id.toString()}`} className="block bg-white h-full">
+      <div className="bg-gray-50 h-[320px] w-full overflow-hidden transition-transform duration-300 hover:shadow-md hover:-translate-y-1 border border-gray-100 rounded-md">
+        <div className="relative h-48 w-full">
           <Image
             src={image_url}
             alt={name}
@@ -35,7 +35,7 @@ export default function ProductCard({
           />
         </div>
         <div className="p-3 text-right">
-          <h3 className="text-xs font-medium text-gray-900 line-clamp-2 mb-1 h-8">
+          <h3 className="text-xs font-medium text-gray-900 line-clamp-2 mb-1">
             {name}
           </h3>
           <div className="mt-1">
