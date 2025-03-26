@@ -134,7 +134,15 @@ export default async function Home() {
 
     const searchTerms =
       name === "S25 Ultra"
-        ? ["s25 الترا", "s25 ultra", "s25ultra", "اس 25 الترا", "اس25 الترا"]
+        ? [
+            "s25 الترا",
+            "s25 ultra",
+            "s25ultra",
+            "اس 25 الترا",
+            "اس25 الترا",
+            "s25الترا",
+            "S25الترا",
+          ]
         : name === "S24 Ultra"
         ? ["s24 الترا", "s24 ultra", "s24ultra", "اس 24 الترا", "اس24 الترا"]
         : [name.toLowerCase()];
