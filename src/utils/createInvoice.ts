@@ -403,13 +403,13 @@ function getPaymentMethodName(method: string): string {
     case "debit_card":
       return "بطاقة خصم";
     case "cash":
-      return "الدفع نقداً";
+      return "دفع كامل المبلغ";
     case "tabby":
       return "تقسيط (تابي)";
     case "cash_on_delivery":
       return "الدفع عند الاستلام";
     case "cash_on_delivery_cash":
-      return "الدفع نقداً عند الاستلام";
+      return "دفع كامل المبلغ عند الاستلام";
     case "cash_on_delivery_installment":
       return "الدفع بالتقسيط عند الاستلام";
     default:

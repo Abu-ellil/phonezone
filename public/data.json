@@ -1,2143 +1,2143 @@
-[
-  {
-    "url": "https://noonestare-ua.com/product/4",
-    "id": 4,
-    "name": "ايفون 16 بروماكس - تيتانيوم أبيض",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/7o1q018Bo1YfNRZV96v6Cn9hdZGaQO2DxNeIBaxB.jpg",
-    "category": ["ابل"],
-    "base_price": 3700.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 5200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 4700.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 4200.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/6",
-    "id": 6,
-    "name": "ايفون 16 بروماكس - تيتانيوم سكري",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 100 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/TO7hlauyuyQS6eo8DK0bk5hmJpc4CMIqKCHIOtGi.jpg",
-    "category": ["ابل"],
-    "base_price": 4200.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 5200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 4700.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 4200.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/7",
-    "id": 7,
-    "name": "ايفون 16 بروماكس - تيتانيوم رمادي",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/AJzapAFshp6cqc7lz6t4Ne6v9nSa3gJia7lx5BLy.jpg",
-    "category": ["ابل"],
-    "base_price": 4200.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 5200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 4700.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 4200.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/8",
-    "id": 8,
-    "name": "ايفون 16 بروماكس - تيتانيوم ذهبي",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/3JYEQsrIbA2c6fB463uTz5bfoKMezcjqN2I4O1bO.webp",
-    "category": ["ابل"],
-    "base_price": 4200.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 5200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 4700.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 4200.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/9",
-    "id": 9,
-    "name": "ايفون 16 برو - تيتانيوم ابيض",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/Y9YAzh0xcb2JPWGDGskbhUTH4X0jndHQNFv1uCY1.jpg",
-    "category": ["ابل"],
-    "base_price": 3700.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/10",
-    "id": 10,
-    "name": "ايفون 16 برو - تيتانيوم ازرق",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/dwfTAnzvmrnoiWzp9zVXeNyIW0L1w5BlNSropca4.jpg",
-    "category": ["ابل"],
-    "base_price": 3700.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/11",
-    "id": 11,
-    "name": "ايفون 16 برو - تيتانيوم وردي",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/6WM0xVSZFbPcWqUIrVObfoldW5s59eidW8BcxluD.jpg",
-    "category": ["ابل"],
-    "base_price": 3700.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/12",
-    "id": 12,
-    "name": "ايفون 16 برو - تيتانيوم رمادي",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/1qKaIvjERyuUJ9uVCXS7s6L714atKEl3SSbtcsqO.jpg",
-    "category": ["ابل"],
-    "base_price": 3700.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/13",
-    "id": 13,
-    "name": "ايفون 16 - تيتانيوم ابيض",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/jG2PC08twVfX1DkK7jrRgJlkt6AU6PM9f8SDL5lA.jpg",
-    "category": ["ابل"],
-    "base_price": 3400.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/14",
-    "id": 14,
-    "name": "ايفون 16 - تيتانيوم ازرق",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/PpsrY5SmTnHDcPq6Iga3DsM8XdBcghsiW9Brr0GY.jpg",
-    "category": ["ابل"],
-    "base_price": 3400.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/15",
-    "id": 15,
-    "name": "ايفون 16 - تيتانيوم وردي",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/wy7oM2zg2mfVfeiQePmueUUxeS8hbRRVYk1RKmfa.jpg",
-    "category": ["ابل"],
-    "base_price": 3400.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/16",
-    "id": 16,
-    "name": "ايفون 16 - تيتانيوم رمادي",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/OR7nJO6AwkvcZ2Ns2VkWWG6ZPWoTfDa1nR6k5jax.jpg",
-    "category": ["ابل"],
-    "base_price": 3400.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/17",
-    "id": 17,
-    "name": "ايفون 15 بروماكس - تيتانيوم أسود",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/xy2SQGgnmD7w65YVjmPwQQXrIWvsAt2dyy9zPTCr.jpg",
-    "category": ["ابل"],
-    "base_price": 3300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 4200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 3600.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 3300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/18",
-    "id": 18,
-    "name": "ايفون 15 بروماكس - تيتانيوم سكري",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/b5XZEnxVu643YeE6LQLbCxrQNZUEII27oQfqz7Bj.jpg",
-    "category": ["ابل"],
-    "base_price": 3300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 4200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 3600.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 3300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/19",
-    "id": 19,
-    "name": "ايفون 15 بروماكس - تيتانيوم ذهبي",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/eIQcTA4p29C1oDJviTIoPCn04JojBMsd8aPrkznA.jpg",
-    "category": ["ابل"],
-    "base_price": 3300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 4200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 3600.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 3300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/20",
-    "id": 20,
-    "name": "ايفون 15 بروماكس - تيتانيوم أبيض",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/yUw4UzMkjeLuiFoVPX90nzcXnEyknfGFHXwBQT4h.jpg",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 3300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 4200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 3600.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 3300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/21",
-    "id": 21,
-    "name": "ايفون 15 برو بلس - تيتانيوم اسود",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/jJ7hxATgHnN2t0JQgbVBqOW5IDXQA57tPkoCQFnr.jpg",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 2300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/22",
-    "id": 22,
-    "name": "ايفون 15 برو بلس - تيتانيوم وردي",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/2PNBieIuD8Z44cww3vviTUCZBrZkEFvcPtqmfR1l.jpg",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 2300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/23",
-    "id": 23,
-    "name": "ايفون 15 برو بلس - تيتانيوم اخضر",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/DsWa2BF0coRXuXF6OQ76LQUOHy461PBl0ptZZEGz.jpg",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 2300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/24",
-    "id": 24,
-    "name": "ايفون 15 برو بلس - تيتانيوم أزرق",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/Be1uCmA0wUp7FRHT0aBK6ErCAFXvFHYKzLsFu8cW.jpg",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 2300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/25",
-    "id": 25,
-    "name": "ايفون 15 برو بلس - تيتانيوم ذهبي",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/Gsh5GcQaqTRLN0CcXp28jkEOobTUKqnHtnh9VuUL.jpg",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 2300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/26",
-    "id": 26,
-    "name": "ايفون 15 - تيتانيوم اسود",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/r8wDDrZgprecvP3Fi2vbYzorK9IbD0Cky1ZcVtGk.jpg",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 2300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/27",
-    "id": 27,
-    "name": "ايفون 15 - تيتانيوم وردي",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/MfezSdYwKr0m0nTNWegZaR4RmEN4rn5ZszP9hBMb.jpg",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 2300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/28",
-    "id": 28,
-    "name": "ايفون 15 - تيتانيوم أخضر",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/APdipzj0ONtCBoP56UTbmzrPPgQKYxTiL504ic9Z.jpg",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 2300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/29",
-    "id": 29,
-    "name": "ايفون 15 - تيتانيوم أزرق",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/yiwD0hUld1pmJJF8ZitmCjdORfevdbKeQ5ItBChr.jpg",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 2300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/30",
-    "id": 30,
-    "name": "ايفون 15 - تيتانيوم ذهبي",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/iv5pkHPo8j3aj2wwsh80DTTbiuVjJnFeAgrhRGbE.jpg",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 2300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/31",
-    "id": 31,
-    "name": "ايفون 14 بروماكس - تيتانيوم بنفسجي",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 120 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/gz2dKaflGNF3PsyqFxGXorJcslqhuKvfIjn1VhPy.jpg",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 2100.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/32",
-    "id": 32,
-    "name": "ايفون 14 بروماكس - تيتانيوم أسود",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/pHSkCMjzsqbEk6N3xAmt3a0YQuEXaLzpThqBcnQ9.jpg",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 2100.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/33",
-    "id": 33,
-    "name": "ايفون 14 بروماكس - تيتانيوم أبيض",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/UYKbPeDFxqTlkDIBcAbxrNTdGCFMPiIeUB8CTr3j.jpg",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 2100.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/34",
-    "id": 34,
-    "name": "ايفون 14 بروماكس - تيتانيوم سكري",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/R3CcBsDNpqcjDPmGhfhVOOv99kTa2NS1M4eRnJ4s.jpg",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 2100.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/35",
-    "id": 35,
-    "name": "ايفون 14 برو - تيتانيوم بنفسجي",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/16T2FNbTpD5eYRQaVdMTKQ7ngKB7n0q9bf283Efl.webp",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 1700.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/36",
-    "id": 36,
-    "name": "ايفون 14 برو - تيتانيوم أسود",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 100 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/aGL4Xu7KNt2Hk0utM5zViOyxJ9XdOBw1l16XyCnW.webp",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 1400.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/37",
-    "id": 37,
-    "name": "ايفون 14 برو - تيتانيوم سكري",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/p7Qt4IZYJs6z99knHCNOMlBtXM9CGJEUKu725ZeT.webp",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 1700.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/38",
-    "id": 38,
-    "name": "ايفون 14 برو - تيتانيوم رمادي",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/XwWhmM1nuzgzRRS6mo54jTUbLIsCHQNtAvnIzOlc.webp",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 1700.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/39",
-    "id": 39,
-    "name": "ايفون 14 - تيتانيوم ابيض",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/fafblSwxHyEWIPceLaiIcMjMS32IYlLWKwerqhTC.webp",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 1400.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/40",
-    "id": 40,
-    "name": "ايفون 14 - تيتانيوم ازرق",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/gB3H7jpLEj0OiV3VzSvaBAlYFD3GA7DD0tMW5hyB.webp",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 1400.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/41",
-    "id": 41,
-    "name": "ايفون 14 - تيتانيوم اسود",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/jiomtAZRvCNRKdA4S0Xb5Hss4wE3APaDGXxMzSlF.jpg",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 1400.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/42",
-    "id": 42,
-    "name": "ايفون 14 - تيتانيوم رمادي",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/L3y0LHzlXfPqgDXGoRD3FA2NhtgcT8TFHkBbCmlF.webp",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 1400.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/43",
-    "id": 43,
-    "name": "ايفون 14 - تيتانيوم سكري",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/NrD7703LSQSL1XObupaEjR465sOk9NPedMozg0Ji.webp",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 1400.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/44",
-    "id": 44,
-    "name": "سامسونج s24  الترا",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/fW2w0WFGvD9ygYEODrTC6YxPl5YsJJgGtgJenlLJ.jpg",
-    "category": ["الهواتف الذكية", "سامسونج"],
-    "base_price": 3300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/45",
-    "id": 45,
-    "name": "سامسونج s24  الترا رمادي",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/qDzdwaBYyFtHZ20oo5IrFVWaMsuNmWIvjOulWZQM.jpg",
-    "category": ["الهواتف الذكية", "سامسونج"],
-    "base_price": 3300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/46",
-    "id": 46,
-    "name": "سامسونج s24  الترا أسود",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/Ipn7EIEqmqKmX2jkoP1XYZtlByjzJfxTd1797RiZ.jpg",
-    "category": ["سامسونج"],
-    "base_price": 3300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/47",
-    "id": 47,
-    "name": "سامسونج s24  الترا أبيض",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/cFoBYJhz9Z3Do0Z1317HpelQwRaZf5f51hWbMCVF.jpg",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 3300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/48",
-    "id": 48,
-    "name": "سامسونج s24  الترا أبيض",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/5K3P0qlbfZIHma3josBdfivDMvD8lhqdiqTBy7MH.jpg",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 3300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/49",
-    "id": 49,
-    "name": "سامسونج s24  الترا ذهبي",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/wy68LFGYZmEGF9NgcS2NuaHV2UBGrCUWY8gNlBCM.jpg",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 3300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/50",
-    "id": 50,
-    "name": "سامسونج s24  الترا رمادي",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/7cnbgLq1f01zhxREJuIf1lrvjT41ByLLUCqKFPtN.jpg",
-    "category": ["الهواتف الذكية", "سامسونج"],
-    "base_price": 3300.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/51",
-    "id": 51,
-    "name": "سامسونج s23  الترا أسود",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 100 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/qqMec1a1x41a03LkWJkMV5EEdR7O2tkNt824P3Rn.jpg",
-    "category": ["الهواتف الذكية", "سامسونج"],
-    "base_price": 2500.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/52",
-    "id": 52,
-    "name": "قلم ايباد مطور من i win",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 500 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/OnyvvQvTV4CZ06JRsqhrHFSMkWZrgGzHqhslq5vq.jpg",
-    "category": ["الإكسسوارات", "ملحقات الأجهزة"],
-    "base_price": 100.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/53",
-    "id": 53,
-    "name": "كفر i pad من iwin",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/52ZO5Ae6E0MfonMDcDPdbVvCMr2xpp48b6Zi0WHF.webp",
-    "category": ["الإكسسوارات", "ملحقات الأجهزة"],
-    "base_price": 25.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/54",
-    "id": 54,
-    "name": "بكج من Iwin يتكون من ساعة وسماعة",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 5000 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/UVZEEvTQbpDeOTGD8L69IQxhwV6TdizmBoCfVTRL.jpg",
-    "category": ["الإكسسوارات", "ملحقات الأجهزة"],
-    "base_price": 150.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/55",
-    "id": 55,
-    "name": "سماعة ايربودز من i win",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1500 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/Hs9MsruVhEHTXCjCW4Uvyg1L8OlvT6VTohGn1stj.jpg",
-    "category": ["الإكسسوارات", "ملحقات الأجهزة"],
-    "base_price": 60.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/56",
-    "id": 56,
-    "name": "ستاند للايباد",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1000 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/HhWHsP9nqe8xZ5hqTNYoWQQjLhzmOdDEbM1ih9jT.webp",
-    "category": ["الأجهزة اللوحية", "إكسسوارات الأجهزة اللوحية"],
-    "base_price": 60.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/57",
-    "id": 57,
-    "name": "ستاند للايباد",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1500 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/eEDXBI0cPMg1NTKLVAEUMZ7qD9eXGasttgA3BUZZ.webp",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 50.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/58",
-    "id": 58,
-    "name": "شريط لتسهيل حمل الايباد",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 5000 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/e5D2RltwEu23KhgpSyuQTUYUW5nvxrRNA7Z4z5vI.webp",
-    "category": ["الأجهزة اللوحية", "إكسسوارات الأجهزة اللوحية"],
-    "base_price": 15.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/59",
-    "id": 59,
-    "name": "قلم ايباد",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 5000 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/8Nbg27qVP1xLr7HJm2wWx29QsPje3hNb2uKkWew4.webp",
-    "category": ["الأجهزة اللوحية", "إكسسوارات الأجهزة اللوحية"],
-    "base_price": 100.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/60",
-    "id": 60,
-    "name": "حماية شاشة اصلية",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1500 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/12piUCLotBhNg4SFMj2R3VB60SQxTcSPP8rfkkFW.jpg",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 15.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/61",
-    "id": 61,
-    "name": "ستاند وكيبورد للايباد",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 6000 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/ituspqiO1PVXRoCI3l0ulAZYFXlkm9owU8zC33oK.jpg",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 150.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/62",
-    "id": 62,
-    "name": "بلاي ستيشن 5 رقمي مع 1 يد تحكم+لعبة هدية",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 520 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/7SKFOXnuNrizSWOGP9RlklIKqlUXoMmPMKS2mMEb.webp",
-    "category": ["الألعاب والترفيه", "أجهزة بلايستيشن"],
-    "base_price": 2600.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/63",
-    "id": 63,
-    "name": "بلاي ستيشن 5 رقمي مع 2 يد تحكم",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1230 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/lvRp54aMq4Awm9YaHHkre3QTsA7jLd23z8hdiP3H.webp",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 3000.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/64",
-    "id": 64,
-    "name": "بلاي ستيشن 4 رقمي مع 2 يد تحكم",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1500 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/U4sMudVkvyQi3tl5eP1eMWIG8fnuHzLGfmOXoqul.webp",
-    "category": ["الألعاب والترفيه", "أجهزة بلايستيشن"],
-    "base_price": 2000.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 3200.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 2800.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 2300.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/65",
-    "id": 65,
-    "name": "بلاي ستيشن 4 رقمي مع يد تحكم واحدة",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1500 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/rlfUFh6ZDzC8Fk8CIn4RA0SReG9kRZmZpwJEdHAx.webp",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 1700.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/66",
-    "id": 66,
-    "name": "بلاي ستيشن 4 رقمي مع يد تحكم واحدة+لعبة COD MW2",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 100 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/Ablw9atocgA1UtrWN2Ba3NqNQFcMcNax3ejwQEjJ.webp",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 1750.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/67",
-    "id": 67,
-    "name": "لعبة HOGWARTS LEGACY",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1000 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/dIFfTKbeu9HCxtiRO2yYXlp4cA1FfGnyvbR7bNTe.webp",
-    "category": ["الألعاب والترفيه", "ألعاب بلايستيشن"],
-    "base_price": 150.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/68",
-    "id": 68,
-    "name": "لعبة HORIZON FORBIDDEN WEST",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1000 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/qf2VHgPInJIlheZhHQ46BpIgiTuN7m47BbP26V3K.webp",
-    "category": ["الألعاب والترفيه", "ألعاب بلايستيشن"],
-    "base_price": 130.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/69",
-    "id": 69,
-    "name": "لعبة uncharted legacy of thieves colletion",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 5000 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/zpGiCdt4HnRgjZLIo1Ya5OwyncCdKXdxREnj3iRr.webp",
-    "category": ["الألعاب والترفيه", "ألعاب بلايستيشن"],
-    "base_price": 150.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/70",
-    "id": 70,
-    "name": "لعبة GTA V",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1250 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/FkuEuWKB5rf6LXApiSHLNHq3qfXUXCRJ4upiaCxd.webp",
-    "category": ["الألعاب والترفيه", "ألعاب بلايستيشن"],
-    "base_price": 100.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/71",
-    "id": 71,
-    "name": "لعبة call of duty black ops cold war",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1400 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/BxioaWrB5f55w22ueyprBW7R6w0lZasA6OM5JehB.webp",
-    "category": ["الألعاب والترفيه", "ألعاب بلايستيشن"],
-    "base_price": 90.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/72",
-    "id": 72,
-    "name": "لعبة call of duty black ops 6",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 5000 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/ZnrRPk8jcgxiIsuAO8lbKkjKrLoCvxXWbRAWGQZa.webp",
-    "category": ["الألعاب والترفيه", "ألعاب بلايستيشن"],
-    "base_price": 180.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/73",
-    "id": 73,
-    "name": "لعبة  EA FIF",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 5000 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/AbhsPCKEnkltBRdipieME94xVsD0FT3IuP3baD1X.webp",
-    "category": ["الألعاب والترفيه", "ألعاب بلايستيشن"],
-    "base_price": 180.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/74",
-    "id": 74,
-    "name": "بور بانك بسعة 20000 ِmlA",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 500 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/5Hza4zC9CsZ5wJy2QtRgBxVFsd1ehcKjkZGsnsFk.webp",
-    "category": ["الإكسسوارات", "الشواحن والبطاريات"],
-    "base_price": 150.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/75",
-    "id": 75,
-    "name": "شاحن  سريع 6 امبير",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 5000 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/TuyCkazQtw8uwPKlpZYh7FtAEtQ37THLjx3cDuaP.webp",
-    "category": ["الإكسسوارات", "الشواحن والبطاريات"],
-    "base_price": 40.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/76",
-    "id": 76,
-    "name": "شاحن بدعم الشحن السريع 33 واط",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1500 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/69tpOUn0mZD2KFXJzY98LraTxAZtBG74gd014pd5.webp",
-    "category": ["الإكسسوارات", "الشواحن والبطاريات"],
-    "base_price": 50.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/77",
-    "id": 77,
-    "name": "بور بانك بسعة 10000 ِmlA",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 500 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/Ob4udawUU37wPh27cYC9ALm3VewJNS49FNVLo5k3.webp",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 80.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/78",
-    "id": 78,
-    "name": "شاحن بطاريات",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 5000 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/M15KRhqAo0rRRPU0xWTh2tW32WnWZjAs8jc8Xzrp.webp",
-    "category": ["الإكسسوارات", "الشواحن والبطاريات"],
-    "base_price": 120.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/79",
-    "id": 79,
-    "name": "كفر حماية باللون الاحمر",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 5000 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/6Dp8Bbtk88lxv7cSfXa4UzRnfdIWlPFWW1LKkdId.jpg",
-    "category": ["اكسسوارات-الايفون"],
-    "base_price": 15.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/80",
-    "id": 80,
-    "name": "كفر شفاف للايفون",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 5000 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/d1wuuXcxqF9kaR3NQJM0LGitV5srMX0ZtTHPWGn9.jpg",
-    "category": ["اكسسوارات-الايفون"],
-    "base_price": 15.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/81",
-    "id": 81,
-    "name": "حماية شاشة اصلية",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 15005 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/OKGErHI9dfRFIQVFShixDanE5ByaO4vMJ6ifJw08.jpg",
-    "category": ["اكسسوارات-الايفون"],
-    "base_price": 20.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/82",
-    "id": 82,
-    "name": "كفر اسود للايفون",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 5000 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/7erzNNPx44k3TCKI0kDLAjtAW8e8JUKxPrtTFeYb.jpg",
-    "category": ["اكسسوارات-الايفون"],
-    "base_price": 25.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/83",
-    "id": 83,
-    "name": "شاشة  Z-DOGE GAMING 24ins 180hz",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/y60nkEJjMBjUR6sCMc3hAZ8mxClswwBmQJXMrUwn.jpg",
-    "category": ["الشاشات والتلفزيون"],
-    "base_price": 1500.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/84",
-    "id": 84,
-    "name": "شاشة TUF GAMING 144hz 27ins",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 500 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/SpW16eIbDXmx1RNEF7ZLTrghAWoGiNglbEJ95Lca.jpg",
-    "category": ["الشاشات والتلفزيون"],
-    "base_price": 1300.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/85",
-    "id": 85,
-    "name": "شاشة lg oled",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1500 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/023tLaueJzHT6xnPh4nXbwq3KAlo0Iximzl0DrrX.webp",
-    "category": ["الشاشات والتلفزيون"],
-    "base_price": 1700.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/86",
-    "id": 86,
-    "name": "شاشة NITRO GAMING",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 500 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/qYr9oRNLK39Wjc0FdXuAueKZHMzMDDuCmPJ5mJ9e.webp",
-    "category": ["الشاشات والتلفزيون"],
-    "base_price": 1000.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/87",
-    "id": 87,
-    "name": "شاشة jaar samsung",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 250 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/MoslWPLUmoNWvw8eJ4OWDC6aRfkXqpGXaSnRACEx.webp",
-    "category": ["الشاشات والتلفزيون"],
-    "base_price": 2000.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/88",
-    "id": 88,
-    "name": "AOC Gaming C27G2ZE - 27 inch FHD gebogen monitor, 240 Hz, 0,5 m, FreeSync Premium (1920x1080, HDMI, DisplayPort) zwart/rood",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1500 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/CNrMLoUsMJYV0Hy0l1FwUTXMHX0dRRaU4YIKrToy.webp",
-    "category": ["الشاشات والتلفزيون"],
-    "base_price": 1200.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/89",
-    "id": 89,
-    "name": "KOORUI 34 Inch Ultrawide Curved Gaming Monitor 165HZ, 1ms, 1000R, WQHD 3440 * 1440, 21:9, DCI-P3 90% Color Gamut, FreeSync G-Sync Compatible, Tilt/Height Adjustable Stand, HDMI, Display Port, Black",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/kAeLD02Z05KJxB7acoJzY3EMs9B925JXkbZK9hv3.webp",
-    "category": ["الشاشات والتلفزيون"],
-    "base_price": 1300.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/90",
-    "id": 90,
-    "name": "BeautyFace Intelligent Skin Therapy Home Spa Mask Olive Leaf",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1500 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/lIs244kcUQIQUriPzQrbKgFZqsqv0mAqPE3GYyir.webp",
-    "category": ["اعتني بصحتك"],
-    "base_price": 20.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/91",
-    "id": 91,
-    "name": "BeautyFace Intelligent Skin Therapy Home Spa Mask Honey",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1500 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/aBGEhatIaIwIZL0sRTVUL2dLBHJKyawoQZJLUw8p.webp",
-    "category": ["اعتني بصحتك"],
-    "base_price": 20.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/92",
-    "id": 92,
-    "name": "BeautyFace Intelligent Skin Therapy Home Spa Mask Chamomile",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1500 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/l62AZr8jkZipudxp1TLS37W6svoxjOtzx9ju4ebQ.webp",
-    "category": ["اعتني بصحتك"],
-    "base_price": 20.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/93",
-    "id": 93,
-    "name": "VegiVital",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/heKi4tg6aHDg1JYZsu36nGPfasHM54megaUsDN5i.webp",
-    "category": [""],
-    "base_price": 150.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/94",
-    "id": 94,
-    "name": "Kurkuma Vitamine C Kleimasker Diep reinigend gezichtsmasker Huidverzorging Verbeter mee-eters Acne Donkere vlekken en egaliseer de huidskleur Gezichtsmasker Controle Olie en verfijning van poriën",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1000 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/eXD8EvooOIKA2AGAVCrxXzSm0NHYDmZpbilJK3eh.webp",
-    "category": ["اعتني بصحتك"],
-    "base_price": 2300.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/95",
-    "id": 95,
-    "name": "بكج مكياج لكل ما تحتاجه المرأة للتزين",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1500 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/711AIWixe2Jds3LRQhtwacd4dLkvMgk8VneoDuaw.webp",
-    "category": ["اعتني بصحتك"],
-    "base_price": 400.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/96",
-    "id": 96,
-    "name": "مرطب revolution peach",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1500 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/7GKZjN1o6scRnC2EVD8wAEa9Kis9vYuCkx1XtKU7.webp",
-    "category": ["اعتني بصحتك"],
-    "base_price": 60.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/97",
-    "id": 97,
-    "name": "آلة تقطيع الخضراوات",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/o55pH3hiPl9qmu6IZhJbwwnmHN7eKMkJrZg3izFb.webp",
-    "category": ["المنزلية-الاجهزة"],
-    "base_price": 100.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/98",
-    "id": 98,
-    "name": "آلة لعمل الفشار",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1500 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/6rIyxUyomVI9Ei50j7ukxPaqSfv842AyerDSyGHN.webp",
-    "category": ["المنزلية-الاجهزة"],
-    "base_price": 150.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/99",
-    "id": 99,
-    "name": "أفضل آلة لعمل العصير",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/wQ1c0c80kaTKctfQYvgSLlpkdTb8R4AkDJc07ccb.webp",
-    "category": ["المنزلية-الاجهزة"],
-    "base_price": 300.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/100",
-    "id": 100,
-    "name": "خلاط سريع",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1520 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/I8KAHwxCUiXD5IXqvQJKpLqjlpvHxYrdfCnDp5je.webp",
-    "category": ["المنزلية-الاجهزة"],
-    "base_price": 200.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/101",
-    "id": 101,
-    "name": "مكنسة كهربائية موفرة للطاقة",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1502 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/FHkpRlfBS6y4GOWwUhXzdyCBW7RnV9YAo6WzFFhm.jpg",
-    "category": ["المنزلية-الاجهزة"],
-    "base_price": 700.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/102",
-    "id": 102,
-    "name": "ساعة رقمية ضد الماء",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1500 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/KHVa3Vppc3XI1u9Sppt0dMxN2BdGYs4bvVDEIVil.webp",
-    "category": ["الساعات"],
-    "base_price": 120.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/103",
-    "id": 103,
-    "name": "ساعة عقارب ذهبية",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1500 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/ApSuB7ODiHwngE0k8cSS42KhEzJfYb0fTdSi4QjB.webp",
-    "category": ["الساعات"],
-    "base_price": 120.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/104",
-    "id": 104,
-    "name": "ساعة casio فضية",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/gJ0Gw9CqwiS8d4wRHZUBIvlrNrx2ozrSHD7iO59d.webp",
-    "category": ["الساعات"],
-    "base_price": 135.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/105",
-    "id": 105,
-    "name": "ساعة ابل واتش HW22 Plus الاصدار 6 مقاس 44m",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 1300 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/B0bXXgao0XwCS8JczeTVllZKX9PR9LMX6WTMVtqS.jpg",
-    "category": ["الساعات"],
-    "base_price": 200.0
-  },
-  {
-    "url": "https://noonestare-ua.com/product/106",
-    "id": 106,
-    "name": "سامسونج S25الترا اسود",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 150 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/jramFFta9wKxZhY6fhe0d6FzlSVSGTYWYNUPNwg4.jpg",
-    "category": ["الهواتف الذكية", "سامسونج"],
-    "base_price": 4200.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 5700.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 4700.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 4200.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/107",
-    "id": 107,
-    "name": "سامسونج S25الترا ابيض",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/iul1WxXC7wKgOFx3o35HmZjDweHo7WEN4K2zEVUX.jpg",
-    "category": ["الهواتف الذكية", "سامسونج"],
-    "base_price": 4200.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 5700.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 4700.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 4200.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/108",
-    "id": 108,
-    "name": "سامسونج S25الترا رمادي",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/FipNA2hHYFqHWcnusP3NDemOGQchvC58kJq1Dg3b.jpg",
-    "category": ["الهواتف الذكية", "سامسونج"],
-    "base_price": 4200.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 5700.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 4700.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 4200.0
-      }
-    ]
-  },
-  {
-    "url": "https://noonestare-ua.com/product/109",
-    "id": 109,
-    "name": "سامسونج s25 الترا ذهبي",
-    "warranty": "ضمان سنتين حاسبات العرب",
-    "stock_status": "متوفر في المخزون 200 منتجات",
-    "image_url": "https://noonestare-ua.com/assets/images/products/WBB6vu4AUudhOufJSpaqlWbwOa8TV471G2fvnTWa.jpg",
-    "category": ["الهواتف الذكية", "ايفون"],
-    "base_price": 4200.0,
-    "variants": [
-      {
-        "type": "memory",
-        "size": "تيرا",
-        "price": 5700.0
-      },
-      {
-        "type": "memory",
-        "size": "512",
-        "price": 4700.0
-      },
-      {
-        "type": "memory",
-        "size": "256",
-        "price": 4200.0
-      }
-    ]
-  },
-  {
+  [
+    {
+      "url": "https://noonestare-ua.com/product/4",
+      "id": 4,
+      "name": "ايفون 16 بروماكس - تيتانيوم أبيض",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/7o1q018Bo1YfNRZV96v6Cn9hdZGaQO2DxNeIBaxB.jpg",
+      "category": ["ابل"],
+      "base_price": 3700.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 5200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 4700.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 4200.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/6",
+      "id": 6,
+      "name": "ايفون 16 بروماكس - تيتانيوم سكري",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 100 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/TO7hlauyuyQS6eo8DK0bk5hmJpc4CMIqKCHIOtGi.jpg",
+      "category": ["ابل"],
+      "base_price": 4200.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 5200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 4700.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 4200.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/7",
+      "id": 7,
+      "name": "ايفون 16 بروماكس - تيتانيوم رمادي",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/AJzapAFshp6cqc7lz6t4Ne6v9nSa3gJia7lx5BLy.jpg",
+      "category": ["ابل"],
+      "base_price": 4200.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 5200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 4700.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 4200.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/8",
+      "id": 8,
+      "name": "ايفون 16 بروماكس - تيتانيوم ذهبي",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/3JYEQsrIbA2c6fB463uTz5bfoKMezcjqN2I4O1bO.webp",
+      "category": ["ابل"],
+      "base_price": 4200.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 5200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 4700.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 4200.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/9",
+      "id": 9,
+      "name": "ايفون 16 برو - تيتانيوم ابيض",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/Y9YAzh0xcb2JPWGDGskbhUTH4X0jndHQNFv1uCY1.jpg",
+      "category": ["ابل"],
+      "base_price": 3700.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/10",
+      "id": 10,
+      "name": "ايفون 16 برو - تيتانيوم ازرق",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/dwfTAnzvmrnoiWzp9zVXeNyIW0L1w5BlNSropca4.jpg",
+      "category": ["ابل"],
+      "base_price": 3700.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/11",
+      "id": 11,
+      "name": "ايفون 16 برو - تيتانيوم وردي",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/6WM0xVSZFbPcWqUIrVObfoldW5s59eidW8BcxluD.jpg",
+      "category": ["ابل"],
+      "base_price": 3700.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/12",
+      "id": 12,
+      "name": "ايفون 16 برو - تيتانيوم رمادي",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/1qKaIvjERyuUJ9uVCXS7s6L714atKEl3SSbtcsqO.jpg",
+      "category": ["ابل"],
+      "base_price": 3700.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/13",
+      "id": 13,
+      "name": "ايفون 16 - تيتانيوم ابيض",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/jG2PC08twVfX1DkK7jrRgJlkt6AU6PM9f8SDL5lA.jpg",
+      "category": ["ابل"],
+      "base_price": 3400.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/14",
+      "id": 14,
+      "name": "ايفون 16 - تيتانيوم ازرق",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/PpsrY5SmTnHDcPq6Iga3DsM8XdBcghsiW9Brr0GY.jpg",
+      "category": ["ابل"],
+      "base_price": 3400.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/15",
+      "id": 15,
+      "name": "ايفون 16 - تيتانيوم وردي",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/wy7oM2zg2mfVfeiQePmueUUxeS8hbRRVYk1RKmfa.jpg",
+      "category": ["ابل"],
+      "base_price": 3400.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/16",
+      "id": 16,
+      "name": "ايفون 16 - تيتانيوم رمادي",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/OR7nJO6AwkvcZ2Ns2VkWWG6ZPWoTfDa1nR6k5jax.jpg",
+      "category": ["ابل"],
+      "base_price": 3400.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/17",
+      "id": 17,
+      "name": "ايفون 15 بروماكس - تيتانيوم أسود",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/xy2SQGgnmD7w65YVjmPwQQXrIWvsAt2dyy9zPTCr.jpg",
+      "category": ["ابل"],
+      "base_price": 3300.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 4200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 3600.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 3300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/18",
+      "id": 18,
+      "name": "ايفون 15 بروماكس - تيتانيوم سكري",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/b5XZEnxVu643YeE6LQLbCxrQNZUEII27oQfqz7Bj.jpg",
+      "category": ["ابل"],
+      "base_price": 3300.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 4200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 3600.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 3300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/19",
+      "id": 19,
+      "name": "ايفون 15 بروماكس - تيتانيوم ذهبي",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/eIQcTA4p29C1oDJviTIoPCn04JojBMsd8aPrkznA.jpg",
+      "category": ["ابل"],
+      "base_price": 3300.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 4200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 3600.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 3300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/20",
+      "id": 20,
+      "name": "ايفون 15 بروماكس - تيتانيوم أبيض",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/yUw4UzMkjeLuiFoVPX90nzcXnEyknfGFHXwBQT4h.jpg",
+      "category": ["ابل"],
+      "base_price": 3300.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 4200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 3600.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 3300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/21",
+      "id": 21,
+      "name": "ايفون 15 برو بلس - تيتانيوم اسود",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/jJ7hxATgHnN2t0JQgbVBqOW5IDXQA57tPkoCQFnr.jpg",
+      "category": ["ابل"],
+      "base_price": 2300.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/22",
+      "id": 22,
+      "name": "ايفون 15 برو بلس - تيتانيوم وردي",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/2PNBieIuD8Z44cww3vviTUCZBrZkEFvcPtqmfR1l.jpg",
+      "category": ["ابل"],
+      "base_price": 2300.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/23",
+      "id": 23,
+      "name": "ايفون 15 برو بلس - تيتانيوم اخضر",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/DsWa2BF0coRXuXF6OQ76LQUOHy461PBl0ptZZEGz.jpg",
+      "category": ["ابل"],
+      "base_price": 2300.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/24",
+      "id": 24,
+      "name": "ايفون 15 برو بلس - تيتانيوم أزرق",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/Be1uCmA0wUp7FRHT0aBK6ErCAFXvFHYKzLsFu8cW.jpg",
+      "category": ["ابل"],
+      "base_price": 2300.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/25",
+      "id": 25,
+      "name": "ايفون 15 برو بلس - تيتانيوم ذهبي",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/Gsh5GcQaqTRLN0CcXp28jkEOobTUKqnHtnh9VuUL.jpg",
+      "category": ["ابل"],
+      "base_price": 2300.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/26",
+      "id": 26,
+      "name": "ايفون 15 - تيتانيوم اسود",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/r8wDDrZgprecvP3Fi2vbYzorK9IbD0Cky1ZcVtGk.jpg",
+      "category": ["ابل"],
+      "base_price": 2300.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/27",
+      "id": 27,
+      "name": "ايفون 15 - تيتانيوم وردي",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/MfezSdYwKr0m0nTNWegZaR4RmEN4rn5ZszP9hBMb.jpg",
+      "category": ["ابل"],
+      "base_price": 2300.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/28",
+      "id": 28,
+      "name": "ايفون 15 - تيتانيوم أخضر",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/APdipzj0ONtCBoP56UTbmzrPPgQKYxTiL504ic9Z.jpg",
+      "category": ["ابل"],
+      "base_price": 2300.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/29",
+      "id": 29,
+      "name": "ايفون 15 - تيتانيوم أزرق",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/yiwD0hUld1pmJJF8ZitmCjdORfevdbKeQ5ItBChr.jpg",
+      "category": ["ابل"],
+      "base_price": 2300.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/30",
+      "id": 30,
+      "name": "ايفون 15 - تيتانيوم ذهبي",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/iv5pkHPo8j3aj2wwsh80DTTbiuVjJnFeAgrhRGbE.jpg",
+      "category": ["ابل"],
+      "base_price": 2300.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/31",
+      "id": 31,
+      "name": "ايفون 14 بروماكس - تيتانيوم بنفسجي",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 120 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/gz2dKaflGNF3PsyqFxGXorJcslqhuKvfIjn1VhPy.jpg",
+      "category": ["ابل"],
+      "base_price": 2100.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/32",
+      "id": 32,
+      "name": "ايفون 14 بروماكس - تيتانيوم أسود",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/pHSkCMjzsqbEk6N3xAmt3a0YQuEXaLzpThqBcnQ9.jpg",
+      "category": ["ابل"],
+      "base_price": 2100.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/33",
+      "id": 33,
+      "name": "ايفون 14 بروماكس - تيتانيوم أبيض",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/UYKbPeDFxqTlkDIBcAbxrNTdGCFMPiIeUB8CTr3j.jpg",
+      "category": ["ابل"],
+      "base_price": 2100.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/34",
+      "id": 34,
+      "name": "ايفون 14 بروماكس - تيتانيوم سكري",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/R3CcBsDNpqcjDPmGhfhVOOv99kTa2NS1M4eRnJ4s.jpg",
+      "category": ["ابل"],
+      "base_price": 2100.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/35",
+      "id": 35,
+      "name": "ايفون 14 برو - تيتانيوم بنفسجي",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/16T2FNbTpD5eYRQaVdMTKQ7ngKB7n0q9bf283Efl.webp",
+      "category": ["ابل"],
+      "base_price": 1700.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/36",
+      "id": 36,
+      "name": "ايفون 14 برو - تيتانيوم أسود",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 100 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/aGL4Xu7KNt2Hk0utM5zViOyxJ9XdOBw1l16XyCnW.webp",
+      "category": ["ابل"],
+      "base_price": 1400.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/37",
+      "id": 37,
+      "name": "ايفون 14 برو - تيتانيوم سكري",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/p7Qt4IZYJs6z99knHCNOMlBtXM9CGJEUKu725ZeT.webp",
+      "category": ["ابل"],
+      "base_price": 1700.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/38",
+      "id": 38,
+      "name": "ايفون 14 برو - تيتانيوم رمادي",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/XwWhmM1nuzgzRRS6mo54jTUbLIsCHQNtAvnIzOlc.webp",
+      "category": ["ابل"],
+      "base_price": 1700.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/39",
+      "id": 39,
+      "name": "ايفون 14 - تيتانيوم ابيض",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/fafblSwxHyEWIPceLaiIcMjMS32IYlLWKwerqhTC.webp",
+      "category": ["ابل"],
+      "base_price": 1400.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/40",
+      "id": 40,
+      "name": "ايفون 14 - تيتانيوم ازرق",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/gB3H7jpLEj0OiV3VzSvaBAlYFD3GA7DD0tMW5hyB.webp",
+      "category": ["ابل"],
+      "base_price": 1400.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/41",
+      "id": 41,
+      "name": "ايفون 14 - تيتانيوم اسود",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/jiomtAZRvCNRKdA4S0Xb5Hss4wE3APaDGXxMzSlF.jpg",
+      "category": ["ابل"],
+      "base_price": 1400.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/42",
+      "id": 42,
+      "name": "ايفون 14 - تيتانيوم رمادي",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/L3y0LHzlXfPqgDXGoRD3FA2NhtgcT8TFHkBbCmlF.webp",
+      "category": ["ابل"],
+      "base_price": 1400.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/43",
+      "id": 43,
+      "name": "ايفون 14 - تيتانيوم سكري",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/NrD7703LSQSL1XObupaEjR465sOk9NPedMozg0Ji.webp",
+      "category": ["ابل"],
+      "base_price": 1400.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/44",
+      "id": 44,
+      "name": "سامسونج s24  الترا",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/fW2w0WFGvD9ygYEODrTC6YxPl5YsJJgGtgJenlLJ.jpg",
+      "category": ["جوالات-سامسونج"],
+      "base_price": 3300.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/45",
+      "id": 45,
+      "name": "سامسونج s24  الترا رمادي",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/qDzdwaBYyFtHZ20oo5IrFVWaMsuNmWIvjOulWZQM.jpg",
+      "category": ["جوالات-سامسونج"],
+      "base_price": 3300.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/46",
+      "id": 46,
+      "name": "سامسونج s24  الترا أسود",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/Ipn7EIEqmqKmX2jkoP1XYZtlByjzJfxTd1797RiZ.jpg",
+      "category": ["سامسونج"],
+      "base_price": 3300.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/47",
+      "id": 47,
+      "name": "سامسونج s24  الترا أبيض",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/cFoBYJhz9Z3Do0Z1317HpelQwRaZf5f51hWbMCVF.jpg",
+      "category": ["ابل"],
+      "base_price": 3300.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/48",
+      "id": 48,
+      "name": "سامسونج s24  الترا أبيض",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/5K3P0qlbfZIHma3josBdfivDMvD8lhqdiqTBy7MH.jpg",
+      "category": ["ابل"],
+      "base_price": 3300.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/49",
+      "id": 49,
+      "name": "سامسونج s24  الترا ذهبي",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/wy68LFGYZmEGF9NgcS2NuaHV2UBGrCUWY8gNlBCM.jpg",
+      "category": ["ابل"],
+      "base_price": 3300.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/50",
+      "id": 50,
+      "name": "سامسونج s24  الترا رمادي",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/7cnbgLq1f01zhxREJuIf1lrvjT41ByLLUCqKFPtN.jpg",
+      "category": ["جوالات-سامسونج"],
+      "base_price": 3300.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/51",
+      "id": 51,
+      "name": "سامسونج s23  الترا أسود",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 100 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/qqMec1a1x41a03LkWJkMV5EEdR7O2tkNt824P3Rn.jpg",
+      "category": ["جوالات-سامسونج"],
+      "base_price": 2500.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/52",
+      "id": 52,
+      "name": "قلم ايباد مطور من i win",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 500 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/OnyvvQvTV4CZ06JRsqhrHFSMkWZrgGzHqhslq5vq.jpg",
+      "category": ["I-win"],
+      "base_price": 100.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/53",
+      "id": 53,
+      "name": "كفر i pad من iwin",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/52ZO5Ae6E0MfonMDcDPdbVvCMr2xpp48b6Zi0WHF.webp",
+      "category": ["I-win"],
+      "base_price": 25.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/54",
+      "id": 54,
+      "name": "بكج من Iwin يتكون من ساعة وسماعة",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 5000 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/UVZEEvTQbpDeOTGD8L69IQxhwV6TdizmBoCfVTRL.jpg",
+      "category": ["I-win"],
+      "base_price": 150.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/55",
+      "id": 55,
+      "name": "سماعة ايربودز من i win",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1500 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/Hs9MsruVhEHTXCjCW4Uvyg1L8OlvT6VTohGn1stj.jpg",
+      "category": ["I-win"],
+      "base_price": 60.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/56",
+      "id": 56,
+      "name": "ستاند للايباد",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1000 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/HhWHsP9nqe8xZ5hqTNYoWQQjLhzmOdDEbM1ih9jT.webp",
+      "category": ["ملحقات-الايباد"],
+      "base_price": 60.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/57",
+      "id": 57,
+      "name": "ستاند للايباد",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1500 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/eEDXBI0cPMg1NTKLVAEUMZ7qD9eXGasttgA3BUZZ.webp",
+      "category": ["ابل"],
+      "base_price": 50.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/58",
+      "id": 58,
+      "name": "شريط لتسهيل حمل الايباد",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 5000 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/e5D2RltwEu23KhgpSyuQTUYUW5nvxrRNA7Z4z5vI.webp",
+      "category": ["ملحقات-الايباد"],
+      "base_price": 15.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/59",
+      "id": 59,
+      "name": "قلم ايباد",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 5000 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/8Nbg27qVP1xLr7HJm2wWx29QsPje3hNb2uKkWew4.webp",
+      "category": ["ملحقات-الايباد"],
+      "base_price": 100.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/60",
+      "id": 60,
+      "name": "حماية شاشة اصلية",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1500 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/12piUCLotBhNg4SFMj2R3VB60SQxTcSPP8rfkkFW.jpg",
+      "category": ["ابل"],
+      "base_price": 15.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/61",
+      "id": 61,
+      "name": "ستاند وكيبورد للايباد",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 6000 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/ituspqiO1PVXRoCI3l0ulAZYFXlkm9owU8zC33oK.jpg",
+      "category": ["ابل"],
+      "base_price": 150.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/62",
+      "id": 62,
+      "name": "بلاي ستيشن 5 رقمي مع 1 يد تحكم+لعبة هدية",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 520 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/7SKFOXnuNrizSWOGP9RlklIKqlUXoMmPMKS2mMEb.webp",
+      "category": ["بلايستيشن"],
+      "base_price": 2600.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/63",
+      "id": 63,
+      "name": "بلاي ستيشن 5 رقمي مع 2 يد تحكم",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1230 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/lvRp54aMq4Awm9YaHHkre3QTsA7jLd23z8hdiP3H.webp",
+      "category": ["ابل"],
+      "base_price": 3000.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/64",
+      "id": 64,
+      "name": "بلاي ستيشن 4 رقمي مع 2 يد تحكم",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1500 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/U4sMudVkvyQi3tl5eP1eMWIG8fnuHzLGfmOXoqul.webp",
+      "category": ["بلايستيشن"],
+      "base_price": 2000.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 3200.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 2800.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 2300.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/65",
+      "id": 65,
+      "name": "بلاي ستيشن 4 رقمي مع يد تحكم واحدة",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1500 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/rlfUFh6ZDzC8Fk8CIn4RA0SReG9kRZmZpwJEdHAx.webp",
+      "category": ["ابل"],
+      "base_price": 1700.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/66",
+      "id": 66,
+      "name": "بلاي ستيشن 4 رقمي مع يد تحكم واحدة+لعبة COD MW2",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 100 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/Ablw9atocgA1UtrWN2Ba3NqNQFcMcNax3ejwQEjJ.webp",
+      "category": ["ابل"],
+      "base_price": 1750.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/67",
+      "id": 67,
+      "name": "لعبة HOGWARTS LEGACY",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1000 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/dIFfTKbeu9HCxtiRO2yYXlp4cA1FfGnyvbR7bNTe.webp",
+      "category": ["العاب بلايستيشن 5"],
+      "base_price": 150.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/68",
+      "id": 68,
+      "name": "لعبة HORIZON FORBIDDEN WEST",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1000 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/qf2VHgPInJIlheZhHQ46BpIgiTuN7m47BbP26V3K.webp",
+      "category": ["العاب بلايستيشن 5"],
+      "base_price": 130.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/69",
+      "id": 69,
+      "name": "لعبة uncharted legacy of thieves colletion",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 5000 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/zpGiCdt4HnRgjZLIo1Ya5OwyncCdKXdxREnj3iRr.webp",
+      "category": ["العاب بلايستيشن 5"],
+      "base_price": 150.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/70",
+      "id": 70,
+      "name": "لعبة GTA V",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1250 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/FkuEuWKB5rf6LXApiSHLNHq3qfXUXCRJ4upiaCxd.webp",
+      "category": ["العاب بلايستيشن 5"],
+      "base_price": 100.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/71",
+      "id": 71,
+      "name": "لعبة call of duty black ops cold war",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1400 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/BxioaWrB5f55w22ueyprBW7R6w0lZasA6OM5JehB.webp",
+      "category": ["العاب بلايستيشن 5"],
+      "base_price": 90.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/72",
+      "id": 72,
+      "name": "لعبة call of duty black ops 6",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 5000 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/ZnrRPk8jcgxiIsuAO8lbKkjKrLoCvxXWbRAWGQZa.webp",
+      "category": ["العاب بلايستيشن 5"],
+      "base_price": 180.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/73",
+      "id": 73,
+      "name": "لعبة  EA FIF",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 5000 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/AbhsPCKEnkltBRdipieME94xVsD0FT3IuP3baD1X.webp",
+      "category": ["العاب بلايستيشن 5"],
+      "base_price": 180.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/74",
+      "id": 74,
+      "name": "بور بانك بسعة 20000 ِmlA",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 500 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/5Hza4zC9CsZ5wJy2QtRgBxVFsd1ehcKjkZGsnsFk.webp",
+      "category": ["الشواحن و البطاريات"],
+      "base_price": 150.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/75",
+      "id": 75,
+      "name": "شاحن  سريع 6 امبير",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 5000 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/TuyCkazQtw8uwPKlpZYh7FtAEtQ37THLjx3cDuaP.webp",
+      "category": ["الشواحن و البطاريات"],
+      "base_price": 40.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/76",
+      "id": 76,
+      "name": "شاحن بدعم الشحن السريع 33 واط",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1500 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/69tpOUn0mZD2KFXJzY98LraTxAZtBG74gd014pd5.webp",
+      "category": ["الشواحن و البطاريات"],
+      "base_price": 50.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/77",
+      "id": 77,
+      "name": "بور بانك بسعة 10000 ِmlA",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 500 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/Ob4udawUU37wPh27cYC9ALm3VewJNS49FNVLo5k3.webp",
+      "category": ["ابل"],
+      "base_price": 80.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/78",
+      "id": 78,
+      "name": "شاحن بطاريات",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 5000 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/M15KRhqAo0rRRPU0xWTh2tW32WnWZjAs8jc8Xzrp.webp",
+      "category": ["الشواحن و البطاريات"],
+      "base_price": 120.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/79",
+      "id": 79,
+      "name": "كفر حماية باللون الاحمر",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 5000 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/6Dp8Bbtk88lxv7cSfXa4UzRnfdIWlPFWW1LKkdId.jpg",
+      "category": ["اكسسوارات-الايفون"],
+      "base_price": 15.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/80",
+      "id": 80,
+      "name": "كفر شفاف للايفون",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 5000 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/d1wuuXcxqF9kaR3NQJM0LGitV5srMX0ZtTHPWGn9.jpg",
+      "category": ["اكسسوارات-الايفون"],
+      "base_price": 15.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/81",
+      "id": 81,
+      "name": "حماية شاشة اصلية",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 15005 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/OKGErHI9dfRFIQVFShixDanE5ByaO4vMJ6ifJw08.jpg",
+      "category": ["اكسسوارات-الايفون"],
+      "base_price": 20.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/82",
+      "id": 82,
+      "name": "كفر اسود للايفون",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 5000 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/7erzNNPx44k3TCKI0kDLAjtAW8e8JUKxPrtTFeYb.jpg",
+      "category": ["اكسسوارات-الايفون"],
+      "base_price": 25.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/83",
+      "id": 83,
+      "name": "شاشة  Z-DOGE GAMING 24ins 180hz",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/y60nkEJjMBjUR6sCMc3hAZ8mxClswwBmQJXMrUwn.jpg",
+      "category": ["الشاشات والتلفزيون"],
+      "base_price": 1500.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/84",
+      "id": 84,
+      "name": "شاشة TUF GAMING 144hz 27ins",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 500 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/SpW16eIbDXmx1RNEF7ZLTrghAWoGiNglbEJ95Lca.jpg",
+      "category": ["الشاشات والتلفزيون"],
+      "base_price": 1300.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/85",
+      "id": 85,
+      "name": "شاشة lg oled",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1500 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/023tLaueJzHT6xnPh4nXbwq3KAlo0Iximzl0DrrX.webp",
+      "category": ["الشاشات والتلفزيون"],
+      "base_price": 1700.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/86",
+      "id": 86,
+      "name": "شاشة NITRO GAMING",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 500 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/qYr9oRNLK39Wjc0FdXuAueKZHMzMDDuCmPJ5mJ9e.webp",
+      "category": ["الشاشات والتلفزيون"],
+      "base_price": 1000.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/87",
+      "id": 87,
+      "name": "شاشة jaar samsung",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 250 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/MoslWPLUmoNWvw8eJ4OWDC6aRfkXqpGXaSnRACEx.webp",
+      "category": ["الشاشات والتلفزيون"],
+      "base_price": 2000.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/88",
+      "id": 88,
+      "name": "AOC Gaming C27G2ZE - 27 inch FHD gebogen monitor, 240 Hz, 0,5 m, FreeSync Premium (1920x1080, HDMI, DisplayPort) zwart/rood",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1500 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/CNrMLoUsMJYV0Hy0l1FwUTXMHX0dRRaU4YIKrToy.webp",
+      "category": ["الشاشات والتلفزيون"],
+      "base_price": 1200.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/89",
+      "id": 89,
+      "name": "KOORUI 34 Inch Ultrawide Curved Gaming Monitor 165HZ, 1ms, 1000R, WQHD 3440 * 1440, 21:9, DCI-P3 90% Color Gamut, FreeSync G-Sync Compatible, Tilt/Height Adjustable Stand, HDMI, Display Port, Black",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/kAeLD02Z05KJxB7acoJzY3EMs9B925JXkbZK9hv3.webp",
+      "category": ["الشاشات والتلفزيون"],
+      "base_price": 1300.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/90",
+      "id": 90,
+      "name": "BeautyFace Intelligent Skin Therapy Home Spa Mask Olive Leaf",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1500 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/lIs244kcUQIQUriPzQrbKgFZqsqv0mAqPE3GYyir.webp",
+      "category": ["اعتني بصحتك"],
+      "base_price": 20.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/91",
+      "id": 91,
+      "name": "BeautyFace Intelligent Skin Therapy Home Spa Mask Honey",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1500 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/aBGEhatIaIwIZL0sRTVUL2dLBHJKyawoQZJLUw8p.webp",
+      "category": ["اعتني بصحتك"],
+      "base_price": 20.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/92",
+      "id": 92,
+      "name": "BeautyFace Intelligent Skin Therapy Home Spa Mask Chamomile",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1500 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/l62AZr8jkZipudxp1TLS37W6svoxjOtzx9ju4ebQ.webp",
+      "category": ["اعتني بصحتك"],
+      "base_price": 20.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/93",
+      "id": 93,
+      "name": "VegiVital",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/heKi4tg6aHDg1JYZsu36nGPfasHM54megaUsDN5i.webp",
+      "category": ["ابل"],
+      "base_price": 150.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/94",
+      "id": 94,
+      "name": "Kurkuma Vitamine C Kleimasker Diep reinigend gezichtsmasker Huidverzorging Verbeter mee-eters Acne Donkere vlekken en egaliseer de huidskleur Gezichtsmasker Controle Olie en verfijning van poriën",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1000 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/eXD8EvooOIKA2AGAVCrxXzSm0NHYDmZpbilJK3eh.webp",
+      "category": ["اعتني بصحتك"],
+      "base_price": 2300.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/95",
+      "id": 95,
+      "name": "بكج مكياج لكل ما تحتاجه المرأة للتزين",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1500 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/711AIWixe2Jds3LRQhtwacd4dLkvMgk8VneoDuaw.webp",
+      "category": ["اعتني بصحتك"],
+      "base_price": 400.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/96",
+      "id": 96,
+      "name": "مرطب revolution peach",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1500 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/7GKZjN1o6scRnC2EVD8wAEa9Kis9vYuCkx1XtKU7.webp",
+      "category": ["اعتني بصحتك"],
+      "base_price": 60.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/97",
+      "id": 97,
+      "name": "آلة تقطيع الخضراوات",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/o55pH3hiPl9qmu6IZhJbwwnmHN7eKMkJrZg3izFb.webp",
+      "category": ["المنزلية-الاجهزة"],
+      "base_price": 100.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/98",
+      "id": 98,
+      "name": "آلة لعمل الفشار",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1500 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/6rIyxUyomVI9Ei50j7ukxPaqSfv842AyerDSyGHN.webp",
+      "category": ["المنزلية-الاجهزة"],
+      "base_price": 150.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/99",
+      "id": 99,
+      "name": "أفضل آلة لعمل العصير",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/wQ1c0c80kaTKctfQYvgSLlpkdTb8R4AkDJc07ccb.webp",
+      "category": ["ابل"],
+      "base_price": 300.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/100",
+      "id": 100,
+      "name": "خلاط سريع",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1520 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/I8KAHwxCUiXD5IXqvQJKpLqjlpvHxYrdfCnDp5je.webp",
+      "category": ["المنزلية-الاجهزة"],
+      "base_price": 200.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/101",
+      "id": 101,
+      "name": "مكنسة كهربائية موفرة للطاقة",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1502 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/FHkpRlfBS6y4GOWwUhXzdyCBW7RnV9YAo6WzFFhm.jpg",
+      "category": ["المنزلية-الاجهزة"],
+      "base_price": 700.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/102",
+      "id": 102,
+      "name": "ساعة رقمية ضد الماء",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1500 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/KHVa3Vppc3XI1u9Sppt0dMxN2BdGYs4bvVDEIVil.webp",
+      "category": ["الساعات"],
+      "base_price": 120.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/103",
+      "id": 103,
+      "name": "ساعة عقارب ذهبية",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1500 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/ApSuB7ODiHwngE0k8cSS42KhEzJfYb0fTdSi4QjB.webp",
+      "category": ["الساعات"],
+      "base_price": 120.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/104",
+      "id": 104,
+      "name": "ساعة casio فضية",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/gJ0Gw9CqwiS8d4wRHZUBIvlrNrx2ozrSHD7iO59d.webp",
+      "category": ["الساعات"],
+      "base_price": 135.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/105",
+      "id": 105,
+      "name": "ساعة ابل واتش HW22 Plus الاصدار 6 مقاس 44m",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 1300 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/B0bXXgao0XwCS8JczeTVllZKX9PR9LMX6WTMVtqS.jpg",
+      "category": ["الساعات"],
+      "base_price": 200.0
+    },
+    {
+      "url": "https://noonestare-ua.com/product/106",
+      "id": 106,
+      "name": "سامسونج S25الترا اسود",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 150 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/jramFFta9wKxZhY6fhe0d6FzlSVSGTYWYNUPNwg4.jpg",
+      "category": ["جوالات-سامسونج"],
+      "base_price": 4200.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 5700.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 4700.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 4200.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/107",
+      "id": 107,
+      "name": "سامسونج S25الترا ابيض",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/iul1WxXC7wKgOFx3o35HmZjDweHo7WEN4K2zEVUX.jpg",
+      "category": ["جوالات-سامسونج"],
+      "base_price": 4200.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 5700.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 4700.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 4200.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/108",
+      "id": 108,
+      "name": "سامسونج S25الترا رمادي",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/FipNA2hHYFqHWcnusP3NDemOGQchvC58kJq1Dg3b.jpg",
+      "category": ["جوالات-سامسونج"],
+      "base_price": 4200.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 5700.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 4700.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 4200.0
+        }
+      ]
+    },
+    {
+      "url": "https://noonestare-ua.com/product/109",
+      "id": 109,
+      "name": "سامسونج s25 الترا ذهبي",
+      "warranty": "ضمان سنتين حاسبات العرب",
+      "stock_status": "متوفر في المخزون 200 منتجات",
+      "image_url": "https://noonestare-ua.com/assets/images/products/WBB6vu4AUudhOufJSpaqlWbwOa8TV471G2fvnTWa.jpg",
+      "category": ["ابل"],
+      "base_price": 4200.0,
+      "variants": [
+        {
+          "type": "memory",
+          "size": "تيرا",
+          "price": 5700.0
+        },
+        {
+          "type": "memory",
+          "size": "512",
+          "price": 4700.0
+        },
+        {
+          "type": "memory",
+          "size": "256",
+          "price": 4200.0
+        }
+      ]
+    },{
+
     "url": "https://rawnaqstoore.com/store/product/136",
     "route": "/store/product/136",
     "id": "136",

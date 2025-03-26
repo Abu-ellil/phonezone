@@ -63,7 +63,7 @@ export default function PaymentMethodRadio({
         <PaymentMethodOption
           method="cash"
           currentMethod={paymentMethod}
-          label="الدفع نقداً"
+          label="دفع كامل المبلغ"
           onSelect={setPaymentMethod}
         />
 
@@ -107,22 +107,22 @@ export default function PaymentMethodRadio({
       </div>
 
       {/* Cash on Delivery Options */}
-      { (
+      {
         <CashOnDeliveryOptions
           paymentMethod={paymentMethod}
           setPaymentMethod={setPaymentMethod}
           shippingCost={shippingCost}
         />
-      )}
+      }
 
       {/* Cash on Delivery Cash Form */}
-      { (
+      {
         <CashOnDeliveryCashForm
           shippingCost={shippingCost}
           onDeliveryInfoSubmit={onDeliveryInfoSubmit}
           onPayNowClick={onPayNowClick}
         />
-      )}
+      }
 
       {/* Cash on Delivery Installment Form */}
       {paymentMethod === "cash_on_delivery_installment" && (
