@@ -62,8 +62,9 @@ export default async function Home() {
             // تعديل الاسم للتعامل مع الاختلافات في الكتابة
             const normalizedName = name
               .toLowerCase()
-              .replace("برو", "pro")
+              .replace("برو ماكس", "promax")
               .replace("بروماكس", "promax")
+              .replace("برو", "pro")
               .replace("ماكس", "max")
               .replace("بلس", "plus");
 
@@ -89,6 +90,21 @@ export default async function Home() {
                 .replace("بروماكس", "promax")
                 .replace("ماكس", "max")
                 .replace("بلس", "plus");
+              // استبعاد المنتجات التي تحتوي على كلمة ماكس إذا كان المنتج المطلوب هو برو
+              if (
+                (name.includes("برو") &&
+                  !name.includes("ماكس") &&
+                  (normalizedProductName.includes("max") ||
+                    normalizedProductName.includes("ماكس") ||
+                    normalizedProductName.includes("promax"))) ||
+                (name.includes("برو ماكس") &&
+                  !(normalizedProductName.includes("promax") ||
+                    (normalizedProductName.includes("pro") &&
+                      (normalizedProductName.includes("max") ||
+                        normalizedProductName.includes("ماكس"))))
+              )) {
+                return false;
+              }
               return normalizedProductName.includes(term);
             });
 
@@ -103,7 +119,10 @@ export default async function Home() {
                   .replace("بروماكس", "promax")
                   .replace("ماكس", "max")
                   .replace("بلس", "plus");
-                return normalizedSubcategory.includes(term);
+                return (
+                  normalizedSubcategory.includes(term) ||
+                  term.includes(normalizedSubcategory)
+                );
               }));
 
           return (
@@ -323,7 +342,7 @@ export default async function Home() {
           <Section
             title="هواتف آيفون 16 برو ماكس"
             products={iPhone16ProMaxProducts}
-            link="/category/ايفون"
+            link="/category/ابل/iPhone 16 Pro Max"
           />
 
           <BannerImage src={img2} alt="Banner 2" />
