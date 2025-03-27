@@ -174,11 +174,13 @@ export default function ProductPage({ params }) {
                         (product.price || selectedVariant?.price) !==
                           product.original_price && (
                           <span className="text-lg text-gray-500 line-through">
-                            {product.original_price.toFixed(2)} د.إ
+                            {Number(product.original_price).toFixed(2)} د.إ
                           </span>
                         )}
                       <span className="text-3xl font-bold text-primary">
-                        {(selectedVariant?.price || product.price).toFixed(2)}{" "}
+                        {Number(
+                          selectedVariant?.price || product.price
+                        ).toFixed(2)}{" "}
                         د.إ
                       </span>
                     </div>
