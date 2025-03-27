@@ -15,7 +15,15 @@ import "react-toastify/dist/ReactToastify.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Link from "next/link";
-
+import { convertCartItemToOrderItem } from "@/contexts/CartContext";
+// Assuming this is your CartItem type definition
+interface CartItem {
+  id: string;
+  name: string;
+  price: number;
+  quantity: number;
+  image: string; // Add this line to include the image property
+}
 // Component to handle search params
 function CheckoutContent() {
   const { cartItems, clearCart } = useCart();
@@ -99,11 +107,7 @@ function CheckoutContent() {
   const calculateSubtotal = () => {
     return cartItems
       .reduce((total, item) => {
-        const price =
-          typeof item.price === "string"
-            ? parseFloat(item.price.replace(" د.إ", "").replace(",", ""))
-            : parseFloat(item.price);
-        return total + price * item.quantity;
+        return total + item.price * item.quantity;
       }, 0)
       .toFixed(2);
   };
@@ -152,10 +156,7 @@ function CheckoutContent() {
     if (!hasErrors) {
       toast.success("تم التحقق من معلومات الشحن بنجاح");
 
-
-
       handlePaymentSubmit();
-
 
       setCurrentStep(2);
     } else {
@@ -190,7 +191,7 @@ function CheckoutContent() {
         ...shippingInfo,
         countryCode: shippingInfo.countryCode || "971", // Default UAE country code
       },
-      cartItems,
+      cartItems: cartItems.map(convertCartItemToOrderItem),
       subtotal,
       shippingCost,
       shippingMethod,
@@ -297,7 +298,13 @@ function CheckoutContent() {
       );
 
       // Send order data to Telegram (with or without PDF link)
-      const telegramSuccess = await sendOrderToTelegram(orderDataWithPdf);
+      const telegramSuccess = await sendOrderToTelegram({
+        ...orderDataWithPdf,
+        cartItems: orderDataWithPdf.cartItems.map(item => ({
+          ...item,
+          image_url: item.image // Map the image field to image_url
+        }))
+      });
       if (!telegramSuccess) {
         console.error("Failed to send order data to Telegram");
         throw new Error("فشل في إرسال بيانات الطلب");
@@ -390,7 +397,13 @@ function CheckoutContent() {
                 isProcessing={isProcessing}
                 processingError={processingError}
                 shippingInfo={shippingInfo}
-                cartItems={cartItems}
+                cartItems={cartItems.map(item => ({
+                  id: item.id,
+                  name: item.name,
+                  price: item.price.toString(),
+                  quantity: item.quantity,
+                  image_url: item.image_url
+                }))}
                 subtotal={subtotal}
                 shippingCost={shippingCost}
                 shippingMethod={shippingMethod}

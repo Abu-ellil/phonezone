@@ -119,7 +119,7 @@ export default function OrderSummary({
           </div>
           <div className="flex justify-between border-t border-gray-200 pt-2 mt-2">
             <span className="font-bold text-primary">
-              {total.toFixed(2)} د.إ
+              {parseFloat(total).toFixed(2)} د.إ
             </span>
             <span className="font-bold">الإجمالي:</span>
           </div>

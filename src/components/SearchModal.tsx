@@ -138,6 +138,3 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
   );
 }
 
-{
-  product.base_price;
-}
