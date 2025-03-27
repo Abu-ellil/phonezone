@@ -2156,7 +2156,7 @@
     "id": "136",
     "name": "أبل ساعة اصدار نايك الجيل السابع 45 مللي جي بي إس، سوار أسود",
     "original_price": "1939.42 د.إ",
-    "price": "1831.62 د.إ",
+    "base_price": "1831.62 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/d4512f67-3578-413e-8359-8d998499f31c.jpeg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2211,7 +2211,7 @@
     "id": "141",
     "name": "أبل ساعة ذكية الجيل السادس جي بي إس مع خاصية الإتصال،44 مللي،ألمينيوم ذهبي،مع سوار وردي",
     "original_price": "2351.02 د.إ",
-    "price": "1763.02 د.إ",
+    "base_price": "1763.02 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/a22a6a58-4cd5-4908-8a4e-46ddd64dc675.jpeg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2222,7 +2222,7 @@
     "id": "142",
     "name": "أبل ساعة إس إي ، جي بي إس، 40 مم، فضي، سوار رياضي أزرق",
     "original_price": "1322.02 د.إ",
-    "price": "1126.02 د.إ",
+    "base_price": "1126.02 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/aecb1354-ae15-473a-af99-2ce8a5feb5d4.jpeg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2233,7 +2233,7 @@
     "id": "143",
     "name": "أبل ساعة الجيل السابع 45 مللي جي بي إس خاصية الإتصال، سوار فضي",
     "original_price": "3429.02 د.إ",
-    "price": "3331.02 د.إ",
+    "base_price": "3331.02 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/4cd575d3-60ad-40f7-a3d2-08758de95622.jpeg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2244,7 +2244,7 @@
     "id": "144",
     "name": "أبل ساعة إس إي ، جي بي إس، 44 مم، ذهبي، سوار رياضي ضوء النجوم",
     "original_price": "1390.62 د.إ",
-    "price": "1194.62 د.إ",
+    "base_price": "1194.62 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/0e093359-618c-49a2-85d6-507526c3a4a6.jpeg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2255,7 +2255,7 @@
     "id": "443",
     "name": "أبل ساعة ذكية الجيل السادس نايكي جي بي إس مع خاصية الإتصال،44 مللي،رمادي،مع سوار أسود",
     "original_price": "2322.6 د.إ",
-    "price": "1741.46 د.إ",
+    "base_price": "1741.46 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/ae2cceca-a3d9-4e78-9cf1-4669c41da499.jpeg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2266,7 +2266,7 @@
     "id": "454",
     "name": "أبل ساعة ذكية الجيل السادس جي بي إس مع خاصية الإتصال،40 مللي،أزرق،مع سوار كحلي",
     "original_price": "2156 د.إ",
-    "price": "1568 د.إ",
+    "base_price": "1568 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/3965118f-d60d-448c-b352-9972e316814a.jpeg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2277,7 +2277,7 @@
     "id": "455",
     "name": "أبل ساعة اصدار نايك الجيل السادس، مقاس 44 ملم، جي بي اس، إطار فضي، سوار نايك الاسود رياضي",
     "original_price": "1839.46 د.إ",
-    "price": "1478.82 د.إ",
+    "base_price": "1478.82 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/66d9ea47-db3b-4031-bea6-ff489390be73.jpeg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2288,7 +2288,7 @@
     "id": "456",
     "name": "آبل ساعة الاصدار 3، مقاس 42 ملم، جي بي اس، أطار رمادي",
     "original_price": "1078 د.إ",
-    "price": "925.12 د.إ",
+    "base_price": "925.12 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/05b06397-8741-4a83-9a70-00acb966a9bb.jpeg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2299,7 +2299,7 @@
     "id": "458",
     "name": "أبل ساعة اصدار نايك الجيل السابع 41 مللي جي بي إس،ضوء النجوم سوار نايك أسود",
     "original_price": "1812.02 د.إ",
-    "price": "1714.02 د.إ",
+    "base_price": "1714.02 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/31c9c757-6bfe-4760-abfd-36da120c0846.jpeg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2310,7 +2310,7 @@
     "id": "459",
     "name": "أبل ساعة اصدار نايك، الجيل السابع 45 مللس جي بي إس، ضوء النجوم سوار نايك أسود",
     "original_price": "1929.62 د.إ",
-    "price": "1831.62 د.إ",
+    "base_price": "1831.62 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/d7355be0-944e-4e09-8374-e723cba94949.jpeg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2321,7 +2321,7 @@
     "id": "461",
     "name": "أبل ساعة إس إي ، جي بي إس مع إتصال، 44 مم، رمادي، سوار رياضي رمادي",
     "original_price": "1616.02 د.إ",
-    "price": "1420.02 د.إ",
+    "base_price": "1420.02 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/eaf7385f-b7a8-4b5e-9ab9-720396093880.jpeg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2332,7 +2332,7 @@
     "id": "462",
     "name": "أبل ساعة ذكية الجيل السادس إس إي جي بي إس مع خاصية الإتصال،40 مللي،ألمنيوم فضي،مع سوار كحلي",
     "original_price": "1469.02 د.إ",
-    "price": "1273.02 د.إ",
+    "base_price": "1273.02 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/70549ca9-32d5-4b26-a350-838a2759f751.jpeg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2343,7 +2343,7 @@
     "id": "463",
     "name": "آبل ساعة الاصدار 3، مقاس 38 ملم، جي بي اس، أطار فضي",
     "original_price": "910.42 د.إ",
-    "price": "832.02 د.إ",
+    "base_price": "832.02 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/90d800ef-eab2-4309-8fce-11a1f03fdeed.jpeg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2354,7 +2354,7 @@
     "id": "465",
     "name": "أبل ساعة الجيل السابع 41 مللي جي بي إس، سوار أخضر",
     "original_price": "1812.02 د.إ",
-    "price": "1714.02 د.إ",
+    "base_price": "1714.02 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/81313be9-ccd9-463e-8009-7af706db686c.jpeg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2365,7 +2365,7 @@
     "id": "467",
     "name": "أبل ساعة ذكية الجيل السادس جي بي إس مع خاصية الإتصال،44 مللي،رمادي داكن،مع سوار رمادي داكن",
     "original_price": "3546.62 د.إ",
-    "price": "2449.02 د.إ",
+    "base_price": "2449.02 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/87576e19-97a8-457a-abd7-cc6a98f8b27b.jpeg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2376,7 +2376,7 @@
     "id": "470",
     "name": "أبل ساعة الجيل السابع 45 مللي جي بي إس، سوار أحمر",
     "original_price": "1929.62 د.إ",
-    "price": "1831.62 د.إ",
+    "base_price": "1831.62 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/2a5d6eab-cc04-476d-a9b5-f2bd56eda52d.jpeg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2387,22 +2387,12 @@
     "id": "471",
     "name": "أبل ساعة الاصدار 6، مقاس 44 ملم، جي بي اس، إطار أحمر أصدار خاص، سوار أحمر رياضي",
     "original_price": "1929.62 د.إ",
-    "price": "1361.22 د.إ",
+    "base_price": "1361.22 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/2f8b69e0-c025-43e7-9231-fe2e56a784b0.jpeg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
   },
-  {
-    "url": "https://rawnaqstoore.com/store/product/472",
-    "route": "/store/product/472",
-    "id": "472",
-    "name": "آبل ساعة الاصدار 3، مقاس 42 ملم، جي بي اس، أطار فضي",
-    "original_price": "980 د.إ",
-    "price": "925.12 د.إ",
-    "image_url": "https://rawnaqstoore.com/images/Original/5d835af1-eee1-4899-9545-8bc4ecf4502c.jpeg",
-    "category": "ساعات ابل",
-    "subcategory": "ساعات ابل"
-  },
+  
   {
     "url": "https://rawnaqstoore.com/store/product/473",
     "route": "/store/product/473",
@@ -2420,7 +2410,7 @@
     "id": "474",
     "name": "أبل ساعة ذكية الجيل السادس جي بي إس مع خاصية الإتصال،40 مللي،ذهبي،مع سوار أزرق",
     "original_price": "3086.02 د.إ",
-    "price": "2155.02 د.إ",
+    "base_price": "2155.02 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/27aa0c0a-b6f1-4ba7-b49d-3138e7bd4a3d.jpeg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2431,7 +2421,7 @@
     "id": "829",
     "name": "ساعة ابل اصدار 9 مقاس 45 مم اسود",
     "original_price": "2499.00 د.إ",
-    "price": "2299.00 د.إ",
+    "base_price": "2299.00 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/1e48c883-f6b5-4420-b635-3ad47172a55e.jpg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2442,7 +2432,7 @@
     "id": "830",
     "name": "ساعة ابل اصدار 9 مقاس 45 مم سلفر",
     "original_price": "2499.00 د.إ",
-    "price": "2299.00 د.إ",
+    "base_price": "2299.00 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/70d12937-93ac-4ea3-9fd8-250391262bdb.jpg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2507,7 +2497,7 @@
     "id": "837",
     "name": "ساعة ابل اصدار 8 مقاس 45 سلفر",
     "original_price": "2199.00 د.إ",
-    "price": "1999.00 د.إ",
+    "base_price": "1999.00 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/08648517-f206-4ce6-8c8c-b821c8184f56.jpg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2518,7 +2508,7 @@
     "id": "838",
     "name": "ساعة ابل اصدار 8 مقاس 41 اسود",
     "original_price": "2099.00 د.إ",
-    "price": "1899.00 د.إ",
+    "base_price": "1899.00 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/93ad05c7-a121-4d5d-88e3-af5c5cbf8f82.jpg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2529,7 +2519,7 @@
     "id": "839",
     "name": "ساعة ابل اصدار 8 مقاس 41 سلفر",
     "original_price": "2099.00 د.إ",
-    "price": "1899.00 د.إ",
+    "base_price": "1899.00 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/14cfbe31-0c04-4192-9886-6d678aaf5b02.jpg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2540,7 +2530,7 @@
     "id": "840",
     "name": "ساعة ابل اصدار 8 مقاس 41 ضوء النجوم",
     "original_price": "2099.00 د.إ",
-    "price": "1899.00 د.إ",
+    "base_price": "1899.00 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/8609c78c-ea1c-4fab-b446-ec80f9a3879f.jpg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2551,7 +2541,7 @@
     "id": "841",
     "name": "ساعة ابل اصدار SE مقاس 44 اسود 2023",
     "original_price": "1399.00 د.إ",
-    "price": "1199.00 د.إ",
+    "base_price": "1199.00 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/10bd77a6-d602-44e0-827f-f67198239134.png",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2562,7 +2552,7 @@
     "id": "842",
     "name": "ساعة ابل اصدار SE مقاس 44 ضوء النجوم 2023",
     "original_price": "1399.00 د.إ",
-    "price": "1199.00 د.إ",
+    "base_price": "1199.00 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/dec6fb55-00bb-4481-b605-aaa7df13625a.jpg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2573,7 +2563,7 @@
     "id": "843",
     "name": "ساعة ابل اصدار SE مقاس 44 سلفر 2023",
     "original_price": "1399.00 د.إ",
-    "price": "1199.00 د.إ",
+    "base_price": "1199.00 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/b2f4116d-c308-432e-be03-8b9f411a17ae.jpg",
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل"
@@ -2585,7 +2575,7 @@
     "id": "302",
     "name": "أبل إيربودز ماكس",
     "original_price": "2596.02 د.إ",
-    "price": "2107 د.إ",
+    "base_price": "2107 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/ecd7dc1a-619b-4d79-8e3b-f29d0107fb18.jpeg",
     "category": "أجهزة صوت و سماعات",
     "subcategory": "سماعات أبل"
@@ -2596,7 +2586,7 @@
     "id": "303",
     "name": "أبل إيربودز ماكس",
     "original_price": "2596.02 د.إ",
-    "price": "2107 د.إ",
+    "base_price": "2107 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/b9641ab6-8fc7-47ef-98c0-835e75490765.jpeg",
     "category": "أجهزة صوت و سماعات",
     "subcategory": "سماعات أبل"
@@ -2607,7 +2597,7 @@
     "id": "304",
     "name": "أبل إيربودز ماكس",
     "original_price": "2596.02 د.إ",
-    "price": "2107 د.إ",
+    "base_price": "2107 د.إ",
     "image_url": "https://rawnaqstoore.com/images/Original/a2f0e0c0-fcc6-441a-8e7c-edec988e4bc0.jpeg",
     "category": "أجهزة صوت و سماعات",
     "subcategory": "سماعات أبل"
