@@ -122,7 +122,7 @@
     "image_url": "https://res.cloudinary.com/masoft/image/upload/v1743030537/mbnna0sduouklh7tivvt.jpg",
     "category": ["ابل"],
     "subcategory": "iPhone 16 Pro",
-    "base_price": 4200.0,
+    "base_price": 3200.0,
     "variants": [
       {
         "type": "memory",
@@ -150,7 +150,7 @@
     "image_url": "https://res.cloudinary.com/masoft/image/upload/v1743030536/curjlevkxbnylefvows4.jpg",
     "category": ["ابل"],
     "subcategory": "iPhone 16 Pro",
-    "base_price": 4200.0,
+    "base_price": 3200.0,
     "variants": [
       {
         "type": "memory",
@@ -177,7 +177,7 @@
     "stock_status": "متوفر في المخزون 200 منتجات",
     "image_url": "https://res.cloudinary.com/masoft/image/upload/v1743030536/surexbdcimkcamgk6rxs.jpg",
     "category": ["ابل"],
-    "base_price": 4200.0,
+    "base_price": 3200.0,
     "variants": [
       {
         "type": "memory",
@@ -204,7 +204,7 @@
     "stock_status": "متوفر في المخزون 200 منتجات",
     "image_url": "https://res.cloudinary.com/masoft/image/upload/v1743030536/dm6au4dbaoc2x1xknt4x.jpg",
     "category": ["ابل"],
-    "base_price": 4200.0,
+    "base_price": 3200.0,
     "variants": [
       {
         "type": "memory",
@@ -232,7 +232,7 @@
     "image_url": "https://res.cloudinary.com/masoft/image/upload/v1743030537/mbnna0sduouklh7tivvt.jpg",
     "category": ["ابل"],
     "subcategory": "iPhone 16",
-    "base_price": 3400.0,
+    "base_price": 2300.0,
     "variants": [
       {
         "type": "memory",
@@ -259,7 +259,7 @@
     "stock_status": "متوفر في المخزون 200 منتجات",
     "image_url": "https://noonestare-ua.com/assets/images/products/PpsrY5SmTnHDcPq6Iga3DsM8XdBcghsiW9Brr0GY.jpg",
     "category": ["ابل"],
-    "base_price": 3400.0,
+    "base_price": 2300.0,
     "variants": [
       {
         "type": "memory",
@@ -286,7 +286,7 @@
     "stock_status": "متوفر في المخزون 200 منتجات",
     "image_url": "https://noonestare-ua.com/assets/images/products/wy7oM2zg2mfVfeiQePmueUUxeS8hbRRVYk1RKmfa.jpg",
     "category": ["ابل"],
-    "base_price": 3400.0,
+    "base_price": 2300.0,
     "variants": [
       {
         "type": "memory",
@@ -313,7 +313,7 @@
     "stock_status": "متوفر في المخزون 200 منتجات",
     "image_url": "https://noonestare-ua.com/assets/images/products/OR7nJO6AwkvcZ2Ns2VkWWG6ZPWoTfDa1nR6k5jax.jpg",
     "category": ["ابل"],
-    "base_price": 3400.0,
+    "base_price": 2300.0,
     "variants": [
       {
         "type": "memory",
