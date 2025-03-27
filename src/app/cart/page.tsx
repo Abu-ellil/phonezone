@@ -105,8 +105,7 @@ export default function CartPage() {
   const calculateTotal = () => {
     return cartItems
       .reduce((total, item) => {
-        let price = parseFloat(item.price);
-        return total + price * item.quantity;
+        return total + item.price * item.quantity;
       }, 0)
       .toFixed(2);
   };
