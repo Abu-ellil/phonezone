@@ -53,7 +53,7 @@ export default function OrderSummary({
                     الكمية: {item.quantity}
                   </span>
                   <span className="text-sm font-medium text-primary">
-                    {item.price.toFixed(2)} د.إ
+                    {Number(item.price).toFixed(2)} د.إ
                   </span>
                 </div>
               </div>
