@@ -5,7 +5,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getDualCurrencyPrice } from "@/utils/currency";
 import { useCart } from "@/contexts/CartContext";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
@@ -175,15 +174,12 @@ export default function ProductPage({ params }) {
                         (product.price || selectedVariant?.price) !==
                           product.original_price && (
                           <span className="text-lg text-gray-500 line-through">
-                            {getDualCurrencyPrice(product.original_price).aed}
+                            {product.original_price.toFixed(2)} د.إ
                           </span>
                         )}
                       <span className="text-3xl font-bold text-primary">
-                        {
-                          getDualCurrencyPrice(
-                            selectedVariant?.price || product.price
-                          ).aed
-                        }
+                        {(selectedVariant?.price || product.price).toFixed(2)}{" "}
+                        د.إ
                       </span>
                     </div>
                     {product.original_price &&
@@ -387,7 +383,7 @@ export default function ProductPage({ params }) {
                         href="/cart"
                         className="component-base  py-2 px-4 font-medium hover:opacity-90 transition-colors text-lg text-center"
                       >
-                        السلة
+                        {product.original_price}
                       </Link>
                     </div>
                   )}

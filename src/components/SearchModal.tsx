@@ -1,9 +1,10 @@
 "use client";
-import { useState } from "react";
-import { getProducts } from "@/utils/data";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { useCart } from "@/contexts/CartContext";
+import { getProducts } from "@/utils/data";
 import Link from "next/link";
-import { getDualCurrencyPrice } from "@/utils/currency";
 
 interface SearchModalProps {
   isOpen: boolean;
@@ -114,18 +115,11 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                     <div className="mt-1 flex items-center justify-start gap-2">
                       {product.variants ? (
                         <span className="text-sm font-medium text-primary">
-                          {
-                            getDualCurrencyPrice(
-                              product.variants[0].price.toString()
-                            ).aed
-                          }
+                          {product.variants[0].price.toFixed(2)} د.إ
                         </span>
                       ) : (
                         <span className="text-sm font-medium text-primary">
-                          {
-                            getDualCurrencyPrice(product.base_price.toString())
-                              .aed
-                          }
+                          {product.base_price.toFixed(2)} د.إ
                         </span>
                       )}
                     </div>
@@ -142,4 +136,8 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
       </div>
     </div>
   );
+}
+
+{
+  product.base_price;
 }

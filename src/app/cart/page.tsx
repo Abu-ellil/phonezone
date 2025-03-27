@@ -2,7 +2,6 @@
 import { useCart } from "@/contexts/CartContext";
 import { useState, useEffect } from "react";
 import { Loading } from "@/components/Loading";
-import { getDualCurrencyPrice } from "@/utils/currency";
 import Header from "@/components/Header";
 import PaymentMethodRadio from "./components/PaymentMethodRadio";
 import Footer from "@/components/Footer";
@@ -100,17 +99,13 @@ export default function CartPage() {
   };
 
   const handlePayNowClick = () => {
-
     handleNextStep();
   };
 
   const calculateTotal = () => {
     return cartItems
       .reduce((total, item) => {
-        let price =
-          typeof item.price === "string"
-            ? parseFloat(item.price.replace(" د.إ", "").replace(",", ""))
-            : parseFloat(item.price);
+        let price = parseFloat(item.price);
         return total + price * item.quantity;
       }, 0)
       .toFixed(2);
@@ -185,7 +180,7 @@ export default function CartPage() {
                 <div className="p-4">
                   <div className="flex justify-between items-center mb-4">
                     <span className="text-gray-900 font-medium">
-                      {getDualCurrencyPrice(calculateTotal() + " د.إ").aed}
+                      {calculateTotal() + " د.إ"}
                     </span>
                     <span className="text-gray-700">مجموع المنتجات</span>
                   </div>
@@ -409,9 +404,8 @@ export default function CartPage() {
                           </p>
                           <div className="mt-1">
                             <span className="text-lg font-bold text-primary">
-                              {getDualCurrencyPrice(item.price).aed}
+                              {item.price}
                             </span>
-                            
                           </div>
                         </div>
                         <div className="w-20 h-20 relative">
