@@ -12,6 +12,15 @@ export interface CartItem {
   quantity: number;
 }
 
+// Helper function to convert CartItem to OrderItem
+export const convertCartItemToOrderItem = (item: CartItem) => ({
+  id: item.id,
+  name: item.name,
+  price: item.price.toString(),
+  quantity: item.quantity,
+  image: item.image_url,
+});
+
 interface CartContextType {
   cartItems: CartItem[];
   addToCart: (item: Omit<CartItem, "quantity">) => void;
