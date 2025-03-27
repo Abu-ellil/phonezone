@@ -175,7 +175,7 @@
     "stock_status": "متوفر في المخزون 200 منتجات",
     "image_url": "https://res.cloudinary.com/masoft/image/upload/v1743030536/surexbdcimkcamgk6rxs.jpg",
     "category": ["ابل"],
-    "base_price": 3700.0,
+    "base_price": 4200.0,
     "variants": [
       {
         "type": "memory",
@@ -202,7 +202,7 @@
     "stock_status": "متوفر في المخزون 200 منتجات",
     "image_url": "https://res.cloudinary.com/masoft/image/upload/v1743030536/dm6au4dbaoc2x1xknt4x.jpg",
     "category": ["ابل"],
-    "base_price": 3700.0,
+    "base_price": 4200.0,
     "variants": [
       {
         "type": "memory",

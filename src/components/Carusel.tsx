@@ -6,7 +6,6 @@ import "slick-carousel/slick/slick-theme.css";
 import { getProducts } from "@/utils/data";
 import Image from "next/image";
 import Link from "next/link";
-import { getDualCurrencyPrice } from "@/utils/currency";
 
 function Carousel() {
   const products = getProducts().slice(0, 10);
@@ -71,13 +70,13 @@ function Carousel() {
                   <div className="mt-1 flex flex-col items-end">
                     {product.price && (
                       <span className="text-sm font-bold text-blue-600">
-                        {getDualCurrencyPrice(product.price).aed}
+                        {product.price}
                       </span>
                     )}
                     {product.original_price &&
                       product.price !== product.original_price && (
                         <span className="text-xs text-gray-500 line-through">
-                          {getDualCurrencyPrice(product.original_price).aed}
+                          {product.original_price}
                         </span>
                       )}
                   </div>

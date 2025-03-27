@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getDualCurrencyPrice } from "@/utils/currency";
 
 interface ProductCardProps {
   id: string;
@@ -54,7 +53,7 @@ export default function ProductCard({
               <>
                 <div className="flex flex-col items-end">
                   <span className="text-sm font-bold text-blue-600">
-                    {getDualCurrencyPrice(price).aed}
+                    {price}
                   </span>
                 </div>
               </>
@@ -62,7 +61,7 @@ export default function ProductCard({
             {original_price && price !== original_price && (
               <div className="flex flex-col items-end mt-1">
                 <span className="text-xs text-gray-500 line-through">
-                  {getDualCurrencyPrice(original_price).aed}
+                  {original_price}
                 </span>
               </div>
             )}

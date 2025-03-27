@@ -1,8 +1,6 @@
 "use client";
 import Image from "next/image";
 import { CartItem } from "@/contexts/CartContext";
-import { getDualCurrencyPrice } from "@/utils/currency";
-
 type OrderSummaryProps = {
   cartItems: CartItem[];
   subtotal: number;
@@ -55,7 +53,7 @@ export default function OrderSummary({
                     الكمية: {item.quantity}
                   </span>
                   <span className="text-sm font-medium text-primary">
-                    {getDualCurrencyPrice(item.price).aed}
+                    {item.price.toFixed(2)} د.إ
                   </span>
                 </div>
               </div>
@@ -112,20 +110,16 @@ export default function OrderSummary({
         )}
         <div className="border-t border-gray-200 pt-4 space-y-2">
           <div className="flex justify-between">
-            <span className="text-primary">
-              {getDualCurrencyPrice(subtotal + " د.إ").aed}
-            </span>
+            <span className="text-primary">{subtotal.toFixed(2)} د.إ</span>
             <span>المجموع الفرعي:</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-primary">
-              {getDualCurrencyPrice(shippingCost + " د.إ").aed}
-            </span>
+            <span className="text-primary">{shippingCost.toFixed(2)} د.إ</span>
             <span>الشحن:</span>
           </div>
           <div className="flex justify-between border-t border-gray-200 pt-2 mt-2">
             <span className="font-bold text-primary">
-              {getDualCurrencyPrice(total + " د.إ").aed}
+              {total.toFixed(2)} د.إ
             </span>
             <span className="font-bold">الإجمالي:</span>
           </div>
