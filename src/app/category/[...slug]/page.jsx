@@ -49,6 +49,7 @@ function getProductsByCategory(categoryName, params) {
         "ابل",
         "آبل",
         "apple",
+        "16",
         "15",
         "14",
         "13",
@@ -65,7 +66,8 @@ function getProductsByCategory(categoryName, params) {
         .replace("برو", "pro")
         .replace("بروماكس", "promax")
         .replace("ماكس", "max")
-        .replace("بلس", "plus");
+        .replace("بلس", "plus")
+        .replace("iphone", "ايفون");
       return (
         iPhoneTerms.some((term) => productNameNormalized.includes(term)) ||
         productCategories.some(
@@ -143,28 +145,40 @@ function getProductsBySubcategory(categoryName, subcategoryName, params) {
     .replace("برو", "pro")
     .replace("بروماكس", "promax")
     .replace("ماكس", "max")
-    .replace("بلس", "plus");
+    .replace("بلس", "plus")
+    .replace("iphone", "ايفون");
 
   return products.filter((product) => {
     const productNameLower = product.name.toLowerCase().trim();
     const productSubcategory = product.subcategory?.toLowerCase().trim() || "";
 
     if (categoryName === "ابل" || categoryName === "آبل") {
-      const iPhoneTerms = ["ايفون", "آيفون", "iphone", "أيفون"];
+      const iPhoneTerms = [
+        "ايفون",
+        "آيفون",
+        "iphone",
+        "أيفون",
+        "16",
+        "pro",
+        "max",
+      ];
       const hasIPhoneInName = iPhoneTerms.some((term) =>
         productNameLower.includes(term.toLowerCase())
       );
-      const modelTerms = normalizedSubcategory.split(" ");
+      const modelTerms = normalizedSubcategory.split(" ").filter(Boolean);
 
       const normalizedProductName = productNameLower
         .replace("برو", "pro")
         .replace("بروماكس", "promax")
         .replace("ماكس", "max")
-        .replace("بلس", "plus");
+        .replace("بلس", "plus")
+        .replace("iphone", "ايفون");
 
       return (
         hasIPhoneInName &&
-        modelTerms.every((term) => normalizedProductName.includes(term))
+        modelTerms.every((term) =>
+          normalizedProductName.includes(term.toLowerCase())
+        )
       );
     } else if (categoryName === "سامسونج") {
       const searchTerms =
@@ -188,7 +202,13 @@ function getProductsBySubcategory(categoryName, subcategoryName, params) {
             ].map((term) => term.toLowerCase().trim())
           : [normalizedSubcategory];
 
-      return searchTerms.some((term) => productNameLower.includes(term));
+      return searchTerms.some((term) => {
+        const normalizedTerm = term.toLowerCase().trim();
+        return (
+          productNameLower.includes(normalizedTerm) ||
+          productSubcategory.includes(normalizedTerm)
+        );
+      });
     }
 
     // More flexible matching for subcategories
