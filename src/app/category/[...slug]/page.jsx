@@ -6,14 +6,20 @@ import { notFound, useParams } from "next/navigation";
 import storeData from "../../../../public/data.json";
 
 function getProductsByCategory(categoryName, params) {
+  const normalizedCategoryName = categoryName.toLowerCase().trim();
+
   let products = storeData.filter((product) => {
     const productCategories = Array.isArray(product.category)
-      ? product.category
-      : [product.category];
+      ? product.category.map((cat) => cat.toLowerCase().trim())
+      : [product.category?.toLowerCase().trim()];
     const productNameLower =
-      typeof product.name === "string" ? product.name.toLowerCase() : "";
+      typeof product.name === "string" ? product.name.toLowerCase().trim() : "";
 
-    if (categoryName === "ساعات ابل" || categoryName === "ساعات آبل") {
+    // Handle Apple Watch category with variations
+    if (
+      normalizedCategoryName.includes("ساعات ابل") ||
+      normalizedCategoryName.includes("ساعات آبل")
+    ) {
       const watchTerms = [
         "ساعات ابل",
         "ساعة ابل",
@@ -22,42 +28,81 @@ function getProductsByCategory(categoryName, params) {
         "ساعات آبل",
         "ابل ووتش",
         "watch",
-      ];
+      ].map((term) => term.toLowerCase().trim());
       return watchTerms.some(
         (term) =>
-          productNameLower.includes(term.toLowerCase()) ||
-          productCategories.some((cat) =>
-            cat.toLowerCase().includes(term.toLowerCase())
-          )
+          productNameLower.includes(term) ||
+          productCategories.some((cat) => cat.includes(term))
       );
     }
 
-    if (categoryName === "ابل" || categoryName === "آبل") {
-      const iPhoneTerms = ["ايفون", "آيفون", "iphone", "أيفون"];
+    // Handle Apple category with variations
+    if (
+      normalizedCategoryName.includes("ابل") ||
+      normalizedCategoryName.includes("آبل")
+    ) {
+      const iPhoneTerms = [
+        "ايفون",
+        "آيفون",
+        "iphone",
+        "أيفون",
+        "ابل",
+        "آبل",
+        "apple",
+        "15",
+        "14",
+        "13",
+        "برو",
+        "بروماكس",
+        "pro",
+        "promax",
+        "max",
+        "ماكس",
+        "plus",
+        "بلس",
+      ].map((term) => term.toLowerCase().trim());
+      const productNameNormalized = productNameLower
+        .replace("برو", "pro")
+        .replace("بروماكس", "promax")
+        .replace("ماكس", "max")
+        .replace("بلس", "plus");
       return (
-        productCategories.includes("ابل") ||
-        productCategories.includes("الهواتف الذكية") ||
-        iPhoneTerms.some((term) =>
-          productNameLower.includes(term.toLowerCase())
+        iPhoneTerms.some((term) => productNameNormalized.includes(term)) ||
+        productCategories.some(
+          (cat) =>
+            cat.includes("ابل") ||
+            cat.includes("آبل") ||
+            cat.includes("الهواتف الذكية")
         )
       );
     }
 
-    if (categoryName === "سامسونج") {
+    // Handle Samsung category with variations
+    if (normalizedCategoryName.includes("سامسونج")) {
+      const samsungTerms = ["سامسونج", "samsung"].map((term) =>
+        term.toLowerCase().trim()
+      );
       return (
-        productCategories.includes("سامسونج") ||
-        productNameLower.includes("سامسونج") ||
-        productNameLower.includes("samsung")
+        samsungTerms.some((term) => productNameLower.includes(term)) ||
+        productCategories.some((cat) =>
+          samsungTerms.some((term) => cat.includes(term))
+        )
       );
     }
 
-    if (categoryName === "الهواتف الذكية") {
-      return productCategories.includes("الهواتف الذكية");
+    // Handle Smartphones category
+    if (normalizedCategoryName.includes("الهواتف الذكية")) {
+      return productCategories.some((cat) => cat.includes("الهواتف الذكية"));
     }
 
-    return productCategories.includes(categoryName);
+    // Default category matching with fuzzy search
+    return (
+      productCategories.some((cat) => cat.includes(normalizedCategoryName)) ||
+      productNameLower.includes(normalizedCategoryName)
+    );
   });
 
+  // Apply filters if provided
   if (params) {
     if (params.minPrice && params.minPrice !== "null") {
       products = products.filter(
@@ -81,20 +126,47 @@ function getProductsByCategory(categoryName, params) {
     }
   }
 
-  return products.map((product) => ({
-    ...product,
-    price: product.base_price,
-    original_price: product.base_price,
-  }));
+  return products.length > 0
+    ? products.map((product) => ({
+        ...product,
+        price: product.base_price,
+        original_price: product.base_price,
+      }))
+    : [];
 }
 
 function getProductsBySubcategory(categoryName, subcategoryName, params) {
   const products = getProductsByCategory(categoryName, params);
-  return products.filter((product) => {
-    const productNameLower = product.name.toLowerCase();
-    const subcategoryLower = subcategoryName.toLowerCase();
+  const normalizedSubcategory = subcategoryName
+    .toLowerCase()
+    .trim()
+    .replace("برو", "pro")
+    .replace("بروماكس", "promax")
+    .replace("ماكس", "max")
+    .replace("بلس", "plus");
 
-    if (categoryName === "سامسونج") {
+  return products.filter((product) => {
+    const productNameLower = product.name.toLowerCase().trim();
+    const productSubcategory = product.subcategory?.toLowerCase().trim() || "";
+
+    if (categoryName === "ابل" || categoryName === "آبل") {
+      const iPhoneTerms = ["ايفون", "آيفون", "iphone", "أيفون"];
+      const hasIPhoneInName = iPhoneTerms.some((term) =>
+        productNameLower.includes(term.toLowerCase())
+      );
+      const modelTerms = normalizedSubcategory.split(" ");
+
+      const normalizedProductName = productNameLower
+        .replace("برو", "pro")
+        .replace("بروماكس", "promax")
+        .replace("ماكس", "max")
+        .replace("بلس", "plus");
+
+      return (
+        hasIPhoneInName &&
+        modelTerms.every((term) => normalizedProductName.includes(term))
+      );
+    } else if (categoryName === "سامسونج") {
       const searchTerms =
         subcategoryName === "S25 Ultra"
           ? [
@@ -105,19 +177,28 @@ function getProductsBySubcategory(categoryName, subcategoryName, params) {
               "اس 25 الترا",
               "S25الترا",
               "s25 الترا",
-            ]
+            ].map((term) => term.toLowerCase().trim())
           : subcategoryName === "S24 Ultra"
-          ? ["s24 الترا", "s24 ultra", "S24 Ultra", "S24 الترا", "اس 24 الترا"]
-          : [subcategoryName];
-      return searchTerms.some((term) =>
-        productNameLower.includes(term.toLowerCase())
-      );
+          ? [
+              "s24 الترا",
+              "s24 ultra",
+              "S24 Ultra",
+              "S24 الترا",
+              "اس 24 الترا",
+            ].map((term) => term.toLowerCase().trim())
+          : [normalizedSubcategory];
+
+      return searchTerms.some((term) => productNameLower.includes(term));
     }
 
+    // More flexible matching for subcategories
     return (
-      productNameLower.includes(subcategoryLower) ||
-      (product.subcategory &&
-        product.subcategory.toLowerCase().includes(subcategoryLower))
+      productNameLower.includes(normalizedSubcategory) ||
+      productSubcategory.includes(normalizedSubcategory) ||
+      (Array.isArray(product.category) &&
+        product.category.some((cat) =>
+          cat.toLowerCase().trim().includes(normalizedSubcategory)
+        ))
     );
   });
 }
