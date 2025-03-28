@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { getCategories } from "@/utils/data";
 import Image from "next/image";
@@ -22,17 +22,25 @@ export default function Header() {
   const { cartCount } = useCart();
 
   // Get categories and filter out duplicates by name
-  const allCategories = getCategories();
-  const uniqueCategoryNames = new Set();
-  const categories = Array.isArray(allCategories)
-    ? allCategories.filter((category) => {
-        if (uniqueCategoryNames.has(category.name)) {
-          return false;
-        }
-        uniqueCategoryNames.add(category.name);
-        return true;
-      })
-    : [];
+  const [categories, setCategories] = useState<Category[]>([]);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const allCategories = await getCategories();
+      const uniqueCategoryNames = new Set();
+      const uniqueCategories = Array.isArray(allCategories)
+        ? allCategories.filter((category) => {
+            if (uniqueCategoryNames.has(category.name)) {
+              return false;
+            }
+            uniqueCategoryNames.add(category.name);
+            return true;
+          })
+        : [];
+      setCategories(uniqueCategories);
+    };
+    fetchCategories();
+  }, []);
 
   const toggleCategory = (categoryName: string) => {
     if (isDropdownOpen === categoryName) {

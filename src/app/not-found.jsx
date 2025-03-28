@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect } from "react";
 import { getProducts } from "@/utils/data";
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
@@ -6,11 +7,18 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export default function NotFound() {
-  // Get 8 random products
-  const allProducts = getProducts();
-  const randomProducts = allProducts
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 8);
+  const [randomProducts, setRandomProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const allProducts = await getProducts();
+      const shuffledProducts = [...allProducts]
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 8);
+      setRandomProducts(shuffledProducts);
+    };
+    fetchProducts();
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col mb-8">
