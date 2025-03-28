@@ -1,53 +1,30 @@
-// Utility to load the store data
-import storeData from "../../public/data.json";
+import axios from "axios";
 
-interface Variant {
-  type: string;
-  size: string;
-  price: number;
+const API_URL = "https://json-server-vercel-six-rust.vercel.app/products"; // غيّره حسب سيرفر البيانات
+
+// ✅ جلب المنتجات من الـ API
+export async function getProducts(): Promise<Product[]> {
+  try {
+    const { data } = await axios.get<Product[]>(API_URL);
+    return data.map((product) => ({
+      ...product,
+      category: Array.isArray(product.category)
+        ? product.category
+        : [product.category],
+      createdAt: new Date().toISOString(),
+      price: product.base_price,
+      original_price: product.base_price,
+      variants: Array.isArray(product.variants) ? product.variants : [],
+    }));
+  } catch (error) {
+    console.error("❌ Error fetching products:", error);
+    return [];
+  }
 }
 
-interface Product {
-  url: string;
-  id: number;
-  name: string;
-  warranty: string;
-  stock_status: string;
-  image_url: string;
-  category: string[];
-  base_price: number;
-  variants: Variant[];
-  subcategory?: string;
-  featured?: boolean;
-  bestSelling?: boolean;
-  createdAt?: string;
-  price?: number;
-  original_price?: number;
-}
-
-interface Category {
-  name: string;
-  url: string;
-  route: string;
-  products: Product[];
-  subcategories: { name: string; products: Product[] }[];
-}
-
-export function getProducts(): Product[] {
-  return storeData.map((product: any) => ({
-    ...product,
-    category: Array.isArray(product.category)
-      ? product.category
-      : [product.category],
-    createdAt: new Date().toISOString(),
-    price: product.base_price,
-    original_price: product.base_price,
-    variants: Array.isArray(product.variants) ? product.variants : [],
-  }));
-}
-
-export function getCategories(): Category[] {
-  const products = getProducts();
+// ✅ جلب جميع الفئات وتصنيف المنتجات تحتها
+export async function getCategories(): Promise<Category[]> {
+  const products = await getProducts();
   const categoriesMap = new Map<
     string,
     { products: Product[]; subcategories: Map<string, Product[]> }
@@ -88,8 +65,11 @@ export function getCategories(): Category[] {
   );
 }
 
-export function getFeaturedProducts(limit: number = 8): Product[] {
-  const products = getProducts();
+// ✅ جلب المنتجات المميزة (أحدث 8 منتجات)
+export async function getFeaturedProducts(
+  limit: number = 8
+): Promise<Product[]> {
+  const products = await getProducts();
   // Since we don't have featured flag in local data, return first n products
   return products.slice(0, limit);
 }
@@ -99,16 +79,17 @@ export function getFeaturedProducts(limit: number = 8): Product[] {
  * @param limit Maximum number of products to return
  * @returns Array of newest products
  */
-export function getNewestProducts(limit: number = 8): Product[] {
-  const products = getProducts();
+export async function getNewestProducts(limit: number = 8): Promise<Product[]> {
+  const products = await getProducts();
   return [...products].reverse().slice(0, limit);
 }
 
-export function getProductsByCategory(
+// ✅ جلب المنتجات حسب الفئة
+export async function getProductsByCategory(
   categoryName: string,
   params?: { [key: string]: string }
-): Product[] {
-  let products = getProducts();
+): Promise<Product[]> {
+  let products = await getProducts();
   products = products.filter((product) =>
     product.category.includes(categoryName)
   );
@@ -139,11 +120,12 @@ export function getProductsByCategory(
   return products;
 }
 
-export function getProductsBySubcategory(
+// ✅ جلب المنتجات حسب الفئة الفرعية
+export async function getProductsBySubcategory(
   categoryName: string,
   subcategoryName: string
-): Product[] {
-  const products = getProducts();
+): Promise<Product[]> {
+  const products = await getProducts();
   return products.filter((product) => {
     const productNameLower = product.name.toLowerCase();
     const productSubcategory = product.subcategory?.toLowerCase() || "";
@@ -154,7 +136,7 @@ export function getProductsBySubcategory(
       .replace("ماكس", "max")
       .replace("بلس", "plus");
 
-    // Handle iPhone models
+    // دعم خاص لأجهزة iPhone
     if (categoryName === "ابل" || categoryName === "آبل") {
       const iPhoneTerms = ["ايفون", "آيفون", "iphone", "أيفون"];
       const hasIPhoneInName = iPhoneTerms.some((term) =>
@@ -175,7 +157,7 @@ export function getProductsBySubcategory(
       );
     }
 
-    // Handle Samsung models
+    // دعم خاص لأجهزة Samsung
     if (categoryName === "سامسونج") {
       const hasSamsungInName =
         productNameLower.includes("سامسونج") ||
@@ -189,7 +171,7 @@ export function getProductsBySubcategory(
       );
     }
 
-    // Default case for other categories
+    // الفئات الأخرى
     return (
       product.category.includes(categoryName) &&
       (product.subcategory === subcategoryName ||
@@ -198,19 +180,48 @@ export function getProductsBySubcategory(
   });
 }
 
-export function getProductById(id: string | number): Product | null {
-  const products = getProducts();
-  const product = products.find((product) => {
-    const productId =
-      typeof product.id === "string" ? product.id : product.id.toString();
-    const searchId = typeof id === "string" ? id : id.toString();
-    return productId === searchId;
-  });
-
-  if (!product) {
-    console.warn(`Product with id ${id} not found`);
+// ✅ جلب المنتج حسب الـ ID
+export async function getProductById(
+  id: string | number
+): Promise<Product | null> {
+  try {
+    const { data } = await axios.get<Product>(`${API_URL}/${id}`);
+    return data;
+  } catch (error) {
+    console.error(`❌ Error fetching product with ID ${id}:`, error);
     return null;
   }
+}
 
-  return product;
+// ✅ تعريفات البيانات (Interfaces)
+interface Variant {
+  type: string;
+  size: string;
+  price: number;
+}
+
+interface Product {
+  url: string;
+  id: number;
+  name: string;
+  warranty: string;
+  stock_status: string;
+  image_url: string;
+  category: string[];
+  base_price: number;
+  variants: Variant[];
+  subcategory?: string;
+  featured?: boolean;
+  bestSelling?: boolean;
+  createdAt?: string;
+  price?: number;
+  original_price?: number;
+}
+
+interface Category {
+  name: string;
+  url: string;
+  route: string;
+  products: Product[];
+  subcategories: { name: string; products: Product[] }[];
 }

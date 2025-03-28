@@ -4,7 +4,15 @@ import Link from "next/link";
 import { getCategories } from "@/utils/data";
 import Image from "next/image";
 import { useCart } from "@/contexts/CartContext";
-import SearchModal from "./SearchModal";
+
+interface Subcategory {
+  name: string;
+}
+
+interface Category {
+  name: string;
+  subcategories: Subcategory[];
+}
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,13 +24,15 @@ export default function Header() {
   // Get categories and filter out duplicates by name
   const allCategories = getCategories();
   const uniqueCategoryNames = new Set();
-  const categories = allCategories.filter((category) => {
-    if (uniqueCategoryNames.has(category.name)) {
-      return false;
-    }
-    uniqueCategoryNames.add(category.name);
-    return true;
-  });
+  const categories = Array.isArray(allCategories)
+    ? allCategories.filter((category) => {
+        if (uniqueCategoryNames.has(category.name)) {
+          return false;
+        }
+        uniqueCategoryNames.add(category.name);
+        return true;
+      })
+    : [];
 
   const toggleCategory = (categoryName: string) => {
     if (isDropdownOpen === categoryName) {
@@ -96,17 +106,19 @@ export default function Header() {
                       </div>
                       {isDropdownOpen === category.name && (
                         <div className="" style={{ touchAction: "none" }}>
-                          {category.subcategories.map((subcategory) => (
-                            <Link
-                              key={subcategory.name}
-                              href={`/category/${encodeURIComponent(
-                                category.name
-                              )}/${encodeURIComponent(subcategory.name)}`}
-                              className="block px-4 py-2 text-right text-gray-700 hover:bg-[#3498db] hover:text-white"
-                            >
-                              {subcategory.name}
-                            </Link>
-                          ))}
+                          {category.subcategories.map(
+                            (subcategory: { name: string }) => (
+                              <Link
+                                key={subcategory.name}
+                                href={`/category/${encodeURIComponent(
+                                  category.name
+                                )}/${encodeURIComponent(subcategory.name)}`}
+                                className="block px-4 py-2 text-right text-gray-700 hover:bg-[#3498db] hover:text-white"
+                              >
+                                {subcategory.name}
+                              </Link>
+                            )
+                          )}
                         </div>
                       )}
                     </li>
@@ -210,18 +222,20 @@ export default function Header() {
                   </button>
                   {isDropdownOpen === category.name && (
                     <div className="mt-2 space-y-2 pr-4 bg-gray-50 rounded-md">
-                      {category.subcategories.map((subcategory) => (
-                        <Link
-                          key={subcategory.name}
-                          href={`/category/${encodeURIComponent(
-                            category.name
-                          )}/${encodeURIComponent(subcategory.name)}`}
-                          className="block py-2 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-100 rounded-md transition-colors"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          {subcategory.name}
-                        </Link>
-                      ))}
+                      {category.subcategories.map(
+                        (subcategory: { name: string }) => (
+                          <Link
+                            key={subcategory.name}
+                            href={`/category/${encodeURIComponent(
+                              category.name
+                            )}/${encodeURIComponent(subcategory.name)}`}
+                            className="block py-2 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-100 rounded-md transition-colors"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            {subcategory.name}
+                          </Link>
+                        )
+                      )}
                     </div>
                   )}
                 </div>
