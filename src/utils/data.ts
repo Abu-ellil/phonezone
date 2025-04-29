@@ -1,21 +1,9 @@
-import axios from "axios";
-
-// Use window.location.origin to create an absolute URL for the local JSON file
-const getLocalDbUrl = () => {
-  // In browser environment, use window.location.origin
-  if (typeof window !== "undefined") {
-    return `${window.location.origin}/data/db.json`;
-  }
-  // In server environment, use a relative path that Next.js can resolve
-  // For Vercel deployment, we need to use a path that works in production
-  return "/data/db.json";
-};
+import { fetchLocalJson } from "./nextFetch";
 
 // ✅ جلب المنتجات من الملف المحلي
 export async function getProducts(): Promise<Product[]> {
   try {
-    const dbUrl = getLocalDbUrl();
-    const { data } = await axios.get<{ products: Product[] }>(dbUrl);
+    const data = await fetchLocalJson<{ products: Product[] }>("/data/db.json");
     return data.products.map((product) => ({
       ...product,
       category: Array.isArray(product.category)

@@ -1,14 +1,4 @@
-import axios from "axios";
-
-// Use window.location.origin to create an absolute URL for the local JSON file
-const getLocalDbUrl = () => {
-  // In browser environment, use window.location.origin
-  if (typeof window !== "undefined") {
-    return `${window.location.origin}/data/db.json`;
-  }
-  // In server environment, use a relative path that works in all environments including Vercel
-  return "/data/db.json";
-};
+import { fetchLocalJson } from "./nextFetch";
 
 interface AppSettings {
   installmentDefaults: {
@@ -24,8 +14,7 @@ interface AppSettings {
  */
 export async function getAppSettings(): Promise<AppSettings> {
   try {
-    const dbUrl = getLocalDbUrl();
-    const { data } = await axios.get(dbUrl);
+    const data = await fetchLocalJson<any>("/data/db.json");
 
     // Check if settings exist in the data
     if (data.settings) {
