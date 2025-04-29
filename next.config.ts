@@ -14,6 +14,10 @@ const nextConfig: NextConfig = {
     turbo: {
       rules: {
         // Configure Turbopack rules here
+        ".module.css": {
+          "loaders": ["postcss-loader"],
+          "use": { "default": {} }
+        },
       },
     },
   },
