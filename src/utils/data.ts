@@ -7,7 +7,8 @@ const getLocalDbUrl = () => {
     return `${window.location.origin}/data/db.json`;
   }
   // In server environment, use a relative path that Next.js can resolve
-  return new URL("/data/db.json", "http://localhost:3000").toString();
+  // For Vercel deployment, we need to use a path that works in production
+  return "/data/db.json";
 };
 
 // ✅ جلب المنتجات من الملف المحلي

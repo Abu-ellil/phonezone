@@ -6,9 +6,8 @@ const getLocalDbUrl = () => {
   if (typeof window !== "undefined") {
     return `${window.location.origin}/data/db.json`;
   }
-  // In server environment, use a relative path that Next.js can resolve
-  // return new URL("/data/db.json", "http://localhost:3000").toString();
-  return new URL("/data/db.json", "https://www.aliiexpressuae.com").toString();
+  // In server environment, use a relative path that works in all environments including Vercel
+  return "/data/db.json";
 };
 
 interface AppSettings {
