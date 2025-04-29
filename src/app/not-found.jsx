@@ -1,24 +1,44 @@
 "use client";
 import { useState, useEffect } from "react";
-import { getProducts } from "@/utils/data";
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useProducts } from "@/contexts/ProductsContext";
+import { Loading } from "@/components/Loading";
 
 export default function NotFound() {
   const [randomProducts, setRandomProducts] = useState([]);
+  const { products, loading, error } = useProducts();
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      const allProducts = await getProducts();
-      const shuffledProducts = [...allProducts]
+    if (products.length > 0) {
+      const shuffledProducts = [...products]
         .sort(() => Math.random() - 0.5)
         .slice(0, 8);
       setRandomProducts(shuffledProducts);
-    };
-    fetchProducts();
-  }, []);
+    }
+  }, [products]);
+
+  if (loading) {
+    return <Loading size="large" text="جاري تحميل المنتجات..." />;
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center">
+        <p className="text-red-500 text-xl">
+          حدث خطأ أثناء تحميل المنتجات: {error}
+        </p>
+        <button
+          onClick={() => window.location.reload()}
+          className="mt-4 px-4 py-2 bg-primary text-white rounded-md"
+        >
+          إعادة المحاولة
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col mb-8">

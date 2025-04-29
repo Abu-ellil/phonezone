@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { CartProvider } from "@/contexts/CartContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import FloatingWhatsAppButton from "@/components/FloatingWhatsAppButton";
+import { CartProvider } from "@/contexts/CartContext";
+import { ProductsProvider } from "@/contexts/ProductsContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FONE ZONE || AliiexpressUAE - متجر الهواتف الذكية والإلكترونيات",
+  title: "FONE ZONE || AliiExpress - متجر الهواتف الذكية والإلكترونيات",
   description: "متجر إلكتروني متخصص في بيع الهواتف الذكية والإلكترونيات",
 };
 
@@ -32,19 +33,21 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         <CartProvider>
-          <div className="flex flex-col min-h-screen">{children}</div>
-          <FloatingWhatsAppButton />
-          <ToastContainer
-            position="bottom-right"
-            autoClose={3000}
-            hideProgressBar={false}
-            newestOnTop
-            closeOnClick
-            rtl={true}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-          />
+          <ProductsProvider>
+            <div className="flex flex-col min-h-screen">{children}</div>
+            <FloatingWhatsAppButton />
+            <ToastContainer
+              position="bottom-right"
+              autoClose={3000}
+              hideProgressBar={false}
+              newestOnTop
+              closeOnClick
+              rtl={true}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+            />
+          </ProductsProvider>
         </CartProvider>
       </body>
     </html>

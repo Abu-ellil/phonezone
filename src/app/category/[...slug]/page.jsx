@@ -2,280 +2,99 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
-import { notFound, useParams } from "next/navigation";
-import storeData from "../../../../public/data.json";
-
-function getProductsByCategory(categoryName, params) {
-  const normalizedCategoryName = categoryName.toLowerCase().trim();
-
-  let products = storeData.filter((product) => {
-    const productCategories = Array.isArray(product.category)
-      ? product.category.map((cat) => cat.toLowerCase().trim())
-      : [product.category?.toLowerCase().trim()];
-    const productNameLower =
-      typeof product.name === "string" ? product.name.toLowerCase().trim() : "";
-
-    // Handle Apple Watch category with variations
-    if (
-      normalizedCategoryName.includes("ساعات ابل") ||
-      normalizedCategoryName.includes("ساعات آبل")
-    ) {
-      const watchTerms = [
-        "ساعات ابل",
-        "ساعة ابل",
-        "apple watch",
-        "ساعة آبل",
-        "ساعات آبل",
-        "ابل ووتش",
-        "watch",
-      ].map((term) => term.toLowerCase().trim());
-      return watchTerms.some(
-        (term) =>
-          productNameLower.includes(term) ||
-          productCategories.some((cat) => cat.includes(term))
-      );
-    }
-
-    // Handle Apple category with variations
-    if (
-      normalizedCategoryName.includes("ابل") ||
-      normalizedCategoryName.includes("آبل")
-    ) {
-      const iPhoneTerms = [
-        "ايفون",
-        "آيفون",
-        "iphone",
-        "أيفون",
-        "ابل",
-        "آبل",
-        "apple",
-        "16",
-        "15",
-        "14",
-        "13",
-        "برو",
-        "بروماكس",
-        "pro",
-        "promax",
-        "max",
-        "ماكس",
-        "plus",
-        "بلس",
-      ].map((term) => term.toLowerCase().trim());
-      const productNameNormalized = productNameLower
-        .replace("برو", "pro")
-        .replace("بروماكس", "promax")
-        .replace("ماكس", "max")
-        .replace("بلس", "plus")
-        .replace("iphone", "ايفون");
-      return (
-        iPhoneTerms.some((term) => productNameNormalized.includes(term)) ||
-        productCategories.some(
-          (cat) =>
-            cat.includes("ابل") ||
-            cat.includes("آبل") ||
-            cat.includes("الهواتف الذكية")
-        )
-      );
-    }
-
-    // Handle Samsung category with variations
-    if (normalizedCategoryName.includes("سامسونج")) {
-      const samsungTerms = ["سامسونج", "samsung"].map((term) =>
-        term.toLowerCase().trim()
-      );
-      return (
-        samsungTerms.some((term) => productNameLower.includes(term)) ||
-        productCategories.some((cat) =>
-          samsungTerms.some((term) => cat.includes(term))
-        )
-      );
-    }
-
-    // Handle Smartphones category
-    if (normalizedCategoryName.includes("الهواتف الذكية")) {
-      return productCategories.some((cat) => cat.includes("الهواتف الذكية"));
-    }
-
-    // Default category matching with fuzzy search
-    return (
-      productCategories.some((cat) => cat.includes(normalizedCategoryName)) ||
-      productNameLower.includes(normalizedCategoryName)
-    );
-  });
-
-  // Apply filters if provided
-  if (params) {
-    if (params.minPrice && params.minPrice !== "null") {
-      products = products.filter(
-        (product) => (product.base_price || 0) >= Number(params.minPrice)
-      );
-    }
-    if (params.maxPrice && params.maxPrice !== "null") {
-      products = products.filter(
-        (product) => (product.base_price || 0) <= Number(params.maxPrice)
-      );
-    }
-    if (params.warranty && params.warranty !== "null") {
-      products = products.filter(
-        (product) => product.warranty === params.warranty
-      );
-    }
-    if (params.stock_status && params.stock_status !== "null") {
-      products = products.filter(
-        (product) => product.stock_status === params.stock_status
-      );
-    }
-  }
-
-  return products.length > 0
-    ? products.map((product) => ({
-        ...product,
-        price: product.base_price,
-        original_price: product.base_price,
-      }))
-    : [];
-}
-
-function getProductsBySubcategory(categoryName, subcategoryName, params) {
-  const products = getProductsByCategory(categoryName, params);
-  const normalizedSubcategory = subcategoryName
-    .toLowerCase()
-    .trim()
-    .replace("برو", "pro")
-    .replace("بروماكس", "promax")
-    .replace("ماكس", "max")
-    .replace("بلس", "plus")
-    .replace("iphone", "ايفون");
-
-  return products.filter((product) => {
-    const productNameLower = product.name.toLowerCase().trim();
-    const productSubcategory = product.subcategory?.toLowerCase().trim() || "";
-
-    if (categoryName === "ابل" || categoryName === "آبل") {
-      const iPhoneTerms = [
-        "ايفون",
-        "آيفون",
-        "iphone",
-        "أيفون",
-        "16",
-        "pro",
-        "max",
-      ];
-      const hasIPhoneInName = iPhoneTerms.some((term) =>
-        productNameLower.includes(term.toLowerCase())
-      );
-      const modelTerms = normalizedSubcategory.split(" ").filter(Boolean);
-
-      const normalizedProductName = productNameLower
-        .replace("برو", "pro")
-        .replace("بروماكس", "promax")
-        .replace("ماكس", "max")
-        .replace("بلس", "plus")
-        .replace("iphone", "ايفون");
-
-      return (
-        hasIPhoneInName &&
-        modelTerms.every((term) =>
-          normalizedProductName.includes(term.toLowerCase())
-        )
-      );
-    } else if (categoryName === "سامسونج") {
-      const searchTerms =
-        subcategoryName === "S25 Ultra"
-          ? [
-              "s25 الترا",
-              "s25 ultra",
-              "S25 Ultra",
-              "S25 الترا",
-              "اس 25 الترا",
-              "S25الترا",
-              "s25 الترا",
-            ].map((term) => term.toLowerCase().trim())
-          : subcategoryName === "S24 Ultra"
-          ? [
-              "s24 الترا",
-              "s24 ultra",
-              "S24 Ultra",
-              "S24 الترا",
-              "اس 24 الترا",
-            ].map((term) => term.toLowerCase().trim())
-          : [normalizedSubcategory];
-
-      return searchTerms.some((term) => {
-        const normalizedTerm = term.toLowerCase().trim();
-        return (
-          productNameLower.includes(normalizedTerm) ||
-          productSubcategory.includes(normalizedTerm)
-        );
-      });
-    }
-
-    // More flexible matching for subcategories
-    return (
-      productNameLower.includes(normalizedSubcategory) ||
-      productSubcategory.includes(normalizedSubcategory) ||
-      (Array.isArray(product.category) &&
-        product.category.some((cat) =>
-          cat.toLowerCase().trim().includes(normalizedSubcategory)
-        ))
-    );
-  });
-}
+import { notFound } from "next/navigation";
+import { useProducts } from "@/contexts/ProductsContext";
+import { Loading } from "@/components/Loading";
 
 export default function CategoryPage({ params }) {
-  const paramss = useParams(); // Get the URL parameters
+  const { products, loading, error } = useProducts();
+
+  if (loading) {
+    return <Loading size="large" text="جاري تحميل المنتجات..." />;
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center">
+        <p className="text-red-500 text-xl">
+          حدث خطأ أثناء تحميل المنتجات: {error}
+        </p>
+        <button
+          onClick={() => window.location.reload()}
+          className="mt-4 px-4 py-2 bg-primary text-white rounded-md"
+        >
+          إعادة المحاولة
+        </button>
+      </div>
+    );
+  }
 
   if (!params?.slug || params.slug.length === 0) {
     notFound();
   }
 
-  const encodedCategory = params.slug[0];
-  const encodedSubcategory =
-    params.slug.length > 1 ? params.slug[1] : undefined;
+  const categoryName = decodeURIComponent(params.slug[0]);
+  const subcategoryName =
+    params.slug.length > 1 ? decodeURIComponent(params.slug[1]) : null;
 
-  if (!encodedCategory) {
-    notFound();
-  }
+  // تصفية المنتجات حسب الفئة والفئة الفرعية
+  let filteredProducts = products.filter((product) => {
+    // التحقق من وجود خاصية category
+    if (!product.category) return false;
 
-  const categoryName = decodeURIComponent(encodedCategory);
-  const subcategoryName = encodedSubcategory
-    ? decodeURIComponent(encodedSubcategory)
-    : undefined;
+    // تحويل الفئة إلى مصفوفة إذا لم تكن كذلك
+    const categories = Array.isArray(product.category)
+      ? product.category.map((c) => c.toLowerCase())
+      : [product.category.toString().toLowerCase()];
 
+    // تحويل اسم المنتج إلى نص صغير للمقارنة
+    const productName = product.name?.toLowerCase() || "";
+
+    // البحث في الفئات واسم المنتج
+    const categoryNameLower = categoryName.toLowerCase();
+    const matchesCategory =
+      categories.some((cat) => cat.includes(categoryNameLower)) ||
+      productName.includes(categoryNameLower);
+
+    // إذا كان هناك فئة فرعية، تحقق منها أيضًا
+    if (subcategoryName) {
+      const subcategoryNameLower = subcategoryName.toLowerCase();
+      const productSubcategory = product.subcategory?.toLowerCase() || "";
+
+      return (
+        matchesCategory &&
+        (productName.includes(subcategoryNameLower) ||
+          productSubcategory.includes(subcategoryNameLower))
+      );
+    }
+
+    return matchesCategory;
+  });
+
+  // تطبيق الفلاتر من عنوان URL إذا وجدت
   const searchParams =
     typeof window !== "undefined"
       ? new URLSearchParams(window.location.search)
       : new URLSearchParams();
-  const filterParams = {
-    minPrice: searchParams.get("minPrice"),
-    maxPrice: searchParams.get("maxPrice"),
-    warranty: searchParams.get("warranty"),
-    stock_status: searchParams.get("stock_status"),
-  };
 
-  let products = getProductsByCategory(categoryName, filterParams);
+  const minPrice = searchParams.get("minPrice");
+  const maxPrice = searchParams.get("maxPrice");
 
-  if (subcategoryName) {
-    products = getProductsBySubcategory(
-      categoryName,
-      subcategoryName,
-      filterParams
+  if (minPrice && minPrice !== "null") {
+    filteredProducts = filteredProducts.filter(
+      (product) => parseFloat(product.price || 0) >= parseFloat(minPrice)
     );
   }
 
-  if (!products.length) {
-    notFound();
+  if (maxPrice && maxPrice !== "null") {
+    filteredProducts = filteredProducts.filter(
+      (product) => parseFloat(product.price || 0) <= parseFloat(maxPrice)
+    );
   }
 
-  console.log("Category Name:", categoryName); // Log the category name
-  console.log("Store Data:", storeData); // Log the store data
-
-  const daa = storeData.filter((product) => {
-    return product.name.includes(categoryName);
-  });
-
-  console.log("Filtered Products:", daa); // Log the filtered products
+  if (!filteredProducts.length) {
+    notFound();
+  }
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -291,25 +110,19 @@ export default function CategoryPage({ params }) {
                 <p className="text-sm text-gray-500">{categoryName}</p>
               )}
             </div>
-            {products.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-56 transition-all duration-300 hover:gap-10">
-                {products.map((product) => (
-                  <ProductCard
-                    key={product.id}
-                    id={product.id}
-                    name={product.name}
-                    image_url={product.image_url}
-                    price={product.price}
-                    original_price={product.original_price}
-                    category={product.category}
-                  />
-                ))}
-              </div>
-            ) : (
-              <div className="text-center py-12">
-                <p className="text-gray-500">لا توجد منتجات في هذه الفئة</p>
-              </div>
-            )}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-56 transition-all duration-300 hover:gap-10">
+              {filteredProducts.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  id={product.id}
+                  name={product.name}
+                  image_url={product.image_url}
+                  price={product.price}
+                  original_price={product.original_price}
+                  category={product.category}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </main>

@@ -1,9 +1,5 @@
+"use client";
 import Link from "next/link";
-import {
-  getFeaturedProducts,
-  getProducts,
-  getNewestProducts,
-} from "@/utils/data";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
@@ -16,277 +12,216 @@ import img3 from "../../public/images/00 (3).jpg";
 import img4 from "../../public/images/00 (4).jpg";
 import HeroBanner from "@/components/HeroBanner";
 import Testimonials from "@/components/Testimonials";
+import { useProducts } from "@/contexts/ProductsContext";
+import { useState, useEffect } from "react";
+import { Loading } from "@/components/Loading";
 
-export default async function Home() {
-  let featuredProducts = [];
-  let newestProducts = [];
-  let allProducts = [];
+export default function Home() {
+  const {
+    products,
+    featuredProducts,
+    newestProducts,
+    bestSellingProducts,
+    loading,
+    error,
+  } = useProducts();
 
-  try {
-    [featuredProducts, newestProducts, allProducts] = await Promise.all([
-      getFeaturedProducts(8),
-      getNewestProducts(8),
-      getProducts(),
-    ]);
+  const [categoryProducts, setCategoryProducts] = useState({
+    iPhone16ProMaxProducts: [],
+    samsungS25UltraProducts: [],
+    iPhone16ProProducts: [],
+    iPhone16PlusProducts: [],
+    iPhone16Products: [],
+    iPhone15ProMaxProducts: [],
+    samsungS24UltraProducts: [],
+    iPhone14ProMaxProducts: [],
+    iPhone14ProProducts: [],
+    iPhone14PlusProducts: [],
+    iPhone14Products: [],
+    appleWatchProducts: [],
+    playstationProducts: [],
+    videoGamesProducts: [],
+    headphonesProducts: [],
+    laptopsProducts: [],
+    tabletsProducts: [],
+    powerBanksProducts: [],
+    gamingAccessoriesProducts: [],
+    tvProducts: [],
+  });
 
-    // Sort products by name
-    allProducts.sort((a, b) => a.name.localeCompare(b.name));
-  } catch (error) {
-    console.error("Error loading products:", error);
+  useEffect(() => {
+    if (products.length > 0) {
+      // تصفية المنتجات حسب الفئات
+      const filterByNameOrCategory = (searchTerms) => {
+        return products
+          .filter((product) => {
+            const productName = product.name?.toLowerCase() || "";
+            const productCategory = Array.isArray(product.category)
+              ? product.category.map((c) => c.toLowerCase())
+              : [product.category?.toLowerCase() || ""];
+
+            return searchTerms.some(
+              (term) =>
+                productName.includes(term) ||
+                productCategory.some((cat) => cat.includes(term))
+            );
+          })
+          .slice(0, 8);
+      };
+
+      setCategoryProducts({
+        iPhone16ProMaxProducts: filterByNameOrCategory([
+          "iphone 16 pro max",
+          "ايفون 16 برو ماكس",
+        ]),
+        samsungS25UltraProducts: filterByNameOrCategory([
+          "samsung s25 ultra",
+          "سامسونج s25 ultra",
+        ]),
+        iPhone16ProProducts: filterByNameOrCategory([
+          "iphone 16 pro",
+          "ايفون 16 برو",
+        ]),
+        iPhone16PlusProducts: filterByNameOrCategory([
+          "iphone 16 plus",
+          "ايفون 16 بلس",
+        ]),
+        iPhone16Products: filterByNameOrCategory([
+          "iphone 16",
+          "ايفون 16",
+        ]).filter(
+          (p) =>
+            !p.name.toLowerCase().includes("pro") &&
+            !p.name.toLowerCase().includes("برو") &&
+            !p.name.toLowerCase().includes("plus") &&
+            !p.name.toLowerCase().includes("بلس")
+        ),
+        iPhone15ProMaxProducts: filterByNameOrCategory([
+          "iphone 15 pro max",
+          "ايفون 15 برو ماكس",
+        ]),
+        samsungS24UltraProducts: filterByNameOrCategory([
+          "samsung s24 ultra",
+          "سامسونج s24 ultra",
+        ]),
+        iPhone14ProMaxProducts: filterByNameOrCategory([
+          "iphone 14 pro max",
+          "ايفون 14 برو ماكس",
+        ]),
+        iPhone14ProProducts: filterByNameOrCategory([
+          "iphone 14 pro",
+          "ايفون 14 برو",
+        ]),
+        iPhone14PlusProducts: filterByNameOrCategory([
+          "iphone 14 plus",
+          "ايفون 14 بلس",
+        ]),
+        iPhone14Products: filterByNameOrCategory([
+          "iphone 14",
+          "ايفون 14",
+        ]).filter(
+          (p) =>
+            !p.name.toLowerCase().includes("pro") &&
+            !p.name.toLowerCase().includes("برو") &&
+            !p.name.toLowerCase().includes("plus") &&
+            !p.name.toLowerCase().includes("بلس")
+        ),
+        appleWatchProducts: filterByNameOrCategory([
+          "apple watch",
+          "ساعات ابل",
+          "ساعة ابل",
+          "ساعات آبل",
+        ]),
+        playstationProducts: filterByNameOrCategory([
+          "playstation",
+          "بلايستيشن",
+          "بلاي ستيشن",
+        ]),
+        videoGamesProducts: filterByNameOrCategory([
+          "ألعاب الفيديو",
+          "video games",
+          "games",
+        ]),
+        headphonesProducts: filterByNameOrCategory([
+          "سماعات",
+          "headphones",
+          "earbuds",
+          "أجهزة صوت",
+        ]),
+        laptopsProducts: filterByNameOrCategory([
+          "لابتوب",
+          "laptop",
+          "شاشات",
+          "لابتوبات",
+        ]),
+        tabletsProducts: filterByNameOrCategory([
+          "ايباد",
+          "ipad",
+          "tablet",
+          "تابلت",
+          "الاجهزة اللوحية",
+        ]),
+        powerBanksProducts: filterByNameOrCategory([
+          "بطاريات متنقلة",
+          "power bank",
+          "كيابل",
+          "شواحن",
+        ]),
+        gamingAccessoriesProducts: filterByNameOrCategory([
+          "ماوسات",
+          "كيبوردات",
+          "gaming",
+          "ألعاب",
+          "mouse",
+          "keyboard",
+        ]),
+        tvProducts: filterByNameOrCategory(["تلفزيون", "tv", "شاشة", "تلفاز"]),
+      });
+    }
+  }, [products]);
+
+  if (loading) {
+    return <Loading size="large" text="جاري تحميل المنتجات..." />;
   }
 
-  // Utility functions for string normalization
-  const normalizeString = (str) => {
-    return str
-      .toLowerCase()
-      .replace("برو ماكس", "promax")
-      .replace("بروماكس", "promax")
-      .replace("برو", "pro")
-      .replace("ماكس", "max")
-      .replace("بلس", "plus");
-  };
-
-  // Helper function to check if product belongs to a category
-  const isInCategory = (productCategory, categoryNames) => {
-    return productCategory.some((cat) => categoryNames.includes(cat));
-  };
-
-  // Helper function to check if product name includes any of the terms
-  const includesAnyTerm = (productName, terms) => {
-    return terms.some((term) => productName.includes(term.toLowerCase()));
-  };
-
-  // Filter functions for different product types
-  const filterAppleProducts = (product, name) => {
-    const productCategory = Array.isArray(product.category)
-      ? product.category
-      : [];
-    const productNameLower = (product.name || "").toLowerCase();
-    const productSubcategory = (product.subcategory || "").toLowerCase();
-
-    const iPhoneTerms = ["ايفون", "آيفون", "iphone", "أيفون"];
-    const isAppleCategory = isInCategory(productCategory, [
-      "ابل",
-      "آبل",
-      "الهواتف الذكية",
-    ]);
-    const hasIPhoneInName = includesAnyTerm(productNameLower, iPhoneTerms);
-
-    if (!name) return isAppleCategory || hasIPhoneInName;
-
-    const normalizedName = normalizeString(name);
-    const normalizedProductName = normalizeString(productNameLower);
-    const normalizedSubcategory = normalizeString(productSubcategory);
-    const modelTerms = normalizedName.split(" ");
-
-    const isProMax = name.includes("برو ماكس");
-    const isProOnly = name.includes("برو") && !name.includes("ماكس");
-    const isRegular = !name.includes("برو") && !name.includes("بلس");
-
-    // Exclude Pro Max and Plus models from regular iPhone
-    if (
-      isRegular &&
-      (normalizedProductName.includes("promax") ||
-        normalizedProductName.includes("pro") ||
-        normalizedProductName.includes("plus"))
-    ) {
-      return false;
-    }
-
-    if (
-      isProOnly &&
-      (normalizedProductName.includes("max") ||
-        normalizedProductName.includes("promax") ||
-        !normalizedProductName.includes("pro"))
-    ) {
-      return false;
-    }
-
-    if (isProMax && !normalizedProductName.includes("promax")) {
-      return false;
-    }
-
-    const matchesModel = modelTerms.every(
-      (term) =>
-        normalizedProductName.includes(term) ||
-        normalizedSubcategory.includes(term)
-    );
-
-    return (isAppleCategory || hasIPhoneInName) && matchesModel;
-  };
-
-  const filterSamsungProducts = (product, name) => {
-    const productCategory = Array.isArray(product.category)
-      ? product.category
-      : [];
-    const productNameLower = (product.name || "").toLowerCase();
-    const productSubcategory = (product.subcategory || "").toLowerCase();
-
-    const isSamsungCategory = isInCategory(productCategory, [
-      "سامسونج",
-      "الهواتف الذكية",
-    ]);
-    const hasSamsungInName =
-      productNameLower.includes("سامسونج") ||
-      productNameLower.includes("samsung");
-
-    if (!name) return isSamsungCategory || hasSamsungInName;
-
-    const searchTerms =
-      name === "S25 Ultra"
-        ? [
-            "s25 الترا",
-            "s25 ultra",
-            "s25ultra",
-            "اس 25 الترا",
-            "اس25 الترا",
-            "s25الترا",
-            "S25الترا",
-          ]
-        : name === "S24 Ultra"
-        ? ["s24 الترا", "s24 ultra", "s24ultra", "اس 24 الترا", "اس24 الترا"]
-        : [name.toLowerCase()];
-
-    const matchesModel =
-      includesAnyTerm(productNameLower, searchTerms) ||
-      includesAnyTerm(productSubcategory, searchTerms);
-
-    return (isSamsungCategory || hasSamsungInName) && matchesModel;
-  };
-
-  const filterAppleWatchProducts = (product) => {
-    const productCategory = Array.isArray(product.category)
-      ? product.category
-      : [];
-    const productNameLower = (product.name || "").toLowerCase();
-    const productSubcategory = (product.subcategory || "").toLowerCase();
-
-    const watchTerms = [
-      "ساعات ابل",
-      "ساعة ابل",
-      "apple watch",
-      "ساعة آبل",
-      "ساعات آبل",
-      "ابل ووتش",
-      "watch",
-    ];
-
+  if (error) {
     return (
-      isInCategory(productCategory, ["ساعات ابل", "ساعات آبل"]) ||
-      includesAnyTerm(productNameLower, watchTerms) ||
-      includesAnyTerm(productSubcategory, watchTerms)
+      <div className="min-h-screen flex flex-col items-center justify-center">
+        <p className="text-red-500 text-xl">
+          حدث خطأ أثناء تحميل المنتجات: {error}
+        </p>
+        <button
+          onClick={() => window.location.reload()}
+          className="mt-4 px-4 py-2 bg-primary text-white rounded-md"
+        >
+          إعادة المحاولة
+        </button>
+      </div>
     );
-  };
+  }
 
-  // Main filter function
-  const filterProductsByCategory = (products, category, name, limit = 8) => {
-    const filterFunction =
-      category === "ابل" || category === "آبل"
-        ? (p) => filterAppleProducts(p, name)
-        : category === "سامسونج"
-        ? (p) => filterSamsungProducts(p, name)
-        : category === "ساعات ابل"
-        ? filterAppleWatchProducts
-        : (p) =>
-            isInCategory(Array.isArray(p.category) ? p.category : [], [
-              category,
-            ]);
-
-    return products.filter(filterFunction).slice(0, limit);
-  };
-
-  // Filter Apple iPhone products
-  const iPhone16ProMaxProducts = filterProductsByCategory(
-    allProducts,
-    "ابل",
-    "ايفون 16 برو ماكس"
-  );
-  const iPhone16ProProducts = filterProductsByCategory(
-    allProducts,
-    "ابل",
-    "ايفون 16 برو"
-  );
-  const iPhone16PlusProducts = filterProductsByCategory(
-    allProducts,
-    "ابل",
-    "ايفون 16 بلس"
-  );
-  const iPhone16Products = filterProductsByCategory(
-    allProducts,
-    "ابل",
-    "ايفون 16"
-  );
-
-  const iPhone15ProMaxProducts = filterProductsByCategory(
-    allProducts,
-    "ابل",
-    "ايفون 15 برو ماكس"
-  );
-  const iPhone15ProProducts = filterProductsByCategory(
-    allProducts,
-    "ابل",
-    "ايفون 15 برو"
-  );
-  const iPhone15PlusProducts = filterProductsByCategory(
-    allProducts,
-    "ابل",
-    "ايفون 15 بلس"
-  );
-  const iPhone15Products = filterProductsByCategory(
-    allProducts,
-    "ابل",
-    "ايفون 15"
-  );
-
-  const iPhone14ProMaxProducts = filterProductsByCategory(
-    allProducts,
-    "ابل",
-    "ايفون 14 برو ماكس"
-  );
-  const iPhone14ProProducts = filterProductsByCategory(
-    allProducts,
-    "ابل",
-    "ايفون 14 برو"
-  );
-  const iPhone14PlusProducts = filterProductsByCategory(
-    allProducts,
-    "ابل",
-    "ايفون 14 بلس"
-  );
-  const iPhone14Products = filterProductsByCategory(
-    allProducts,
-    "ابل",
-    "ايفون 14"
-  );
-
-  // Filter Samsung products
-  const samsungS25UltraProducts = filterProductsByCategory(
-    allProducts,
-    "سامسونج",
-    "S25 Ultra"
-  );
-  const samsungS24UltraProducts = filterProductsByCategory(
-    allProducts,
-    "سامسونج",
-    "S24 Ultra"
-  );
-
-  // Filter Apple Watch products under Watches category
-  const appleWatchProducts = filterProductsByCategory(
-    allProducts,
-    "ساعات ابل",
-    null
-  );
-  const playstationProducts = filterProductsByCategory(
-    allProducts,
-    "بلاي ستيشن"
-  );
-
-  // Filter best selling products with random selection
-  const bestSellingProducts = allProducts
-    .filter((p) => p.bestSelling === true)
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 8);
+  const {
+    iPhone16ProMaxProducts,
+    samsungS25UltraProducts,
+    iPhone16ProProducts,
+    iPhone16PlusProducts,
+    iPhone16Products,
+    iPhone15ProMaxProducts,
+    samsungS24UltraProducts,
+    iPhone14ProMaxProducts,
+    iPhone14ProProducts,
+    iPhone14PlusProducts,
+    iPhone14Products,
+    appleWatchProducts,
+    playstationProducts,
+    videoGamesProducts,
+    headphonesProducts,
+    laptopsProducts,
+    tabletsProducts,
+    powerBanksProducts,
+    gamingAccessoriesProducts,
+    tvProducts,
+  } = categoryProducts;
 
   return (
     <div className="min-h-screen flex flex-col transition-theme">
@@ -379,6 +314,48 @@ export default async function Home() {
             title="بلايستيشن"
             products={playstationProducts}
             link="/category/بلاي ستيشن"
+          />
+
+          <Section
+            title="ألعاب الفيديو"
+            products={videoGamesProducts}
+            link="/category/ألعاب الفيديو"
+          />
+
+          <Section
+            title="سماعات وأجهزة صوت"
+            products={headphonesProducts}
+            link="/category/سماعات"
+          />
+
+          <Section
+            title="لابتوبات وشاشات"
+            products={laptopsProducts}
+            link="/category/لابتوبات وشاشات"
+          />
+
+          <Section
+            title="الأجهزة اللوحية وايبادات"
+            products={tabletsProducts}
+            link="/category/الاجهزة اللوحية ايبادات"
+          />
+
+          <Section
+            title="بطاريات متنقلة وكيابل"
+            products={powerBanksProducts}
+            link="/category/بطاريات متنقلة وكيابل"
+          />
+
+          <Section
+            title="ماوسات وكيبوردات ألعاب"
+            products={gamingAccessoriesProducts}
+            link="/category/ماوسات وكيبوردات ألعاب"
+          />
+
+          <Section
+            title="تلفزيونات"
+            products={tvProducts}
+            link="/category/تلفزيون"
           />
 
           <Section

@@ -1,9 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { getCategories } from "@/utils/data";
 import Image from "next/image";
 import { useCart } from "@/contexts/CartContext";
+import { fetchCategories } from "@/api/categories";
 
 interface Subcategory {
   name: string;
@@ -17,29 +17,29 @@ interface Category {
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState("");
-
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const { cartCount } = useCart();
 
-  // Get categories and filter out duplicates by name
+  // Get categories from API
   const [categories, setCategories] = useState<Category[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchCategories = async () => {
-      const allCategories = await getCategories();
-      const uniqueCategoryNames = new Set();
-      const uniqueCategories = Array.isArray(allCategories)
-        ? allCategories.filter((category) => {
-            if (uniqueCategoryNames.has(category.name)) {
-              return false;
-            }
-            uniqueCategoryNames.add(category.name);
-            return true;
-          })
-        : [];
-      setCategories(uniqueCategories);
+    const getCategories = async () => {
+      try {
+        setLoading(true);
+        const categoriesData = await fetchCategories();
+        setCategories(categoriesData);
+        setError(null);
+      } catch (err) {
+        console.error("Error fetching categories:", err);
+        setError("Failed to load categories");
+      } finally {
+        setLoading(false);
+      }
     };
-    fetchCategories();
+
+    getCategories();
   }, []);
 
   const toggleCategory = (categoryName: string) => {
@@ -83,57 +83,83 @@ export default function Header() {
               <Image src="/logoo.png" alt="Logo" width={90} height={40} />
             </Link>
             {/* Category Navigation Bar */}
-            <div className="hidden md:block text-white">
-              <div className="container mx-auto px-4">
-                <ul className="flex justify-center space-x-8 space-x-reverse flex-wrap">
-                  {categories.map((category) => (
-                    <li key={category.name} className="relative group">
-                      <div className="py-3 text-center cursor-pointer text-gray-700 hover:text-gray-200 flex items-center">
-                        <Link
-                          href={`/category/${encodeURIComponent(
-                            category.name
-                          )}`}
-                          className="flex items-center"
+            <nav className="hidden md:block">
+              <div className="container mx-auto">
+                {loading ? (
+                  <div className="flex justify-center py-2">
+                    <span className="text-gray-500 text-sm">
+                      جاري تحميل التصنيفات...
+                    </span>
+                  </div>
+                ) : error ? (
+                  <div className="flex justify-center py-2">
+                    <span className="text-red-500 text-sm">
+                      حدث خطأ في تحميل التصنيفات
+                    </span>
+                  </div>
+                ) : (
+                  <ul className="flex justify-center space-x-2 space-x-reverse flex-wrap">
+                    {categories.map((category) => (
+                      <li key={category.name} className="relative group">
+                        <div
+                          className="py-2 px-2 text-center cursor-pointer text-gray-700 hover:text-[#3498db] flex items-center"
+                          onClick={() => toggleCategory(category.name)}
                         >
-                          <span>{category.name}</span>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-4 w-4 mr-1"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M19 9l-7 7-7-7"
-                            />
-                          </svg>
-                        </Link>
-                      </div>
-                      {isDropdownOpen === category.name && (
-                        <div className="" style={{ touchAction: "none" }}>
-                          {category.subcategories.map(
-                            (subcategory: { name: string }) => (
-                              <Link
-                                key={subcategory.name}
-                                href={`/category/${encodeURIComponent(
-                                  category.name
-                                )}/${encodeURIComponent(subcategory.name)}`}
-                                className="block px-4 py-2 text-right text-gray-700 hover:bg-[#3498db] hover:text-white"
-                              >
-                                {subcategory.name}
-                              </Link>
-                            )
+                          <span className="text-xs">{category.name}</span>
+                          {category.subcategories.length > 0 && (
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-3 w-3 mr-1"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M19 9l-7 7-7-7"
+                              />
+                            </svg>
                           )}
                         </div>
-                      )}
-                    </li>
-                  ))}
-                </ul>
+                        {isDropdownOpen === category.name &&
+                          category.subcategories.length > 0 && (
+                            <div
+                              className="absolute right-0 mt-1 w-48 bg-white rounded-md shadow-lg z-50"
+                              style={{ touchAction: "none" }}
+                            >
+                              <Link
+                                href={`/category/${encodeURIComponent(
+                                  category.name
+                                )}`}
+                                className="block px-4 py-2 text-right text-gray-700 hover:bg-[#3498db] hover:text-white font-bold border-b border-gray-200"
+                                onClick={() => setIsDropdownOpen("")}
+                              >
+                                كل منتجات {category.name}
+                              </Link>
+                              {category.subcategories.map(
+                                (subcategory: { name: string }) => (
+                                  <Link
+                                    key={subcategory.name}
+                                    href={`/category/${encodeURIComponent(
+                                      category.name
+                                    )}/${encodeURIComponent(subcategory.name)}`}
+                                    className="block px-4 py-2 text-right text-gray-700 hover:bg-[#3498db] hover:text-white"
+                                    onClick={() => setIsDropdownOpen("")}
+                                  >
+                                    {subcategory.name}
+                                  </Link>
+                                )
+                              )}
+                            </div>
+                          )}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
-            </div>
+            </nav>
             <div className="flex items-center gap-2">
               {/* Navigation */}
               <nav className="flex items-center space-x-6 space-x-reverse">
@@ -172,83 +198,112 @@ export default function Header() {
             }`}
             style={{ direction: "rtl" }}
           >
-            <div className="relative w-full mb-4">
-              <input
-                type="text"
-                placeholder="ابحث عن منتجات..."
-                className="w-full py-2 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3498db] text-right"
-              />
-              <button className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-              </button>
-            </div>
-            <nav className="flex flex-col space-y-4 text-right">
-              {categories.map((category) => (
-                <div
-                  key={category.name}
-                  className="border-b border-gray-200 pb-2"
-                >
-                  <button
-                    onClick={() => toggleCategory(category.name)}
-                    className="flex items-center justify-between w-full py-2 text-gray-700 hover:text-[#3498db] pr-20 pl-4"
+            <div className="p-4">
+              <div className="relative w-full mb-6">
+                <input
+                  type="text"
+                  placeholder="ابحث عن منتجات..."
+                  className="w-full py-2 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3498db] text-right"
+                />
+                <button className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
                   >
-                    <Link
-                      href={`/category/${encodeURIComponent(category.name)}`}
-                      className="flex items-center justify-between w-full"
-                    >
-                      <span>{category.name}</span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className={`h-4 w-4 transform transition-transform ${
-                          isDropdownOpen === category.name ? "rotate-180" : ""
-                        }`}
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </Link>
-                  </button>
-                  {isDropdownOpen === category.name && (
-                    <div className="mt-2 space-y-2 pr-4 bg-gray-50 rounded-md">
-                      {category.subcategories.map(
-                        (subcategory: { name: string }) => (
-                          <Link
-                            key={subcategory.name}
-                            href={`/category/${encodeURIComponent(
-                              category.name
-                            )}/${encodeURIComponent(subcategory.name)}`}
-                            className="block py-2 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-100 rounded-md transition-colors"
-                            onClick={() => setIsMenuOpen(false)}
-                          >
-                            {subcategory.name}
-                          </Link>
-                        )
-                      )}
-                    </div>
-                  )}
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              <h3 className="text-lg font-bold text-gray-800 mb-3 pr-2">
+                الفئات
+              </h3>
+
+              {loading ? (
+                <div className="flex justify-center py-4">
+                  <span className="text-gray-500">جاري تحميل التصنيفات...</span>
                 </div>
-              ))}
-            </nav>
+              ) : error ? (
+                <div className="flex justify-center py-4">
+                  <span className="text-red-500">
+                    حدث خطأ في تحميل التصنيفات
+                  </span>
+                </div>
+              ) : (
+                <nav className="flex flex-col space-y-1 text-right">
+                  {categories.map((category) => (
+                    <div
+                      key={category.name}
+                      className="border-b border-gray-100 pb-2"
+                    >
+                      <div className="flex items-center justify-between w-full py-2 text-gray-700 hover:text-[#3498db] px-2">
+                        <Link
+                          href={`/category/${encodeURIComponent(
+                            category.name
+                          )}`}
+                          className="flex-grow text-right"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {category.name}
+                        </Link>
+                        {category.subcategories.length > 0 && (
+                          <button
+                            onClick={() => toggleCategory(category.name)}
+                            className="p-1"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className={`h-4 w-4 transform transition-transform ${
+                                isDropdownOpen === category.name
+                                  ? "rotate-180"
+                                  : ""
+                              }`}
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M19 9l-7 7-7-7"
+                              />
+                            </svg>
+                          </button>
+                        )}
+                      </div>
+                      {isDropdownOpen === category.name &&
+                        category.subcategories.length > 0 && (
+                          <div className="mt-1 space-y-1 pr-6 bg-gray-50 rounded-md py-2">
+                            {category.subcategories.map(
+                              (subcategory: { name: string }) => (
+                                <Link
+                                  key={subcategory.name}
+                                  href={`/category/${encodeURIComponent(
+                                    category.name
+                                  )}/${encodeURIComponent(subcategory.name)}`}
+                                  className="block py-1.5 px-2 text-sm text-gray-600 hover:text-[#3498db] hover:bg-gray-100 rounded-md transition-colors"
+                                  onClick={() => setIsMenuOpen(false)}
+                                >
+                                  {subcategory.name}
+                                </Link>
+                              )
+                            )}
+                          </div>
+                        )}
+                    </div>
+                  ))}
+                </nav>
+              )}
+            </div>
           </div>
         </div>
       </div>

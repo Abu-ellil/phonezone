@@ -230,7 +230,7 @@ function generateContractHtml(data: ContractData): string {
   </div>
 
   <div class="contract-section">
-    <p>أقر و أعترف و أنا في حالتى الشرعية بأنني في ذمتي للمؤسسة المدعوة / AliiexpressUAE مبلغ و قدره</p>
+    <p>أقر و أعترف و أنا في حالتى الشرعية بأنني في ذمتي للمؤسسة المدعوة / AliiExpress مبلغ و قدره</p>
     <p class="amount">${data.total} د.إ فقط</p>
     <p>و ذلك قيمة عن ما تبقى من جهاز / ${deviceDetails}</p>
     <p>قيمة الدفعة الشهرية : ${monthlyPayment} د.إ فقط لمدة ${numberOfMonths} أشهر اعتباراً من تاريخ ${
@@ -251,7 +251,7 @@ function generateContractHtml(data: ContractData): string {
   </div>
 
   <div class="footer">
-    <p>AliiexpressUAE - جميع الحقوق محفوظة © ${new Date().getFullYear()}</p>
+    <p>AliiExpress - جميع الحقوق محفوظة © ${new Date().getFullYear()}</p>
     <p>للتواصل: +971547675648 </p>
   </div>
 </body>

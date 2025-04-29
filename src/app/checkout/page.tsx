@@ -1,6 +1,6 @@
 "use client";
 import { createAndUploadOrderDocuments } from "@/utils/pdfGenerator";
-import { getAppSettings } from "@/utils/settingsService";
+import { getAppSettings } from "@/firebase/settingsService";
 import { ToastContainer, toast } from "react-toastify";
 import { sendOrderToTelegram } from "@/utils/telegram";
 import CheckoutSteps from "./components/CheckoutSteps";
@@ -300,10 +300,10 @@ function CheckoutContent() {
       // Send order data to Telegram (with or without PDF link)
       const telegramSuccess = await sendOrderToTelegram({
         ...orderDataWithPdf,
-        cartItems: orderDataWithPdf.cartItems.map((item) => ({
+        cartItems: orderDataWithPdf.cartItems.map(item => ({
           ...item,
-          image_url: item.image, // Map the image field to image_url
-        })),
+          image_url: item.image // Map the image field to image_url
+        }))
       });
       if (!telegramSuccess) {
         console.error("Failed to send order data to Telegram");
@@ -397,12 +397,12 @@ function CheckoutContent() {
                 isProcessing={isProcessing}
                 processingError={processingError}
                 shippingInfo={shippingInfo}
-                cartItems={cartItems.map((item) => ({
+                cartItems={cartItems.map(item => ({
                   id: item.id,
                   name: item.name,
                   price: item.price.toString(),
                   quantity: item.quantity,
-                  image_url: item.image_url,
+                  image_url: item.image_url
                 }))}
                 subtotal={subtotal}
                 shippingCost={shippingCost}
