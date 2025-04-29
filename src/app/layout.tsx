@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FONE ZONE || فون زون - متجر الهواتف الذكية والإلكترونيات",
+  title: "FONE ZONE || AliiexpressUAE - متجر الهواتف الذكية والإلكترونيات",
   description: "متجر إلكتروني متخصص في بيع الهواتف الذكية والإلكترونيات",
 };
 

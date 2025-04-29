@@ -1,12 +1,21 @@
 import axios from "axios";
 
-const API_URL = "https://json-server-vercel-six-rust.vercel.app/products"; // غيّره حسب سيرفر البيانات
+// Use window.location.origin to create an absolute URL for the local JSON file
+const getLocalDbUrl = () => {
+  // In browser environment, use window.location.origin
+  if (typeof window !== "undefined") {
+    return `${window.location.origin}/data/db.json`;
+  }
+  // In server environment, use a relative path that Next.js can resolve
+  return new URL("/data/db.json", "http://localhost:3000").toString();
+};
 
-// ✅ جلب المنتجات من الـ API
+// ✅ جلب المنتجات من الملف المحلي
 export async function getProducts(): Promise<Product[]> {
   try {
-    const { data } = await axios.get<Product[]>(API_URL);
-    return data.map((product) => ({
+    const dbUrl = getLocalDbUrl();
+    const { data } = await axios.get<{ products: Product[] }>(dbUrl);
+    return data.products.map((product) => ({
       ...product,
       category: Array.isArray(product.category)
         ? product.category
@@ -17,7 +26,7 @@ export async function getProducts(): Promise<Product[]> {
       variants: Array.isArray(product.variants) ? product.variants : [],
     }));
   } catch (error) {
-    console.error("❌ Error fetching products:", error);
+    console.error("❌ Error fetching products from local file:", error);
     return [];
   }
 }
@@ -185,8 +194,9 @@ export async function getProductById(
   id: string | number
 ): Promise<Product | null> {
   try {
-    const { data } = await axios.get<Product>(`${API_URL}/${id}`);
-    return data;
+    const products = await getProducts();
+    const product = products.find((p) => p.id === Number(id));
+    return product || null;
   } catch (error) {
     console.error(`❌ Error fetching product with ID ${id}:`, error);
     return null;

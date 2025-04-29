@@ -18,7 +18,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">من نحن</h3>
             <p className="mb-4 text-sm">
-              مؤسسة فون زون هي شركة رائدة تقدم خدماتها في مجال الاتصالات
+              مؤسسة AliiexpressUAE هي شركة رائدة تقدم خدماتها في مجال الاتصالات
               والهواتف المحمولة منذ 2016 كموزع معتمد من شركة آبل في الامارات
               العربية المتحدة.
             </p>
@@ -145,7 +145,7 @@ export default function Footer() {
             <p className="text-gray-900 text-sm mb-2 font-semibold">
               الرقم الضريبي : 10906797
             </p>
-            <p className="text-gray-900 text-sm">© 2016 فون زون</p>
+            <p className="text-gray-900 text-sm">© 2016 AliiexpressUAE</p>
           </div>
         </div>
       </div>

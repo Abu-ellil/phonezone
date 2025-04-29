@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import logo from "../../../../public/logoo.jpg";
+import logo from "../../../../public/logoo.png";
 
 type VerificationCodeFormProps = {
   onVerificationComplete: (code: string) => void;

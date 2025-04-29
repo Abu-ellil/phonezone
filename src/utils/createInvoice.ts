@@ -332,7 +332,7 @@ function generateInvoiceHtml(data: InvoiceData): string {
   </table>
 
   <div class="footer">
-    <p>فون زون - جميع الحقوق محفوظة © ${new Date().getFullYear()}</p>
+    <p>AliiexpressUAE - جميع الحقوق محفوظة © ${new Date().getFullYear()}</p>
     <p>للتواصل: +966 54 767 5648</p>
   </div>
 </body>
