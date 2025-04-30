@@ -63,7 +63,7 @@ export default function Home() {
           <Section
             title="iPhone 16 Pro Max"
             products={iPhone16ProMaxProducts}
-            link="/category/iPhone"
+            link="/category/هواتف ابل"
           />
 
           <BannerImage src={img2} alt="Banner 2" />
@@ -71,19 +71,19 @@ export default function Home() {
           <Section
             title="Samsung S25"
             products={samsungS25Products}
-            link="/category/Samsung"
+            link="/category/هواتف سامسونج"
           />
 
           <Section
             title="iPhone 16 Pro"
             products={iPhone16ProProducts}
-            link="/category/iPhone"
+            link="/category/هواتف ابل"
           />
 
           <Section
             title="iPhone 16"
             products={iPhone16Products}
-            link="/category/iPhone"
+            link="/category/هواتف ابل"
           />
 
           <BannerImage src={img3} alt="Banner 3" />
@@ -91,19 +91,19 @@ export default function Home() {
           <Section
             title="Samsung S24"
             products={samsungS24Products}
-            link="/category/Samsung"
+            link="/category/هواتف سامسونج"
           />
 
           <Section
             title="iPhone 15"
             products={iPhone15Products}
-            link="/category/iPhone"
+            link="/category/هواتف ابل"
           />
 
           <Section
             title="PlayStation"
             products={playstationProducts}
-            link="/category/PlayStation"
+            link="/category/اجهزة سوني"
           />
 
           <BannerImage src={img4} alt="Banner 4" />
@@ -111,9 +111,13 @@ export default function Home() {
           <Section
             title="ساعات ابل"
             products={products
-              .filter((p) => p?.category?.includes("ساعات ابل"))
+              .filter(
+                (p) =>
+                  p?.category?.includes("ساعات ابل") ||
+                  p?.category?.includes("ساعات أبل")
+              )
               .slice(0, 8)}
-            link="/category/ساعات أبل"
+            link="/category/ساعات ابل"
           />
 
           <Section

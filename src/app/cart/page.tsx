@@ -7,6 +7,7 @@ import PaymentMethodRadio from "./components/PaymentMethodRadio";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
+import { getAppSettings } from "@/utils/appSettings";
 
 export default function CartPage() {
   const [error, setError] = useState<string | null>(null);
@@ -103,7 +104,7 @@ export default function CartPage() {
 
   const calculateTotal = () => {
     return cartItems
-      .reduce((total, item) => {
+      .reduce((total: number, item: { price: number; quantity: number }) => {
         return total + item.price * item.quantity;
       }, 0)
       .toFixed(2);
@@ -348,7 +349,14 @@ export default function CartPage() {
 
               {cartItems.length > 0 ? (
                 <div className="divide-y divide-gray-200">
-                  {cartItems.map((item) => (
+                  {cartItems.map((item: { 
+                    id: string;
+                    quantity: number;
+                    name: string;
+                    category: string;
+                    price: number;
+                    image_url: string;
+                  }) => (
                     <div key={item.id} className="p-4 flex items-center">
                       <button
                         onClick={() => removeFromCart(item.id)}

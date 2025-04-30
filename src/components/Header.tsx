@@ -29,48 +29,19 @@ export default function Header() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const getCategories = async () => {
+    const fetchData = async () => {
       try {
-        setLoading(true);
-        const categoriesData = await fetchCategories();
-
-        // إضافة تصنيفات جديدة
-        if (xboxProducts && xboxProducts.length > 0) {
-          const xboxCategory = categoriesData.find(
-            (cat) => cat.name === "Xbox"
-          );
-          if (!xboxCategory) {
-            categoriesData.push({
-              name: "Xbox",
-              subcategories: [{ name: "Xbox Series X" }],
-            });
-          }
-        }
-
-        if (appleWatchesProducts && appleWatchesProducts.length > 0) {
-          const watchCategory = categoriesData.find(
-            (cat) => cat.name === "Apple Watch" || cat.name === "ساعات أبل"
-          );
-          if (!watchCategory) {
-            categoriesData.push({
-              name: "ساعات أبل",
-              subcategories: [{ name: "Apple Watch" }],
-            });
-          }
-        }
-
-        setCategories(categoriesData);
-        setError(null);
-      } catch (err) {
-        console.error("Error fetching categories:", err);
-        setError("Failed to load categories");
-      } finally {
+        const data = await fetchCategories();
+        setCategories(data);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+        setError("حدث خطأ في تحميل التصنيفات");
         setLoading(false);
       }
     };
-
-    getCategories();
-  }, [xboxProducts, appleWatchesProducts]);
+    fetchData();
+  }, []);
 
   const toggleCategory = (categoryName: string) => {
     if (isDropdownOpen === categoryName) {
@@ -129,76 +100,101 @@ export default function Header() {
                   </div>
                 ) : (
                   <ul className="flex justify-center space-x-2 space-x-reverse flex-wrap">
-                    {categories.map((category) => (
-                      <li key={category.name} className="relative group">
-                        <div
-                          className="py-2 px-2 text-center cursor-pointer text-gray-700 hover:text-[#3498db] flex items-center"
-                          onClick={() => toggleCategory(category.name)}
-                        >
-                          <span className="text-xs">
-                            {category.name}{" "}
-                            {category.englishName &&
-                            category.name !== category.englishName
-                              ? `(${category.englishName})`
-                              : ""}
-                          </span>
-                          {category.subcategories.length > 0 && (
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="h-3 w-3 mr-1"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M19 9l-7 7-7-7"
-                              />
-                            </svg>
-                          )}
-                        </div>
-                        {isDropdownOpen === category.name &&
-                          category.subcategories.length > 0 && (
-                            <div
-                              className="absolute right-0 mt-1 w-48 bg-white rounded-md shadow-lg z-50"
-                              style={{ touchAction: "none" }}
-                            >
-                              <Link
-                                href={`/category/${encodeURIComponent(
-                                  category.name
-                                )}`}
-                                className="block px-4 py-2 text-right text-gray-700 hover:bg-[#3498db] hover:text-white font-bold border-b border-gray-200"
-                                onClick={() => setIsDropdownOpen("")}
+                    {categories
+                      .filter((category) =>
+                        [
+                          "هواتف ابل",
+                          "هواتف سامسونج",
+                          "ساعات ابل",
+                          "اجهزة سوني",
+                          "اكس بوكس",
+                          "اكسسوارات",
+                        ].includes(category.name)
+                      )
+                      .sort((a, b) => {
+                        const order = [
+                          "هواتف ابل",
+                          "هواتف سامسونج",
+                          "ساعات ابل",
+                          "اجهزة سوني",
+                          "اكس بوكس",
+                          "اكسسوارات",
+                        ];
+                        return order.indexOf(a.name) - order.indexOf(b.name);
+                      })
+                      .map((category) => (
+                        <li key={category.name} className="relative group">
+                          <div
+                            className="py-2 px-2 text-center cursor-pointer text-gray-700 hover:text-[#3498db] flex items-center"
+                            onClick={() => toggleCategory(category.name)}
+                          >
+                            <span className="text-xs">
+                              {category.name}{" "}
+                              {category.englishName &&
+                              category.name !== category.englishName
+                                ? ``
+                                : ""}
+                            </span>
+                            {category.subcategories.length > 0 && (
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-3 w-3 mr-1"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
                               >
-                                كل منتجات {category.name}
-                              </Link>
-                              {category.subcategories.map(
-                                (subcategory: {
-                                  name: string;
-                                  englishName?: string;
-                                }) => (
-                                  <Link
-                                    key={subcategory.name}
-                                    href={`/category/${encodeURIComponent(
-                                      category.name
-                                    )}/${encodeURIComponent(subcategory.name)}`}
-                                    className="block px-4 py-2 text-right text-gray-700 hover:bg-[#3498db] hover:text-white"
-                                    onClick={() => setIsDropdownOpen("")}
-                                  >
-                                    {subcategory.name}{" "}
-                                    {subcategory.englishName &&
-                                    subcategory.name !== subcategory.englishName
-                                      ? `(${subcategory.englishName})`
-                                      : ""}
-                                  </Link>
-                                )
-                              )}
-                            </div>
-                          )}
-                      </li>
-                    ))}
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M19 9l-7 7-7-7"
+                                />
+                              </svg>
+                            )}
+                          </div>
+                          {isDropdownOpen === category.name &&
+                            category.subcategories.length > 0 && (
+                              <div
+                                className="absolute right-0 mt-1 w-48 bg-white rounded-md shadow-lg z-50"
+                                style={{ touchAction: "none" }}
+                              >
+                                <Link
+                                  href={`/category/${encodeURIComponent(
+                                    category.name
+                                  )}`}
+                                  className="block px-4 py-2 text-right text-gray-700 hover:bg-[#3498db] hover:text-white font-bold border-b border-gray-200"
+                                  onClick={() => setIsDropdownOpen("")}
+                                >
+                                  كل منتجات {category.name}
+                                </Link>
+                                {category.subcategories.map(
+                                  (subcategory: {
+                                    name: string;
+                                    englishName?: string;
+                                  }) => (
+                                    <Link
+                                      key={subcategory.name}
+                                      href={`/category/${encodeURIComponent(
+                                        category.name
+                                      )}/${encodeURIComponent(
+                                        subcategory.name
+                                      )}`}
+                                      className="block px-4 py-2 text-right text-gray-700 hover:bg-[#3498db] hover:text-white"
+                                      onClick={() => setIsDropdownOpen("")}
+                                    >
+                                      {subcategory.name}{" "}
+                                      {subcategory.englishName &&
+                                      subcategory.name !==
+                                        subcategory.englishName
+                                        ? `(${subcategory.englishName})`
+                                        : ""}
+                                    </Link>
+                                  )
+                                )}
+                              </div>
+                            )}
+                        </li>
+                      ))}
                   </ul>
                 )}
               </div>
@@ -282,79 +278,101 @@ export default function Header() {
                 </div>
               ) : (
                 <nav className="flex flex-col space-y-1 text-right">
-                  {categories.map((category) => (
-                    <div
-                      key={category.name}
-                      className="border-b border-gray-100 pb-2"
-                    >
-                      <div className="flex items-center justify-between w-full py-2 text-gray-700 hover:text-[#3498db] px-2">
-                        <Link
-                          href={`/category/${encodeURIComponent(
-                            category.name
-                          )}`}
-                          className="flex-grow text-right"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          {category.name}{" "}
-                          {category.englishName &&
-                          category.name !== category.englishName
-                            ? `(${category.englishName})`
-                            : ""}
-                        </Link>
-                        {category.subcategories.length > 0 && (
-                          <button
-                            onClick={() => toggleCategory(category.name)}
-                            className="p-1"
+                  {categories
+                    .filter((category) =>
+                      [
+                        "هواتف ابل",
+                        "هواتف سامسونج",
+                        "ساعات ابل",
+                        "اجهزة سوني",
+                        "اكس بوكس",
+                        "اكسسوارات",
+                      ].includes(category.name)
+                    )
+                    .sort((a, b) => {
+                      const order = [
+                        "هواتف ابل",
+                        "هواتف سامسونج",
+                        "ساعات ابل",
+                        "اجهزة سوني",
+                        "اكس بوكس",
+                        "اكسسوارات",
+                      ];
+                      return order.indexOf(a.name) - order.indexOf(b.name);
+                    })
+                    .map((category) => (
+                      <div
+                        key={category.name}
+                        className="border-b border-gray-100 pb-2"
+                      >
+                        <div className="flex items-center justify-between w-full py-2 text-gray-700 hover:text-[#3498db] px-2">
+                          <Link
+                            href={`/category/${encodeURIComponent(
+                              category.name
+                            )}`}
+                            className="flex-grow text-right"
+                            onClick={() => setIsMenuOpen(false)}
                           >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className={`h-4 w-4 transform transition-transform ${
-                                isDropdownOpen === category.name
-                                  ? "rotate-180"
-                                  : ""
-                              }`}
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
+                            {category.name}{" "}
+                            {category.englishName &&
+                            category.name !== category.englishName
+                              ? `(${category.englishName})`
+                              : ""}
+                          </Link>
+                          {category.subcategories.length > 0 && (
+                            <button
+                              onClick={() => toggleCategory(category.name)}
+                              className="p-1"
                             >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M19 9l-7 7-7-7"
-                              />
-                            </svg>
-                          </button>
-                        )}
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className={`h-4 w-4 transform transition-transform ${
+                                  isDropdownOpen === category.name
+                                    ? "rotate-180"
+                                    : ""
+                                }`}
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M19 9l-7 7-7-7"
+                                />
+                              </svg>
+                            </button>
+                          )}
+                        </div>
+                        {isDropdownOpen === category.name &&
+                          category.subcategories.length > 0 && (
+                            <div className="mt-1 space-y-1 pr-6 bg-gray-50 rounded-md py-2">
+                              {category.subcategories.map(
+                                (subcategory: {
+                                  name: string;
+                                  englishName?: string;
+                                }) => (
+                                  <Link
+                                    key={subcategory.name}
+                                    href={`/category/${encodeURIComponent(
+                                      category.name
+                                    )}/${encodeURIComponent(subcategory.name)}`}
+                                    className="block py-1.5 px-2 text-sm text-gray-600 hover:text-[#3498db] hover:bg-gray-100 rounded-md transition-colors"
+                                    onClick={() => setIsMenuOpen(false)}
+                                  >
+                                    {subcategory.name}{" "}
+                                    {subcategory.englishName &&
+                                    subcategory.name !== subcategory.englishName
+                                      ? `(${subcategory.englishName})`
+                                      : ""}
+                                  </Link>
+                                )
+                              )}
+                            </div>
+                          )}
                       </div>
-                      {isDropdownOpen === category.name &&
-                        category.subcategories.length > 0 && (
-                          <div className="mt-1 space-y-1 pr-6 bg-gray-50 rounded-md py-2">
-                            {category.subcategories.map(
-                              (subcategory: {
-                                name: string;
-                                englishName?: string;
-                              }) => (
-                                <Link
-                                  key={subcategory.name}
-                                  href={`/category/${encodeURIComponent(
-                                    category.name
-                                  )}/${encodeURIComponent(subcategory.name)}`}
-                                  className="block py-1.5 px-2 text-sm text-gray-600 hover:text-[#3498db] hover:bg-gray-100 rounded-md transition-colors"
-                                  onClick={() => setIsMenuOpen(false)}
-                                >
-                                  {subcategory.name}{" "}
-                                  {subcategory.englishName &&
-                                  subcategory.name !== subcategory.englishName
-                                    ? `(${subcategory.englishName})`
-                                    : ""}
-                                </Link>
-                              )
-                            )}
-                          </div>
-                        )}
-                    </div>
-                  ))}
+                    ))}
                 </nav>
               )}
             </div>

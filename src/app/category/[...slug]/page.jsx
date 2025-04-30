@@ -41,8 +41,8 @@ export default function CategoryPage({ params }) {
   let filteredProducts = [];
 
   // التحقق من الفئات الخاصة
-  if (categoryName === "iPhone") {
-    // إذا كانت الفئة هي iPhone
+  if (categoryName === "iPhone" || categoryName === "هواتف ابل") {
+    // إذا كانت الفئة هي iPhone أو هواتف ابل
     if (subcategoryName) {
       // إذا كان هناك فئة فرعية مثل "iPhone 16 Pro Max"
       filteredProducts = products.filter((product) => {
@@ -62,15 +62,18 @@ export default function CategoryPage({ params }) {
           productName.includes("iphone") ||
           (product.category &&
             (Array.isArray(product.category)
-              ? product.category.some((cat) =>
-                  cat.toLowerCase().includes("iphone")
+              ? product.category.some(
+                  (cat) =>
+                    cat.toLowerCase().includes("iphone") ||
+                    cat.toLowerCase().includes("هواتف ابل")
                 )
-              : product.category.toLowerCase().includes("iphone")))
+              : product.category.toLowerCase().includes("iphone") ||
+                product.category.toLowerCase().includes("هواتف ابل")))
         );
       });
     }
-  } else if (categoryName === "Samsung") {
-    // إذا كانت الفئة هي Samsung
+  } else if (categoryName === "Samsung" || categoryName === "هواتف سامسونج") {
+    // إذا كانت الفئة هي Samsung أو هواتف سامسونج
     if (subcategoryName) {
       // إذا كان هناك فئة فرعية مثل "Samsung S25"
       filteredProducts = products.filter((product) => {
@@ -90,41 +93,60 @@ export default function CategoryPage({ params }) {
           productName.includes("samsung") ||
           (product.category &&
             (Array.isArray(product.category)
-              ? product.category.some((cat) =>
-                  cat.toLowerCase().includes("samsung")
+              ? product.category.some(
+                  (cat) =>
+                    cat.toLowerCase().includes("samsung") ||
+                    cat.toLowerCase().includes("هواتف سامسونج")
                 )
-              : product.category.toLowerCase().includes("samsung")))
+              : product.category.toLowerCase().includes("samsung") ||
+                product.category.toLowerCase().includes("هواتف سامسونج")))
         );
       });
     }
-  } else if (categoryName === "PlayStation") {
-    // إذا كانت الفئة هي PlayStation
+  } else if (categoryName === "PlayStation" || categoryName === "اجهزة سوني") {
+    // إذا كانت الفئة هي PlayStation أو اجهزة سوني
     filteredProducts = products.filter((product) => {
       const productName = product.name?.toLowerCase() || "";
       return (
         productName.includes("playstation") ||
         (product.category &&
           (Array.isArray(product.category)
-            ? product.category.some((cat) =>
-                cat.toLowerCase().includes("playstation")
+            ? product.category.some(
+                (cat) =>
+                  cat.toLowerCase().includes("playstation") ||
+                  cat.toLowerCase().includes("اجهزة سوني")
               )
-            : product.category.toLowerCase().includes("playstation")))
+            : product.category.toLowerCase().includes("playstation") ||
+              product.category.toLowerCase().includes("اجهزة سوني")))
       );
     });
-  } else if (categoryName === "Xbox" || categoryName.includes("Xbox")) {
-    // إذا كانت الفئة هي Xbox
+  } else if (
+    categoryName === "Xbox" ||
+    categoryName.includes("Xbox") ||
+    categoryName === "اكس بوكس"
+  ) {
+    // إذا كانت الفئة هي Xbox أو اكس بوكس
     filteredProducts = products.filter((product) => {
       const productName = product.name?.toLowerCase() || "";
       return (
         productName.includes("xbox") ||
         (product.category &&
           (Array.isArray(product.category)
-            ? product.category.some((cat) => cat.toLowerCase().includes("xbox"))
-            : product.category.toLowerCase().includes("xbox")))
+            ? product.category.some(
+                (cat) =>
+                  cat.toLowerCase().includes("xbox") ||
+                  cat.toLowerCase().includes("اكس بوكس")
+              )
+            : product.category.toLowerCase().includes("xbox") ||
+              product.category.toLowerCase().includes("اكس بوكس")))
       );
     });
-  } else if (categoryName === "ساعات أبل" || categoryName === "Apple Watch") {
-    // إذا كانت الفئة هي ساعات أبل
+  } else if (
+    categoryName === "ساعات أبل" ||
+    categoryName === "ساعات ابل" ||
+    categoryName === "Apple Watch"
+  ) {
+    // إذا كانت الفئة هي ساعات أبل أو ساعات ابل
     filteredProducts = products.filter((product) => {
       const productName = product.name?.toLowerCase() || "";
       return (
@@ -138,6 +160,24 @@ export default function CategoryPage({ params }) {
               )
             : product.category.toLowerCase().includes("ساعات") ||
               product.category.toLowerCase().includes("watch")))
+      );
+    });
+  } else if (categoryName === "اكسسوارات" || categoryName === "Accessories") {
+    // إذا كانت الفئة هي اكسسوارات
+    filteredProducts = products.filter((product) => {
+      const productName = product.name?.toLowerCase() || "";
+      return (
+        productName.includes("accessories") ||
+        productName.includes("اكسسوارات") ||
+        (product.category &&
+          (Array.isArray(product.category)
+            ? product.category.some(
+                (cat) =>
+                  cat.toLowerCase().includes("اكسسوارات") ||
+                  cat.toLowerCase().includes("accessories")
+              )
+            : product.category.toLowerCase().includes("اكسسوارات") ||
+              product.category.toLowerCase().includes("accessories")))
       );
     });
   } else {
