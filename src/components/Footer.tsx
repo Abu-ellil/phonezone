@@ -12,15 +12,13 @@ import government from "../../public/images/government-ae-logo-arabic2.webp";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-blue-800 via-blue-500 to-blue-900 text-gray-300 py-12">
+    <footer className="bg-gradient-to-b from-gray-300 to-slate-500 text-gray-800 py-5">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 text-right">
           <div>
             <h3 className="text-lg font-semibold mb-4">من نحن</h3>
             <p className="mb-4 text-sm">
-              مؤسسة AliiExpress هي شركة رائدة تقدم خدماتها في مجال الاتصالات
-              والهواتف المحمولة منذ 2016 كموزع معتمد من شركة آبل في الامارات
-              العربية المتحدة.
+            تم إطلاق AliExpress في عام 2010، وهو سوق دولي يمكن المستهلكين العالميين من الشراء مباشرة  في الإمارات العربيه المتحده وحول العالم AliExpress
             </p>
           </div>
           <div>

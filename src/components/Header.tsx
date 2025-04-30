@@ -3,14 +3,17 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useCart } from "@/contexts/CartContext";
+import { useProducts } from "@/contexts/ProductsContext";
 import { fetchCategories } from "@/api/categories";
 
 interface Subcategory {
   name: string;
+  englishName?: string;
 }
 
 interface Category {
   name: string;
+  englishName?: string;
   subcategories: Subcategory[];
 }
 
@@ -18,6 +21,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState("");
   const { cartCount } = useCart();
+  const { xboxProducts, appleWatchesProducts } = useProducts();
 
   // Get categories from API
   const [categories, setCategories] = useState<Category[]>([]);
@@ -29,6 +33,32 @@ export default function Header() {
       try {
         setLoading(true);
         const categoriesData = await fetchCategories();
+
+        // إضافة تصنيفات جديدة
+        if (xboxProducts && xboxProducts.length > 0) {
+          const xboxCategory = categoriesData.find(
+            (cat) => cat.name === "Xbox"
+          );
+          if (!xboxCategory) {
+            categoriesData.push({
+              name: "Xbox",
+              subcategories: [{ name: "Xbox Series X" }],
+            });
+          }
+        }
+
+        if (appleWatchesProducts && appleWatchesProducts.length > 0) {
+          const watchCategory = categoriesData.find(
+            (cat) => cat.name === "Apple Watch" || cat.name === "ساعات أبل"
+          );
+          if (!watchCategory) {
+            categoriesData.push({
+              name: "ساعات أبل",
+              subcategories: [{ name: "Apple Watch" }],
+            });
+          }
+        }
+
         setCategories(categoriesData);
         setError(null);
       } catch (err) {
@@ -40,7 +70,7 @@ export default function Header() {
     };
 
     getCategories();
-  }, []);
+  }, [xboxProducts, appleWatchesProducts]);
 
   const toggleCategory = (categoryName: string) => {
     if (isDropdownOpen === categoryName) {
@@ -105,7 +135,13 @@ export default function Header() {
                           className="py-2 px-2 text-center cursor-pointer text-gray-700 hover:text-[#3498db] flex items-center"
                           onClick={() => toggleCategory(category.name)}
                         >
-                          <span className="text-xs">{category.name}</span>
+                          <span className="text-xs">
+                            {category.name}{" "}
+                            {category.englishName &&
+                            category.name !== category.englishName
+                              ? `(${category.englishName})`
+                              : ""}
+                          </span>
                           {category.subcategories.length > 0 && (
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -139,7 +175,10 @@ export default function Header() {
                                 كل منتجات {category.name}
                               </Link>
                               {category.subcategories.map(
-                                (subcategory: { name: string }) => (
+                                (subcategory: {
+                                  name: string;
+                                  englishName?: string;
+                                }) => (
                                   <Link
                                     key={subcategory.name}
                                     href={`/category/${encodeURIComponent(
@@ -148,7 +187,11 @@ export default function Header() {
                                     className="block px-4 py-2 text-right text-gray-700 hover:bg-[#3498db] hover:text-white"
                                     onClick={() => setIsDropdownOpen("")}
                                   >
-                                    {subcategory.name}
+                                    {subcategory.name}{" "}
+                                    {subcategory.englishName &&
+                                    subcategory.name !== subcategory.englishName
+                                      ? `(${subcategory.englishName})`
+                                      : ""}
                                   </Link>
                                 )
                               )}
@@ -252,7 +295,11 @@ export default function Header() {
                           className="flex-grow text-right"
                           onClick={() => setIsMenuOpen(false)}
                         >
-                          {category.name}
+                          {category.name}{" "}
+                          {category.englishName &&
+                          category.name !== category.englishName
+                            ? `(${category.englishName})`
+                            : ""}
                         </Link>
                         {category.subcategories.length > 0 && (
                           <button
@@ -284,7 +331,10 @@ export default function Header() {
                         category.subcategories.length > 0 && (
                           <div className="mt-1 space-y-1 pr-6 bg-gray-50 rounded-md py-2">
                             {category.subcategories.map(
-                              (subcategory: { name: string }) => (
+                              (subcategory: {
+                                name: string;
+                                englishName?: string;
+                              }) => (
                                 <Link
                                   key={subcategory.name}
                                   href={`/category/${encodeURIComponent(
@@ -293,7 +343,11 @@ export default function Header() {
                                   className="block py-1.5 px-2 text-sm text-gray-600 hover:text-[#3498db] hover:bg-gray-100 rounded-md transition-colors"
                                   onClick={() => setIsMenuOpen(false)}
                                 >
-                                  {subcategory.name}
+                                  {subcategory.name}{" "}
+                                  {subcategory.englishName &&
+                                  subcategory.name !== subcategory.englishName
+                                    ? `(${subcategory.englishName})`
+                                    : ""}
                                 </Link>
                               )
                             )}

@@ -18,9 +18,16 @@ import { Loading } from "@/components/Loading";
 export default function Home() {
   const {
     products,
-    featuredProducts,
     newestProducts,
     bestSellingProducts,
+    // التصنيفات المطلوبة
+    iPhone16ProMaxProducts,
+    samsungS25Products,
+    iPhone16ProProducts,
+    iPhone16Products,
+    samsungS24Products,
+    iPhone15Products,
+    playstationProducts,
     loading,
     error,
   } = useProducts();
@@ -45,90 +52,6 @@ export default function Home() {
     );
   }
 
-  // الحصول على المنتجات من فئة معينة
-  const getProductsByCategory = (categoryName, limit = 8) => {
-    if (!products || products.length === 0) return [];
-
-    // تحويل اسم الفئة إلى مصفوفة إذا كان نصًا
-    const searchTerms = Array.isArray(categoryName)
-      ? categoryName.map((term) => term.toLowerCase().trim())
-      : [categoryName.toLowerCase().trim()];
-
-    // البحث في المنتجات
-    const filteredProducts = products.filter((product) => {
-      if (!product) return false;
-
-      // البحث في اسم المنتج
-      if (product.name) {
-        const productName = product.name.toString().toLowerCase();
-        if (searchTerms.some((term) => productName.includes(term))) {
-          return true;
-        }
-      }
-
-      // البحث في خاصية category
-      if (product.category) {
-        // إذا كانت الفئة مصفوفة
-        if (Array.isArray(product.category)) {
-          const categories = product.category.map((cat) =>
-            cat ? cat.toString().toLowerCase() : ""
-          );
-
-          // التحقق من وجود أي من مصطلحات البحث في الفئات
-          for (const category of categories) {
-            if (searchTerms.some((term) => category.includes(term))) {
-              return true;
-            }
-          }
-        }
-        // إذا كانت الفئة نصًا
-        else {
-          const category = product.category.toString().toLowerCase();
-          if (searchTerms.some((term) => category.includes(term))) {
-            return true;
-          }
-        }
-      }
-
-      // البحث في خاصية subcategory
-      if (product.subcategory) {
-        // إذا كانت الفئة الفرعية مصفوفة
-        if (Array.isArray(product.subcategory)) {
-          const subcategories = product.subcategory.map((subcat) =>
-            subcat ? subcat.toString().toLowerCase() : ""
-          );
-
-          // التحقق من وجود أي من مصطلحات البحث في الفئات الفرعية
-          for (const subcategory of subcategories) {
-            if (searchTerms.some((term) => subcategory.includes(term))) {
-              return true;
-            }
-          }
-        }
-        // إذا كانت الفئة الفرعية نصًا
-        else {
-          const subcategory = product.subcategory.toString().toLowerCase();
-          if (searchTerms.some((term) => subcategory.includes(term))) {
-            return true;
-          }
-        }
-      }
-
-      // البحث في الوصف
-      if (product.description) {
-        const description = product.description.toString().toLowerCase();
-        if (searchTerms.some((term) => description.includes(term))) {
-          return true;
-        }
-      }
-
-      return false;
-    });
-
-    // إرجاع عدد محدد من المنتجات
-    return filteredProducts.slice(0, limit);
-  };
-
   return (
     <div className="min-h-screen flex flex-col transition-theme">
       <Header />
@@ -139,97 +62,123 @@ export default function Home() {
           <BannerImage src={img1} alt="Banner 1" />
 
           <Section
-            title="هواتف آيفون"
-            products={getProductsByCategory([
-              "ايفون",
-              "iphone",
-              "apple",
-              "ابل",
-              "آبل",
-            ])}
-            link="/category/ابل"
+            title="iPhone 16 Pro Max"
+            products={iPhone16ProMaxProducts}
+            link="/category/الهواتف الذكية/Apple"
           />
 
           <BannerImage src={img2} alt="Banner 2" />
 
           <Section
-            title="هواتف سامسونج"
-            products={getProductsByCategory(["سامسونج", "samsung", "galaxy"])}
-            link="/category/سامسونج"
+            title="Samsung S25"
+            products={samsungS25Products}
+            link="/category/الهواتف الذكية/Samsung"
+          />
+
+          <Section
+            title="iPhone 16 Pro"
+            products={iPhone16ProProducts}
+            link="/category/الهواتف الذكية/Apple"
+          />
+
+          <Section
+            title="iPhone 16"
+            products={iPhone16Products}
+            link="/category/الهواتف الذكية/Apple"
           />
 
           <BannerImage src={img3} alt="Banner 3" />
 
           <Section
-            title="ساعات آبل"
-            products={getProductsByCategory([
-              "ساعات",
-              "watch",
-              "apple watch",
-              "ساعة ابل",
-            ])}
-            link="/category/ساعات ابل"
+            title="Samsung S24"
+            products={samsungS24Products}
+            link="/category/الهواتف الذكية/Samsung"
           />
 
           <Section
-            title="بلايستيشن"
-            products={getProductsByCategory([
-              "بلايستيشن",
-              "playstation",
-              "ps5",
-              "ps4",
-              "بلاي ستيشن",
-            ])}
-            link="/category/بلاي ستيشن"
+            title="iPhone 15"
+            products={iPhone15Products}
+            link="/category/الهواتف الذكية/Apple"
           />
 
           <Section
-            title="ألعاب الفيديو"
-            products={getProductsByCategory([
-              "ألعاب",
-              "games",
-              "video games",
-              "gaming",
-            ])}
-            link="/category/ألعاب الفيديو"
-          />
-
-          <Section
-            title="سماعات وأجهزة صوت"
-            products={getProductsByCategory("سماعات")}
-            link="/category/سماعات"
+            title="PlayStation"
+            products={playstationProducts}
+            link="/category/أجهزة بلاي ستيشن"
           />
 
           <BannerImage src={img4} alt="Banner 4" />
 
           <Section
+            title="ساعات ابل"
+            products={products
+              .filter((p) => p?.category?.includes("ساعات ابل"))
+              .slice(0, 8)}
+            link="/category/ساعات ابل"
+          />
+
+          <Section
+            title="اكسسوارات"
+            products={products
+              .filter((p) => p?.category?.includes("اكسسوارات"))
+              .slice(0, 8)}
+            link="/category/اكسسوارات"
+          />
+
+          <Section
+            title="أجهزة صوت و سماعات"
+            products={products
+              .filter((p) => p?.category?.includes("أجهزة صوت و سماعات"))
+              .slice(0, 8)}
+            link="/category/أجهزة صوت و سماعات"
+          />
+
+          <Section
             title="لابتوبات وشاشات"
-            products={getProductsByCategory("لابتوب")}
+            products={products
+              .filter((p) => p?.category?.includes("لابتوبات وشاشات"))
+              .slice(0, 8)}
             link="/category/لابتوبات وشاشات"
           />
 
           <Section
-            title="الأجهزة اللوحية وايبادات"
-            products={getProductsByCategory("ايباد")}
+            title="الاجهزة اللوحية ايبادات"
+            products={products
+              .filter((p) => p?.category?.includes("الاجهزة اللوحية ايبادات"))
+              .slice(0, 8)}
             link="/category/الاجهزة اللوحية ايبادات"
           />
 
           <Section
             title="بطاريات متنقلة وكيابل"
-            products={getProductsByCategory("بطاريات")}
+            products={products
+              .filter((p) => p?.category?.includes("بطاريات متنقلة وكيابل"))
+              .slice(0, 8)}
             link="/category/بطاريات متنقلة وكيابل"
           />
 
           <Section
+            title="ألعاب الفيديو"
+            products={products
+              .filter((p) => p?.category?.includes("ألعاب الفيديو"))
+              .slice(0, 8)}
+            link="/category/ألعاب الفيديو"
+          />
+
+          <Section
             title="ماوسات وكيبوردات ألعاب"
-            products={getProductsByCategory("ماوسات")}
+            products={products
+              .filter((p) => p?.category?.includes("ماوسات وكيبوردات ألعاب"))
+              .slice(0, 8)}
             link="/category/ماوسات وكيبوردات ألعاب"
           />
 
           <Section
             title="تلفزيونات"
-            products={getProductsByCategory("تلفزيون")}
-            link="/category/تلفزيون"
+            products={products
+              .filter((p) => p?.category?.includes("تلفزيون"))
+              .slice(0, 8)}
+            link="/category/الهواتف الذكية/تلفزيون"
           />
 
           <Section
@@ -267,7 +216,9 @@ const BannerImage = ({ src, alt }) => (
 );
 
 const Section = ({ title, products, link }) => {
-  if (!products || products.length === 0) return null;
+  if (!products || products.length === 0) {
+    return null;
+  }
 
   return (
     <div className=" p-4">

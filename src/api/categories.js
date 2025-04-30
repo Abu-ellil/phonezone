@@ -1,143 +1,138 @@
-import axios from "axios";
+// استيراد البيانات من ملفات البيانات
+import { getAllProducts } from "@/contexts/data";
 
-// الحصول على التصنيفات الرئيسية والفرعية من API
-export async function fetchCategories() {
+/**
+ * استخراج التصنيفات من بيانات المنتجات
+ * @returns {Promise<Array>} مصفوفة من التصنيفات
+ */
+export const fetchCategories = async () => {
   try {
-    const response = await axios.get("http://localhost:9000/products");
+    // الحصول على جميع المنتجات
+    const products = getAllProducts();
 
-    // تخزين التصنيفات الرئيسية والفرعية
-    const mainCategories = [];
-    const categoryMap = new Map();
+    // إنشاء كائن لتجميع التصنيفات والتصنيفات الفرعية
+    const categoriesMap = {};
 
-    // استخراج البيانات من الاستجابة
-    if (typeof response.data === "object") {
-      // استخراج التصنيفات الأساسية مباشرة من الكائن الرئيسي
-      const rootCategories = Object.keys(response.data);
-
-      // إضافة التصنيفات الأساسية
-      rootCategories.forEach((categoryName) => {
-        if (!categoryMap.has(categoryName)) {
-          const category = {
-            name: categoryName,
-            subcategories: [],
-          };
-          categoryMap.set(categoryName, category);
-          mainCategories.push(category);
-        }
-      });
-
-      // تحويل الكائن إلى مصفوفة من المنتجات للحصول على التصنيفات الفرعية
-      let allProducts = [];
-
-      // البحث عن المنتجات في المستوى الأول
-      for (const key in response.data) {
-        if (Array.isArray(response.data[key])) {
-          allProducts = allProducts.concat(response.data[key]);
-        } else if (typeof response.data[key] === "object") {
-          // إضافة التصنيفات الفرعية من المستوى الثاني
-          const subCategories = Object.keys(response.data[key]);
-          const parentCategory = categoryMap.get(key);
-
-          if (parentCategory) {
-            subCategories.forEach((subCategoryName) => {
-              if (
-                !parentCategory.subcategories.some(
-                  (sub) => sub.name === subCategoryName
-                )
-              ) {
-                parentCategory.subcategories.push({ name: subCategoryName });
-              }
-            });
-          }
-
-          // البحث في المستوى الثاني
-          for (const subKey in response.data[key]) {
-            if (Array.isArray(response.data[key][subKey])) {
-              allProducts = allProducts.concat(response.data[key][subKey]);
-            } else if (
-              typeof response.data[key][subKey] === "object" &&
-              response.data[key][subKey] !== null
-            ) {
-              // البحث في المستوى الثالث
-              for (const subSubKey in response.data[key][subKey]) {
-                if (Array.isArray(response.data[key][subKey][subSubKey])) {
-                  allProducts = allProducts.concat(
-                    response.data[key][subKey][subSubKey]
-                  );
-                }
-              }
-            }
-          }
-        }
-      }
-
-      // استخراج التصنيفات الإضافية من المنتجات
-      allProducts.forEach((product) => {
-        if (!product.category) return;
-
-        // التعامل مع الفئات كمصفوفة أو كنص
+    // استخراج التصنيفات والتصنيفات الفرعية من المنتجات
+    products.forEach((product) => {
+      if (product.category) {
+        // التعامل مع التصنيف كمصفوفة أو كسلسلة نصية
         const categories = Array.isArray(product.category)
           ? product.category
           : [product.category];
 
-        categories.forEach((categoryName) => {
-          if (!categoryName) return;
-          const name = categoryName.toString();
-
-          if (!categoryMap.has(name)) {
-            const category = {
-              name,
+        categories.forEach((category) => {
+          if (!categoriesMap[category]) {
+            categoriesMap[category] = {
+              name: category,
               subcategories: [],
             };
-            categoryMap.set(name, category);
-            mainCategories.push(category);
           }
 
-          // إضافة الفئة الفرعية إذا كانت موجودة
-          if (product.subcategory) {
-            const subcategoryName = product.subcategory.toString();
-            const category = categoryMap.get(name);
-
-            // التحقق من عدم وجود الفئة الفرعية مسبقًا
-            if (
-              !category.subcategories.some(
-                (sub) => sub.name === subcategoryName
-              )
-            ) {
-              category.subcategories.push({ name: subcategoryName });
-            }
+          // إضافة التصنيف الفرعي إذا كان موجوداً
+          if (
+            product.subcategory &&
+            !categoriesMap[category].subcategories.some(
+              (sub) => sub.name === product.subcategory
+            )
+          ) {
+            categoriesMap[category].subcategories.push({
+              name: product.subcategory,
+            });
           }
         });
-      });
-    }
-
-    // ترتيب التصنيفات حسب الاسم
-    mainCategories.sort((a, b) => a.name.localeCompare(b.name));
-
-    // ترتيب التصنيفات الفرعية حسب الاسم
-    mainCategories.forEach((category) => {
-      category.subcategories.sort((a, b) => a.name.localeCompare(b.name));
+      }
     });
 
-    return mainCategories;
+    // إضافة التصنيفات الإضافية
+    const additionalCategories = [
+      {
+        name: "iPhone",
+        englishName: "iPhone",
+        subcategories: [
+          { name: "iPhone 16 Pro Max", englishName: "iPhone 16 Pro Max" },
+          { name: "iPhone 16 Pro", englishName: "iPhone 16 Pro" },
+          { name: "iPhone 16", englishName: "iPhone 16" },
+          { name: "iPhone 15", englishName: "iPhone 15" },
+        ],
+      },
+      {
+        name: "Samsung",
+        englishName: "Samsung",
+        subcategories: [
+          { name: "Samsung S25", englishName: "Samsung S25" },
+          { name: "Samsung S24", englishName: "Samsung S24" },
+          { name: "Samsung S23", englishName: "Samsung S23" },
+        ],
+      },
+      {
+        name: "PlayStation",
+        englishName: "PlayStation",
+        subcategories: [
+          { name: "PlayStation 5", englishName: "PlayStation 5" },
+          { name: "ألعاب PlayStation", englishName: "PlayStation Games" },
+        ],
+      },
+      {
+        name: "Xbox",
+        englishName: "Xbox",
+        subcategories: [
+          { name: "Xbox Series X", englishName: "Xbox Series X" },
+          { name: "ألعاب Xbox", englishName: "Xbox Games" },
+        ],
+      },
+      {
+        name: "ساعات أبل",
+        englishName: "Apple Watch",
+        subcategories: [
+          { name: "Apple Watch Series 9", englishName: "Apple Watch Series 9" },
+          { name: "Apple Watch Ultra", englishName: "Apple Watch Ultra" },
+        ],
+      },
+    ];
+
+    // دمج التصنيفات الإضافية مع التصنيفات المستخرجة
+    additionalCategories.forEach((category) => {
+      if (!categoriesMap[category.name]) {
+        categoriesMap[category.name] = category;
+      } else {
+        // دمج التصنيفات الفرعية
+        category.subcategories.forEach((subcategory) => {
+          if (
+            !categoriesMap[category.name].subcategories.some(
+              (sub) => sub.name === subcategory.name
+            )
+          ) {
+            categoriesMap[category.name].subcategories.push(subcategory);
+          }
+        });
+      }
+    });
+
+    // تحويل الكائن إلى مصفوفة
+    return Object.values(categoriesMap);
   } catch (error) {
-    console.error("حدث خطأ أثناء جلب التصنيفات:", error);
+    console.error("Error fetching categories:", error);
     return [];
   }
-}
+};
 
-// الحصول على التصنيفات الرئيسية فقط
-export async function fetchMainCategories() {
+/**
+ * الحصول على التصنيفات الرئيسية
+ * @returns {Promise<Array>} مصفوفة من أسماء التصنيفات
+ */
+export const fetchMainCategories = async () => {
   const categories = await fetchCategories();
-  return categories.map((category) => ({
-    name: category.name,
-    hasSubcategories: category.subcategories.length > 0,
-  }));
-}
+  return categories.map((category) => category.name);
+};
 
-// الحصول على التصنيفات الفرعية لتصنيف معين
-export async function fetchSubcategories(categoryName) {
+/**
+ * الحصول على التصنيفات الفرعية لتصنيف معين
+ * @param {string} categoryName اسم التصنيف
+ * @returns {Promise<Array>} مصفوفة من التصنيفات الفرعية
+ */
+export const fetchSubcategories = async (categoryName) => {
   const categories = await fetchCategories();
   const category = categories.find((cat) => cat.name === categoryName);
   return category ? category.subcategories : [];
-}
+};

@@ -32,9 +32,11 @@ export default function ProductDetails({ productId }) {
   if (error) {
     return (
       <div className="text-center py-8">
-        <p className="text-red-500 text-xl">حدث خطأ أثناء تحميل المنتج: {error}</p>
-        <button 
-          onClick={() => window.location.reload()} 
+        <p className="text-red-500 text-xl">
+          حدث خطأ أثناء تحميل المنتج: {error}
+        </p>
+        <button
+          onClick={() => window.location.reload()}
           className="mt-4 px-4 py-2 bg-primary text-white rounded-md"
         >
           إعادة المحاولة
@@ -94,6 +96,9 @@ export default function ProductDetails({ productId }) {
             className="object-contain"
             sizes="(max-width: 768px) 100vw, 50vw"
             priority
+            onError={(e) => {
+              e.currentTarget.src = "/images/placeholder.svg";
+            }}
           />
         </div>
 

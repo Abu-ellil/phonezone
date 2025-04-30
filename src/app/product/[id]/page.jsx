@@ -1,5 +1,5 @@
 "use client";
-import { getProductById } from "@/utils/data";
+import { useProducts } from "@/contexts/ProductsContext";
 import { Loading } from "@/components/Loading";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -19,22 +19,36 @@ export default function ProductPage({ params }) {
   const [selectedVariant, setSelectedVariant] = useState(null);
   const [selectedVersion, setSelectedVersion] = useState("me"); // me = Middle East, us = US Version
 
+  const { getProductById } = useProducts();
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const productData = await getProductById(id);
-        setProduct(productData);
-        if (productData?.variants?.length > 0) {
-          setSelectedVariant(productData.variants[0]);
+        // الحصول على المنتج باستخدام المعرف
+        const productData = getProductById(id);
+
+        if (productData) {
+          console.log("Product found:", productData);
+          setProduct(productData);
+
+          // إذا كان المنتج يحتوي على متغيرات
+          if (productData?.variants?.length > 0) {
+            setSelectedVariant(productData.variants[0]);
+          }
+        } else {
+          console.error("Product not found with ID:", id);
         }
       } catch (error) {
         console.error("Error fetching product:", error);
       } finally {
+        // إنهاء حالة التحميل بعد الانتهاء من البحث
         setLoading(false);
       }
     };
+
+    // تنفيذ الدالة
     fetchProduct();
-  }, [id]);
+  }, [id, getProductById]);
 
   const { addToCart } = useCart();
 
@@ -96,6 +110,9 @@ export default function ProductPage({ params }) {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 33vw"
                       className="p-4"
                       priority
+                      onError={(e) => {
+                        e.currentTarget.src = "/images/placeholder.svg";
+                      }}
                     />
                   </div>
                 </div>

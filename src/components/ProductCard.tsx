@@ -31,6 +31,9 @@ export default function ProductCard({
             style={{ objectFit: "contain" }}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="p-2"
+            onError={(e) => {
+              e.currentTarget.src = "/images/placeholder.svg";
+            }}
           />
         </div>
         <div className="p-3 text-right">
