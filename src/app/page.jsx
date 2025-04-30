@@ -13,7 +13,6 @@ import img4 from "../../public/images/00 (4).jpg";
 import HeroBanner from "@/components/HeroBanner";
 import Testimonials from "@/components/Testimonials";
 import { useProducts } from "@/contexts/ProductsContext";
-import { useState, useEffect } from "react";
 import { Loading } from "@/components/Loading";
 
 export default function Home() {
@@ -25,160 +24,6 @@ export default function Home() {
     loading,
     error,
   } = useProducts();
-
-  const [categoryProducts, setCategoryProducts] = useState({
-    iPhone16ProMaxProducts: [],
-    samsungS25UltraProducts: [],
-    iPhone16ProProducts: [],
-    iPhone16PlusProducts: [],
-    iPhone16Products: [],
-    iPhone15ProMaxProducts: [],
-    samsungS24UltraProducts: [],
-    iPhone14ProMaxProducts: [],
-    iPhone14ProProducts: [],
-    iPhone14PlusProducts: [],
-    iPhone14Products: [],
-    appleWatchProducts: [],
-    playstationProducts: [],
-    videoGamesProducts: [],
-    headphonesProducts: [],
-    laptopsProducts: [],
-    tabletsProducts: [],
-    powerBanksProducts: [],
-    gamingAccessoriesProducts: [],
-    tvProducts: [],
-  });
-
-  useEffect(() => {
-    if (products.length > 0) {
-      // تصفية المنتجات حسب الفئات
-      const filterByNameOrCategory = (searchTerms) => {
-        return products
-          .filter((product) => {
-            const productName = product.name?.toLowerCase() || "";
-            const productCategory = Array.isArray(product.category)
-              ? product.category.map((c) => c.toLowerCase())
-              : [product.category?.toLowerCase() || ""];
-
-            return searchTerms.some(
-              (term) =>
-                productName.includes(term) ||
-                productCategory.some((cat) => cat.includes(term))
-            );
-          })
-          .slice(0, 8);
-      };
-
-      setCategoryProducts({
-        iPhone16ProMaxProducts: filterByNameOrCategory([
-          "iphone 16 pro max",
-          "ايفون 16 برو ماكس",
-        ]),
-        samsungS25UltraProducts: filterByNameOrCategory([
-          "samsung s25 ultra",
-          "سامسونج s25 ultra",
-        ]),
-        iPhone16ProProducts: filterByNameOrCategory([
-          "iphone 16 pro",
-          "ايفون 16 برو",
-        ]),
-        iPhone16PlusProducts: filterByNameOrCategory([
-          "iphone 16 plus",
-          "ايفون 16 بلس",
-        ]),
-        iPhone16Products: filterByNameOrCategory([
-          "iphone 16",
-          "ايفون 16",
-        ]).filter(
-          (p) =>
-            !p.name.toLowerCase().includes("pro") &&
-            !p.name.toLowerCase().includes("برو") &&
-            !p.name.toLowerCase().includes("plus") &&
-            !p.name.toLowerCase().includes("بلس")
-        ),
-        iPhone15ProMaxProducts: filterByNameOrCategory([
-          "iphone 15 pro max",
-          "ايفون 15 برو ماكس",
-        ]),
-        samsungS24UltraProducts: filterByNameOrCategory([
-          "samsung s24 ultra",
-          "سامسونج s24 ultra",
-        ]),
-        iPhone14ProMaxProducts: filterByNameOrCategory([
-          "iphone 14 pro max",
-          "ايفون 14 برو ماكس",
-        ]),
-        iPhone14ProProducts: filterByNameOrCategory([
-          "iphone 14 pro",
-          "ايفون 14 برو",
-        ]),
-        iPhone14PlusProducts: filterByNameOrCategory([
-          "iphone 14 plus",
-          "ايفون 14 بلس",
-        ]),
-        iPhone14Products: filterByNameOrCategory([
-          "iphone 14",
-          "ايفون 14",
-        ]).filter(
-          (p) =>
-            !p.name.toLowerCase().includes("pro") &&
-            !p.name.toLowerCase().includes("برو") &&
-            !p.name.toLowerCase().includes("plus") &&
-            !p.name.toLowerCase().includes("بلس")
-        ),
-        appleWatchProducts: filterByNameOrCategory([
-          "apple watch",
-          "ساعات ابل",
-          "ساعة ابل",
-          "ساعات آبل",
-        ]),
-        playstationProducts: filterByNameOrCategory([
-          "playstation",
-          "بلايستيشن",
-          "بلاي ستيشن",
-        ]),
-        videoGamesProducts: filterByNameOrCategory([
-          "ألعاب الفيديو",
-          "video games",
-          "games",
-        ]),
-        headphonesProducts: filterByNameOrCategory([
-          "سماعات",
-          "headphones",
-          "earbuds",
-          "أجهزة صوت",
-        ]),
-        laptopsProducts: filterByNameOrCategory([
-          "لابتوب",
-          "laptop",
-          "شاشات",
-          "لابتوبات",
-        ]),
-        tabletsProducts: filterByNameOrCategory([
-          "ايباد",
-          "ipad",
-          "tablet",
-          "تابلت",
-          "الاجهزة اللوحية",
-        ]),
-        powerBanksProducts: filterByNameOrCategory([
-          "بطاريات متنقلة",
-          "power bank",
-          "كيابل",
-          "شواحن",
-        ]),
-        gamingAccessoriesProducts: filterByNameOrCategory([
-          "ماوسات",
-          "كيبوردات",
-          "gaming",
-          "ألعاب",
-          "mouse",
-          "keyboard",
-        ]),
-        tvProducts: filterByNameOrCategory(["تلفزيون", "tv", "شاشة", "تلفاز"]),
-      });
-    }
-  }, [products]);
 
   if (loading) {
     return <Loading size="large" text="جاري تحميل المنتجات..." />;
@@ -200,28 +45,89 @@ export default function Home() {
     );
   }
 
-  const {
-    iPhone16ProMaxProducts,
-    samsungS25UltraProducts,
-    iPhone16ProProducts,
-    iPhone16PlusProducts,
-    iPhone16Products,
-    iPhone15ProMaxProducts,
-    samsungS24UltraProducts,
-    iPhone14ProMaxProducts,
-    iPhone14ProProducts,
-    iPhone14PlusProducts,
-    iPhone14Products,
-    appleWatchProducts,
-    playstationProducts,
-    videoGamesProducts,
-    headphonesProducts,
-    laptopsProducts,
-    tabletsProducts,
-    powerBanksProducts,
-    gamingAccessoriesProducts,
-    tvProducts,
-  } = categoryProducts;
+  // الحصول على المنتجات من فئة معينة
+  const getProductsByCategory = (categoryName, limit = 8) => {
+    if (!products || products.length === 0) return [];
+
+    // تحويل اسم الفئة إلى مصفوفة إذا كان نصًا
+    const searchTerms = Array.isArray(categoryName)
+      ? categoryName.map((term) => term.toLowerCase().trim())
+      : [categoryName.toLowerCase().trim()];
+
+    // البحث في المنتجات
+    const filteredProducts = products.filter((product) => {
+      if (!product) return false;
+
+      // البحث في اسم المنتج
+      if (product.name) {
+        const productName = product.name.toString().toLowerCase();
+        if (searchTerms.some((term) => productName.includes(term))) {
+          return true;
+        }
+      }
+
+      // البحث في خاصية category
+      if (product.category) {
+        // إذا كانت الفئة مصفوفة
+        if (Array.isArray(product.category)) {
+          const categories = product.category.map((cat) =>
+            cat ? cat.toString().toLowerCase() : ""
+          );
+
+          // التحقق من وجود أي من مصطلحات البحث في الفئات
+          for (const category of categories) {
+            if (searchTerms.some((term) => category.includes(term))) {
+              return true;
+            }
+          }
+        }
+        // إذا كانت الفئة نصًا
+        else {
+          const category = product.category.toString().toLowerCase();
+          if (searchTerms.some((term) => category.includes(term))) {
+            return true;
+          }
+        }
+      }
+
+      // البحث في خاصية subcategory
+      if (product.subcategory) {
+        // إذا كانت الفئة الفرعية مصفوفة
+        if (Array.isArray(product.subcategory)) {
+          const subcategories = product.subcategory.map((subcat) =>
+            subcat ? subcat.toString().toLowerCase() : ""
+          );
+
+          // التحقق من وجود أي من مصطلحات البحث في الفئات الفرعية
+          for (const subcategory of subcategories) {
+            if (searchTerms.some((term) => subcategory.includes(term))) {
+              return true;
+            }
+          }
+        }
+        // إذا كانت الفئة الفرعية نصًا
+        else {
+          const subcategory = product.subcategory.toString().toLowerCase();
+          if (searchTerms.some((term) => subcategory.includes(term))) {
+            return true;
+          }
+        }
+      }
+
+      // البحث في الوصف
+      if (product.description) {
+        const description = product.description.toString().toLowerCase();
+        if (searchTerms.some((term) => description.includes(term))) {
+          return true;
+        }
+      }
+
+      return false;
+    });
+
+    // إرجاع عدد محدد من المنتجات
+    return filteredProducts.slice(0, limit);
+  };
 
   return (
     <div className="min-h-screen flex flex-col transition-theme">
@@ -233,128 +139,96 @@ export default function Home() {
           <BannerImage src={img1} alt="Banner 1" />
 
           <Section
-            title="هواتف آيفون 16 برو ماكس"
-            products={iPhone16ProMaxProducts}
-            link="/category/ابل/iPhone 16 Pro Max"
+            title="هواتف آيفون"
+            products={getProductsByCategory([
+              "ايفون",
+              "iphone",
+              "apple",
+              "ابل",
+              "آبل",
+            ])}
+            link="/category/ابل"
           />
 
           <BannerImage src={img2} alt="Banner 2" />
 
           <Section
-            title="هواتف سامسونج S25 Ultra"
-            products={samsungS25UltraProducts}
-            link="/category/سامسونج/S25 Ultra"
-          />
-
-          <Section
-            title="هواتف آيفون 16 برو"
-            products={iPhone16ProProducts}
-            link="/category/ابل/ايفون 16 برو"
-          />
-
-          <Section
-            title="هواتف آيفون 16 بلس"
-            products={iPhone16PlusProducts}
-            link="/category/ابل/ايفون 16 بلس"
-          />
-
-          <Section
-            title="هواتف آيفون 16"
-            products={iPhone16Products}
-            link="/category/ابل/ايفون 16"
+            title="هواتف سامسونج"
+            products={getProductsByCategory(["سامسونج", "samsung", "galaxy"])}
+            link="/category/سامسونج"
           />
 
           <BannerImage src={img3} alt="Banner 3" />
 
           <Section
-            title="هواتف آيفون 15 برو ماكس"
-            products={iPhone15ProMaxProducts}
-            link="/category/ابل/ايفون 15 برو ماكس"
-          />
-
-          <Section
-            title="هواتف سامسونج S24 Ultra"
-            products={samsungS24UltraProducts}
-            link="/category/سامسونج/S24 Ultra"
-          />
-
-          <Section
-            title="هواتف آيفون 14 برو ماكس"
-            products={iPhone14ProMaxProducts}
-            link="/category/ابل/ايفون 14 برو ماكس"
-          />
-
-          <Section
-            title="هواتف آيفون 14 برو"
-            products={iPhone14ProProducts}
-            link="/category/ابل/ايفون 14 برو"
-          />
-
-          <Section
-            title="هواتف آيفون 14 بلس"
-            products={iPhone14PlusProducts}
-            link="/category/ابل/ايفون 14 بلس"
-          />
-
-          <Section
-            title="هواتف آيفون 14"
-            products={iPhone14Products}
-            link="/category/ابل/ايفون 14"
-          />
-
-          <BannerImage src={img4} alt="Banner 4" />
-
-          <Section
             title="ساعات آبل"
-            products={appleWatchProducts}
+            products={getProductsByCategory([
+              "ساعات",
+              "watch",
+              "apple watch",
+              "ساعة ابل",
+            ])}
             link="/category/ساعات ابل"
           />
 
           <Section
             title="بلايستيشن"
-            products={playstationProducts}
+            products={getProductsByCategory([
+              "بلايستيشن",
+              "playstation",
+              "ps5",
+              "ps4",
+              "بلاي ستيشن",
+            ])}
             link="/category/بلاي ستيشن"
           />
 
           <Section
             title="ألعاب الفيديو"
-            products={videoGamesProducts}
+            products={getProductsByCategory([
+              "ألعاب",
+              "games",
+              "video games",
+              "gaming",
+            ])}
             link="/category/ألعاب الفيديو"
           />
 
           <Section
             title="سماعات وأجهزة صوت"
-            products={headphonesProducts}
+            products={getProductsByCategory("سماعات")}
             link="/category/سماعات"
           />
 
+          <BannerImage src={img4} alt="Banner 4" />
+
           <Section
             title="لابتوبات وشاشات"
-            products={laptopsProducts}
+            products={getProductsByCategory("لابتوب")}
             link="/category/لابتوبات وشاشات"
           />
 
           <Section
             title="الأجهزة اللوحية وايبادات"
-            products={tabletsProducts}
+            products={getProductsByCategory("ايباد")}
             link="/category/الاجهزة اللوحية ايبادات"
           />
 
           <Section
             title="بطاريات متنقلة وكيابل"
-            products={powerBanksProducts}
+            products={getProductsByCategory("بطاريات")}
             link="/category/بطاريات متنقلة وكيابل"
           />
 
           <Section
             title="ماوسات وكيبوردات ألعاب"
-            products={gamingAccessoriesProducts}
+            products={getProductsByCategory("ماوسات")}
             link="/category/ماوسات وكيبوردات ألعاب"
           />
 
           <Section
             title="تلفزيونات"
-            products={tvProducts}
+            products={getProductsByCategory("تلفزيون")}
             link="/category/تلفزيون"
           />
 
