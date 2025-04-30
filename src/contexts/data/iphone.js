@@ -726,35 +726,6 @@ const iPhoneData = {
         }
       ]
     },
-    {
-      "url": "https://noonestare-ua.com/product/30",
-      "id": 30,
-      "name": "ايفون 15 - تيتانيوم ذهبي",
-      "warranty": "ضمان سنتين حاسبات العرب",
-      "stock_status": "متوفر في المخزون 150 منتجات",
-      "image_url": "https://noonestare-ua.com/assets/images/products/iv5pkHPo8j3aj2wwsh80DTTbiuVjJnFeAgrhRGbE.jpg",
-      "category": [
-        "ابل"
-      ],
-      "base_price": 2300,
-      "variants": [
-        {
-          "type": "memory",
-          "size": "تيرا",
-          "price": 3200
-        },
-        {
-          "type": "memory",
-          "size": "512",
-          "price": 2800
-        },
-        {
-          "type": "memory",
-          "size": "256",
-          "price": 2300
-        }
-      ]
-    }
   ],
   iPhone14: [
     {
