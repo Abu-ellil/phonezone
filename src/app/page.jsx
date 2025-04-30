@@ -99,6 +99,19 @@ export default function Home() {
             products={iPhone15Products}
             link="/category/هواتف ابل"
           />
+<BannerImage src={img4} alt="Banner 4" />
+
+<Section
+  title="ساعات ابل"
+  products={products
+    .filter(
+      (p) =>
+        p?.category?.includes("ساعات ابل") ||
+        p?.category?.includes("ساعات أبل")
+    )
+    .slice(0, 8)}
+  link="/category/ساعات ابل"
+/>
 
           <Section
             title="PlayStation"
@@ -106,19 +119,6 @@ export default function Home() {
             link="/category/اجهزة سوني"
           />
 
-          <BannerImage src={img4} alt="Banner 4" />
-
-          <Section
-            title="ساعات ابل"
-            products={products
-              .filter(
-                (p) =>
-                  p?.category?.includes("ساعات ابل") ||
-                  p?.category?.includes("ساعات أبل")
-              )
-              .slice(0, 8)}
-            link="/category/ساعات ابل"
-          />
 
           <Section
             title="اكسسوارات"

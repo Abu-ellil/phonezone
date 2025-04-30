@@ -106,7 +106,7 @@ function CheckoutContent() {
 
   const calculateSubtotal = () => {
     return cartItems
-      .reduce((total, item) => {
+      .reduce((total: number, item) => {
         return total + item.price * item.quantity;
       }, 0)
       .toFixed(2);
