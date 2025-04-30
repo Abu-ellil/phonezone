@@ -3,23 +3,24 @@ import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { getProducts } from "@/utils/data";
+import { getAllProducts } from "@/contexts/data";
 import Image from "next/image";
 import Link from "next/link";
 
 function Carousel() {
   interface Product {
-    id: number;
+    id: string | number;
     name: string;
-    price?: number;
-    original_price?: number;
+    price?: number | string;
+    original_price?: number | string;
+    base_price?: number | string;
     image_url: string;
   }
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const data = await getProducts();
+      const data = getAllProducts();
       setProducts(data.slice(0, 10));
     };
     fetchProducts();
@@ -85,13 +86,16 @@ function Carousel() {
                   <div className="mt-1 flex flex-col items-end">
                     {product.price && (
                       <span className="text-sm font-bold text-blue-600">
-                        {product.price}
+                        {typeof product.price === "number"
+                          ? product.price.toFixed(2)
+                          : product.price}{" "}
+                        د.إ
                       </span>
                     )}
-                    {product.original_price &&
+                    {(product.original_price || product.base_price) &&
                       product.price !== product.original_price && (
                         <span className="text-xs text-gray-500 line-through">
-                          {product.original_price}
+                          {product.original_price || product.base_price} د.إ
                         </span>
                       )}
                   </div>

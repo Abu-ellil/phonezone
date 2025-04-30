@@ -105,7 +105,7 @@ export default function CartPage() {
   const calculateTotal = () => {
     return cartItems
       .reduce((total: number, item: { price: number; quantity: number }) => {
-        return total + item.price * item.quantity;
+        return total + (item.price || 0) * item.quantity;
       }, 0)
       .toFixed(2);
   };
@@ -349,83 +349,85 @@ export default function CartPage() {
 
               {cartItems.length > 0 ? (
                 <div className="divide-y divide-gray-200">
-                  {cartItems.map((item: { 
-                    id: string;
-                    quantity: number;
-                    name: string;
-                    category: string;
-                    price: number;
-                    image_url: string;
-                  }) => (
-                    <div key={item.id} className="p-4 flex items-center">
-                      <button
-                        onClick={() => removeFromCart(item.id)}
-                        className="text-red-500 hover:text-red-700 ml-4"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M6 18L18 6M6 6l12 12"
-                          />
-                        </svg>
-                      </button>
-
-                      <div className="flex items-center ml-4">
+                  {cartItems.map(
+                    (item: {
+                      id: string;
+                      quantity: number;
+                      name: string;
+                      category: string;
+                      price: number;
+                      image_url: string;
+                    }) => (
+                      <div key={item.id} className="p-4 flex items-center">
                         <button
-                          onClick={() =>
-                            updateQuantity(item.id, item.quantity - 1)
-                          }
-                          className="px-2 py-1 text-gray-600 hover:bg-gray-100 border border-gray-300 rounded-r-md"
+                          onClick={() => removeFromCart(item.id)}
+                          className="text-red-500 hover:text-red-700 ml-4"
                         >
-                          -
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-5 w-5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M6 18L18 6M6 6l12 12"
+                            />
+                          </svg>
                         </button>
-                        <span className="px-3 py-1 border-t border-b border-gray-300">
-                          {item.quantity}
-                        </span>
-                        <button
-                          onClick={() =>
-                            updateQuantity(item.id, item.quantity + 1)
-                          }
-                          className="px-2 py-1 text-gray-600 hover:bg-gray-100 border border-gray-300 rounded-l-md"
-                        >
-                          +
-                        </button>
-                      </div>
 
-                      <div className="flex-1 flex items-center">
-                        <div className="flex-1 text-right mr-4">
-                          <h3 className="text-sm font-medium text-gray-900">
-                            {item.name}
-                          </h3>
-                          <p className="text-sm text-gray-500 mt-1">
-                            {item.category}
-                          </p>
-                          <div className="mt-1">
-                            <span className="text-lg font-bold text-primary">
-                              {item.price}
-                            </span>
+                        <div className="flex items-center ml-4">
+                          <button
+                            onClick={() =>
+                              updateQuantity(item.id, item.quantity - 1)
+                            }
+                            className="px-2 py-1 text-gray-600 hover:bg-gray-100 border border-gray-300 rounded-r-md"
+                          >
+                            -
+                          </button>
+                          <span className="px-3 py-1 border-t border-b border-gray-300">
+                            {item.quantity}
+                          </span>
+                          <button
+                            onClick={() =>
+                              updateQuantity(item.id, item.quantity + 1)
+                            }
+                            className="px-2 py-1 text-gray-600 hover:bg-gray-100 border border-gray-300 rounded-l-md"
+                          >
+                            +
+                          </button>
+                        </div>
+
+                        <div className="flex-1 flex items-center">
+                          <div className="flex-1 text-right mr-4">
+                            <h3 className="text-sm font-medium text-gray-900">
+                              {item.name}
+                            </h3>
+                            <p className="text-sm text-gray-500 mt-1">
+                              {item.category}
+                            </p>
+                            <div className="mt-1">
+                              <span className="text-lg font-bold text-primary">
+                                {item.price}
+                              </span>
+                            </div>
+                          </div>
+                          <div className="w-20 h-20 relative">
+                            <Image
+                              src={item.image_url}
+                              alt={item.name}
+                              fill
+                              style={{ objectFit: "contain" }}
+                              sizes="80px"
+                            />
                           </div>
                         </div>
-                        <div className="w-20 h-20 relative">
-                          <Image
-                            src={item.image_url}
-                            alt={item.name}
-                            fill
-                            style={{ objectFit: "contain" }}
-                            sizes="80px"
-                          />
-                        </div>
                       </div>
-                    </div>
-                  ))}
+                    )
+                  )}
                 </div>
               ) : (
                 <div className="p-8 text-center flex flex-col items-center justify-center py-16">

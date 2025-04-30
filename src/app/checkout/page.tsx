@@ -1,6 +1,6 @@
 "use client";
 import { createAndUploadOrderDocuments } from "@/utils/pdfGenerator";
-import { getAppSettings } from "@/firebase/settingsService";
+import { getAppSettings } from "@/utils/appSettings";
 import { ToastContainer, toast } from "react-toastify";
 import { sendOrderToTelegram } from "@/utils/telegram";
 import CheckoutSteps from "./components/CheckoutSteps";
@@ -15,7 +15,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Link from "next/link";
-import { convertCartItemToOrderItem } from "@/contexts/CartContext";
+// import { convertCartItemToOrderItem } from "@/contexts/CartContext"; // Not used
 // Assuming this is your CartItem type definition
 interface CartItem {
   id: string;
@@ -191,7 +191,13 @@ function CheckoutContent() {
         ...shippingInfo,
         countryCode: shippingInfo.countryCode || "971", // Default UAE country code
       },
-      cartItems: cartItems.map(convertCartItemToOrderItem),
+      cartItems: cartItems.map((item) => ({
+        id: item.id,
+        name: item.name,
+        price: item.price.toString(), // Convert price to string
+        quantity: item.quantity,
+        image: item.image_url,
+      })),
       subtotal,
       shippingCost,
       shippingMethod,
@@ -300,10 +306,11 @@ function CheckoutContent() {
       // Send order data to Telegram (with or without PDF link)
       const telegramSuccess = await sendOrderToTelegram({
         ...orderDataWithPdf,
-        cartItems: orderDataWithPdf.cartItems.map(item => ({
+        cartItems: orderDataWithPdf.cartItems.map((item: any) => ({
           ...item,
-          image_url: item.image // Map the image field to image_url
-        }))
+          image_url: item.image, // Map the image field to image_url
+          price: item.price.toString(), // Ensure price is a string
+        })),
       });
       if (!telegramSuccess) {
         console.error("Failed to send order data to Telegram");
@@ -397,12 +404,12 @@ function CheckoutContent() {
                 isProcessing={isProcessing}
                 processingError={processingError}
                 shippingInfo={shippingInfo}
-                cartItems={cartItems.map(item => ({
+                cartItems={cartItems.map((item: any) => ({
                   id: item.id,
                   name: item.name,
                   price: item.price.toString(),
                   quantity: item.quantity,
-                  image_url: item.image_url
+                  image_url: item.image_url,
                 }))}
                 subtotal={subtotal}
                 shippingCost={shippingCost}
