@@ -352,7 +352,7 @@ const iPhoneData = {
       "name": "ايفون 15 بروماكس - تيتانيوم أسود",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون 200 منتجات",
-      "image_url": "https://res.cloudinary.com/masoft/image/upload/v1742111180/noon-store-products/m77nbqavc3yk5lkokv7z.jpg",
+      "image_url": "https://res.cloudinary.com/masoft/image/upload/v1742111419/noon-store-products/qjhevcyzk7xjuqzff7tq.jpg",
       "category": [
         "ابل"
       ],
@@ -382,7 +382,7 @@ const iPhoneData = {
       "name": "ايفون 15 بروماكس - تيتانيوم سكري",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون 200 منتجات",
-      "image_url": "https://2b.com.eg/media/catalog/product/cache/661473ab953cdcdf4c3b607144109b90/a/p/apple-iphone-16-pro-desert-1_4.jpg",
+      "image_url": "https://res.cloudinary.com/masoft/image/upload/v1742111419/noon-store-products/qjhevcyzk7xjuqzff7tq.jpg",
       "category": [
         "ابل"
       ],

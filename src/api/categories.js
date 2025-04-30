@@ -44,10 +44,10 @@ export const fetchCategories = async () => {
       }
     });
 
-    // إضافة التصنيفات الإضافية
+    // إضافة التصنيفات الإضافية بالترتيب المطلوب
     const additionalCategories = [
       {
-        name: "iPhone",
+        name: "هواتف ابل",
         englishName: "iPhone",
         subcategories: [
           { name: "iPhone 16 Pro Max", englishName: "iPhone 16 Pro Max" },
@@ -57,7 +57,7 @@ export const fetchCategories = async () => {
         ],
       },
       {
-        name: "Samsung",
+        name: "هواتف سامسونج",
         englishName: "Samsung",
         subcategories: [
           { name: "Samsung S25", englishName: "Samsung S25" },
@@ -66,7 +66,15 @@ export const fetchCategories = async () => {
         ],
       },
       {
-        name: "PlayStation",
+        name: "ساعات ابل",
+        englishName: "Apple Watch",
+        subcategories: [
+          { name: "Apple Watch Series 9", englishName: "Apple Watch Series 9" },
+          { name: "Apple Watch Ultra", englishName: "Apple Watch Ultra" },
+        ],
+      },
+      {
+        name: "اجهزة سوني",
         englishName: "PlayStation",
         subcategories: [
           { name: "PlayStation 5", englishName: "PlayStation 5" },
@@ -74,7 +82,7 @@ export const fetchCategories = async () => {
         ],
       },
       {
-        name: "Xbox",
+        name: "اكس بوكس",
         englishName: "Xbox",
         subcategories: [
           { name: "Xbox Series X", englishName: "Xbox Series X" },
@@ -82,11 +90,12 @@ export const fetchCategories = async () => {
         ],
       },
       {
-        name: "ساعات أبل",
-        englishName: "Apple Watch",
+        name: "اكسسوارات",
+        englishName: "Accessories",
         subcategories: [
-          { name: "Apple Watch Series 9", englishName: "Apple Watch Series 9" },
-          { name: "Apple Watch Ultra", englishName: "Apple Watch Ultra" },
+          { name: "كيابل وشواحن", englishName: "Cables & Chargers" },
+          { name: "سماعات", englishName: "Headphones" },
+          { name: "حافظات واغطية", englishName: "Cases & Covers" },
         ],
       },
     ];

@@ -38,38 +38,143 @@ export default function CategoryPage({ params }) {
     params.slug.length > 1 ? decodeURIComponent(params.slug[1]) : null;
 
   // تصفية المنتجات حسب الفئة والفئة الفرعية
-  let filteredProducts = products.filter((product) => {
-    // التحقق من وجود خاصية category
-    if (!product.category) return false;
+  let filteredProducts = [];
 
-    // تحويل الفئة إلى مصفوفة إذا لم تكن كذلك
-    const categories = Array.isArray(product.category)
-      ? product.category.map((c) => c.toLowerCase())
-      : [product.category.toString().toLowerCase()];
-
-    // تحويل اسم المنتج إلى نص صغير للمقارنة
-    const productName = product.name?.toLowerCase() || "";
-
-    // البحث في الفئات واسم المنتج
-    const categoryNameLower = categoryName.toLowerCase();
-    const matchesCategory =
-      categories.some((cat) => cat.includes(categoryNameLower)) ||
-      productName.includes(categoryNameLower);
-
-    // إذا كان هناك فئة فرعية، تحقق منها أيضًا
+  // التحقق من الفئات الخاصة
+  if (categoryName === "iPhone") {
+    // إذا كانت الفئة هي iPhone
     if (subcategoryName) {
-      const subcategoryNameLower = subcategoryName.toLowerCase();
-      const productSubcategory = product.subcategory?.toLowerCase() || "";
-
-      return (
-        matchesCategory &&
-        (productName.includes(subcategoryNameLower) ||
-          productSubcategory.includes(subcategoryNameLower))
-      );
+      // إذا كان هناك فئة فرعية مثل "iPhone 16 Pro Max"
+      filteredProducts = products.filter((product) => {
+        const productName = product.name?.toLowerCase() || "";
+        const subcategoryNameLower = subcategoryName.toLowerCase();
+        return (
+          productName.includes(subcategoryNameLower) ||
+          (product.subcategory &&
+            product.subcategory.toLowerCase().includes(subcategoryNameLower))
+        );
+      });
+    } else {
+      // جميع منتجات iPhone
+      filteredProducts = products.filter((product) => {
+        const productName = product.name?.toLowerCase() || "";
+        return (
+          productName.includes("iphone") ||
+          (product.category &&
+            (Array.isArray(product.category)
+              ? product.category.some((cat) =>
+                  cat.toLowerCase().includes("iphone")
+                )
+              : product.category.toLowerCase().includes("iphone")))
+        );
+      });
     }
+  } else if (categoryName === "Samsung") {
+    // إذا كانت الفئة هي Samsung
+    if (subcategoryName) {
+      // إذا كان هناك فئة فرعية مثل "Samsung S25"
+      filteredProducts = products.filter((product) => {
+        const productName = product.name?.toLowerCase() || "";
+        const subcategoryNameLower = subcategoryName.toLowerCase();
+        return (
+          productName.includes(subcategoryNameLower) ||
+          (product.subcategory &&
+            product.subcategory.toLowerCase().includes(subcategoryNameLower))
+        );
+      });
+    } else {
+      // جميع منتجات Samsung
+      filteredProducts = products.filter((product) => {
+        const productName = product.name?.toLowerCase() || "";
+        return (
+          productName.includes("samsung") ||
+          (product.category &&
+            (Array.isArray(product.category)
+              ? product.category.some((cat) =>
+                  cat.toLowerCase().includes("samsung")
+                )
+              : product.category.toLowerCase().includes("samsung")))
+        );
+      });
+    }
+  } else if (categoryName === "PlayStation") {
+    // إذا كانت الفئة هي PlayStation
+    filteredProducts = products.filter((product) => {
+      const productName = product.name?.toLowerCase() || "";
+      return (
+        productName.includes("playstation") ||
+        (product.category &&
+          (Array.isArray(product.category)
+            ? product.category.some((cat) =>
+                cat.toLowerCase().includes("playstation")
+              )
+            : product.category.toLowerCase().includes("playstation")))
+      );
+    });
+  } else if (categoryName === "Xbox" || categoryName.includes("Xbox")) {
+    // إذا كانت الفئة هي Xbox
+    filteredProducts = products.filter((product) => {
+      const productName = product.name?.toLowerCase() || "";
+      return (
+        productName.includes("xbox") ||
+        (product.category &&
+          (Array.isArray(product.category)
+            ? product.category.some((cat) => cat.toLowerCase().includes("xbox"))
+            : product.category.toLowerCase().includes("xbox")))
+      );
+    });
+  } else if (categoryName === "ساعات أبل" || categoryName === "Apple Watch") {
+    // إذا كانت الفئة هي ساعات أبل
+    filteredProducts = products.filter((product) => {
+      const productName = product.name?.toLowerCase() || "";
+      return (
+        productName.includes("apple watch") ||
+        (product.category &&
+          (Array.isArray(product.category)
+            ? product.category.some(
+                (cat) =>
+                  cat.toLowerCase().includes("ساعات") ||
+                  cat.toLowerCase().includes("watch")
+              )
+            : product.category.toLowerCase().includes("ساعات") ||
+              product.category.toLowerCase().includes("watch")))
+      );
+    });
+  } else {
+    // للفئات الأخرى
+    filteredProducts = products.filter((product) => {
+      // التحقق من وجود خاصية category
+      if (!product.category) return false;
 
-    return matchesCategory;
-  });
+      // تحويل الفئة إلى مصفوفة إذا لم تكن كذلك
+      const categories = Array.isArray(product.category)
+        ? product.category.map((c) => c.toLowerCase())
+        : [product.category.toString().toLowerCase()];
+
+      // تحويل اسم المنتج إلى نص صغير للمقارنة
+      const productName = product.name?.toLowerCase() || "";
+
+      // البحث في الفئات واسم المنتج
+      const categoryNameLower = categoryName.toLowerCase();
+      const matchesCategory =
+        categories.some((cat) => cat.includes(categoryNameLower)) ||
+        productName.includes(categoryNameLower);
+
+      // إذا كان هناك فئة فرعية، تحقق منها أيضًا
+      if (subcategoryName) {
+        const subcategoryNameLower = subcategoryName.toLowerCase();
+        const productSubcategory = product.subcategory?.toLowerCase() || "";
+
+        return (
+          matchesCategory &&
+          (productName.includes(subcategoryNameLower) ||
+            productSubcategory.includes(subcategoryNameLower))
+        );
+      }
+
+      return matchesCategory;
+    });
+  }
 
   // تطبيق الفلاتر من عنوان URL إذا وجدت
   const searchParams =

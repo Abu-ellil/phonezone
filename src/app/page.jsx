@@ -20,7 +20,6 @@ export default function Home() {
     products,
     newestProducts,
     bestSellingProducts,
-    // التصنيفات المطلوبة
     iPhone16ProMaxProducts,
     samsungS25Products,
     iPhone16ProProducts,
@@ -64,7 +63,7 @@ export default function Home() {
           <Section
             title="iPhone 16 Pro Max"
             products={iPhone16ProMaxProducts}
-            link="/category/الهواتف الذكية/Apple"
+            link="/category/iPhone"
           />
 
           <BannerImage src={img2} alt="Banner 2" />
@@ -72,19 +71,19 @@ export default function Home() {
           <Section
             title="Samsung S25"
             products={samsungS25Products}
-            link="/category/الهواتف الذكية/Samsung"
+            link="/category/Samsung"
           />
 
           <Section
             title="iPhone 16 Pro"
             products={iPhone16ProProducts}
-            link="/category/الهواتف الذكية/Apple"
+            link="/category/iPhone"
           />
 
           <Section
             title="iPhone 16"
             products={iPhone16Products}
-            link="/category/الهواتف الذكية/Apple"
+            link="/category/iPhone"
           />
 
           <BannerImage src={img3} alt="Banner 3" />
@@ -92,19 +91,19 @@ export default function Home() {
           <Section
             title="Samsung S24"
             products={samsungS24Products}
-            link="/category/الهواتف الذكية/Samsung"
+            link="/category/Samsung"
           />
 
           <Section
             title="iPhone 15"
             products={iPhone15Products}
-            link="/category/الهواتف الذكية/Apple"
+            link="/category/iPhone"
           />
 
           <Section
             title="PlayStation"
             products={playstationProducts}
-            link="/category/أجهزة بلاي ستيشن"
+            link="/category/PlayStation"
           />
 
           <BannerImage src={img4} alt="Banner 4" />
@@ -114,7 +113,7 @@ export default function Home() {
             products={products
               .filter((p) => p?.category?.includes("ساعات ابل"))
               .slice(0, 8)}
-            link="/category/ساعات ابل"
+            link="/category/ساعات أبل"
           />
 
           <Section
@@ -123,14 +122,6 @@ export default function Home() {
               .filter((p) => p?.category?.includes("اكسسوارات"))
               .slice(0, 8)}
             link="/category/اكسسوارات"
-          />
-
-          <Section
-            title="أجهزة صوت و سماعات"
-            products={products
-              .filter((p) => p?.category?.includes("أجهزة صوت و سماعات"))
-              .slice(0, 8)}
-            link="/category/أجهزة صوت و سماعات"
           />
 
           <Section
@@ -148,50 +139,14 @@ export default function Home() {
               .slice(0, 8)}
             link="/category/الاجهزة اللوحية ايبادات"
           />
-
           <Section
-            title="بطاريات متنقلة وكيابل"
+            title="أجهزة صوت و سماعات"
             products={products
-              .filter((p) => p?.category?.includes("بطاريات متنقلة وكيابل"))
+              .filter((p) => p?.category?.includes("أجهزة صوت و سماعات"))
               .slice(0, 8)}
-            link="/category/بطاريات متنقلة وكيابل"
+            link="/category/أجهزة صوت و سماعات"
           />
 
-          <Section
-            title="ألعاب الفيديو"
-            products={products
-              .filter((p) => p?.category?.includes("ألعاب الفيديو"))
-              .slice(0, 8)}
-            link="/category/ألعاب الفيديو"
-          />
-
-          <Section
-            title="ماوسات وكيبوردات ألعاب"
-            products={products
-              .filter((p) => p?.category?.includes("ماوسات وكيبوردات ألعاب"))
-              .slice(0, 8)}
-            link="/category/ماوسات وكيبوردات ألعاب"
-          />
-
-          <Section
-            title="تلفزيونات"
-            products={products
-              .filter((p) => p?.category?.includes("تلفزيون"))
-              .slice(0, 8)}
-            link="/category/الهواتف الذكية/تلفزيون"
-          />
-
-          <Section
-            title="أحدث المنتجات"
-            products={newestProducts}
-            link="/category/احدث المنتجات"
-          />
-
-          <Section
-            title="الأفضل مبيعاً"
-            products={bestSellingProducts}
-            link="/category/الافضل مبيعا"
-          />
           <Testimonials />
         </div>
       </main>

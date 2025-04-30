@@ -89,117 +89,138 @@ export function ProductsProvider({ children }) {
 
   // دالة للحصول على منتج بواسطة المعرف
   const getProductById = (id) => {
-    // تحويل المعرف إلى رقم إذا كان سلسلة نصية
-    const numericId = typeof id === "string" ? parseInt(id, 10) : id;
-    console.log("Looking for product with ID:", numericId);
+    try {
+      // تحويل المعرف إلى رقم إذا كان سلسلة نصية
+      const numericId = typeof id === "string" ? parseInt(id, 10) : id;
+      console.log("Looking for product with ID:", numericId);
 
-    // أولاً، البحث في مصفوفة المنتجات المحملة (إذا كانت موجودة)
-    if (products.length > 0) {
-      console.log("Searching in loaded products array");
-      const product = products.find((product) => {
-        const productId =
-          typeof product.id === "string"
-            ? parseInt(product.id, 10)
-            : product.id;
-        return productId === numericId;
-      });
+      // أولاً، البحث في مصفوفة المنتجات المحملة (إذا كانت موجودة)
+      if (products.length > 0) {
+        console.log("Searching in loaded products array");
+        const product = products.find((product) => {
+          const productId =
+            typeof product.id === "string"
+              ? parseInt(product.id, 10)
+              : product.id;
+          return productId === numericId;
+        });
 
-      if (product) {
-        console.log("Found product in loaded products:", product);
-        return product;
+        if (product) {
+          console.log("Found product in loaded products:", product);
+          return product;
+        }
       }
+
+      // إذا لم يتم العثور على المنتج في المصفوفة المحملة، البحث مباشرة في ملفات البيانات
+      console.log("Searching directly in data files");
+
+      // البحث في بيانات iPhone
+      for (const category in iPhoneData) {
+        if (Array.isArray(iPhoneData[category])) {
+          const product = iPhoneData[category].find((p) => {
+            const productId =
+              typeof p.id === "string" ? parseInt(p.id, 10) : p.id;
+            return productId === numericId;
+          });
+          if (product) {
+            console.log("Found product in iPhone data:", product);
+            return product;
+          }
+        }
+      }
+
+      // البحث في بيانات Samsung
+      for (const category in samsungData) {
+        if (Array.isArray(samsungData[category])) {
+          const product = samsungData[category].find((p) => {
+            const productId =
+              typeof p.id === "string" ? parseInt(p.id, 10) : p.id;
+            return productId === numericId;
+          });
+          if (product) {
+            console.log("Found product in Samsung data:", product);
+            return product;
+          }
+        }
+      }
+
+      // البحث في بيانات PlayStation
+      for (const category in playstationData) {
+        if (Array.isArray(playstationData[category])) {
+          const product = playstationData[category].find((p) => {
+            const productId =
+              typeof p.id === "string" ? parseInt(p.id, 10) : p.id;
+            return productId === numericId;
+          });
+          if (product) {
+            console.log("Found product in PlayStation data:", product);
+            return product;
+          }
+        }
+      }
+
+      // البحث في بيانات الملحقات
+      for (const category in accessoriesData) {
+        if (Array.isArray(accessoriesData[category])) {
+          const product = accessoriesData[category].find((p) => {
+            const productId =
+              typeof p.id === "string" ? parseInt(p.id, 10) : p.id;
+            return productId === numericId;
+          });
+          if (product) {
+            console.log("Found product in accessories data:", product);
+            return product;
+          }
+        }
+      }
+
+      // البحث في بيانات Xbox
+      if (xboxData && xboxData.xbox && Array.isArray(xboxData.xbox)) {
+        const product = xboxData.xbox.find((p) => {
+          const productId =
+            typeof p.id === "string" ? parseInt(p.id, 10) : p.id;
+          return productId === numericId;
+        });
+        if (product) {
+          console.log("Found product in Xbox data:", product);
+          return product;
+        }
+      }
+
+      // البحث في بيانات ساعات أبل
+      if (Array.isArray(appleWatches)) {
+        const product = appleWatches.find((p) => {
+          const productId =
+            typeof p.id === "string" ? parseInt(p.id, 10) : p.id;
+          return productId === numericId;
+        });
+        if (product) {
+          console.log("Found product in Apple Watches data:", product);
+          return product;
+        }
+      } else if (
+        appleWatches &&
+        appleWatches.appleWatches &&
+        Array.isArray(appleWatches.appleWatches)
+      ) {
+        const product = appleWatches.appleWatches.find((p) => {
+          const productId =
+            typeof p.id === "string" ? parseInt(p.id, 10) : p.id;
+          return productId === numericId;
+        });
+        if (product) {
+          console.log("Found product in Apple Watches data:", product);
+          return product;
+        }
+      }
+
+      // إذا لم يتم العثور على المنتج في أي من ملفات البيانات
+      console.log("Product not found");
+      return null;
+    } catch (error) {
+      console.error("Error in getProductById:", error);
+      return null;
     }
-
-    // إذا لم يتم العثور على المنتج في المصفوفة المحملة، البحث مباشرة في ملفات البيانات
-    console.log("Searching directly in data files");
-
-    // البحث في بيانات iPhone
-    for (const category in iPhoneData) {
-      const product = iPhoneData[category].find((p) => {
-        const productId = typeof p.id === "string" ? parseInt(p.id, 10) : p.id;
-        return productId === numericId;
-      });
-      if (product) {
-        console.log("Found product in iPhone data:", product);
-        return product;
-      }
-    }
-
-    // البحث في بيانات Samsung
-    for (const category in samsungData) {
-      const product = samsungData[category].find((p) => {
-        const productId = typeof p.id === "string" ? parseInt(p.id, 10) : p.id;
-        return productId === numericId;
-      });
-      if (product) {
-        console.log("Found product in Samsung data:", product);
-        return product;
-      }
-    }
-
-    // البحث في بيانات PlayStation
-    for (const category in playstationData) {
-      const product = playstationData[category].find((p) => {
-        const productId = typeof p.id === "string" ? parseInt(p.id, 10) : p.id;
-        return productId === numericId;
-      });
-      if (product) {
-        console.log("Found product in PlayStation data:", product);
-        return product;
-      }
-    }
-
-    // البحث في بيانات الملحقات
-    for (const category in accessoriesData) {
-      const product = accessoriesData[category].find((p) => {
-        const productId = typeof p.id === "string" ? parseInt(p.id, 10) : p.id;
-        return productId === numericId;
-      });
-      if (product) {
-        console.log("Found product in accessories data:", product);
-        return product;
-      }
-    }
-
-    // البحث في بيانات Xbox
-    if (xboxData && xboxData.xbox) {
-      const product = xboxData.xbox.find((p) => {
-        const productId = typeof p.id === "string" ? parseInt(p.id, 10) : p.id;
-        return productId === numericId;
-      });
-      if (product) {
-        console.log("Found product in Xbox data:", product);
-        return product;
-      }
-    }
-
-    // البحث في بيانات ساعات أبل
-    if (Array.isArray(appleWatches)) {
-      const product = appleWatches.find((p) => {
-        const productId = typeof p.id === "string" ? parseInt(p.id, 10) : p.id;
-        return productId === numericId;
-      });
-      if (product) {
-        console.log("Found product in Apple Watches data:", product);
-        return product;
-      }
-    } else if (
-      appleWatches.appleWatches &&
-      Array.isArray(appleWatches.appleWatches)
-    ) {
-      const product = appleWatches.appleWatches.find((p) => {
-        const productId = typeof p.id === "string" ? parseInt(p.id, 10) : p.id;
-        return productId === numericId;
-      });
-      if (product) {
-        console.log("Found product in Apple Watches data:", product);
-        return product;
-      }
-    }
-
-    // إذا لم يتم العثور على المنتج في أي من ملفات البيانات
-    console.log("Product not found");
-    return null;
   };
 
   // دالة للبحث عن المنتجات

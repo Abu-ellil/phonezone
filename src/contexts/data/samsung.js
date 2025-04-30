@@ -185,7 +185,7 @@ const samsungData = {
       "stock_status": "متوفر في المخزون 150 منتجات",
       "image_url": "https://res.cloudinary.com/masoft/image/upload/v1742111504/noon-store-products/kkmez6hxqnax1wjwxir6.jpg",
       "category": [
-        "سامسونج"
+        "جوالات-سامسونج"
       ],
       "base_price": 3300,
       "variants": [
@@ -214,7 +214,7 @@ const samsungData = {
       "stock_status": "متوفر في المخزون 150 منتجات",
       "image_url": "https://res.cloudinary.com/masoft/image/upload/v1742111502/noon-store-products/t6quhornlz9ojl0nvz48.jpg",
       "category": [
-        "ابل"
+        "جوالات-سامسونج"
       ],
       "base_price": 3300,
       "variants": [
@@ -243,7 +243,7 @@ const samsungData = {
       "stock_status": "متوفر في المخزون 150 منتجات",
       "image_url": "https://www.zdnet.com/a/img/resize/59d9448270bdf9642e4f5f6f323d2a1e94361c3d/2024/02/02/1bfa7d30-112c-4906-83a7-ce12551b7b16/galaxy-s24-ultra.jpg?auto=webp&fit=crop&height=1200&width=1200",
       "category": [
-        "ابل"
+        "جوالات-سامسونج"
       ],
       "base_price": 3300,
       "variants": [
@@ -272,8 +272,9 @@ const samsungData = {
       "stock_status": "متوفر في المخزون 150 منتجات",
       "image_url": "https://res.cloudinary.com/masoft/image/upload/v1742111502/noon-store-products/t6quhornlz9ojl0nvz48.jpg",
       "category": [
-        "ابل"
+        "جوالات-سامسونج"
       ],
+   
       "base_price": 3300,
       "variants": [
         {

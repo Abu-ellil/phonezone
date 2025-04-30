@@ -7,7 +7,6 @@ import PaymentMethodRadio from "./components/PaymentMethodRadio";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
-import { getAppSettings } from "@/firebase/settingsService";
 
 export default function CartPage() {
   const [error, setError] = useState<string | null>(null);
