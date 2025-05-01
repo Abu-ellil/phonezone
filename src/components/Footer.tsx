@@ -12,13 +12,15 @@ import government from "../../public/images/government-ae-logo-arabic2.webp";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-gray-300 to-slate-500 text-gray-800 py-5">
+    <footer className="bg-gradient-to-b from-gray-900 via-black to-gray-800 text-white py-5">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 text-right">
           <div>
             <h3 className="text-lg font-semibold mb-4">من نحن</h3>
             <p className="mb-4 text-sm">
-            تم إطلاق AliExpress في عام 2010، وهو سوق دولي يمكن المستهلكين العالميين من الشراء مباشرة  في الإمارات العربيه المتحده وحول العالم AliExpress
+              تم إطلاق AliExpress في عام 2010، وهو سوق دولي يمكن المستهلكين
+              العالميين من الشراء مباشرة في الإمارات العربيه المتحده وحول العالم
+              AliExpress
             </p>
           </div>
           <div>
@@ -83,19 +85,19 @@ export default function Footer() {
             <div className="flex space-x-reverse">
               <a
                 href="https://www.facebook.com"
-                className="text-gray-300 hover:text-white transition-colors duration-200"
+                className="text-red-500 hover:text-red-600 transition-colors duration-200"
               >
                 <FontAwesomeIcon icon={faFacebook} className="h-5 w-5" />
               </a>
               <a
                 href="https://www.twitter.com"
-                className="text-gray-300 hover:text-white transition-colors duration-200"
+                className="text-red-500 hover:text-red-600 transition-colors duration-200"
               >
                 <FontAwesomeIcon icon={faTwitter} className="h-5 w-5" />
               </a>
               <a
                 href="https://www.instagram.com"
-                className="text-gray-300 hover:text-white transition-colors duration-200"
+                className="text-red-500 hover:text-red-600 transition-colors duration-200"
               >
                 <FontAwesomeIcon icon={faInstagram} className="h-5 w-5" />
               </a>
@@ -140,10 +142,10 @@ export default function Footer() {
           </Link>
 
           <div className="text-center">
-            <p className="text-gray-900 text-sm mb-2 font-semibold">
+            <p className="text-white text-sm mb-2 font-semibold">
               الرقم الضريبي : 10906797
             </p>
-            <p className="text-gray-900 text-sm">© 2016 AliiExpress</p>
+            <p className="text-white text-sm">© 2016 AliiExpress</p>
           </div>
         </div>
       </div>

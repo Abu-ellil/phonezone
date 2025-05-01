@@ -15,14 +15,14 @@ module.exports = {
       },
       colors: {
         primary: {
-          light: "#f7941d",
-          DEFAULT: "#f7941d",
-          dark: "#d97706",
+          light: "#ff3333",
+          DEFAULT: "#ff0000",
+          dark: "#cc0000",
         },
         secondary: {
           light: "#333333",
-          DEFAULT: "#333333",
-          dark: "#1a1a1a",
+          DEFAULT: "#000000",
+          dark: "#000000",
         },
         background: {
           light: "#ffffff",
@@ -35,9 +35,9 @@ module.exports = {
           dark: "#e0e0e0",
         },
         accent: {
-          light: "#3498db",
-          DEFAULT: "#3498db",
-          dark: "#2980b9",
+          light: "#ff3333",
+          DEFAULT: "#ff0000",
+          dark: "#cc0000",
         },
       },
       fontFamily: {

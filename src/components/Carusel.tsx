@@ -85,7 +85,7 @@ function Carousel() {
                   </h3>
                   <div className="mt-1 flex flex-col items-end">
                     {product.price && (
-                      <span className="text-sm font-bold text-blue-600">
+                      <span className="text-sm font-bold text-red-600">
                         {typeof product.price === "number"
                           ? product.price.toFixed(2)
                           : product.price}{" "}

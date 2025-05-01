@@ -119,12 +119,12 @@ export default function ProductPage({ params }) {
                 <div className="md:w-3/5 p-6 text-right">
                   <div className="mb-2">
                     {product.category && (
-                      <span className="text-sm text-blue-600 font-medium">
+                      <span className="text-sm text-red-600 font-medium">
                         {product.category}
                       </span>
                     )}
                     {product.subcategory && (
-                      <span className="text-sm text-blue-600 font-medium mr-2">
+                      <span className="text-sm text-red-600 font-medium mr-2">
                         / {product.subcategory}
                       </span>
                     )}
@@ -147,7 +147,7 @@ export default function ProductPage({ params }) {
                               onClick={() => setSelectedVariant(variant)}
                               className={`px-4 py-2 rounded-lg ${
                                 selectedVariant?.size === variant.size
-                                  ? "bg-blue-500 text-white"
+                                  ? "bg-red-600 text-white"
                                   : "bg-gray-200 text-gray-700"
                               } hover:opacity-90 transition-colors`}
                             >
@@ -167,7 +167,7 @@ export default function ProductPage({ params }) {
                             onClick={() => setSelectedVersion("me")}
                             className={`px-3 py-1.5 rounded-lg text-xs ${
                               selectedVersion === "me"
-                                ? "bg-blue-500 text-white"
+                                ? "bg-red-600 text-white"
                                 : "bg-gray-200 text-gray-700"
                             } hover:opacity-90 transition-colors`}
                           >

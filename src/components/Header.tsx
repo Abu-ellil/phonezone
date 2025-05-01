@@ -125,7 +125,7 @@ export default function Header() {
                       .map((category) => (
                         <li key={category.name} className="relative group">
                           <div
-                            className="py-2 px-2 text-center cursor-pointer text-gray-700 hover:text-[#3498db] flex items-center"
+                            className="py-2 px-2 text-center cursor-pointer text-gray-700 hover:text-red-600 flex items-center"
                             onClick={() => toggleCategory(category.name)}
                           >
                             <span className="text-xs">
@@ -162,7 +162,7 @@ export default function Header() {
                                   href={`/category/${encodeURIComponent(
                                     category.name
                                   )}`}
-                                  className="block px-4 py-2 text-right text-gray-700 hover:bg-[#3498db] hover:text-white font-bold border-b border-gray-200"
+                                  className="block px-4 py-2 text-right text-gray-700 hover:bg-red-600 hover:text-white font-bold border-b border-gray-200"
                                   onClick={() => setIsDropdownOpen("")}
                                 >
                                   كل منتجات {category.name}
@@ -179,7 +179,7 @@ export default function Header() {
                                       )}/${encodeURIComponent(
                                         subcategory.name
                                       )}`}
-                                      className="block px-4 py-2 text-right text-gray-700 hover:bg-[#3498db] hover:text-white"
+                                      className="block px-4 py-2 text-right text-gray-700 hover:bg-red-600 hover:text-white"
                                       onClick={() => setIsDropdownOpen("")}
                                     >
                                       {subcategory.name}{" "}
@@ -204,7 +204,7 @@ export default function Header() {
               <nav className="flex items-center space-x-6 space-x-reverse">
                 <Link
                   href="/cart"
-                  className="flex items-center hover:text-[#3498db] text-gray-500 border border-b-gray-400 p-2 rounded-sm relative"
+                  className="flex items-center hover:text-red-600 text-gray-500 border border-b-gray-400 p-2 rounded-sm relative"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -242,7 +242,7 @@ export default function Header() {
                 <input
                   type="text"
                   placeholder="ابحث عن منتجات..."
-                  className="w-full py-2 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3498db] text-right"
+                  className="w-full py-2 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 text-right"
                 />
                 <button className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500">
                   <svg
@@ -305,7 +305,7 @@ export default function Header() {
                         key={category.name}
                         className="border-b border-gray-100 pb-2"
                       >
-                        <div className="flex items-center justify-between w-full py-2 text-gray-700 hover:text-[#3498db] px-2">
+                        <div className="flex items-center justify-between w-full py-2 text-gray-700 hover:text-red-600 px-2">
                           <Link
                             href={`/category/${encodeURIComponent(
                               category.name
@@ -358,7 +358,7 @@ export default function Header() {
                                     href={`/category/${encodeURIComponent(
                                       category.name
                                     )}/${encodeURIComponent(subcategory.name)}`}
-                                    className="block py-1.5 px-2 text-sm text-gray-600 hover:text-[#3498db] hover:bg-gray-100 rounded-md transition-colors"
+                                    className="block py-1.5 px-2 text-sm text-gray-600 hover:text-red-600 hover:bg-gray-100 rounded-md transition-colors"
                                     onClick={() => setIsMenuOpen(false)}
                                   >
                                     {subcategory.name}{" "}

@@ -42,12 +42,12 @@ export default function ProductCard({
           </h3>
           <div className="mt-1">
             {category && (
-              <span className="text-xs text-gray-500">{category}</span>
+              <span className="text-xs text-gray-700">{category}</span>
             )}
             {subcategory && (
               <>
-                <span className="text-xs text-gray-500 mx-1">|</span>
-                <span className="text-xs text-gray-500">{subcategory}</span>
+                <span className="text-xs text-gray-700 mx-1">|</span>
+                <span className="text-xs text-gray-700">{subcategory}</span>
               </>
             )}
           </div>
@@ -55,7 +55,7 @@ export default function ProductCard({
             {price && (
               <>
                 <div className="flex flex-col items-end">
-                  <span className="text-sm font-bold text-blue-600">
+                  <span className="text-sm font-bold text-red-600">
                     {price}
                   </span>
                 </div>
@@ -63,7 +63,7 @@ export default function ProductCard({
             )}
             {original_price && price !== original_price && (
               <div className="flex flex-col items-end mt-1">
-                <span className="text-xs text-gray-500 line-through">
+                <span className="text-xs text-gray-700 line-through">
                   {original_price}
                 </span>
               </div>

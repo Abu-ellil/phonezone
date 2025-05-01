@@ -45,13 +45,13 @@ export default function NotFound() {
       <Header />
       <main className="flex-grow container mx-auto px-4 py-12 mt-10">
         <div className="text-center mb-12 bg-white p-12 rounded-xl shadow-lg border border-gray-100">
-          <h1 className="text-9xl font-bold text-primary mb-6 animate-pulse">
+          <h1 className="text-9xl font-bold text-red-600 mb-6 animate-pulse">
             404
           </h1>
-          <p className="text-2xl text-gray-700 mb-8">
+          <p className="text-2xl text-gray-800 mb-8">
             عذراً، الصفحة التي تبحث عنها غير موجودة
           </p>
-          <p className="text-gray-500 mb-8">
+          <p className="text-gray-700 mb-8">
             يمكنك العودة إلى الصفحة الرئيسية أو تصفح منتجاتنا
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -83,7 +83,7 @@ export default function NotFound() {
         </div>
 
         <div className="mb-8 bg-white p-12 rounded-xl shadow-lg border border-gray-100">
-          <h2 className="text-3xl font-bold text-primary text-right mb-8">
+          <h2 className="text-3xl font-bold text-red-600 text-right mb-8">
             منتجات مقترحة لك
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 hover:gap-8 transition-all duration-300">
