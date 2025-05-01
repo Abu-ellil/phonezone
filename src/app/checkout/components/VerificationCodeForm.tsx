@@ -128,7 +128,7 @@ export default function VerificationCodeForm({
             placeholder="XXXXXX"
             className={`w-full p-3 border ${
               error ? "border-red-500" : "border-gray-300"
-            } rounded-lg text-center text-2xl tracking-widest letter-spacing-2 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+            } rounded-lg text-center text-2xl tracking-widest letter-spacing-2 focus:outline-none focus:ring-2 focus:ring-red-600`}
             required
             autoFocus
           />
@@ -143,13 +143,13 @@ export default function VerificationCodeForm({
           className={`w-full py-3 px-6 font-medium rounded-lg ${
             isProcessing || loading
               ? "bg-gray-400 cursor-not-allowed"
-              : "bg-blue-600 hover:bg-blue-700"
+              : "bg-red-600 hover:bg-red-700"
           } text-white transition-colors`}
         >
           {loading ? "جاري التحقق..." : "تأكيد"}
         </button>
         <button
-          className="w-full text-blue-600 hover:text-blue-700 font-medium mt-4 transition-colors"
+          className="w-full text-red-600 hover:text-red-700 font-medium mt-4 transition-colors"
           onClick={() => setVerificationCode("")}
         >
           إعادة إرسال الرمز

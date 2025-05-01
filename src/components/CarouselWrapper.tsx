@@ -38,7 +38,7 @@ const CarouselWrapper: React.FC<CarouselWrapperProps> = ({
           <ChevronRight className="w-5 h-5" />
         </button>
 
-        <h2 className="text-xl font-bold text-blue-600">{title}</h2>
+        <h2 className="text-xl font-bold text-red-600">{title}</h2>
 
         <button
           className="component-base secondary p-2"

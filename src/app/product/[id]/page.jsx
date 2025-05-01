@@ -177,7 +177,7 @@ export default function ProductPage({ params }) {
                             onClick={() => setSelectedVersion("us")}
                             className={`px-3 py-1.5 rounded-lg text-xs ${
                               selectedVersion === "us"
-                                ? "bg-blue-500 text-white"
+                                ? "bg-red-600 text-white"
                                 : "bg-gray-200 text-gray-700"
                             } hover:opacity-90 transition-colors`}
                           >
@@ -255,7 +255,7 @@ export default function ProductPage({ params }) {
                         </Link>
                         <Link
                           href="/cart"
-                          className="flex-1 component-base py-2 px-4 text-black font-xs hover:opacity-90 transition-colors text-lg text-center bg-blue-400"
+                          className="flex-1 component-base py-2 px-4 text-white font-xs hover:opacity-90 transition-colors text-lg text-center bg-red-400"
                         >
                           السلة
                         </Link>

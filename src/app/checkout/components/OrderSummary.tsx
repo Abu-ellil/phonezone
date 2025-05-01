@@ -25,16 +25,16 @@ export default function OrderSummary({
   return (
     <div className="sticky top-6">
       {paymentMethod === "cash_on_delivery" ? (
-        <div className="bg-blue-50 p-3 rounded-md text-right">
-          <p className="text-sm text-red-400">
+        <div className="bg-red-50 p-3 rounded-md text-right">
+          <p className="text-sm text-red-600">
             <span className="font-medium">ملاحظة:</span> سيتم دفع رسوم التوصيل
             فقط ({shippingCost} د.إ) الآن، وسيتم دفع باقي المبلغ (
             {subtotal.toFixed(2)} د.إ) عند استلام الطلب
           </p>
         </div>
       ) : (
-        <div className="bg-blue-50 p-3 rounded-md text-right">
-          <p className="text-sm text-blue-800">
+        <div className="bg-red-50 p-3 rounded-md text-right">
+          <p className="text-sm text-red-800">
             <span className="font-medium">ملاحظة:</span> سيتم تأكيد طلبك بعد
             التحقق من معلومات الدفع
           </p>
