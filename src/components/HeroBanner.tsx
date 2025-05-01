@@ -2,14 +2,16 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Image from "next/image";
+import B1 from "../../public/images/Banner1.jpg";
+import B2 from "../../public/images/Banner2.jpg";
+import B3 from "../../public/images/Banner3.jpg";
+import B5 from "../../public/images/Banner5.jpg";
 
 const images = [
-  "https://res.cloudinary.com/masoft/image/upload/v1742340091/Banner3_ib99zt.jpg",
-  "https://res.cloudinary.com/masoft/image/upload/v1742340087/00_2_qgs319.jpg",
-  "https://res.cloudinary.com/masoft/image/upload/v1742340091/Banner4_qisert.jpg",
-  "https://res.cloudinary.com/masoft/image/upload/v1742340091/Banner1_uir2hs.jpg",
-  "https://res.cloudinary.com/masoft/image/upload/v1742340090/Banner2_sleqgq.jpg",
-  "https://res.cloudinary.com/masoft/image/upload/v1742340091/Banner3_ib99zt.jpg",
+  B3,
+  B1,
+  B2,
+  B5,
 ];
 
 const responsive = {
