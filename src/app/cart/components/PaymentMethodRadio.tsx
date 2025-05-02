@@ -98,7 +98,7 @@ export default function PaymentMethodRadio({
         </div>
 
         {/* Cash on Delivery Option */}
-        <div  onClick={() => setOnDelevery(!onDelevery)}   >
+        {/* <div  onClick={() => setOnDelevery(!onDelevery)}   >
           
         <PaymentMethodOption
           method="cash_on_delivery"
@@ -107,7 +107,7 @@ export default function PaymentMethodRadio({
           description={`دفع رسوم التوصيل فقط الآن (${shippingCost} د.إ) والباقي عند الاستلام`}
           onSelect={setPaymentMethod}
           />
-          </div>
+          </div> */}
       </div>
 
       {/* Cash on Delivery Options */}
