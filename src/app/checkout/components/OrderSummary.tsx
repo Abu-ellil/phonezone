@@ -71,8 +71,8 @@ export default function OrderSummary({
         </div>
 
         {paymentMethod === "tabby" && installmentInfo && (
-          <div className="bg-blue-50 p-4 rounded-md mb-3 border border-blue-200">
-            <h3 className="font-bold text-right mb-3 text-blue-800">
+          <div className="bg-red-50 p-4 rounded-md mb-3 border border-red-200">
+            <h3 className="font-bold text-right mb-3 text-red-800">
               معلومات التقسيط
             </h3>
             <div className="space-y-3">
@@ -100,7 +100,7 @@ export default function OrderSummary({
                 <span className="font-medium">القسط الشهري:</span>
               </div>
             </div>
-            <div className="mt-3 pt-3 border-t border-blue-200 flex justify-between items-center">
+            <div className="mt-3 pt-3 border-t border-red-200 flex justify-between items-center">
               <span className="font-bold text-primary">
                 {parseFloat(total).toFixed(2)} د.إ
               </span>

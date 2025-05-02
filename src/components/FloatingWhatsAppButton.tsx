@@ -8,7 +8,7 @@ export default function FloatingWhatsAppButton() {
   const handleWhatsAppClick = () => {
     // Default message for WhatsApp
     const message = "مرحباً، أود الاستفسار عن منتجاتكم";
-    const phoneNumber = "+971547675648";
+    const phoneNumber = "+971588997368";
 
     // Open WhatsApp with pre-filled message
     window.open(

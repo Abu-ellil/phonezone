@@ -76,7 +76,7 @@ export default function Footer() {
                 <span>971547675648</span>+
               </li>
               <li className="flex items-center justify-start">
-                <span>Phonezonemobile3@gmail.com</span>
+                <span>Aliiexpress4@hotmail.com</span>
               </li>
             </ul>
           </div>

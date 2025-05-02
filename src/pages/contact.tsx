@@ -7,10 +7,10 @@ export default function Contact() {
         <h2 className="text-xl font-semibold mb-2">معلومات الاتصال</h2>
         <ul className="space-y-2">
           <li>
-            <span className="font-bold">الهاتف:</span> +971 54 767 5648
+            <span className="font-bold">الهاتف:</span> +971588997368
           </li>
           <li>
-            <span className="font-bold">البريد الإلكتروني:</span> Phonezonemobile3@gmail.com
+            <span className="font-bold">البريد الإلكتروني:</span> Aliiexpress4@hotmail.com
           </li>
           <li>
             <span className="font-bold">العنوان:</span> الإمارات العربية المتحدة

