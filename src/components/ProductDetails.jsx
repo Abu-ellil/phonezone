@@ -2,10 +2,10 @@
 import { useState, useEffect } from "react";
 import { useProducts } from "@/contexts/ProductsContext";
 import { useCart } from "@/contexts/CartContext";
-import Image from "next/image";
 import { toast } from "react-toastify";
 import Link from "next/link";
 import { Loading } from "@/components/Loading";
+import SafeImage from "@/components/SafeImage";
 
 export default function ProductDetails({ productId }) {
   const { getProductById, loading, error } = useProducts();
@@ -89,16 +89,13 @@ export default function ProductDetails({ productId }) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* صورة المنتج */}
         <div className="relative h-[300px] md:h-[500px] rounded-lg overflow-hidden">
-          <Image
+          <SafeImage
             src={product.image_url}
             alt={product.name}
             fill
             className="object-contain"
             sizes="(max-width: 768px) 100vw, 50vw"
             priority
-            onError={(e) => {
-              e.currentTarget.src = "/images/placeholder.svg";
-            }}
           />
         </div>
 

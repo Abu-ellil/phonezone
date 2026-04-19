@@ -7,7 +7,7 @@ const samsungData = {
       "name": "سامسونج S25الترا اسود",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون 150 منتجات",
-      "image_url": "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=400&h=400&fit=crop",
+      "image_url": "https://res.cloudinary.com/masoft/image/upload/v1742111241/noon-store-products/oqbrxj1cv2lcyu28qfya.png",
       "category": [
         "جوالات-سامسونج"
       ],
@@ -36,7 +36,7 @@ const samsungData = {
       "name": "سامسونج S25الترا ابيض",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون 200 منتجات",
-      "image_url": "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=400&h=400&fit=crop",
+      "image_url": "https://res.cloudinary.com/masoft/image/upload/v1742111236/noon-store-products/vrx4b3njpbxvkiygs6sb.png",
       "category": [
         "جوالات-سامسونج"
       ],
@@ -65,7 +65,7 @@ const samsungData = {
       "name": "سامسونج S25الترا رمادي",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون 200 منتجات",
-      "image_url": "https://images.unsplash.com/photo-1585060544812-6b45742d762f?w=400&h=400&fit=crop",
+      "image_url": "https://res.cloudinary.com/masoft/image/upload/v1742111233/noon-store-products/yaks4tznpcgzxdubbtpv.png",
       "category": [
         "سامسونج"
       ],
@@ -94,7 +94,7 @@ const samsungData = {
       "name": "سامسونج s25 الترا ذهبي",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون 200 منتجات",
-      "image_url": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&h=400&fit=crop",
+      "image_url": "https://res.cloudinary.com/masoft/image/upload/v1742111235/noon-store-products/hyv3t0wxkhcars4uahwn.png",
       "category": [
         "سامسونج"
       ],
@@ -125,7 +125,7 @@ const samsungData = {
       "name": "سامسونج s24  الترا",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون 200 منتجات",
-      "image_url": "https://images.unsplash.com/photo-1585060544812-6b45742d762f?w=400&h=400&fit=crop",
+      "image_url": "https://res.cloudinary.com/masoft/image/upload/v1742111503/noon-store-products/t12e6uw4hzmuyzoejpuc.jpg",
       "category": [
         "جوالات-سامسونج"
       ],
@@ -154,7 +154,7 @@ const samsungData = {
       "name": "سامسونج s24  الترا رمادي",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون 150 منتجات",
-      "image_url": "https://images.unsplash.com/photo-1585060544812-6b45742d762f?w=400&h=400&fit=crop",
+      "image_url": "https://res.cloudinary.com/masoft/image/upload/v1742111503/noon-store-products/t12e6uw4hzmuyzoejpuc.jpg",
       "category": [
         "جوالات-سامسونج"
       ],
@@ -183,7 +183,7 @@ const samsungData = {
       "name": "سامسونج s24  الترا أسود",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون 150 منتجات",
-      "image_url": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&h=400&fit=crop",
+      "image_url": "https://res.cloudinary.com/masoft/image/upload/v1742111504/noon-store-products/kkmez6hxqnax1wjwxir6.jpg",
       "category": [
         "جوالات-سامسونج"
       ],
@@ -212,7 +212,7 @@ const samsungData = {
       "name": "سامسونج s24  الترا أبيض",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون 150 منتجات",
-      "image_url": "https://images.unsplash.com/photo-1585060544812-6b45742d762f?w=400&h=400&fit=crop",
+      "image_url": "https://res.cloudinary.com/masoft/image/upload/v1742111502/noon-store-products/t6quhornlz9ojl0nvz48.jpg",
       "category": [
         "جوالات-سامسونج"
       ],
@@ -270,7 +270,7 @@ const samsungData = {
       "name": "سامسونج s24  الترا ذهبي",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون 150 منتجات",
-      "image_url": "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=400&h=400&fit=crop",
+      "image_url": "https://res.cloudinary.com/masoft/image/upload/v1742111502/noon-store-products/t6quhornlz9ojl0nvz48.jpg",
       "category": [
         "جوالات-سامسونج"
       ],
@@ -300,7 +300,7 @@ const samsungData = {
       "name": "سامسونج s24  الترا رمادي",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون 150 منتجات",
-      "image_url": "https://images.unsplash.com/photo-1585060544812-6b45742d762f?w=400&h=400&fit=crop",
+      "image_url": "https://res.cloudinary.com/masoft/image/upload/v1742111501/noon-store-products/qjtnrp89m1phblyikm4n.jpg",
       "category": [
         "جوالات-سامسونج"
       ],
@@ -331,7 +331,7 @@ const samsungData = {
       "name": "سامسونج s23  الترا أسود",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون 100 منتجات",
-      "image_url": "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=400&h=400&fit=crop",
+      "image_url": "https://res.cloudinary.com/masoft/image/upload/v1742111493/noon-store-products/xbpns7xay4464kmpmhpt.jpg",
       "category": [
         "جوالات-سامسونج"
       ],
@@ -360,7 +360,7 @@ const samsungData = {
       "name": "سامسونج s23  الترا أبيض",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون 100 منتجات",
-      "image_url": "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=400&h=400&fit=crop",
+      "image_url": "https://res.cloudinary.com/masoft/image/upload/v1742111491/noon-store-products/bkrmnjp4s0emerbp42im.jpg",
       "category": [
         "جوالات-سامسونج"
       ],
@@ -389,7 +389,7 @@ const samsungData = {
       "name": "سامسونج s23  الترا أسود",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون 100 منتجات",
-      "image_url": "https://images.unsplash.com/photo-1585060544812-6b45742d762f?w=400&h=400&fit=crop",
+      "image_url": "https://res.cloudinary.com/masoft/image/upload/v1742111490/noon-store-products/wkpggus9on2ho2smlcro.jpg",
       "category": [
         "جوالات-سامسونج"
       ],
@@ -418,7 +418,7 @@ const samsungData = {
       "name": "سامسونج s23  الترا أسود",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون 100 منتجات",
-      "image_url": "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=400&h=400&fit=crop",
+      "image_url": "https://res.cloudinary.com/masoft/image/upload/v1742111492/noon-store-products/fvoyhjbwobllkh9q7uki.jpg",
       "category": [
         "جوالات-سامسونج"
       ],

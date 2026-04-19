@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { getAllProducts } from "@/contexts/data";
-import Image from "next/image";
+import SafeImage from "@/components/SafeImage";
 import Link from "next/link";
 
 function Carousel() {
@@ -71,7 +71,7 @@ function Carousel() {
             >
               <div className="bg-white rounded-lg shadow-sm overflow-hidden transition-transform duration-300 hover:shadow-md hover:-translate-y-1 border border-gray-100 h-64">
                 <div className="relative h-40 w-full">
-                  <Image
+                  <SafeImage
                     src={product.image_url}
                     alt={product.name}
                     fill

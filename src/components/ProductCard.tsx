@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import SafeImage from "./SafeImage";
 
 interface ProductCardProps {
   id: string;
@@ -24,16 +24,12 @@ export default function ProductCard({
     <Link href={`/product/${id.toString()}`} className="block bg-white h-full">
       <div className="bg-gray-50 h-[320px] w-full overflow-hidden transition-transform duration-300 hover:shadow-md hover:-translate-y-1 border border-gray-100 rounded-md">
         <div className="relative h-48 w-full">
-          <Image
+          <SafeImage
             src={image_url}
             alt={name}
             fill
-            style={{ objectFit: "contain" }}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="p-2"
-            onError={(e) => {
-              e.currentTarget.src = "/images/placeholder.svg";
-            }}
           />
         </div>
         <div className="p-3 text-right">

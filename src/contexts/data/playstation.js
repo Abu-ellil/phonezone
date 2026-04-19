@@ -7,10 +7,10 @@ const playstationData = {
       original_price: "3233.02",
       price: "3037.02",
       image_url:
-        "https://rawnaqstoore.com/images/Original/7d2fb717-63b6-4517-bb98-310f192c22b2.jpeg",
+        "/images/placeholder.svg",
       category: "أجهزة بلاي ستيشن",
       subcategory: "بلاي ستيشن 5",
-      url: "https://rawnaqstoore.com/store/product/158",
+      url: "/images/placeholder.svg",
       route: "/store/product/158",
     },
     {
@@ -19,10 +19,10 @@ const playstationData = {
       original_price: "2940.00",
       price: "2743.02",
       image_url:
-        "https://rawnaqstoore.com/images/Original/9542fb9e-5ebe-4dce-814f-c2facb6ceb9c.jpg",
+        "/images/placeholder.svg",
       category: "أجهزة بلاي ستيشن",
       subcategory: "بلاي ستيشن 5",
-      url: "https://rawnaqstoore.com/store/product/224",
+      url: "/images/placeholder.svg",
       route: "/store/product/224",
     },
     {
@@ -31,10 +31,10 @@ const playstationData = {
       original_price: "2940.00",
       price: "2743.02",
       image_url:
-        "https://rawnaqstoore.com/images/Original/ee0339cd-91ee-4333-9b8e-bf26e243475d.jpg",
+        "/images/placeholder.svg",
       category: "أجهزة بلاي ستيشن",
       subcategory: "بلاي ستيشن 5",
-      url: "https://rawnaqstoore.com/store/product/225",
+      url: "/images/placeholder.svg",
       route: "/store/product/225",
     },
     {
@@ -43,10 +43,10 @@ const playstationData = {
       original_price: "2645.02",
       price: "2352.00",
       image_url:
-        "https://rawnaqstoore.com/images/Original/9f406493-d63a-43d6-9e3c-36d8e430f351.jpg",
+        "/images/placeholder.svg",
       category: "أجهزة بلاي ستيشن",
       subcategory: "بلاي ستيشن 5",
-      url: "https://rawnaqstoore.com/store/product/226",
+      url: "/images/placeholder.svg",
       route: "/store/product/226",
     },
     {
@@ -55,10 +55,10 @@ const playstationData = {
       original_price: "2940.00",
       price: "2743.02",
       image_url:
-        "https://rawnaqstoore.com/images/Original/fcd49a39-e997-4493-b538-fa4a07496f1a.jpg",
+        "/images/placeholder.svg",
       category: "أجهزة بلاي ستيشن",
       subcategory: "بلاي ستيشن 5",
-      url: "https://rawnaqstoore.com/store/product/227",
+      url: "/images/placeholder.svg",
       route: "/store/product/227",
     },
     {
@@ -67,10 +67,10 @@ const playstationData = {
       original_price: "2940.00",
       price: "2743.02",
       image_url:
-        "https://rawnaqstoore.com/images/Original/4d118f75-b783-4676-87b0-56242f7e736d.jpg",
+        "/images/placeholder.svg",
       category: "أجهزة بلاي ستيشن",
       subcategory: "بلاي ستيشن 5",
-      url: "https://rawnaqstoore.com/store/product/228",
+      url: "/images/placeholder.svg",
       route: "/store/product/228",
     },
     {
@@ -79,10 +79,10 @@ const playstationData = {
       original_price: "2940.00",
       price: "2743.02",
       image_url:
-        "https://rawnaqstoore.com/images/Original/11cc7d25-d37c-4cb4-9379-98eb434569b7.jfif",
+        "/images/placeholder.svg",
       category: "أجهزة بلاي ستيشن",
       subcategory: "بلاي ستيشن 5",
-      url: "https://rawnaqstoore.com/store/product/257",
+      url: "/images/placeholder.svg",
       route: "/store/product/257",
     },
     {
@@ -91,10 +91,10 @@ const playstationData = {
       original_price: "8819.02",
       price: "7545.02",
       image_url:
-        "https://rawnaqstoore.com/images/Original/56615b70-93b0-4705-b0b0-f797fa696d80.png",
+        "/images/placeholder.svg",
       category: "أجهزة بلاي ستيشن",
       subcategory: "بلاي ستيشن 5",
-      url: "https://rawnaqstoore.com/store/product/283",
+      url: "/images/placeholder.svg",
       route: "/store/product/283",
     },
     {
@@ -103,10 +103,10 @@ const playstationData = {
       original_price: "2940.00",
       price: "2743.02",
       image_url:
-        "https://rawnaqstoore.com/images/Original/2877f7cf-206f-4655-9070-1803cd00d4aa.jpg",
+        "/images/placeholder.svg",
       category: "أجهزة بلاي ستيشن",
       subcategory: "بلاي ستيشن 5",
-      url: "https://rawnaqstoore.com/store/product/284",
+      url: "/images/placeholder.svg",
       route: "/store/product/284",
     },
     {
@@ -115,10 +115,10 @@ const playstationData = {
       original_price: "2527.42",
       price: "2352.00",
       image_url:
-        "https://rawnaqstoore.com/images/Original/913fe263-c7bc-4a8d-a845-b4ea2adcc4e9.jpg",
+        "/images/placeholder.svg",
       category: "أجهزة بلاي ستيشن",
       subcategory: "بلاي ستيشن 5",
-      url: "https://rawnaqstoore.com/store/product/368",
+      url: "/images/placeholder.svg",
       route: "/store/product/368",
     },
     {
@@ -127,10 +127,10 @@ const playstationData = {
       original_price: "1861.02",
       price: "1338.68",
       image_url:
-        "https://rawnaqstoore.com/images/Original/3ceb610c-3309-4f5d-81d9-c7910c5228e0.jpeg",
+        "/images/placeholder.svg",
       category: "أجهزة بلاي ستيشن",
       subcategory: "بلاي ستيشن 4",
-      url: "https://rawnaqstoore.com/store/product/536",
+      url: "/images/placeholder.svg",
       route: "/store/product/536",
     },
     {
@@ -139,10 +139,10 @@ const playstationData = {
       original_price: "1764.00",
       price: "1342.60",
       image_url:
-        "https://rawnaqstoore.com/images/Original/f0c2d42e-094b-4af3-afe0-cf43cf1cc5ad.jpg",
+        "/images/placeholder.svg",
       category: "أجهزة بلاي ستيشن",
       subcategory: "بلاي ستيشن 4",
-      url: "https://rawnaqstoore.com/store/product/537",
+      url: "/images/placeholder.svg",
       route: "/store/product/537",
     },
     {
@@ -151,10 +151,10 @@ const playstationData = {
       original_price: "1960.00",
       price: "1372.00",
       image_url:
-        "https://rawnaqstoore.com/images/Original/c5679408-6a3a-40d2-b603-af55571c5818.jpg",
+        "/images/placeholder.svg",
       category: "أجهزة بلاي ستيشن",
       subcategory: "بلاي ستيشن 4",
-      url: "https://rawnaqstoore.com/store/product/538",
+      url: "/images/placeholder.svg",
       route: "/store/product/538",
     },
     {
@@ -163,10 +163,10 @@ const playstationData = {
       original_price: "1764.00",
       price: "1342.60",
       image_url:
-        "https://rawnaqstoore.com/images/Original/dd4690f9-56aa-49ac-be4d-21bef2815304.jpg",
+        "/images/placeholder.svg",
       category: "أجهزة بلاي ستيشن",
       subcategory: "بلاي ستيشن 4",
-      url: "https://rawnaqstoore.com/store/product/539",
+      url: "/images/placeholder.svg",
       route: "/store/product/539",
     },
   ],

@@ -5,7 +5,7 @@ import { Loading } from "@/components/Loading";
 import Header from "@/components/Header";
 import PaymentMethodRadio from "./components/PaymentMethodRadio";
 import Footer from "@/components/Footer";
-import Image from "next/image";
+import SafeImage from "@/components/SafeImage";
 import Link from "next/link";
 import { getAppSettings } from "@/utils/appSettings";
 
@@ -416,7 +416,7 @@ export default function CartPage() {
                             </div>
                           </div>
                           <div className="w-20 h-20 relative">
-                            <Image
+                            <SafeImage
                               src={item.image_url}
                               alt={item.name}
                               fill
