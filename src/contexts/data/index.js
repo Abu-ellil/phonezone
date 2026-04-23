@@ -9,12 +9,15 @@ import appleWatches from "./appleWatches";
 // تجميع كل البيانات في كائن واحد
 const allData = {
   // بيانات iPhone
+  iPhone17ProMax: iPhoneData.iPhone17ProMax,
+  iPhone17Pro: iPhoneData.iPhone17Pro,
   iPhone16ProMax: iPhoneData.iPhone16ProMax,
   iPhone16Pro: iPhoneData.iPhone16Pro,
   iPhone16: iPhoneData.iPhone16,
   iPhone15: iPhoneData.iPhone15,
 
   // بيانات Samsung
+  samsungS26: samsungData.samsungS26,
   samsungS25: samsungData.samsungS25,
   samsungS24: samsungData.samsungS24,
   samsungS23: samsungData.samsungS23,
@@ -39,13 +42,16 @@ const allData = {
 export const getAllProducts = () => {
   const allProducts = [];
 
-  // إضافة منتجات iPhone
+  // إضافة منتجات iPhone (الترتيب الجديد)
+  allProducts.push(...(iPhoneData.iPhone17ProMax || []));
+  allProducts.push(...(iPhoneData.iPhone17Pro || []));
   allProducts.push(...iPhoneData.iPhone16ProMax);
   allProducts.push(...iPhoneData.iPhone16Pro);
   allProducts.push(...iPhoneData.iPhone16);
   allProducts.push(...iPhoneData.iPhone15);
 
-  // إضافة منتجات Samsung
+  // إضافة منتجات Samsung (الترتيب الجديد)
+  allProducts.push(...(samsungData.samsungS26 || []));
   allProducts.push(...samsungData.samsungS25);
   allProducts.push(...samsungData.samsungS24);
   allProducts.push(...samsungData.samsungS23);
