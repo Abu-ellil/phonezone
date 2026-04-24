@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { uploadPDFToGoogleDrive } from "@/utils/googleDriveService";
+
+export const dynamic = "force-dynamic";
 
 export async function POST(request) {
   try {
@@ -27,6 +28,7 @@ export async function POST(request) {
       const documentType = (formData.get("documentType") ) || "order";
 
       // Upload to Google Drive
+      const { uploadPDFToGoogleDrive } = await import("@/utils/googleDriveService");
       const fileUrl = await uploadPDFToGoogleDrive(
         new Uint8Array(buffer),
         orderNumber,

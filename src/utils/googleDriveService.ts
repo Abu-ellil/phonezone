@@ -1,5 +1,5 @@
 import { google } from "googleapis";
-import { Readable } from "stream";
+import { Readable } from "node:stream";
 
 // تكوين Google Drive API
 const SCOPES = ["https://www.googleapis.com/auth/drive.file"];
