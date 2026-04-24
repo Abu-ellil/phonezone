@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -7,14 +7,26 @@ import FloatingWhatsAppButton from "@/components/FloatingWhatsAppButton";
 import { CartProvider } from "@/contexts/CartContext";
 import { ProductsProvider } from "@/contexts/ProductsContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const cairo = localFont({
+  src: "../../public/fonts/Cairo/Cairo-VariableFont_slnt,wght.ttf",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const tajawal = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Tajawal/Tajawal-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Tajawal/Tajawal-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-tajawal",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -30,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
+        className={`${cairo.className} ${tajawal.variable} antialiased`}
       >
         <CartProvider>
           <ProductsProvider>

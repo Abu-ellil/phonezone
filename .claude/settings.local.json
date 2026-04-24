@@ -1,22 +1,17 @@
 {
   "permissions": {
     "allow": [
-      "Bash(node scripts/cleanup-broken-images.js)",
-      "Bash(node scripts/fix-js-data-files.js)",
-      "Bash(find ./src -type f \\\\\\( -name \"*.js\" -o -name \"*.jsx\" -o -name \"*.ts\" -o -name \"*.tsx\" \\\\\\) ! -path \"*/node_modules/*\" ! -path \"*/.next/*\" -exec wc -l {} +)",
-      "Bash(npm list *)",
-      "Bash(node *)",
-      "Bash(curl -I \"https://res.cloudinary.com/masoft/image/upload/v1742111164/noon-store-products/gu9porh3qybbiumdlqay.jpg\")",
-      "Bash(curl -I \"https://res.cloudinary.com/masoft/image/upload/v1742111181/noon-store-products/ixecivzgnq6jzzd9rgeg.jpg\")",
-      "Bash(curl -I \"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-7inch-deserttitanium?wid=400\")",
-      "Bash(curl -I \"https://images.samsung.com/is/image/samsung/p6pim/uk/2501/gallery/uk-galaxy-s25-ultra-s928-sm-s928bztpeub-thumb-539573637?wid=400\")",
-      "Bash(curl -I \"https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400&h=400&fit=crop\")",
-      "Bash(curl -I \"https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=400&h=400&fit=crop\")",
-      "Bash(npm run *)",
-      "Bash(curl -I http://localhost:3000)",
-      "Bash(pkill *)",
-      "Bash(tasklist)",
-      "Bash(findstr git *)"
+      "mcp__web-reader__webReader",
+      "Bash(d:/DEV2/phonezone/.venv/Scripts/python.exe *)",
+      "mcp__web-search-prime__web_search_prime",
+      "Bash(powershell.exe *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001)",
+      "Bash(kill %1)",
+      "Bash(head -20 src/contexts/data/iphone.js)",
+      "Bash(head -20 src/contexts/data/iphone.ts)",
+      "Bash(head -20 src/contexts/data/iphone.tsx)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3002/product/B0FQFHZF6L)",
+      "Bash(git add *)"
     ]
   }
 }

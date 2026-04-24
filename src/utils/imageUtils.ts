@@ -15,7 +15,7 @@ export async function validateImageUrl(url: string): Promise<boolean> {
 
     // Try to fetch the image headers only
     const response = await fetch(url, { method: 'HEAD' });
-    return response.ok && response.headers.get('content-type')?.startsWith('image/');
+    return !!(response.ok && response.headers.get('content-type')?.startsWith('image/'));
   } catch {
     return false;
   }
@@ -35,36 +35,32 @@ export function getSafeImageUrl(
     return fallbackUrl;
   }
 
+  // Relative paths (e.g. "/images/placeholder.svg") are safe as-is
+  if (url.startsWith('/')) {
+    return url;
+  }
+
   try {
     const urlObj = new URL(url);
 
-    // Check for known invalid domains
     const invalidDomains = [
       'rawnaqstoore.com',
       'rawnaq.com',
-      'noon-store.com' // Add other potentially problematic domains
+      'noon-store.com'
     ];
 
-    // Check if the hostname includes any invalid domain
     if (invalidDomains.some(domain => urlObj.hostname.includes(domain))) {
-      console.warn(`Invalid image domain detected: ${urlObj.hostname}`);
       return fallbackUrl;
     }
 
-    // Check for Cloudinary URLs that might be broken
-    if (urlObj.hostname.includes('cloudinary.com')) {
-      // Check if it's from the problematic masoft account
-      if (urlObj.hostname.includes('masoft')) {
-        // Add timestamp to prevent caching issues
-        const timestamp = Date.now();
-        const separator = urlObj.search ? '&' : '?';
-        return `${url}${separator}t=${timestamp}`;
-      }
+    if (urlObj.hostname.includes('cloudinary.com') && urlObj.hostname.includes('masoft')) {
+      const timestamp = Date.now();
+      const separator = urlObj.search ? '&' : '?';
+      return `${url}${separator}t=${timestamp}`;
     }
 
     return url;
-  } catch (error) {
-    console.error('Error parsing image URL:', error);
+  } catch {
     return fallbackUrl;
   }
 }

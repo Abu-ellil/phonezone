@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import logo from "../../../../public/logoo.png";
 
 type VerificationCodeFormProps = {
   onVerificationComplete: (code: string) => void;
@@ -90,7 +89,7 @@ export default function VerificationCodeForm({
         >
           إلغاء
         </button>
-        <Image src={logo} alt="Logo" width={100} height={40} />
+        <Image src="/logoo.png" alt="Logo" width={100} height={40} />
       </div>
       <div className="flex justify-center mb-6">
         <Image

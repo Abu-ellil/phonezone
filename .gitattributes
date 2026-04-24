@@ -1,1 +1,16 @@
+* text=auto
+
+# Source files
+*.jsx text
+*.tsx text
+*.ts text
+*.js text
+
+# Config and data files
+*.json text
+*.md text
+*.css text
+*.html text
+
+# Binary files
 *.svg text eol=lf

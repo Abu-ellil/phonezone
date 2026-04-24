@@ -18,6 +18,16 @@ export default function ProductPage({ params }) {
   const [isAddedToCart, setIsAddedToCart] = useState(false);
   const [selectedVariant, setSelectedVariant] = useState(null);
   const [selectedVersion, setSelectedVersion] = useState("me"); // me = Middle East, us = US Version
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+  // Get product images - if product has multiple images, use them, otherwise use the single image
+  const getProductImages = (product) => {
+    if (product.images && product.images.length > 0) {
+      return product.images;
+    }
+    // Fallback: create array with single image if no images array
+    return [product.image_url];
+  };
 
   const { getProductById } = useProducts();
 
@@ -28,7 +38,6 @@ export default function ProductPage({ params }) {
         const productData = getProductById(id);
 
         if (productData) {
-          console.log("Product found:", productData);
           setProduct(productData);
 
           // إذا كان المنتج يحتوي على متغيرات
@@ -38,8 +47,7 @@ export default function ProductPage({ params }) {
         } else {
           console.error("Product not found with ID:", id);
         }
-      } catch (error) {
-        console.error("Error fetching product:", error);
+      } catch {
       } finally {
         // إنهاء حالة التحميل بعد الانتهاء من البحث
         setLoading(false);
@@ -70,6 +78,7 @@ export default function ProductPage({ params }) {
       category: product.category,
       subcategory: product.subcategory,
       variant: selectedVariant ? selectedVariant.size : null,
+      version: selectedVersion,
     });
 
     setIsAddedToCart(true);
@@ -90,8 +99,6 @@ export default function ProductPage({ params }) {
     );
   };
 
-  console.log(product);
-
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -100,20 +107,44 @@ export default function ProductPage({ params }) {
           <div className="w-full">
             <div className=" w-full  rounded-lg shadow-md overflow-hidden">
               <div className="md:flex p-6">
-                <div className="md:w-2/5 flex justify-center items-center">
-                  <div className="relative h-96 w-full">
+                {/* Image Gallery Section */}
+                <div className="md:w-2/3 flex gap-4">
+                  {/* Main Image - Left Side */}
+                  <div className="flex-1 relative h-[500px] border border-gray-200 rounded-lg overflow-hidden">
                     <Image
-                      src={product.image_url}
-                      alt={product.name}
+                      src={getProductImages(product)[selectedImageIndex] || product.image_url}
+                      alt={`${product.name} - الصورة ${selectedImageIndex + 1}`}
                       fill
                       style={{ objectFit: "contain" }}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 33vw"
-                      className="p-4"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="p-6 transition-opacity duration-300"
                       priority
+                      key={selectedImageIndex}
                       onError={(e) => {
                         e.currentTarget.src = "/images/placeholder.svg";
                       }}
                     />
+                  </div>
+
+                  {/* Thumbnail Images - Right Side */}
+                  <div className="w-24 flex flex-col gap-3">
+                    {getProductImages(product).map((image, index) => (
+                      <div
+                        key={index}
+                        className={`relative w-24 h-24 border-2 rounded-lg overflow-hidden cursor-pointer transition-all ${
+                          selectedImageIndex === index ? 'border-blue-500 scale-105' : 'border-gray-200 hover:border-blue-300'
+                        }`}
+                        onClick={() => setSelectedImageIndex(index)}
+                      >
+                        <Image
+                          src={image}
+                          alt={`${product.name} - صورة ${index + 1}`}
+                          fill
+                          sizes="96px"
+                          className="object-cover p-1"
+                        />
+                      </div>
+                    ))}
                   </div>
                 </div>
                 <div className="md:w-3/5 p-6 text-right">
@@ -400,13 +431,12 @@ export default function ProductPage({ params }) {
                       </Link>
                       <Link
                         href="/cart"
-                        className="component-base  py-2 px-4 font-medium hover:opacity-90 transition-colors text-lg text-center"
+                        className="component-base  py-3 px-6 font-medium hover:opacity-90 transition-colors text-lg text-center"
                       >
-                        {product.original_price}
+                        الذهاب للسلة
                       </Link>
                     </div>
                   )}
-                  <div className="text-right"></div>
                 </div>
               </div>
             </div>

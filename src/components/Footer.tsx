@@ -73,7 +73,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center justify-start">
-                <span>971547675648</span>+
+                <span>+971547675648</span>
               </li>
               <li className="flex items-center justify-start">
                 <span>Aliiexpress4@hotmail.com</span>
@@ -107,30 +107,34 @@ export default function Footer() {
         <div className="mt-8 py-6">
           <div className="flex flex-wrap justify-center items-center gap-6 mb-4">
             <Image
-              src="/images/applepay.png" // Ensure this path is correct
+              src="/images/applepay.png"
               alt="Apple Pay"
               width={120}
               height={60}
+              style={{ width: 'auto', height: 'auto' }}
             />
             <Image
-              src="/images/visa.png" // Ensure this path is correct
+              src="/images/visa.png"
               alt="Visa"
               width={120}
               height={60}
+              style={{ width: 'auto', height: 'auto' }}
             />
           </div>
           <div className="text-center flex flex-wrap justify-center items-center gap-6 mb-4">
             <Image
-              src={government} // Ensure this path is correct
+              src={government}
               alt="UAE Government"
               width={120}
               height={60}
+              style={{ width: 'auto', height: 'auto' }}
             />
             <Image
-              src={trda} // Ensure this path is correct
+              src={trda}
               alt="TDRA"
               width={120}
               height={60}
+              style={{ width: 'auto', height: 'auto' }}
             />
           </div>
           <Link

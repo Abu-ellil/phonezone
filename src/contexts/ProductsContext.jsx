@@ -13,6 +13,19 @@ import appleWatches from "./data/appleWatches";
 // إنشاء السياق
 const ProductsContext = createContext();
 
+const findProductById = (data, targetId) => {
+  for (const category in data) {
+    if (Array.isArray(data[category])) {
+      const product = data[category].find((p) => {
+        const pId = String(p.id);
+        return pId === String(targetId);
+      });
+      if (product) return product;
+    }
+  }
+  return null;
+};
+
 // مزود السياق
 export function ProductsProvider({ children }) {
   const [products, setProducts] = useState([]);
@@ -21,15 +34,18 @@ export function ProductsProvider({ children }) {
   const [bestSellingProducts, setBestSellingProducts] = useState([]);
 
   // التصنيفات المطلوبة
+  const [iPhone17ProMaxProducts, setIPhone17ProMaxProducts] = useState([]);
+  const [samsungS26Products, setSamsungS26Products] = useState([]);
+  const [iPhone17ProProducts, setIPhone17ProProducts] = useState([]);
   const [iPhone16ProMaxProducts, setIPhone16ProMaxProducts] = useState([]);
   const [samsungS25Products, setSamsungS25Products] = useState([]);
+  const [appleWatchesProducts, setAppleWatchesProducts] = useState([]);
+  const [playstationProducts, setPlaystationProducts] = useState([]);
+  const [xboxProducts, setXboxProducts] = useState([]);
   const [iPhone16ProProducts, setIPhone16ProProducts] = useState([]);
   const [iPhone16Products, setIPhone16Products] = useState([]);
   const [samsungS24Products, setSamsungS24Products] = useState([]);
   const [iPhone15Products, setIPhone15Products] = useState([]);
-  const [playstationProducts, setPlaystationProducts] = useState([]);
-  const [xboxProducts, setXboxProducts] = useState([]);
-  const [appleWatchesProducts, setAppleWatchesProducts] = useState([]);
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -39,10 +55,9 @@ export function ProductsProvider({ children }) {
       try {
         setLoading(true);
 
-        // استخدام البيانات من ملفات البيانات
-        console.log("استخدام البيانات من ملفات البيانات");
-
-        // تعيين المنتجات مباشرة
+        setIPhone17ProMaxProducts(iPhoneData.iPhone17ProMax || []);
+        setSamsungS26Products(samsungData.samsungS26 || []);
+        setIPhone17ProProducts(iPhoneData.iPhone17Pro || []);
         setIPhone16ProMaxProducts(iPhoneData.iPhone16ProMax);
         setSamsungS25Products(samsungData.samsungS25);
         setIPhone16ProProducts(iPhoneData.iPhone16Pro);
@@ -50,11 +65,8 @@ export function ProductsProvider({ children }) {
         setSamsungS24Products(samsungData.samsungS24);
         setIPhone15Products(iPhoneData.iPhone15);
         setPlaystationProducts(playstationData.playstation);
-
-        // تعيين منتجات Xbox وساعات أبل أيضاً
         setXboxProducts(xboxData.xbox);
 
-        // تعيين ساعات أبل
         if (Array.isArray(appleWatches)) {
           setAppleWatchesProducts(appleWatches);
         } else if (
@@ -64,21 +76,14 @@ export function ProductsProvider({ children }) {
           setAppleWatchesProducts(appleWatches.appleWatches);
         }
 
-        // جمع جميع المنتجات في مصفوفة واحدة
         const allProducts = getAllProducts();
 
-        // تعيين المنتجات المميزة والأحدث والأكثر مبيعاً
         setFeaturedProducts(allProducts.slice(0, 8));
         setNewestProducts(allProducts.slice(0, 8));
         setBestSellingProducts(allProducts.slice(0, 8));
-
-        // تعيين جميع المنتجات
         setProducts(allProducts);
-
-        console.log("تم تحميل", allProducts.length, "منتج");
         setLoading(false);
       } catch (err) {
-        console.error("خطأ في تحميل البيانات:", err);
         setError(err.message || "حدث خطأ أثناء تحميل البيانات");
         setLoading(false);
       }
@@ -90,135 +95,25 @@ export function ProductsProvider({ children }) {
   // دالة للحصول على منتج بواسطة المعرف
   const getProductById = (id) => {
     try {
-      // تحويل المعرف إلى رقم إذا كان سلسلة نصية
-      const numericId = typeof id === "string" ? parseInt(id, 10) : id;
-      console.log("Looking for product with ID:", numericId);
+      const targetId = String(id);
 
-      // أولاً، البحث في مصفوفة المنتجات المحملة (إذا كانت موجودة)
       if (products.length > 0) {
-        console.log("Searching in loaded products array");
-        const product = products.find((product) => {
-          const productId =
-            typeof product.id === "string"
-              ? parseInt(product.id, 10)
-              : product.id;
-          return productId === numericId;
-        });
-
-        if (product) {
-          console.log("Found product in loaded products:", product);
-          return product;
-        }
+        const product = products.find((p) => String(p.id) === targetId);
+        if (product) return product;
       }
 
-      // إذا لم يتم العثور على المنتج في المصفوفة المحملة، البحث مباشرة في ملفات البيانات
-      console.log("Searching directly in data files");
-
-      // البحث في بيانات iPhone
-      for (const category in iPhoneData) {
-        if (Array.isArray(iPhoneData[category])) {
-          const product = iPhoneData[category].find((p) => {
-            const productId =
-              typeof p.id === "string" ? parseInt(p.id, 10) : p.id;
-            return productId === numericId;
-          });
-          if (product) {
-            console.log("Found product in iPhone data:", product);
-            return product;
-          }
-        }
-      }
-
-      // البحث في بيانات Samsung
-      for (const category in samsungData) {
-        if (Array.isArray(samsungData[category])) {
-          const product = samsungData[category].find((p) => {
-            const productId =
-              typeof p.id === "string" ? parseInt(p.id, 10) : p.id;
-            return productId === numericId;
-          });
-          if (product) {
-            console.log("Found product in Samsung data:", product);
-            return product;
-          }
-        }
-      }
-
-      // البحث في بيانات PlayStation
-      for (const category in playstationData) {
-        if (Array.isArray(playstationData[category])) {
-          const product = playstationData[category].find((p) => {
-            const productId =
-              typeof p.id === "string" ? parseInt(p.id, 10) : p.id;
-            return productId === numericId;
-          });
-          if (product) {
-            console.log("Found product in PlayStation data:", product);
-            return product;
-          }
-        }
-      }
-
-      // البحث في بيانات الملحقات
-      for (const category in accessoriesData) {
-        if (Array.isArray(accessoriesData[category])) {
-          const product = accessoriesData[category].find((p) => {
-            const productId =
-              typeof p.id === "string" ? parseInt(p.id, 10) : p.id;
-            return productId === numericId;
-          });
-          if (product) {
-            console.log("Found product in accessories data:", product);
-            return product;
-          }
-        }
-      }
-
-      // البحث في بيانات Xbox
-      if (xboxData && xboxData.xbox && Array.isArray(xboxData.xbox)) {
-        const product = xboxData.xbox.find((p) => {
-          const productId =
-            typeof p.id === "string" ? parseInt(p.id, 10) : p.id;
-          return productId === numericId;
-        });
-        if (product) {
-          console.log("Found product in Xbox data:", product);
-          return product;
-        }
-      }
-
-      // البحث في بيانات ساعات أبل
-      if (Array.isArray(appleWatches)) {
-        const product = appleWatches.find((p) => {
-          const productId =
-            typeof p.id === "string" ? parseInt(p.id, 10) : p.id;
-          return productId === numericId;
-        });
-        if (product) {
-          console.log("Found product in Apple Watches data:", product);
-          return product;
-        }
-      } else if (
-        appleWatches &&
-        appleWatches.appleWatches &&
-        Array.isArray(appleWatches.appleWatches)
-      ) {
-        const product = appleWatches.appleWatches.find((p) => {
-          const productId =
-            typeof p.id === "string" ? parseInt(p.id, 10) : p.id;
-          return productId === numericId;
-        });
-        if (product) {
-          console.log("Found product in Apple Watches data:", product);
-          return product;
-        }
-      }
-
-      // إذا لم يتم العثور على المنتج في أي من ملفات البيانات
-      console.log("Product not found");
-      return null;
-    } catch (error) {
-      console.error("Error in getProductById:", error);
+      return (
+        findProductById(iPhoneData, targetId) ||
+        findProductById(samsungData, targetId) ||
+        findProductById(playstationData, targetId) ||
+        findProductById(accessoriesData, targetId) ||
+        (xboxData?.xbox?.find((p) => String(p.id) === targetId) || null) ||
+        (Array.isArray(appleWatches)
+          ? appleWatches.find((p) => String(p.id) === targetId)
+          : appleWatches?.appleWatches?.find((p) => String(p.id) === targetId)) ||
+        null
+      );
+    } catch {
       return null;
     }
   };
@@ -229,27 +124,21 @@ export function ProductsProvider({ children }) {
 
     const searchQuery = query.toLowerCase();
     return products.filter((product) => {
-      // البحث في اسم المنتج
       if (product.name && product.name.toLowerCase().includes(searchQuery)) {
         return true;
       }
-
-      // البحث في التصنيف
       if (
         product.category &&
         product.category.toLowerCase().includes(searchQuery)
       ) {
         return true;
       }
-
-      // البحث في التصنيف الفرعي
       if (
         product.subcategory &&
         product.subcategory.toLowerCase().includes(searchQuery)
       ) {
         return true;
       }
-
       return false;
     });
   };
@@ -270,15 +159,18 @@ export function ProductsProvider({ children }) {
     featuredProducts,
     newestProducts,
     bestSellingProducts,
+    iPhone17ProMaxProducts,
+    samsungS26Products,
+    iPhone17ProProducts,
     iPhone16ProMaxProducts,
     samsungS25Products,
+    appleWatchesProducts,
+    playstationProducts,
+    xboxProducts,
     iPhone16ProProducts,
     iPhone16Products,
     samsungS24Products,
     iPhone15Products,
-    playstationProducts,
-    xboxProducts,
-    appleWatchesProducts,
     loading,
     error,
     getProductById,

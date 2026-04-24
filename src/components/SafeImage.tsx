@@ -102,7 +102,7 @@ export default function SafeImage({
     ...(fill
       ? {
           fill,
-          style: { objectFit: "contain", ...style },
+          style: { objectFit: "contain" as const, ...style },
         }
       : {
           width,
@@ -112,7 +112,7 @@ export default function SafeImage({
   };
 
   return (
-    <div className="relative">
+    <div className={`relative ${fill ? 'w-full h-full' : ''}`}>
       {isLoading && !hasError && (
         <div
           className={`absolute inset-0 flex items-center justify-center bg-gray-100 ${className}`}

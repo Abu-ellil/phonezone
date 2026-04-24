@@ -3,7 +3,6 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
-import FloatingWhatsAppButton from "@/components/FloatingWhatsAppButton";
 import CarouselWrapper from "@/components/CarouselWrapper";
 import Image from "next/image";
 import img1 from "../../public/images/00 (1).jpg";
@@ -18,14 +17,12 @@ import { Loading } from "@/components/Loading";
 export default function Home() {
   const {
     products,
-    newestProducts,
-    bestSellingProducts,
+    iPhone17ProMaxProducts,
+    samsungS26Products,
+    iPhone17ProProducts,
     iPhone16ProMaxProducts,
     samsungS25Products,
-    iPhone16ProProducts,
-    iPhone16Products,
-    samsungS24Products,
-    iPhone15Products,
+    appleWatchesProducts,
     playstationProducts,
     loading,
     error,
@@ -61,57 +58,46 @@ export default function Home() {
           <BannerImage src={img1} alt="Banner 1" />
 
           <Section
-            title="iPhone 16 Pro Max"
-            products={iPhone16ProMaxProducts}
+            title="iPhone 17 Pro Max"
+            products={iPhone17ProMaxProducts}
             link="/category/هواتف ابل"
           />
 
           <BannerImage src={img2} alt="Banner 2" />
 
           <Section
-            title="Samsung S25"
-            products={samsungS25Products}
+            title="Samsung S26 Ultra"
+            products={samsungS26Products}
             link="/category/هواتف سامسونج"
           />
 
           <Section
-            title="iPhone 16 Pro"
-            products={iPhone16ProProducts}
+            title="iPhone 17 Pro"
+            products={iPhone17ProProducts}
             link="/category/هواتف ابل"
           />
 
           <Section
-            title="iPhone 16"
-            products={iPhone16Products}
+            title="iPhone 16 Pro Max"
+            products={iPhone16ProMaxProducts}
             link="/category/هواتف ابل"
           />
 
           <BannerImage src={img3} alt="Banner 3" />
 
           <Section
-            title="Samsung S24"
-            products={samsungS24Products}
+            title="Samsung S25 Ultra"
+            products={samsungS25Products}
             link="/category/هواتف سامسونج"
           />
 
           <Section
-            title="iPhone 15"
-            products={iPhone15Products}
-            link="/category/هواتف ابل"
+            title="ساعات ابل"
+            products={appleWatchesProducts}
+            link="/category/ساعات ابل"
           />
-<BannerImage src={img4} alt="Banner 4" />
 
-<Section
-  title="ساعات ابل"
-  products={products
-    .filter(
-      (p) =>
-        p?.category?.includes("ساعات ابل") ||
-        p?.category?.includes("ساعات أبل")
-    )
-    .slice(0, 8)}
-  link="/category/ساعات ابل"
-/>
+          <BannerImage src={img4} alt="Banner 4" />
 
           <Section
             title="PlayStation"
@@ -119,43 +105,10 @@ export default function Home() {
             link="/category/اجهزة سوني"
           />
 
-
-          <Section
-            title="اكسسوارات"
-            products={products
-              .filter((p) => p?.category?.includes("اكسسوارات"))
-              .slice(0, 8)}
-            link="/category/اكسسوارات"
-          />
-
-          <Section
-            title="لابتوبات وشاشات"
-            products={products
-              .filter((p) => p?.category?.includes("لابتوبات وشاشات"))
-              .slice(0, 8)}
-            link="/category/لابتوبات وشاشات"
-          />
-
-          <Section
-            title="الاجهزة اللوحية ايبادات"
-            products={products
-              .filter((p) => p?.category?.includes("الاجهزة اللوحية ايبادات"))
-              .slice(0, 8)}
-            link="/category/الاجهزة اللوحية ايبادات"
-          />
-          <Section
-            title="أجهزة صوت و سماعات"
-            products={products
-              .filter((p) => p?.category?.includes("أجهزة صوت و سماعات"))
-              .slice(0, 8)}
-            link="/category/أجهزة صوت و سماعات"
-          />
-
           <Testimonials />
         </div>
       </main>
 
-      <FloatingWhatsAppButton />
       <Footer />
     </div>
   );
