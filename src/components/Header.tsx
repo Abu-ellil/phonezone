@@ -110,22 +110,12 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="flex items-center mr-4">
               <Image
-                src="/logoo.png"
-                alt="AliiExpress UAE"
+                src="/logo.png"
+                alt="PhoneZone"
                 width={90}
                 height={40}
                 style={{ width: 'auto', height: 'auto' }}
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  const parent = target.parentElement;
-                  if (parent && !parent.querySelector('.logo-fallback')) {
-                    const span = document.createElement('span');
-                    span.className = 'logo-fallback text-red-600 font-bold text-lg';
-                    span.textContent = 'AliiExpress';
-                    parent.appendChild(span);
-                  }
-                }}
+                priority
               />
             </Link>
 

@@ -127,15 +127,21 @@ export function ProductsProvider({ children }) {
       if (product.name && product.name.toLowerCase().includes(searchQuery)) {
         return true;
       }
+      const categoryStr = typeof product.category === 'string'
+        ? product.category
+        : product.category?.name || '';
       if (
-        product.category &&
-        product.category.toLowerCase().includes(searchQuery)
+        categoryStr &&
+        categoryStr.toLowerCase().includes(searchQuery)
       ) {
         return true;
       }
+      const subcategoryStr = typeof product.subcategory === 'string'
+        ? product.subcategory
+        : product.subcategory?.name || '';
       if (
-        product.subcategory &&
-        product.subcategory.toLowerCase().includes(searchQuery)
+        subcategoryStr &&
+        subcategoryStr.toLowerCase().includes(searchQuery)
       ) {
         return true;
       }

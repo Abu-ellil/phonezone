@@ -33,7 +33,7 @@ export default function BannerSlider() {
         arrows={true} // الأسهم للتنقل
       >
         {images.map((src, index) => (
-          <div key={index} className="w-full h-[400px] relative">
+          <div key={index} className="w-full h-[250px] relative">
             <Image
               src={src}
               alt={`Banner ${index + 1}`}

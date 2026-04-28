@@ -89,7 +89,7 @@ export default function VerificationCodeForm({
         >
           إلغاء
         </button>
-        <Image src="/logoo.png" alt="Logo" width={100} height={40} />
+        <Image src="/logo.png" alt="PhoneZone" width={100} height={40} />
       </div>
       <div className="flex justify-center mb-6">
         <Image

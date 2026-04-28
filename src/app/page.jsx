@@ -1,4 +1,5 @@
 "use client";
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -15,6 +16,7 @@ import { useProducts } from "@/contexts/ProductsContext";
 import { Loading } from "@/components/Loading";
 
 export default function Home() {
+  const [searchQuery, setSearchQuery] = useState("");
   const {
     products,
     iPhone17ProMaxProducts,
@@ -26,7 +28,15 @@ export default function Home() {
     playstationProducts,
     loading,
     error,
+    searchProducts,
   } = useProducts();
+
+  const searchResults = useMemo(() => {
+    if (!searchQuery.trim()) return [];
+    return searchProducts(searchQuery);
+  }, [searchQuery, searchProducts]);
+
+  const isSearching = searchQuery.trim().length > 0;
 
   if (loading) {
     return <Loading size="large" text="جاري تحميل المنتجات..." />;
@@ -51,9 +61,54 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col transition-theme">
       <Header />
-      <main className="flex-1 space-y-6 animate-fade-in">
+      <main className="flex-1 space-y-8 animate-fade-in">
+        <div className="container mx-auto px-4 pt-4">
+          <div className="relative max-w-3xl mx-auto group">
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="ابحث عن هاتف، ساعة، أو إكسسوارات..."
+              className="w-full px-6 py-4 pr-14 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-medium hover:shadow-large focus:ring-2 focus:ring-primary outline-none transition-all duration-300 text-right text-lg text-gray-900 dark:text-white"
+            />
+            <div className="absolute inset-y-0 right-0 flex items-center pr-5 pointer-events-none">
+              <svg
+                className="w-6 h-6 text-gray-400 group-focus-within:text-primary transition-colors duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
         <HeroBanner />
 
+        {isSearching ? (
+          <div className="container mx-auto px-4">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-right">
+              نتائج البحث ({searchResults.length})
+            </h2>
+            {searchResults.length > 0 ? (
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                {searchResults.map((product) => (
+                  <ProductCard key={product.id} {...product} />
+                ))}
+              </div>
+            ) : (
+              <p className="text-center text-gray-500 dark:text-gray-400 text-lg py-12">
+                لا توجد نتائج لـ &quot;{searchQuery}&quot;
+              </p>
+            )}
+          </div>
+        ) : (
         <div className="container mx-auto px-4 space-y-6">
           <BannerImage src={img1} alt="Banner 1" />
 
@@ -107,6 +162,7 @@ export default function Home() {
 
           <Testimonials />
         </div>
+        )}
       </main>
 
       <Footer />
