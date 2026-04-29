@@ -7,7 +7,7 @@ const xboxData = {
       "name": "Xbox Series X with 2 Controller and Gamepass",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/51Gi3RXwaSL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/51Gi3RXwaSL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/3191iV172UL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/31mtaC838PL._AC_SR38,50_.jpg",
@@ -31,7 +31,7 @@ const xboxData = {
       "name": "Xbox Series X – 1TB Digital Edition",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/51bq1shHXEL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/51bq1shHXEL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/218abAyebcL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/31NxxUxBmmL._AC_SR38,50_.jpg",
@@ -55,7 +55,7 @@ const xboxData = {
       "name": "Xbox Series X 1TB (EU Import)",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/512ulOXnvYL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/512ulOXnvYL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31GIE1eNKsL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/31cC65QltOL._AC_SR38,50_.jpg",
@@ -79,7 +79,7 @@ const xboxData = {
       "name": "WD_BLACK 1TB C50 Expansion Card for Xbox - WDBMPH0010BNC-WCSN",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/71QxmOXxYVL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71QxmOXxYVL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/41eITXwv2-L._AC_US40_.jpg",
         "https://m.media-amazon.com/images/I/41Ni3Bun-LL._AC_US40_.jpg",
@@ -103,7 +103,7 @@ const xboxData = {
       "name": "Seagate Storage Expansion Card for Xbox Series X|S, 1TB, SSD, Plug and Play NVMe Expansion SSD Xbox Series X|S, Officially Licensed, 2 yr Rescue Services(STJR1000400)",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61mMQ6NPKaL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61mMQ6NPKaL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31hyGfUn61L._AC_US40_.jpg",
         "https://m.media-amazon.com/images/I/31ezuidaaeL._AC_US40_.jpg",
@@ -127,7 +127,7 @@ const xboxData = {
       "name": "Xbox Series S – 512GB (2024)",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61sml86sZXL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61sml86sZXL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/417RO19D+-L._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/41UgCeoQUHL._AC_SR38,50_.jpg",
@@ -151,7 +151,7 @@ const xboxData = {
       "name": "WD_BLACK 512GB C50 Expansion Card for Xbox - WDBMPH5120ANC-WCSN",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/71QxmOXxYVL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71QxmOXxYVL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/41eITXwv2-L._AC_US40_.jpg",
         "https://m.media-amazon.com/images/I/41Ni3Bun-LL._AC_US40_.jpg",
@@ -175,7 +175,7 @@ const xboxData = {
       "name": "For Xbox Series S Storage Expansion Card, Aluminium Alloy External Hard Drive For Xbox Series X/S, Compatible With CH SN530 XA1 512G/1TB NVME 2230 SSD",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/514Pr-8VvpL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/514Pr-8VvpL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/216dOnhIloL._AC_US40_.jpg",
         "https://m.media-amazon.com/images/I/31E-WU8xBSL._AC_US40_.jpg",

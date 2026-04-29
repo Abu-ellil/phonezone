@@ -7,7 +7,7 @@ const iphoneData = {
       "name": "Apple iPhone 17 Pro Max 256 GB: 6.9-inch Display with ProMotion, A19 Pro Chip, Best Battery Life in Any iPhone Ever, Pro Fusion Camera System, Center Stage Front Camera; Cosmic Orange",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/714TxWv1JYL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/714TxWv1JYL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31bQqSuRjuL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/41L-tM7SCzL._AC_SR38,50_.jpg",
@@ -43,7 +43,7 @@ const iphoneData = {
       "name": "Apple iPhone 17 Pro 256 GB: 6.3-inch Display with ProMotion up to 120Hz, A19 Pro Chip, Breakthrough Battery Life, Pro Fusion Camera System with Center Stage Front Camera; Cosmic Orange",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/716Bo6d914L._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/716Bo6d914L..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31LNbB-aR3L._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/41ZZIMvqktL._AC_SR38,50_.jpg",
@@ -79,7 +79,7 @@ const iphoneData = {
       "name": "Apple iPhone 17 256 GB: 6.3-inch Display with ProMotion, A19 Chip, Center Stage Front Camera for Smarter Group Selfies, Improved Scratch Resistance, All-Day Battery Life; Sage",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61WYeXatWNL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61WYeXatWNL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31VZYbH1o1L._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/31LqifqkbvL._AC_SR38,50_.jpg",
@@ -115,7 +115,7 @@ const iphoneData = {
       "name": "Apple iPhone 17 Pro Max 512 GB: 6.9-inch Display with ProMotion, A19 Pro Chip, Best Battery Life in Any iPhone Ever, Pro Fusion Camera System, Center Stage Front Camera; Silver",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/619Pp4ERPNL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/619Pp4ERPNL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31l0CkVEoLL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/31u61l6v9QL._AC_SR38,50_.jpg",
@@ -151,7 +151,7 @@ const iphoneData = {
       "name": "Apple iPhone 17 Pro 512 GB: 6.3-inch Display with ProMotion up to 120Hz, A19 Pro Chip, Breakthrough Battery Life, Pro Fusion Camera System with Center Stage Front Camera; Cosmic Orange",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/716Bo6d914L._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/716Bo6d914L..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31LNbB-aR3L._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/41ZZIMvqktL._AC_SR38,50_.jpg",
@@ -189,7 +189,7 @@ const iphoneData = {
       "name": "Apple iPhone 17 Pro 256 GB: 6.3-inch Display with ProMotion up to 120Hz, A19 Pro Chip, Breakthrough Battery Life, Pro Fusion Camera System with Center Stage Front Camera; Cosmic Orange",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/716Bo6d914L._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/716Bo6d914L..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31LNbB-aR3L._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/41ZZIMvqktL._AC_SR38,50_.jpg",
@@ -225,7 +225,7 @@ const iphoneData = {
       "name": "Apple iPhone 17 256 GB: 6.3-inch Display with ProMotion, A19 Chip, Center Stage Front Camera for Smarter Group Selfies, Improved Scratch Resistance, All-Day Battery Life; Lavender",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61vNxSF6qeL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61vNxSF6qeL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31nD9iWvX1L._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/31Gcmbwux7L._AC_SR38,50_.jpg",
@@ -261,7 +261,7 @@ const iphoneData = {
       "name": "Apple iPhone 17 Pro Max 256 GB: 6.9-inch Display with ProMotion, A19 Pro Chip, Best Battery Life in Any iPhone Ever, Pro Fusion Camera System, Center Stage Front Camera; Silver",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/619Pp4ERPNL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/619Pp4ERPNL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31l0CkVEoLL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/31u61l6v9QL._AC_SR38,50_.jpg",
@@ -297,7 +297,7 @@ const iphoneData = {
       "name": "Apple iPhone 17 Pro 512 GB: 6.3-inch Display with ProMotion up to 120Hz, A19 Pro Chip, Breakthrough Battery Life, Pro Fusion Camera System with Center Stage Front Camera; Deep Blue",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61LFeKye45L._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61LFeKye45L..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31hNrO1SmmL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/41Om6WO2B6L._AC_SR38,50_.jpg",
@@ -333,7 +333,7 @@ const iphoneData = {
       "name": "Apple iPhone 17 512 GB: 6.3-inch Display with ProMotion, A19 Chip, Center Stage Front Camera for Smarter Group Selfies, Improved Scratch Resistance, All-Day Battery Life; Lavender",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61vNxSF6qeL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61vNxSF6qeL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31nD9iWvX1L._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/31Gcmbwux7L._AC_SR38,50_.jpg",
@@ -369,7 +369,7 @@ const iphoneData = {
       "name": "Apple iPhone 17 Pro Max 512 GB: 6.9-inch Display with ProMotion, A19 Pro Chip, Best Battery Life in Any iPhone Ever, Pro Fusion Camera System, Center Stage Front Camera; Deep Blue",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/71ddhabs2mL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71ddhabs2mL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31b8rA1KXAL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/41EziC3WorL._AC_SR38,50_.jpg",
@@ -407,7 +407,7 @@ const iphoneData = {
       "name": "Apple iPhone 16 Plus (256 GB) - White",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61bMAK6EiuL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61bMAK6EiuL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31oUrq6N-AL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/21Ea4WroKwL._AC_SR38,50_.jpg",
@@ -443,7 +443,7 @@ const iphoneData = {
       "name": "Apple iPhone 16 (512 GB) - Black",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61-251PVEZL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61-251PVEZL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31EFr2BZxmL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/21sQbvERXmL._AC_SR38,50_.jpg",
@@ -479,7 +479,7 @@ const iphoneData = {
       "name": "Apple iPhone 17 Pro Max 256 GB: 6.9-inch Display with ProMotion, A19 Pro Chip, Best Battery Life in Any iPhone Ever, Pro Fusion Camera System, Center Stage Front Camera; Silver",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/619Pp4ERPNL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/619Pp4ERPNL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31l0CkVEoLL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/31u61l6v9QL._AC_SR38,50_.jpg",
@@ -515,7 +515,7 @@ const iphoneData = {
       "name": "Apple iPhone 17 Pro Max 512 GB: 6.9-inch Display with ProMotion, A19 Pro Chip, Best Battery Life in Any iPhone Ever, Pro Fusion Camera System, Center Stage Front Camera; Silver",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/619Pp4ERPNL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/619Pp4ERPNL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31l0CkVEoLL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/31u61l6v9QL._AC_SR38,50_.jpg",
@@ -553,7 +553,7 @@ const iphoneData = {
       "name": "Apple iPhone 16 Plus (256 GB) - White",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61bMAK6EiuL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61bMAK6EiuL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31oUrq6N-AL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/21Ea4WroKwL._AC_SR38,50_.jpg",
@@ -589,7 +589,7 @@ const iphoneData = {
       "name": "Apple iPhone 16 (128 GB) - Black",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61-251PVEZL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61-251PVEZL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31EFr2BZxmL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/21sQbvERXmL._AC_SR38,50_.jpg",
@@ -625,7 +625,7 @@ const iphoneData = {
       "name": "Apple iPhone 17 Pro 256 GB: 6.3-inch Display with ProMotion up to 120Hz, A19 Pro Chip, Breakthrough Battery Life, Pro Fusion Camera System with Center Stage Front Camera; Deep Blue",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61LFeKye45L._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61LFeKye45L..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31hNrO1SmmL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/41Om6WO2B6L._AC_SR38,50_.jpg",
@@ -661,7 +661,7 @@ const iphoneData = {
       "name": "Apple iPhone 16 (128 GB) - Ultramarine",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61vU7pByR-L._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61vU7pByR-L..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/313JYjxMQ-L._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/212YnR4jOcL._AC_SR38,50_.jpg",
@@ -697,7 +697,7 @@ const iphoneData = {
       "name": "Apple iPhone 16 (128 GB) - Teal",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61z03IUpbXL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61z03IUpbXL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31bJqMv6hwL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/21KVXrmarSL._AC_SR38,50_.jpg",
@@ -733,7 +733,7 @@ const iphoneData = {
       "name": "Apple iPhone 16 (128 GB) - Pink",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61hz5imfLHL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61hz5imfLHL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31dRCarNK2L._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/21XYJpu0wXL._AC_SR38,50_.jpg",
@@ -769,7 +769,7 @@ const iphoneData = {
       "name": "Apple iPhone 16 Plus (128 GB) - Black",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61qsfmPhNQL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61qsfmPhNQL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31cujn1RSbL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/31qdUeXGz3L._AC_SR38,50_.jpg",
@@ -805,7 +805,7 @@ const iphoneData = {
       "name": "Apple iPhone 16 Plus (128 GB) - Ultramarine",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/71Ecl1RS5jL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71Ecl1RS5jL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/313xy-XOlcL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/21EEGpauEHL._AC_SR38,50_.jpg",
@@ -843,7 +843,7 @@ const iphoneData = {
       "name": "iPhone 16 (128 GB) - Black",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61-251PVEZL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61-251PVEZL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31EFr2BZxmL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/21sQbvERXmL._AC_SR38,50_.jpg",
@@ -879,7 +879,7 @@ const iphoneData = {
       "name": "iPhone 16 (128 GB) - Teal",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61z03IUpbXL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61z03IUpbXL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31bJqMv6hwL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/21KVXrmarSL._AC_SR38,50_.jpg",
@@ -915,7 +915,7 @@ const iphoneData = {
       "name": "iPhone 16 (128 GB) - White",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61mIdbtma3L._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61mIdbtma3L..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/313C2kOFH9L._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/21XE0zhTDPL._AC_SR38,50_.jpg",
@@ -951,7 +951,7 @@ const iphoneData = {
       "name": "iPhone 16 Plus (128 GB) - Ultramarine iPhone 16 Plus (128 GB) - Ultramarine List: List:",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/71Ecl1RS5jL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71Ecl1RS5jL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/313xy-XOlcL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/21EEGpauEHL._AC_SR38,50_.jpg",
@@ -987,7 +987,7 @@ const iphoneData = {
       "name": "iPhone 16 Plus (128 GB) - Black iPhone 16 Plus (128 GB) - Black List: List:",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61qsfmPhNQL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61qsfmPhNQL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31cujn1RSbL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/31qdUeXGz3L._AC_SR38,50_.jpg",
@@ -1023,7 +1023,7 @@ const iphoneData = {
       "name": "iPhone 16e (128 GB) - White iPhone 16e (128 GB) - White List: List:",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/610vqacJO2L._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/610vqacJO2L..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31W+GSEQNiL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/216fiVZosnL._AC_SR38,50_.jpg",
@@ -1059,7 +1059,7 @@ const iphoneData = {
       "name": "iPhone 16 Plus (128 GB) - Pink iPhone 16 Plus (128 GB) - Pink List: List:",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/716KLI9CI6L._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/716KLI9CI6L..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31mDINx-WEL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/212K-837J-L._AC_SR38,50_.jpg",
@@ -1095,7 +1095,7 @@ const iphoneData = {
       "name": "iPhone 15 (128 GB) - Blue",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61CjBAnIfGL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61CjBAnIfGL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/41kwxXWV2UL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/21ZHGZNAKSL._AC_SR38,50_.jpg",
@@ -1133,7 +1133,7 @@ const iphoneData = {
       "name": "iPhone 15 (128 GB) - Blue",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61CjBAnIfGL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61CjBAnIfGL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/41kwxXWV2UL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/21ZHGZNAKSL._AC_SR38,50_.jpg",
@@ -1169,7 +1169,7 @@ const iphoneData = {
       "name": "iPhone 15 (128 GB) - Black",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61bCKBrMVNL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61bCKBrMVNL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31H+JpsR4JL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/21ccB8DQ6pL._AC_SR38,50_.jpg",
@@ -1205,7 +1205,7 @@ const iphoneData = {
       "name": "iPhone 15 (128 GB) - Pink",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61bv+QKrIlL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61bv+QKrIlL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/41-dHf3k73L._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/21Q3TxyOQuL._AC_SR38,50_.jpg",
@@ -1241,7 +1241,7 @@ const iphoneData = {
       "name": "Apple iPhone 15 (256 GB) - Black",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61bCKBrMVNL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61bCKBrMVNL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31H+JpsR4JL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/21ccB8DQ6pL._AC_SR38,50_.jpg",
@@ -1277,7 +1277,7 @@ const iphoneData = {
       "name": "Apple iPhone 16 Plus (256 GB) - White",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61bMAK6EiuL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61bMAK6EiuL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31oUrq6N-AL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/21Ea4WroKwL._AC_SR38,50_.jpg",
@@ -1313,7 +1313,7 @@ const iphoneData = {
       "name": "Apple iPhone 16 (128 GB) - Black",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61-251PVEZL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61-251PVEZL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31EFr2BZxmL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/21sQbvERXmL._AC_SR38,50_.jpg",
@@ -1349,7 +1349,7 @@ const iphoneData = {
       "name": "Apple iPhone 17 256 GB: 6.3-inch Display with ProMotion, A19 Chip, Center Stage Front Camera for Smarter Group Selfies, Improved Scratch Resistance, All-Day Battery Life; Mist Blue",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61Da45h7jCL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61Da45h7jCL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/31nlyu8jMzL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/31WDv2FpTRL._AC_SR38,50_.jpg",
@@ -1385,7 +1385,7 @@ const iphoneData = {
       "name": "Apple iPhone 15 (256 GB) - Blue",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61CjBAnIfGL._AC_UL960_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61CjBAnIfGL..jpg",
       "images": [
         "https://m.media-amazon.com/images/I/41kwxXWV2UL._AC_SR38,50_.jpg",
         "https://m.media-amazon.com/images/I/21ZHGZNAKSL._AC_SR38,50_.jpg",

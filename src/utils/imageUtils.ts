@@ -61,13 +61,11 @@ export function getSafeImageUrl(
 
     // Upgrade Amazon image URLs to higher resolution
     if (urlObj.hostname.includes('media-amazon.com')) {
-      // Remove size suffixes like ._AC_UY400_ or ._AC_SL300_
-      let upgraded = url.replace(/\._[^.]*_/, '.');
-      // If no size suffix exists, ensure we get a decent size
-      if (upgraded === url && !url.includes('._')) {
-        // Try to insert high-res indicator before extension
-        upgraded = url.replace(/(\.jpg|\.png|\.jpeg|\.gif)/i, '._AC_SL1500_$1');
-      }
+      // Remove low-quality size/compression suffixes
+      // Patterns: ._AC_UL960_FMwebp_QL65_, ._AC_UY400_, ._AC_SL300_, etc.
+      let upgraded = url.replace(/\._AC_[A-Z0-9_]+_/g, '.');
+      // Also remove any remaining ._XXX_ patterns
+      upgraded = upgraded.replace(/\._[^.]*_\./, '.');
       return upgraded;
     }
 
