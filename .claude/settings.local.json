@@ -17,7 +17,8 @@
       "Bash(npm view *)",
       "Bash(npm install *)",
       "Bash(npm ls *)",
-      "Bash(npm update *)"
+      "Bash(npm update *)",
+      "Bash(node -e ' *)"
     ]
   }
 }
