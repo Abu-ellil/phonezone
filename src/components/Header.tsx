@@ -45,13 +45,21 @@ export default function Header() {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setIsDropdownOpen("");
       }
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-        setIsMenuOpen(false);
-      }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
 
   useEffect(() => {
     if (searchQuery.trim().length > 1) {
@@ -194,15 +202,34 @@ export default function Header() {
             </div>
           </div>
 
+          {/* Mobile Menu Overlay */}
+          {isMenuOpen && (
+            <div
+              className="md:hidden fixed inset-0 bg-black/40 z-40"
+              onClick={() => setIsMenuOpen(false)}
+            />
+          )}
+
           {/* Mobile Menu */}
           <div
             ref={menuRef}
-            className={`md:hidden fixed top-[80px] right-0 bottom-0 w-3/4 bg-white z-50 border-l border-gray-200 shadow-lg transform transition-transform duration-300 ease-in-out overflow-y-auto ${
+            className={`md:hidden fixed top-0 right-0 bottom-0 w-3/4 bg-white z-50 border-l border-gray-200 shadow-lg transform transition-transform duration-300 ease-in-out overflow-y-auto ${
               isMenuOpen ? "translate-x-0" : "translate-x-full"
             }`}
             style={{ direction: "rtl" }}
           >
-            <div className="p-4">
+            <div className="p-4 pt-16">
+              {/* Close Button */}
+              <button
+                className="absolute top-4 left-4 text-gray-500 hover:text-gray-800"
+                onClick={() => setIsMenuOpen(false)}
+                aria-label="إغلاق القائمة"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+
               {/* Search */}
               <div className="relative w-full mb-6">
                 <input
