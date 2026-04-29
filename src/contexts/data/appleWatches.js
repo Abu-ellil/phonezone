@@ -6,12 +6,12 @@ const appleWatches = [
     "name": "Watch Series 10 GPS + Cellular 42 mm Smartwatch with Slate Titanium Case with Black Sport Band - M/L. Fitness Tracker, ECG App, Always-On Retina Display, Water Resistant Watch Series 10 GPS + Cellular 42 mm Smartwatch with Slate Titanium Case with Black Sport Band - M/L. Fitness Tracker, ECG App, Always-On Retina Display, Water Resistant List: List:",
     "warranty": "ضمان سنتين حاسبات العرب",
     "stock_status": "متوفر في المخزون",
-    "image_url": "https://m.media-amazon.com/images/I/71mVEVVQC5L..jpg",
+    "image_url": "https://m.media-amazon.com/images/I/71mVEVVQC5L.jpg",
     "images": [
-      "https://m.media-amazon.com/images/I/411wn8O35xL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/413MiZ4TNcL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/412fBlh2tpL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/410HIhD7KYL._AC_SR38,50_.jpg"
+      "https://m.media-amazon.com/images/I/411wn8O35xL.jpg",
+      "https://m.media-amazon.com/images/I/413MiZ4TNcL.jpg",
+      "https://m.media-amazon.com/images/I/412fBlh2tpL.jpg",
+      "https://m.media-amazon.com/images/I/410HIhD7KYL.jpg"
     ],
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل",
@@ -35,12 +35,12 @@ const appleWatches = [
     "name": "Watch Series 11 GPS 42mm Smartwatch with Space Grey Aluminium Case with Black Sport Band S/M. Sleep Score, Fitness Tracker, Health Monitoring, Always-On Display, Water Resistant Watch Series 11 GPS 42mm Smartwatch with Space Grey Aluminium Case with Black Sport Band S/M. Sleep Score, Fitness Tracker, Health Monitoring, Always-On Display, Water Resistant List: List:",
     "warranty": "ضمان سنتين حاسبات العرب",
     "stock_status": "متوفر في المخزون",
-    "image_url": "https://m.media-amazon.com/images/I/71mrKtBWpeL..jpg",
+    "image_url": "https://m.media-amazon.com/images/I/71mrKtBWpeL.jpg",
     "images": [
-      "https://m.media-amazon.com/images/I/41ik4vClIpL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/41C8RQzr2UL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/41ojrvwWqAL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/41cYRzl0S3L._AC_SR38,50_.jpg"
+      "https://m.media-amazon.com/images/I/41ik4vClIpL.jpg",
+      "https://m.media-amazon.com/images/I/41C8RQzr2UL.jpg",
+      "https://m.media-amazon.com/images/I/41ojrvwWqAL.jpg",
+      "https://m.media-amazon.com/images/I/41cYRzl0S3L.jpg"
     ],
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل",
@@ -64,12 +64,12 @@ const appleWatches = [
     "name": "Watch Series 10 GPS + Cellular 42 mm Smartwatch with Gold Titanium Case with Starlight Sport Band - M/L. Fitness Tracker, ECG App, Always-On Retina Display, Water Resistant Watch Series 10 GPS + Cellular 42 mm Smartwatch with Gold Titanium Case with Starlight Sport Band - M/L. Fitness Tracker, ECG App, Always-On Retina Display, Water Resistant List: List:",
     "warranty": "ضمان سنتين حاسبات العرب",
     "stock_status": "متوفر في المخزون",
-    "image_url": "https://m.media-amazon.com/images/I/71YW7WBgmrL..jpg",
+    "image_url": "https://m.media-amazon.com/images/I/71YW7WBgmrL.jpg",
     "images": [
-      "https://m.media-amazon.com/images/I/41IwR7qORXL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/41xAR7wVkEL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/412fBlh2tpL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/414iGeZp2dL._AC_SR38,50_.jpg"
+      "https://m.media-amazon.com/images/I/41IwR7qORXL.jpg",
+      "https://m.media-amazon.com/images/I/41xAR7wVkEL.jpg",
+      "https://m.media-amazon.com/images/I/412fBlh2tpL.jpg",
+      "https://m.media-amazon.com/images/I/414iGeZp2dL.jpg"
     ],
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل",
@@ -93,12 +93,12 @@ const appleWatches = [
     "name": "Watch Series 11 GPS 42mm Smartwatch with Jet Black Aluminium Case with Black Sport Band S/M. Sleep Score, Fitness Tracker, Health Monitoring, Always-On Display, Water Resistant",
     "warranty": "ضمان سنتين حاسبات العرب",
     "stock_status": "متوفر في المخزون",
-    "image_url": "https://m.media-amazon.com/images/I/71+uZf5lKnL..jpg",
+    "image_url": "https://m.media-amazon.com/images/I/71+uZf5lKnL.jpg",
     "images": [
-      "https://m.media-amazon.com/images/I/41Cv5ORWODL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/41C8RQzr2UL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/41TqsE1QHGL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/418LpmqX-pL._AC_SR38,50_.jpg"
+      "https://m.media-amazon.com/images/I/41Cv5ORWODL.jpg",
+      "https://m.media-amazon.com/images/I/41C8RQzr2UL.jpg",
+      "https://m.media-amazon.com/images/I/41TqsE1QHGL.jpg",
+      "https://m.media-amazon.com/images/I/418LpmqX-pL.jpg"
     ],
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل",
@@ -122,12 +122,12 @@ const appleWatches = [
     "name": "Watch Series 10 GPS + Cellular 42 mm Smartwatch with Gold Titanium Case with Gold Milanese Loop - One Size (Fits Most). Fitness Tracker, ECG App, Always-On Retina Display, Carbon Neutral",
     "warranty": "ضمان سنتين حاسبات العرب",
     "stock_status": "متوفر في المخزون",
-    "image_url": "https://m.media-amazon.com/images/I/91oNppHGpmL..jpg",
+    "image_url": "https://m.media-amazon.com/images/I/91oNppHGpmL.jpg",
     "images": [
-      "https://m.media-amazon.com/images/I/51ie2SQHeOL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/41mt8lVbXnL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/412fBlh2tpL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/41oTkjQeF-L._AC_SR38,50_.jpg"
+      "https://m.media-amazon.com/images/I/51ie2SQHeOL.jpg",
+      "https://m.media-amazon.com/images/I/41mt8lVbXnL.jpg",
+      "https://m.media-amazon.com/images/I/412fBlh2tpL.jpg",
+      "https://m.media-amazon.com/images/I/41oTkjQeF-L.jpg"
     ],
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل",
@@ -151,12 +151,12 @@ const appleWatches = [
     "name": "Watch Series 11 GPS 42mm Smartwatch with Jet Black Aluminium Case with Black Sport Band M/L. Sleep Score, Fitness Tracker, Health Monitoring, Always-On Display, Water Resistant Watch Series 11 GPS 42mm Smartwatch with Jet Black Aluminium Case with Black Sport Band M/L. Sleep Score, Fitness Tracker, Health Monitoring, Always-On Display, Water Resistant List: List:",
     "warranty": "ضمان سنتين حاسبات العرب",
     "stock_status": "متوفر في المخزون",
-    "image_url": "https://m.media-amazon.com/images/I/71+uZf5lKnL..jpg",
+    "image_url": "https://m.media-amazon.com/images/I/71+uZf5lKnL.jpg",
     "images": [
-      "https://m.media-amazon.com/images/I/41Cv5ORWODL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/41C8RQzr2UL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/41TqsE1QHGL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/418LpmqX-pL._AC_SR38,50_.jpg"
+      "https://m.media-amazon.com/images/I/41Cv5ORWODL.jpg",
+      "https://m.media-amazon.com/images/I/41C8RQzr2UL.jpg",
+      "https://m.media-amazon.com/images/I/41TqsE1QHGL.jpg",
+      "https://m.media-amazon.com/images/I/418LpmqX-pL.jpg"
     ],
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل",
@@ -180,12 +180,12 @@ const appleWatches = [
     "name": "Watch Series 10 GPS + Cellular 46 mm Smartwatch with Rose Gold Aluminium Case with Light Blush Sport Band - M/L. Fitness Tracker, ECG App, Always-On Retina Display, Water Resistant Watch Series 10 GPS + Cellular 46 mm Smartwatch with Rose Gold Aluminium Case with Light Blush Sport Band - M/L. Fitness Tracker, ECG App, Always-On Retina Display, Water Resistant List: List:",
     "warranty": "ضمان سنتين حاسبات العرب",
     "stock_status": "متوفر في المخزون",
-    "image_url": "https://m.media-amazon.com/images/I/61jgSiL0jKL..jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61jgSiL0jKL.jpg",
     "images": [
-      "https://m.media-amazon.com/images/I/31s3lbb2NbL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/31+myII2PZL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/412fBlh2tpL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/41rVmMVXe3L._AC_SR38,50_.jpg"
+      "https://m.media-amazon.com/images/I/31s3lbb2NbL.jpg",
+      "https://m.media-amazon.com/images/I/31+myII2PZL.jpg",
+      "https://m.media-amazon.com/images/I/412fBlh2tpL.jpg",
+      "https://m.media-amazon.com/images/I/41rVmMVXe3L.jpg"
     ],
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل",
@@ -209,12 +209,12 @@ const appleWatches = [
     "name": "Watch Series 11 GPS + Cellular 42mm Smartwatch with Rose Gold Aluminium Case with Light Blush Sport Band S/M. Sleep Score, Fitness Tracker, Health Monitoring, Always-On Display, Water Resistant",
     "warranty": "ضمان سنتين حاسبات العرب",
     "stock_status": "متوفر في المخزون",
-    "image_url": "https://m.media-amazon.com/images/I/61VOfd0j01L..jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61VOfd0j01L.jpg",
     "images": [
-      "https://m.media-amazon.com/images/I/416JZMb6hHL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/41C8RQzr2UL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/41fIiOW1BdL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/41vdAm-mGfL._AC_SR38,50_.jpg"
+      "https://m.media-amazon.com/images/I/416JZMb6hHL.jpg",
+      "https://m.media-amazon.com/images/I/41C8RQzr2UL.jpg",
+      "https://m.media-amazon.com/images/I/41fIiOW1BdL.jpg",
+      "https://m.media-amazon.com/images/I/41vdAm-mGfL.jpg"
     ],
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل",
@@ -238,12 +238,12 @@ const appleWatches = [
     "name": "Watch Series 11 GPS + Cellular 42mm Smartwatch with Gold Titanium Case with Gold Milanese Loop. Sleep Score, Fitness Tracker, Health Monitoring, Always-On Display, Water Resistant",
     "warranty": "ضمان سنتين حاسبات العرب",
     "stock_status": "متوفر في المخزون",
-    "image_url": "https://m.media-amazon.com/images/I/81fU7T3OIHL..jpg",
+    "image_url": "https://m.media-amazon.com/images/I/81fU7T3OIHL.jpg",
     "images": [
-      "https://m.media-amazon.com/images/I/51yENO2GiwL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/41bbUbbv2mL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/41JP+9aBv7L._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/41KUp+gvjqL._AC_SR38,50_.jpg"
+      "https://m.media-amazon.com/images/I/51yENO2GiwL.jpg",
+      "https://m.media-amazon.com/images/I/41bbUbbv2mL.jpg",
+      "https://m.media-amazon.com/images/I/41JP+9aBv7L.jpg",
+      "https://m.media-amazon.com/images/I/41KUp+gvjqL.jpg"
     ],
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل",
@@ -267,12 +267,12 @@ const appleWatches = [
     "name": "Compatible with Apple Watch Band 49mm 46mm 45mm 44mm 42mm 41mm 40mm 38mm for Women Men Air Holes Design Sport Silicone Wristband Bands Strap for iWatch Ultra Series 11/10/9/8/7/6/5/4/3/SE Multi Color",
     "warranty": "ضمان سنتين حاسبات العرب",
     "stock_status": "متوفر في المخزون",
-    "image_url": "https://m.media-amazon.com/images/I/61ql7vAAShL..jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61ql7vAAShL.jpg",
     "images": [
-      "https://m.media-amazon.com/images/I/41GTK8aD9fL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/51eCHaS0NcL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/41gkR3YlEEL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/410Qy-tYanL._AC_SR38,50_.jpg"
+      "https://m.media-amazon.com/images/I/41GTK8aD9fL.jpg",
+      "https://m.media-amazon.com/images/I/51eCHaS0NcL.jpg",
+      "https://m.media-amazon.com/images/I/41gkR3YlEEL.jpg",
+      "https://m.media-amazon.com/images/I/410Qy-tYanL.jpg"
     ],
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل",
@@ -296,12 +296,12 @@ const appleWatches = [
     "name": "6 Pack Sport Band Compatible with Apple Watch Bands for Women Men",
     "warranty": "ضمان سنتين حاسبات العرب",
     "stock_status": "متوفر في المخزون",
-    "image_url": "https://m.media-amazon.com/images/I/71hyul5MxyL..jpg",
+    "image_url": "https://m.media-amazon.com/images/I/71hyul5MxyL.jpg",
     "images": [
-      "https://m.media-amazon.com/images/I/519fF1gUP1L._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/51dEbYfJPBL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/41LgW8YWLOL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/41UsdLNUxZL._AC_SR38,50_.jpg"
+      "https://m.media-amazon.com/images/I/519fF1gUP1L.jpg",
+      "https://m.media-amazon.com/images/I/51dEbYfJPBL.jpg",
+      "https://m.media-amazon.com/images/I/41LgW8YWLOL.jpg",
+      "https://m.media-amazon.com/images/I/41UsdLNUxZL.jpg"
     ],
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل",
@@ -325,12 +325,12 @@ const appleWatches = [
     "name": "Rugged Armor Cover Case Compatible with Apple Watch Series 10 42mm, Full Protection Military Grade, Soft Flexible Shockproof Resist Sport iWatch Bumper - (S10-42mm Black) Rugged Armor Cover Case Compatible with Apple Watch Series 10 42mm, Full Protection Military Grade, Soft Flexible Shockproof Resist Sport iWatch Bumper - (S10-42mm Black) List: List:",
     "warranty": "ضمان سنتين حاسبات العرب",
     "stock_status": "متوفر في المخزون",
-    "image_url": "https://m.media-amazon.com/images/I/61yCpoTYX5L..jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61yCpoTYX5L.jpg",
     "images": [
-      "https://m.media-amazon.com/images/I/41Zkw42NO5L._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/41tF-856j+L._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/41d2o+X0lRL._AC_SR38,50_.jpg",
-      "https://m.media-amazon.com/images/I/41t6WFm8q1L._AC_SR38,50_.jpg"
+      "https://m.media-amazon.com/images/I/41Zkw42NO5L.jpg",
+      "https://m.media-amazon.com/images/I/41tF-856j+L.jpg",
+      "https://m.media-amazon.com/images/I/41d2o+X0lRL.jpg",
+      "https://m.media-amazon.com/images/I/41t6WFm8q1L.jpg"
     ],
     "category": "ساعات ابل",
     "subcategory": "ساعات ابل",

@@ -7,12 +7,12 @@ const playstationData = {
       "name": "PlayStation 5 Slim Blu-ray Disc Edition Console (KSA version), 2 Year Manufacturer Warranty",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/51tSjJJl82L..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/51tSjJJl82L.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/21d6MWY1LCL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/21V0XZZ2ZIL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/31UWEa7lxGL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41htjvASSFL._AC_SR38,50_.jpg"
+        "https://m.media-amazon.com/images/I/21d6MWY1LCL.jpg",
+        "https://m.media-amazon.com/images/I/21V0XZZ2ZIL.jpg",
+        "https://m.media-amazon.com/images/I/31UWEa7lxGL.jpg",
+        "https://m.media-amazon.com/images/I/41htjvASSFL.jpg"
       ],
       "category": "أجهزة بلاي ستيشن",
       "subcategory": "بلاي ستيشن 5",
@@ -31,12 +31,12 @@ const playstationData = {
       "name": "PlayStation 5 Slim Digital Edition Console, 825 GB, (KSA version), 2 Year Manufacturer Warranty",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/51Wnat-gG6L..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/51Wnat-gG6L.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/31UJr28o-6L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/215-3skg0WL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/21LuNMGDjcL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/31hjvJKYF0L._AC_SR38,50_.jpg"
+        "https://m.media-amazon.com/images/I/31UJr28o-6L.jpg",
+        "https://m.media-amazon.com/images/I/215-3skg0WL.jpg",
+        "https://m.media-amazon.com/images/I/21LuNMGDjcL.jpg",
+        "https://m.media-amazon.com/images/I/31hjvJKYF0L.jpg"
       ],
       "category": "أجهزة بلاي ستيشن",
       "subcategory": "بلاي ستيشن 5",
@@ -55,12 +55,12 @@ const playstationData = {
       "name": "PlayStation 5 Blu-ray Disc Edition Console 1TB - EA SPORTS FC26 Bundle, 2 Year Manufacturer Warranty (KSA Version)",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61fzesRSYNL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61fzesRSYNL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/31eHrDMgL-L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/31QS1c0Fo0L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/31v+DEiCXlL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/61fzesRSYNL._AC_SL1500_.jpg"
+        "https://m.media-amazon.com/images/I/31eHrDMgL-L.jpg",
+        "https://m.media-amazon.com/images/I/31QS1c0Fo0L.jpg",
+        "https://m.media-amazon.com/images/I/31v+DEiCXlL.jpg",
+        "https://m.media-amazon.com/images/I/61fzesRSYNL.jpg"
       ],
       "category": "أجهزة بلاي ستيشن",
       "subcategory": "بلاي ستيشن 5",
@@ -79,12 +79,12 @@ const playstationData = {
       "name": "PlayStation 5 Slim Blu-ray Disc Ghost of Yotei Gold Limited Edition Bundle (KSA version), 2 Year Manufacturer Warranty",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/71SoxHWpSRL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71SoxHWpSRL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/31nqhyZgZpL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/31vT5v16PxL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/31dkAsEg+IL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/21Dl9X+xe+L._AC_SR38,50_.jpg"
+        "https://m.media-amazon.com/images/I/31nqhyZgZpL.jpg",
+        "https://m.media-amazon.com/images/I/31vT5v16PxL.jpg",
+        "https://m.media-amazon.com/images/I/31dkAsEg+IL.jpg",
+        "https://m.media-amazon.com/images/I/21Dl9X+xe+L.jpg"
       ],
       "category": "أجهزة بلاي ستيشن",
       "subcategory": "بلاي ستيشن 5",
@@ -103,12 +103,12 @@ const playstationData = {
       "name": "PlayStation 5 Slim Blu-ray Disc Edition Console + Fortnite® Cobalt Star DLC Voucher (KSA version), 2 Year Manufacturer Warranty",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/71iReQDB9UL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71iReQDB9UL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/41ofoDObpsL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41fjlxOhzEL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41qRAQ+zn5L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41C018xIAjL._AC_SR38,50_.jpg"
+        "https://m.media-amazon.com/images/I/41ofoDObpsL.jpg",
+        "https://m.media-amazon.com/images/I/41fjlxOhzEL.jpg",
+        "https://m.media-amazon.com/images/I/41qRAQ+zn5L.jpg",
+        "https://m.media-amazon.com/images/I/41C018xIAjL.jpg"
       ],
       "category": "أجهزة بلاي ستيشن",
       "subcategory": "بلاي ستيشن 5",
@@ -127,12 +127,12 @@ const playstationData = {
       "name": "Disc Drive For PS5 Digital Edition Consoles (slim)",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/41Z3js9aNtL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/41Z3js9aNtL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/11AaezWD4CL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/31yKjlRlKOL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41Z3js9aNtL._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/41Z3js9aNtL..jpg"
+        "https://m.media-amazon.com/images/I/11AaezWD4CL.jpg",
+        "https://m.media-amazon.com/images/I/31yKjlRlKOL.jpg",
+        "https://m.media-amazon.com/images/I/41Z3js9aNtL.jpg",
+        "https://m.media-amazon.com/images/I/41Z3js9aNtL.jpg"
       ],
       "category": "أجهزة بلاي ستيشن",
       "subcategory": "بلاي ستيشن 5",
@@ -151,12 +151,12 @@ const playstationData = {
       "name": "PlayStation PS5 Disc Drive - for Digital Edition Consoles (model group – slim) (KSA Version)",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/415S-Puzd8L..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/415S-Puzd8L.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/212LcdjQRXL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/11vrKv+GTfL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/21dflPDHaQL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/31WJFdUHAqL._AC_SR38,50_.jpg"
+        "https://m.media-amazon.com/images/I/212LcdjQRXL.jpg",
+        "https://m.media-amazon.com/images/I/11vrKv+GTfL.jpg",
+        "https://m.media-amazon.com/images/I/21dflPDHaQL.jpg",
+        "https://m.media-amazon.com/images/I/31WJFdUHAqL.jpg"
       ],
       "category": "أجهزة بلاي ستيشن",
       "subcategory": "بلاي ستيشن 5",
@@ -175,12 +175,12 @@ const playstationData = {
       "name": "PlayStation 5 Digital Console + Western Digital WD_Black 1TB SSD, 2 Year Manufacturer Warranty and Free Installation (KSA Version)",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/615ytqHWaOL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/615ytqHWaOL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/31fwnHYfFvL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41SK7MTfLDL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41Lxb25n1EL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/615ytqHWaOL._AC_SL1500_.jpg"
+        "https://m.media-amazon.com/images/I/31fwnHYfFvL.jpg",
+        "https://m.media-amazon.com/images/I/41SK7MTfLDL.jpg",
+        "https://m.media-amazon.com/images/I/41Lxb25n1EL.jpg",
+        "https://m.media-amazon.com/images/I/615ytqHWaOL.jpg"
       ],
       "category": "أجهزة بلاي ستيشن",
       "subcategory": "بلاي ستيشن 5",
@@ -199,12 +199,12 @@ const playstationData = {
       "name": "PlayStation 5 Slim Ultra HD Blu-ray Disc Drive (KSA Version)",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61LRf22OtNL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61LRf22OtNL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/31R8dtCa0qL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/31SiTJrXQkL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/31c-cXPqjUL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/31eoSmHEwjL._AC_SR38,50_.jpg"
+        "https://m.media-amazon.com/images/I/31R8dtCa0qL.jpg",
+        "https://m.media-amazon.com/images/I/31SiTJrXQkL.jpg",
+        "https://m.media-amazon.com/images/I/31c-cXPqjUL.jpg",
+        "https://m.media-amazon.com/images/I/31eoSmHEwjL.jpg"
       ],
       "category": "أجهزة بلاي ستيشن",
       "subcategory": "بلاي ستيشن 5",
@@ -223,12 +223,12 @@ const playstationData = {
       "name": "PlayStation®5 Digital Edition – ASTRO BOT-Bundle (Modellgruppe – Slim)*",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/71hb2ptR36L..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71hb2ptR36L.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/31iVLZbcDmL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/31Bt+Q8gHxL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/31P0v7j6ywL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/31zvNALHvAL._AC_SR38,50_.jpg"
+        "https://m.media-amazon.com/images/I/31iVLZbcDmL.jpg",
+        "https://m.media-amazon.com/images/I/31Bt+Q8gHxL.jpg",
+        "https://m.media-amazon.com/images/I/31P0v7j6ywL.jpg",
+        "https://m.media-amazon.com/images/I/31zvNALHvAL.jpg"
       ],
       "category": "أجهزة بلاي ستيشن",
       "subcategory": "بلاي ستيشن 5",
@@ -249,12 +249,12 @@ const playstationData = {
       "name": "FC 26 EA Sports - STANDARD EDITION - PS5 (KSA Version)",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/71jHV4ZDosL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71jHV4ZDosL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/51if71d0k3L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/51fzkXw8QtL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41fRiVbAzZL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/51dv5YQ3T+L._AC_SR38,50_.jpg"
+        "https://m.media-amazon.com/images/I/51if71d0k3L.jpg",
+        "https://m.media-amazon.com/images/I/51fzkXw8QtL.jpg",
+        "https://m.media-amazon.com/images/I/41fRiVbAzZL.jpg",
+        "https://m.media-amazon.com/images/I/51dv5YQ3T+L.jpg"
       ],
       "category": "أجهزة بلاي ستيشن",
       "subcategory": "ألعاب بلاي ستيشن",
@@ -273,12 +273,12 @@ const playstationData = {
       "name": "FIFA 25 Standard Edition, PlayStation 5, UAE Version, Arabic/English Game",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/71vdXTfR6AL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71vdXTfR6AL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/41xT1rdhjaL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41yi7K9zj5L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/51zqQUzSx6L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/51VYqONpS5L._AC_SR38,50_.jpg"
+        "https://m.media-amazon.com/images/I/41xT1rdhjaL.jpg",
+        "https://m.media-amazon.com/images/I/41yi7K9zj5L.jpg",
+        "https://m.media-amazon.com/images/I/51zqQUzSx6L.jpg",
+        "https://m.media-amazon.com/images/I/51VYqONpS5L.jpg"
       ],
       "category": "أجهزة بلاي ستيشن",
       "subcategory": "ألعاب بلاي ستيشن",
@@ -297,12 +297,12 @@ const playstationData = {
       "name": "Fifa 22 - Playstation 5 (Ksa Version)",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/71+bPJBNG9L..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71+bPJBNG9L.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/41t0k-TccpL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41XqIIS9HML._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41endmWvrLL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41vqxYY0JOL._AC_SR38,50_.jpg"
+        "https://m.media-amazon.com/images/I/41t0k-TccpL.jpg",
+        "https://m.media-amazon.com/images/I/41XqIIS9HML.jpg",
+        "https://m.media-amazon.com/images/I/41endmWvrLL.jpg",
+        "https://m.media-amazon.com/images/I/41vqxYY0JOL.jpg"
       ],
       "category": "أجهزة بلاي ستيشن",
       "subcategory": "ألعاب بلاي ستيشن",
@@ -321,12 +321,12 @@ const playstationData = {
       "name": "FIFA 21 NXT LVL Edition (PS5) - KSA Version",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/71oksWyzBiL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71oksWyzBiL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/41JEiIjV8KL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/51yXuk9OcdL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/51oXNsT6QyL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/71oksWyzBiL._AC_SL1500_.jpg"
+        "https://m.media-amazon.com/images/I/41JEiIjV8KL.jpg",
+        "https://m.media-amazon.com/images/I/51yXuk9OcdL.jpg",
+        "https://m.media-amazon.com/images/I/51oXNsT6QyL.jpg",
+        "https://m.media-amazon.com/images/I/71oksWyzBiL.jpg"
       ],
       "category": "أجهزة بلاي ستيشن",
       "subcategory": "ألعاب بلاي ستيشن",
@@ -345,12 +345,12 @@ const playstationData = {
       "name": "Electronic Arts FIFA 21 (Nordic) - Includes PS5 Version",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/81zlSPqHu0L..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/81zlSPqHu0L.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/511eBWyYwLL._AC_US40_.jpg",
-        "https://m.media-amazon.com/images/I/81zlSPqHu0L._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/81zlSPqHu0L..jpg",
-        "https://m.media-amazon.com/images/I/81zlSPqHu0L..jpg"
+        "https://m.media-amazon.com/images/I/511eBWyYwLL.jpg",
+        "https://m.media-amazon.com/images/I/81zlSPqHu0L.jpg",
+        "https://m.media-amazon.com/images/I/81zlSPqHu0L.jpg",
+        "https://m.media-amazon.com/images/I/81zlSPqHu0L.jpg"
       ],
       "category": "أجهزة بلاي ستيشن",
       "subcategory": "ألعاب بلاي ستيشن",
@@ -369,12 +369,12 @@ const playstationData = {
       "name": "Electronic Arts Sony FIFA 22 - PS5",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/810Xc8pD6hL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/810Xc8pD6hL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/51wgcd3VBcL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/51c2TKxFxGL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/810Xc8pD6hL._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/810Xc8pD6hL..jpg"
+        "https://m.media-amazon.com/images/I/51wgcd3VBcL.jpg",
+        "https://m.media-amazon.com/images/I/51c2TKxFxGL.jpg",
+        "https://m.media-amazon.com/images/I/810Xc8pD6hL.jpg",
+        "https://m.media-amazon.com/images/I/810Xc8pD6hL.jpg"
       ],
       "category": "أجهزة بلاي ستيشن",
       "subcategory": "ألعاب بلاي ستيشن",
@@ -393,12 +393,12 @@ const playstationData = {
       "name": "FIFA 23 PS5 -Spiel",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61LODBgeTzL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61LODBgeTzL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/51TDLPHl69L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/51okc1cLZ4L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/51cAsC-n3XL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/51jgj7H7JxL._AC_SR38,50_.jpg"
+        "https://m.media-amazon.com/images/I/51TDLPHl69L.jpg",
+        "https://m.media-amazon.com/images/I/51okc1cLZ4L.jpg",
+        "https://m.media-amazon.com/images/I/51cAsC-n3XL.jpg",
+        "https://m.media-amazon.com/images/I/51jgj7H7JxL.jpg"
       ],
       "category": "أجهزة بلاي ستيشن",
       "subcategory": "ألعاب بلاي ستيشن",
@@ -417,12 +417,12 @@ const playstationData = {
       "name": "FIFA 22 PS5 (PS4)",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/81KNnqzP1wL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/81KNnqzP1wL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/51zOhUwYhyL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41FOFFUA+1L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/81KNnqzP1wL._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/81KNnqzP1wL..jpg"
+        "https://m.media-amazon.com/images/I/51zOhUwYhyL.jpg",
+        "https://m.media-amazon.com/images/I/41FOFFUA+1L.jpg",
+        "https://m.media-amazon.com/images/I/81KNnqzP1wL.jpg",
+        "https://m.media-amazon.com/images/I/81KNnqzP1wL.jpg"
       ],
       "category": "أجهزة بلاي ستيشن",
       "subcategory": "ألعاب بلاي ستيشن",
@@ -441,12 +441,12 @@ const playstationData = {
       "name": "EA SPORTS FC 25 Standard Edition PS5 | German",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/81+LQJ4-vmL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/81+LQJ4-vmL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/5113lswlyfL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/519RFAh9l1L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/31WbLXOviYL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/81+LQJ4-vmL._AC_SL1500_.jpg"
+        "https://m.media-amazon.com/images/I/5113lswlyfL.jpg",
+        "https://m.media-amazon.com/images/I/519RFAh9l1L.jpg",
+        "https://m.media-amazon.com/images/I/31WbLXOviYL.jpg",
+        "https://m.media-amazon.com/images/I/81+LQJ4-vmL.jpg"
       ],
       "category": "أجهزة بلاي ستيشن",
       "subcategory": "ألعاب بلاي ستيشن",
@@ -465,12 +465,12 @@ const playstationData = {
       "name": "Fifa 23 (PS5)",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/71YWdaIxQzL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71YWdaIxQzL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/41Kp4vBcFML._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/71YWdaIxQzL._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/71YWdaIxQzL..jpg",
-        "https://m.media-amazon.com/images/I/71YWdaIxQzL..jpg"
+        "https://m.media-amazon.com/images/I/41Kp4vBcFML.jpg",
+        "https://m.media-amazon.com/images/I/71YWdaIxQzL.jpg",
+        "https://m.media-amazon.com/images/I/71YWdaIxQzL.jpg",
+        "https://m.media-amazon.com/images/I/71YWdaIxQzL.jpg"
       ],
       "category": "أجهزة بلاي ستيشن",
       "subcategory": "ألعاب بلاي ستيشن",

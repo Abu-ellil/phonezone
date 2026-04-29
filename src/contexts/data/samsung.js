@@ -7,12 +7,12 @@ const samsungData = {
       "name": "Galaxy S26 Ultra Black, 12 Months x 0% Interest with Tamara, 256GB Storage, 12GB RAM, Built-in Privacy Display, 1 Year Extended Warranty (KSA Version)[Amazon Exclusive]",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/711YaZ05-WL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/711YaZ05-WL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/41wM79wemWL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41Z1l1vQtbL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41ThqNBi79L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41dbqXrqp6L._AC_SR38,50_.jpg"
+        "https://m.media-amazon.com/images/I/41wM79wemWL.jpg",
+        "https://m.media-amazon.com/images/I/41Z1l1vQtbL.jpg",
+        "https://m.media-amazon.com/images/I/41ThqNBi79L.jpg",
+        "https://m.media-amazon.com/images/I/41dbqXrqp6L.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -43,12 +43,12 @@ const samsungData = {
       "name": "Galaxy S26 Ultra Black, 256GB Storage, AI Phone, 12GB RAM, Customized AP, Built-in Privacy Display, Photo Assist, 200MP Camera, 5000mAh Battery (KSA version) Galaxy S26 Ultra Black, 256GB Storage, AI Phone, 12GB RAM, Customized AP, Built-in Privacy Display, Photo Assist, 200MP Camera, 5000mAh Battery (KSA version) List: List:",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/615m0PyEH6L..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/615m0PyEH6L.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/31JWdAbRndL._AC_US40_.jpg",
-        "https://m.media-amazon.com/images/I/615m0PyEH6L._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/615m0PyEH6L..jpg",
-        "https://m.media-amazon.com/images/I/615m0PyEH6L..jpg"
+        "https://m.media-amazon.com/images/I/31JWdAbRndL.jpg",
+        "https://m.media-amazon.com/images/I/615m0PyEH6L.jpg",
+        "https://m.media-amazon.com/images/I/615m0PyEH6L.jpg",
+        "https://m.media-amazon.com/images/I/615m0PyEH6L.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -79,12 +79,12 @@ const samsungData = {
       "name": "Galaxy S26 Ultra Violet, 256GB Storage, AI Phone, 12GB RAM, Customized AP, Built-in Privacy Display, Photo Assist, 200MP Camera, 5000mAh Battery (KSA version)",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/41xe8bAIDFL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/41xe8bAIDFL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/41xe8bAIDFL._AC_US40_.jpg",
-        "https://m.media-amazon.com/images/I/41M8Pcg4hvL._AC_US40_.jpg",
-        "https://m.media-amazon.com/images/I/41Dy6Fi+a7L._AC_US40_.jpg",
-        "https://m.media-amazon.com/images/I/410ZRq4bPcL._AC_US40_.jpg"
+        "https://m.media-amazon.com/images/I/41xe8bAIDFL.jpg",
+        "https://m.media-amazon.com/images/I/41M8Pcg4hvL.jpg",
+        "https://m.media-amazon.com/images/I/41Dy6Fi+a7L.jpg",
+        "https://m.media-amazon.com/images/I/410ZRq4bPcL.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -115,12 +115,12 @@ const samsungData = {
       "name": "Galaxy S26 Ultra Blue, 256GB Storage, AI Phone, 12GB RAM, Customized AP, Built-in Privacy Display, Photo Assist, 200MP Camera, 5000mAh Battery (KSA version) Galaxy S26 Ultra Blue, 256GB Storage, AI Phone, 12GB RAM, Customized AP, Built-in Privacy Display, Photo Assist, 200MP Camera, 5000mAh Battery (KSA version) List: List:",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/31r44eJjbLL._AC_UL640_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/31r44eJjbLL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/31r44eJjbLL._AC_US40_.jpg",
-        "https://m.media-amazon.com/images/I/31r44eJjbLL._AC_SY300_SX300_QL70_ML2_.jpg",
-        "https://m.media-amazon.com/images/I/31r44eJjbLL._AC_UL640_FMwebp_QL65_.jpg",
-        "https://m.media-amazon.com/images/I/31r44eJjbLL._AC_UL640_FMwebp_QL65_.jpg"
+        "https://m.media-amazon.com/images/I/31r44eJjbLL.jpg",
+        "https://m.media-amazon.com/images/I/31r44eJjbLL.jpg",
+        "https://m.media-amazon.com/images/I/31r44eJjbLL.jpg",
+        "https://m.media-amazon.com/images/I/31r44eJjbLL.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -151,12 +151,12 @@ const samsungData = {
       "name": "Galaxy S26 Ultra Cobalt Violet, 12 Months x 0% Interest with Tamara, 256GB Storage, 12GB RAM, Built-in Privacy Display, 1 Year Extended Warranty (KSA Version)[Amazon Exclusive]",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/71rg6+uACyL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71rg6+uACyL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/41Is61HL9xL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41Z1l1vQtbL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41ThqNBi79L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41dbqXrqp6L._AC_SR38,50_.jpg"
+        "https://m.media-amazon.com/images/I/41Is61HL9xL.jpg",
+        "https://m.media-amazon.com/images/I/41Z1l1vQtbL.jpg",
+        "https://m.media-amazon.com/images/I/41ThqNBi79L.jpg",
+        "https://m.media-amazon.com/images/I/41dbqXrqp6L.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -187,12 +187,12 @@ const samsungData = {
       "name": "Galaxy S26 Ultra White, 12 Months x 0% Interest with Tamara, 256GB Storage, 12GB RAM, Built-in Privacy Display, 1 Year Extended Warranty (KSA Version)[Amazon Exclusive]",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/71YTYm0y22L..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71YTYm0y22L.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/41wet7w4DkL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41Z1l1vQtbL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41ThqNBi79L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41dbqXrqp6L._AC_SR38,50_.jpg"
+        "https://m.media-amazon.com/images/I/41wet7w4DkL.jpg",
+        "https://m.media-amazon.com/images/I/41Z1l1vQtbL.jpg",
+        "https://m.media-amazon.com/images/I/41ThqNBi79L.jpg",
+        "https://m.media-amazon.com/images/I/41dbqXrqp6L.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -223,12 +223,12 @@ const samsungData = {
       "name": "Galaxy S26 Ultra White, 256GB Storage, AI Phone, 12GB RAM, Customized AP, Built-in Privacy Display, Photo Assist, 200MP Camera, 5000mAh Battery (KSA version) Galaxy S26 Ultra White, 256GB Storage, AI Phone, 12GB RAM, Customized AP, Built-in Privacy Display, Photo Assist, 200MP Camera, 5000mAh Battery (KSA version) List: List:",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/21UdWvhOouL._AC_UL600_FMwebp_QL65_.jpg",
+      "image_url": "https://m.media-amazon.com/images/I/21UdWvhOouL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/21UdWvhOouL._AC_US40_.jpg",
-        "https://m.media-amazon.com/images/I/41M8Pcg4hvL._AC_US40_.jpg",
-        "https://m.media-amazon.com/images/I/41Dy6Fi+a7L._AC_US40_.jpg",
-        "https://m.media-amazon.com/images/I/410ZRq4bPcL._AC_US40_.jpg"
+        "https://m.media-amazon.com/images/I/21UdWvhOouL.jpg",
+        "https://m.media-amazon.com/images/I/41M8Pcg4hvL.jpg",
+        "https://m.media-amazon.com/images/I/41Dy6Fi+a7L.jpg",
+        "https://m.media-amazon.com/images/I/410ZRq4bPcL.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -259,12 +259,12 @@ const samsungData = {
       "name": "Galaxy S25 Ultra AI Phone, 256GB Storage, 12GB RAM, Titanium Black, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (KSA Version) Galaxy S25 Ultra AI Phone, 256GB Storage, 12GB RAM, Titanium Black, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (KSA Version) List: List:",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61VsHDiF0gL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61VsHDiF0gL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/21MDm5fUpdL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/61VsHDiF0gL._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/61VsHDiF0gL..jpg",
-        "https://m.media-amazon.com/images/I/61VsHDiF0gL..jpg"
+        "https://m.media-amazon.com/images/I/21MDm5fUpdL.jpg",
+        "https://m.media-amazon.com/images/I/61VsHDiF0gL.jpg",
+        "https://m.media-amazon.com/images/I/61VsHDiF0gL.jpg",
+        "https://m.media-amazon.com/images/I/61VsHDiF0gL.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -297,12 +297,12 @@ const samsungData = {
       "name": "Galaxy S25 Ultra AI Phone, 256GB Storage, 12GB RAM, Titanium Black, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (KSA Version) Galaxy S25 Ultra AI Phone, 256GB Storage, 12GB RAM, Titanium Black, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (KSA Version) List: List:",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61VsHDiF0gL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61VsHDiF0gL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/21MDm5fUpdL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/61VsHDiF0gL._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/61VsHDiF0gL..jpg",
-        "https://m.media-amazon.com/images/I/61VsHDiF0gL..jpg"
+        "https://m.media-amazon.com/images/I/21MDm5fUpdL.jpg",
+        "https://m.media-amazon.com/images/I/61VsHDiF0gL.jpg",
+        "https://m.media-amazon.com/images/I/61VsHDiF0gL.jpg",
+        "https://m.media-amazon.com/images/I/61VsHDiF0gL.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -333,12 +333,12 @@ const samsungData = {
       "name": "Galaxy S25 Ultra AI Phone, 256GB Storage, 12GB RAM, Titanium Gray, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (UAE Version) Galaxy S25 Ultra AI Phone, 256GB Storage, 12GB RAM, Titanium Gray, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (UAE Version) List: List:",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61jUIWKN9vL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61jUIWKN9vL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/21UsRuTICgL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/21Zt4G0dqDL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/31AvYfQMqXL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/61jUIWKN9vL._AC_SL1500_.jpg"
+        "https://m.media-amazon.com/images/I/21UsRuTICgL.jpg",
+        "https://m.media-amazon.com/images/I/21Zt4G0dqDL.jpg",
+        "https://m.media-amazon.com/images/I/31AvYfQMqXL.jpg",
+        "https://m.media-amazon.com/images/I/61jUIWKN9vL.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -369,12 +369,12 @@ const samsungData = {
       "name": "Galaxy S25 Ultra AI Phone, 256GB Storage, 12GB RAM, Titanium Silverblue, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (KSA Version) Galaxy S25 Ultra AI Phone, 256GB Storage, 12GB RAM, Titanium Silverblue, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (KSA Version) List: List:",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61D2QqQKV8L..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61D2QqQKV8L.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/311iuZe9o+L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/61D2QqQKV8L._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/61D2QqQKV8L..jpg",
-        "https://m.media-amazon.com/images/I/61D2QqQKV8L..jpg"
+        "https://m.media-amazon.com/images/I/311iuZe9o+L.jpg",
+        "https://m.media-amazon.com/images/I/61D2QqQKV8L.jpg",
+        "https://m.media-amazon.com/images/I/61D2QqQKV8L.jpg",
+        "https://m.media-amazon.com/images/I/61D2QqQKV8L.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -405,12 +405,12 @@ const samsungData = {
       "name": "Galaxy S25 Ultra, 256GB (International Version)",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61Q51ztMpFL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61Q51ztMpFL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/312U3nd8TNL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/61Q51ztMpFL._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/61Q51ztMpFL..jpg",
-        "https://m.media-amazon.com/images/I/61Q51ztMpFL..jpg"
+        "https://m.media-amazon.com/images/I/312U3nd8TNL.jpg",
+        "https://m.media-amazon.com/images/I/61Q51ztMpFL.jpg",
+        "https://m.media-amazon.com/images/I/61Q51ztMpFL.jpg",
+        "https://m.media-amazon.com/images/I/61Q51ztMpFL.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -441,12 +441,12 @@ const samsungData = {
       "name": "Galaxy S25 Ultra Cell Phone, 256GB, AI Smartphone, Unlocked Android, AI Camera, Fast Processor, Long Battery Life, 2025, Titanium Gray (International Version)",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/71YwgW1hzFL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71YwgW1hzFL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/41nNURw4pBL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41gvsNcRlkL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41uLnxExtSL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/51MMfPFCfCL._AC_SR38,50_.jpg"
+        "https://m.media-amazon.com/images/I/41nNURw4pBL.jpg",
+        "https://m.media-amazon.com/images/I/41gvsNcRlkL.jpg",
+        "https://m.media-amazon.com/images/I/41uLnxExtSL.jpg",
+        "https://m.media-amazon.com/images/I/51MMfPFCfCL.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -477,12 +477,12 @@ const samsungData = {
       "name": "Galaxy S25 Ultra AI Phone, 256GB Storage, 10 Months x 0% interest Buy Now Pay Later, 6 Month Extended Manufacturer Warranty, Titanium Gray, 200MP Camera (KSA Version) [Amazon Exclusive]",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/617eQdWxHgL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/617eQdWxHgL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/41HSmFIvTNL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/4123CQIaecL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41WHD4fMK6L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/51xr9E1L2ML._AC_SR38,50_.jpg"
+        "https://m.media-amazon.com/images/I/41HSmFIvTNL.jpg",
+        "https://m.media-amazon.com/images/I/4123CQIaecL.jpg",
+        "https://m.media-amazon.com/images/I/41WHD4fMK6L.jpg",
+        "https://m.media-amazon.com/images/I/51xr9E1L2ML.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -513,12 +513,12 @@ const samsungData = {
       "name": "Galaxy S25 AI Phone, 256GB Storage, 12GB RAM, Silver Shadow, Android Smartphone, 50MP Camera, 6 Month Extended Manufacturer Warranty (KSA Version) Galaxy S25 AI Phone, 256GB Storage, 12GB RAM, Silver Shadow, Android Smartphone, 50MP Camera, 6 Month Extended Manufacturer Warranty (KSA Version) Was: Was:",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61ki+JxCTJL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61ki+JxCTJL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/31HyMzf7wiL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41gQuae5z2L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41Z010R6n4L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/51xr9E1L2ML._AC_SR38,50_.jpg"
+        "https://m.media-amazon.com/images/I/31HyMzf7wiL.jpg",
+        "https://m.media-amazon.com/images/I/41gQuae5z2L.jpg",
+        "https://m.media-amazon.com/images/I/41Z010R6n4L.jpg",
+        "https://m.media-amazon.com/images/I/51xr9E1L2ML.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -549,12 +549,12 @@ const samsungData = {
       "name": "Galaxy S25 Ultra AI Phone, 512GB Storage, 10 Months x 0% interest Buy Now Pay Later, 6 Month Extended Manufacturer Warranty, Titanium Black, 200MP Camera (KSA Version) [Amazon Exclusive]",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61PW9+hSV-L..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61PW9+hSV-L.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/31JveKb5vDL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/4123CQIaecL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41WHD4fMK6L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/51xr9E1L2ML._AC_SR38,50_.jpg"
+        "https://m.media-amazon.com/images/I/31JveKb5vDL.jpg",
+        "https://m.media-amazon.com/images/I/4123CQIaecL.jpg",
+        "https://m.media-amazon.com/images/I/41WHD4fMK6L.jpg",
+        "https://m.media-amazon.com/images/I/51xr9E1L2ML.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -587,12 +587,12 @@ const samsungData = {
       "name": "Galaxy S24 Ultra, AI Phone, 512GB Storage, Titanium Black, 12GB RAM, Android Smartphone, 200MP Camera, 6 Month Extended Manufacturer Warranty (KSA Version) Galaxy S24 Ultra, AI Phone, 512GB Storage, Titanium Black, 12GB RAM, Android Smartphone, 200MP Camera, 6 Month Extended Manufacturer Warranty (KSA Version) List: List:",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/51B4tTxD2pL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/51B4tTxD2pL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/51B4tTxD2pL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41T86lUpvOL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41sccK+stJL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41x3339VR7L._AC_SR38,50_.jpg"
+        "https://m.media-amazon.com/images/I/51B4tTxD2pL.jpg",
+        "https://m.media-amazon.com/images/I/41T86lUpvOL.jpg",
+        "https://m.media-amazon.com/images/I/41sccK+stJL.jpg",
+        "https://m.media-amazon.com/images/I/41x3339VR7L.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -623,12 +623,12 @@ const samsungData = {
       "name": "Galaxy S25 Ultra AI Phone, 256GB Storage, 12GB RAM, Titanium Gray, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (UAE Version) Galaxy S25 Ultra AI Phone, 256GB Storage, 12GB RAM, Titanium Gray, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (UAE Version) List: List:",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61jUIWKN9vL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61jUIWKN9vL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/21UsRuTICgL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/21Zt4G0dqDL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/31AvYfQMqXL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/61jUIWKN9vL._AC_SL1500_.jpg"
+        "https://m.media-amazon.com/images/I/21UsRuTICgL.jpg",
+        "https://m.media-amazon.com/images/I/21Zt4G0dqDL.jpg",
+        "https://m.media-amazon.com/images/I/31AvYfQMqXL.jpg",
+        "https://m.media-amazon.com/images/I/61jUIWKN9vL.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -659,12 +659,12 @@ const samsungData = {
       "name": "Galaxy S25 Ultra, 256GB (International Version)",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61Q51ztMpFL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61Q51ztMpFL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/312U3nd8TNL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/61Q51ztMpFL._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/61Q51ztMpFL..jpg",
-        "https://m.media-amazon.com/images/I/61Q51ztMpFL..jpg"
+        "https://m.media-amazon.com/images/I/312U3nd8TNL.jpg",
+        "https://m.media-amazon.com/images/I/61Q51ztMpFL.jpg",
+        "https://m.media-amazon.com/images/I/61Q51ztMpFL.jpg",
+        "https://m.media-amazon.com/images/I/61Q51ztMpFL.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -695,12 +695,12 @@ const samsungData = {
       "name": "Galaxy S24, 256GB, Gray, 8GB RAM, Android Smartphone, 50MP Camera, No Manufacturer Warranty (International Version)",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/614-EJsd1DL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/614-EJsd1DL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/31IG1QxIc6L._AC_US40_.jpg",
-        "https://m.media-amazon.com/images/I/41ioVtTVyuL._AC_US40_.jpg",
-        "https://m.media-amazon.com/images/I/41XZiKGEQuL._AC_US40_.jpg",
-        "https://m.media-amazon.com/images/I/41ugTZMRpXL._AC_US40_.jpg"
+        "https://m.media-amazon.com/images/I/31IG1QxIc6L.jpg",
+        "https://m.media-amazon.com/images/I/41ioVtTVyuL.jpg",
+        "https://m.media-amazon.com/images/I/41XZiKGEQuL.jpg",
+        "https://m.media-amazon.com/images/I/41ugTZMRpXL.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -731,12 +731,12 @@ const samsungData = {
       "name": "Galaxy S25 Ultra AI Phone, 256GB Storage, 12GB RAM, Titanium Black, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (KSA Version) Galaxy S25 Ultra AI Phone, 256GB Storage, 12GB RAM, Titanium Black, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (KSA Version) List: List:",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61VsHDiF0gL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61VsHDiF0gL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/21MDm5fUpdL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/61VsHDiF0gL._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/61VsHDiF0gL..jpg",
-        "https://m.media-amazon.com/images/I/61VsHDiF0gL..jpg"
+        "https://m.media-amazon.com/images/I/21MDm5fUpdL.jpg",
+        "https://m.media-amazon.com/images/I/61VsHDiF0gL.jpg",
+        "https://m.media-amazon.com/images/I/61VsHDiF0gL.jpg",
+        "https://m.media-amazon.com/images/I/61VsHDiF0gL.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -767,12 +767,12 @@ const samsungData = {
       "name": "Galaxy S25 AI Phone, 256GB Storage, 12GB RAM, Silver Shadow, Android Smartphone, 50MP Camera, 6 Month Extended Manufacturer Warranty (KSA Version) Galaxy S25 AI Phone, 256GB Storage, 12GB RAM, Silver Shadow, Android Smartphone, 50MP Camera, 6 Month Extended Manufacturer Warranty (KSA Version) Was: Was:",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61ki+JxCTJL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61ki+JxCTJL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/31HyMzf7wiL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41gQuae5z2L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41Z010R6n4L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/51xr9E1L2ML._AC_SR38,50_.jpg"
+        "https://m.media-amazon.com/images/I/31HyMzf7wiL.jpg",
+        "https://m.media-amazon.com/images/I/41gQuae5z2L.jpg",
+        "https://m.media-amazon.com/images/I/41Z010R6n4L.jpg",
+        "https://m.media-amazon.com/images/I/51xr9E1L2ML.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -803,12 +803,12 @@ const samsungData = {
       "name": "Galaxy S25 Ultra AI Phone, 512GB Storage, 10 Months x 0% interest Buy Now Pay Later, 6 Month Extended Manufacturer Warranty, Titanium Black, 200MP Camera (KSA Version) [Amazon Exclusive]",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61PW9+hSV-L..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61PW9+hSV-L.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/31JveKb5vDL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/4123CQIaecL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41WHD4fMK6L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/51xr9E1L2ML._AC_SR38,50_.jpg"
+        "https://m.media-amazon.com/images/I/31JveKb5vDL.jpg",
+        "https://m.media-amazon.com/images/I/4123CQIaecL.jpg",
+        "https://m.media-amazon.com/images/I/41WHD4fMK6L.jpg",
+        "https://m.media-amazon.com/images/I/51xr9E1L2ML.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -839,12 +839,12 @@ const samsungData = {
       "name": "Galaxy S25 Ultra AI Phone, 512GB Storage, 12GB RAM, Titanium Silverblue, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (UAE Version) Galaxy S25 Ultra AI Phone, 512GB Storage, 12GB RAM, Titanium Silverblue, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (UAE Version) List: List:",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61D2QqQKV8L..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61D2QqQKV8L.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/311iuZe9o+L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/61D2QqQKV8L._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/61D2QqQKV8L..jpg",
-        "https://m.media-amazon.com/images/I/61D2QqQKV8L..jpg"
+        "https://m.media-amazon.com/images/I/311iuZe9o+L.jpg",
+        "https://m.media-amazon.com/images/I/61D2QqQKV8L.jpg",
+        "https://m.media-amazon.com/images/I/61D2QqQKV8L.jpg",
+        "https://m.media-amazon.com/images/I/61D2QqQKV8L.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -877,12 +877,12 @@ const samsungData = {
       "name": "Galaxy S25 Ultra AI Phone, 256GB Storage, 12GB RAM, Titanium Black, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (KSA Version) Galaxy S25 Ultra AI Phone, 256GB Storage, 12GB RAM, Titanium Black, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (KSA Version) List: List:",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61VsHDiF0gL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61VsHDiF0gL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/21MDm5fUpdL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/61VsHDiF0gL._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/61VsHDiF0gL..jpg",
-        "https://m.media-amazon.com/images/I/61VsHDiF0gL..jpg"
+        "https://m.media-amazon.com/images/I/21MDm5fUpdL.jpg",
+        "https://m.media-amazon.com/images/I/61VsHDiF0gL.jpg",
+        "https://m.media-amazon.com/images/I/61VsHDiF0gL.jpg",
+        "https://m.media-amazon.com/images/I/61VsHDiF0gL.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -913,12 +913,12 @@ const samsungData = {
       "name": "Galaxy S22 Ultra Dual SIM Burgundy 12GB RAM 256GB 5G - International Version",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/71aZcE8K+eL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/71aZcE8K+eL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/51Z4Fl5NYKL._AC_US40_.jpg",
-        "https://m.media-amazon.com/images/I/71aZcE8K+eL._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/71aZcE8K+eL..jpg",
-        "https://m.media-amazon.com/images/I/71aZcE8K+eL..jpg"
+        "https://m.media-amazon.com/images/I/51Z4Fl5NYKL.jpg",
+        "https://m.media-amazon.com/images/I/71aZcE8K+eL.jpg",
+        "https://m.media-amazon.com/images/I/71aZcE8K+eL.jpg",
+        "https://m.media-amazon.com/images/I/71aZcE8K+eL.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -949,12 +949,12 @@ const samsungData = {
       "name": "Galaxy S25 Ultra AI Phone, 256GB Storage, 12GB RAM, Titanium Gray, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (UAE Version) Galaxy S25 Ultra AI Phone, 256GB Storage, 12GB RAM, Titanium Gray, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (UAE Version) List: List:",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61jUIWKN9vL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61jUIWKN9vL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/21UsRuTICgL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/21Zt4G0dqDL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/31AvYfQMqXL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/61jUIWKN9vL._AC_SL1500_.jpg"
+        "https://m.media-amazon.com/images/I/21UsRuTICgL.jpg",
+        "https://m.media-amazon.com/images/I/21Zt4G0dqDL.jpg",
+        "https://m.media-amazon.com/images/I/31AvYfQMqXL.jpg",
+        "https://m.media-amazon.com/images/I/61jUIWKN9vL.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -985,12 +985,12 @@ const samsungData = {
       "name": "Galaxy S25 Ultra, 256GB (International Version)",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61Q51ztMpFL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61Q51ztMpFL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/312U3nd8TNL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/61Q51ztMpFL._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/61Q51ztMpFL..jpg",
-        "https://m.media-amazon.com/images/I/61Q51ztMpFL..jpg"
+        "https://m.media-amazon.com/images/I/312U3nd8TNL.jpg",
+        "https://m.media-amazon.com/images/I/61Q51ztMpFL.jpg",
+        "https://m.media-amazon.com/images/I/61Q51ztMpFL.jpg",
+        "https://m.media-amazon.com/images/I/61Q51ztMpFL.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -1021,12 +1021,12 @@ const samsungData = {
       "name": "Galaxy S25 Ultra AI Phone, 256GB Storage, 12GB RAM, Titanium Silverblue, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (KSA Version) Galaxy S25 Ultra AI Phone, 256GB Storage, 12GB RAM, Titanium Silverblue, Android Smartphone, 200MP Camera, S Pen, Long Battery Life (KSA Version) List: List:",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61D2QqQKV8L..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61D2QqQKV8L.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/311iuZe9o+L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/61D2QqQKV8L._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/61D2QqQKV8L..jpg",
-        "https://m.media-amazon.com/images/I/61D2QqQKV8L..jpg"
+        "https://m.media-amazon.com/images/I/311iuZe9o+L.jpg",
+        "https://m.media-amazon.com/images/I/61D2QqQKV8L.jpg",
+        "https://m.media-amazon.com/images/I/61D2QqQKV8L.jpg",
+        "https://m.media-amazon.com/images/I/61D2QqQKV8L.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -1057,12 +1057,12 @@ const samsungData = {
       "name": "Galaxy S23 Ultra 5G Smartphone Dual-SIM RAM 12 GB / Interner Speicher 512 OLED Display 6.8\" 3088 x 1440 pixels 120 Hz 4x x Rückkamera 200 MP 10 front camera Phantomschwarz",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/51ygk8oviDL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/51ygk8oviDL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/31nA9DwPF5L._AC_US40_.jpg",
-        "https://m.media-amazon.com/images/I/216eYFnlTkL._AC_US40_.jpg",
-        "https://m.media-amazon.com/images/I/21KlqRghDUL._AC_US40_.jpg",
-        "https://m.media-amazon.com/images/I/21Gu+xgGm2L._AC_US40_.jpg"
+        "https://m.media-amazon.com/images/I/31nA9DwPF5L.jpg",
+        "https://m.media-amazon.com/images/I/216eYFnlTkL.jpg",
+        "https://m.media-amazon.com/images/I/21KlqRghDUL.jpg",
+        "https://m.media-amazon.com/images/I/21Gu+xgGm2L.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -1093,12 +1093,12 @@ const samsungData = {
       "name": "Galaxy S24 Ultra, AI Phone, 512GB Storage, Titanium Black, 12GB RAM, Android Smartphone, 200MP Camera, 6 Month Extended Manufacturer Warranty (KSA Version) Galaxy S24 Ultra, AI Phone, 512GB Storage, Titanium Black, 12GB RAM, Android Smartphone, 200MP Camera, 6 Month Extended Manufacturer Warranty (KSA Version) List: List:",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/51B4tTxD2pL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/51B4tTxD2pL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/51B4tTxD2pL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41T86lUpvOL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41sccK+stJL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41x3339VR7L._AC_SR38,50_.jpg"
+        "https://m.media-amazon.com/images/I/51B4tTxD2pL.jpg",
+        "https://m.media-amazon.com/images/I/41T86lUpvOL.jpg",
+        "https://m.media-amazon.com/images/I/41sccK+stJL.jpg",
+        "https://m.media-amazon.com/images/I/41x3339VR7L.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
@@ -1129,12 +1129,12 @@ const samsungData = {
       "name": "Galaxy S23 Ultra, 12GB RAM 512GB Lavender, International Version, 5G Mobile Phone, Dual SIM, Android Smartphone",
       "warranty": "ضمان سنتين حاسبات العرب",
       "stock_status": "متوفر في المخزون",
-      "image_url": "https://m.media-amazon.com/images/I/61o8gBOg0wL..jpg",
+      "image_url": "https://m.media-amazon.com/images/I/61o8gBOg0wL.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/41bHwMaGJ8L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41ViG+FtM3L._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41HFfEA48mL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41nnZ5DtQWL._AC_SR38,50_.jpg"
+        "https://m.media-amazon.com/images/I/41bHwMaGJ8L.jpg",
+        "https://m.media-amazon.com/images/I/41ViG+FtM3L.jpg",
+        "https://m.media-amazon.com/images/I/41HFfEA48mL.jpg",
+        "https://m.media-amazon.com/images/I/41nnZ5DtQWL.jpg"
       ],
       "category": [
         "جوالات-سامسونج"
