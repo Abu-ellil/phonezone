@@ -192,13 +192,31 @@ class AmazonSAScraper:
         img_el = item.select_one(".s-image")
         image_url = ""
         if img_el:
+            # Prefer high-res image sources in order of quality
             image_url = (
                 img_el.get("data-old-hires")
-                or img_el.get("srcset", "").split()[-2] if img_el.get("srcset") else ""
+                or ""
             )
             if not image_url:
+                srcset = img_el.get("srcset", "")
+                if srcset:
+                    # Extract the highest resolution from srcset (last entry is usually largest)
+                    srcset_parts = srcset.split(",")
+                    for part in reversed(srcset_parts):
+                        part = part.strip()
+                        if part and " " in part:
+                            url_candidate = part.split(" ")[0]
+                            if url_candidate:
+                                image_url = url_candidate
+                                break
+            if not image_url:
                 image_url = img_el.get("src", "")
-            image_url = re.sub(r"_AC_UY\d+_", "_AC_UY400_", image_url)
+            # Use high-resolution variant (1200px instead of 400px)
+            image_url = re.sub(r"_AC_UY\d+_", "_AC_UY1200_", image_url)
+            image_url = re.sub(r"_AC_SL\d+_", "_AC_SL1500_", image_url)
+            image_url = re.sub(r"_AC_US\d+_", "_AC_US1500_", image_url)
+            # Remove tiny thumbnail indicators
+            image_url = re.sub(r"\._[^.]*_", ".", image_url) if "cloudinary" not in image_url else image_url
 
         price = 0
         price_whole = item.select_one(".a-price .a-price-whole")
@@ -241,14 +259,60 @@ class AmazonSAScraper:
             soup = BeautifulSoup(resp.text, "html.parser")
 
             images = []
+            seen_urls = set()
+
+            # Extract from hi-res data attribute first
             for img in soup.select("#imageBlock img, .image .img, [data-a-image-name='landingImage']"):
-                src = img.get("data-old-hires") or img.get("src", "")
-                if src and "media-amazon" in src:
+                src = img.get("data-old-hires") or ""
+                if not src:
+                    # Try extracting from data-a-dynamic-image JSON
+                    dynamic_attr = img.get("data-a-dynamic-image", "")
+                    if dynamic_attr:
+                        try:
+                            import json as _json
+                            dynamic_data = _json.loads(dynamic_attr)
+                            if isinstance(dynamic_data, dict):
+                                # Get the largest variant by key (URL -> dimensions)
+                                sorted_urls = sorted(
+                                    dynamic_data.keys(),
+                                    key=lambda u: sum(dynamic_data[u]) if isinstance(dynamic_data[u], list) else 0,
+                                    reverse=True,
+                                )
+                                src = sorted_urls[0] if sorted_urls else ""
+                        except Exception:
+                            pass
+                if not src:
+                    src = img.get("src", "")
+
+                if src and "media-amazon" in src and src not in seen_urls:
+                    # Ensure high resolution
+                    src = re.sub(r"\._[^.]*_", ".", src)
+                    seen_urls.add(src)
                     images.append(src)
+
             if not images:
                 for img in soup.select("img[data-a-dynamic-image]"):
+                    dynamic_attr = img.get("data-a-dynamic-image", "")
+                    if dynamic_attr:
+                        try:
+                            import json as _json
+                            dynamic_data = _json.loads(dynamic_attr)
+                            if isinstance(dynamic_data, dict):
+                                sorted_urls = sorted(
+                                    dynamic_data.keys(),
+                                    key=lambda u: sum(dynamic_data[u]) if isinstance(dynamic_data[u], list) else 0,
+                                    reverse=True,
+                                )
+                                for u in sorted_urls:
+                                    if "media-amazon" in u and u not in seen_urls:
+                                        seen_urls.add(u)
+                                        images.append(u)
+                        except Exception:
+                            pass
                     src = img.get("data-old-hires") or img.get("src", "")
-                    if src and "media-amazon" in src:
+                    if src and "media-amazon" in src and src not in seen_urls:
+                        src = re.sub(r"\._[^.]*_", ".", src)
+                        seen_urls.add(src)
                         images.append(src)
 
             desc = ""
@@ -256,7 +320,7 @@ class AmazonSAScraper:
             if desc_el:
                 desc = desc_el.get_text(strip=True)[:500]
 
-            return {"images": images[:4], "description": desc}
+            return {"images": images[:6], "description": desc}
         except Exception:
             return {}
 

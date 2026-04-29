@@ -269,6 +269,28 @@ class NoonAPIScraper:
                     return result
         return []
 
+    def _upgrade_image_url(self, url):
+        """Upgrade image URL to the highest available resolution."""
+        if not url or not isinstance(url, str):
+            return url or ""
+
+        # Noon CDN: replace size parameters with larger versions
+        if "nooncdn" in url or "noon.post" in url:
+            # Replace thumbnail indicators with full-size
+            url = re.sub(r"/w\d+/", "/w1200/", url)
+            url = re.sub(r"/h\d+/", "/h1200/", url)
+            url = re.sub(r"_\d+x\d+", "_1200x1200", url)
+            # Remove any resize/crop parameters that limit size
+            url = re.sub(r"[?&](?:width|height|size)=\d+", "", url)
+
+        # Generic CDN patterns - try to get bigger images
+        if "amazonaws" in url or "cloudinary" in url:
+            url = re.sub(r"/w_\d+", "/w_1200", url)
+            url = re.sub(r"/h_\d+", "/h_1200", url)
+            url = re.sub(r"/c_fill[^/]*", "/c_fill,w_1200,h_1200", url)
+
+        return url
+
     def normalize_product(self, raw, category_config):
         try:
             name = (
@@ -320,13 +342,24 @@ class NoonAPIScraper:
                 if isinstance(imgs, list) and len(imgs) > 0:
                     image_url = imgs[0] if isinstance(imgs[0], str) else imgs[0].get("url", "")
 
+            # Upgrade image URL to highest available resolution
+            image_url = self._upgrade_image_url(image_url)
+
             images = raw.get("images", [])
             if isinstance(images, list):
                 images = [
-                    img if isinstance(img, str) else img.get("url", "")
+                    self._upgrade_image_url(img if isinstance(img, str) else img.get("url", ""))
                     for img in images
                     if isinstance(img, (str, dict))
                 ]
+                # Remove duplicates while preserving order
+                seen = set()
+                unique_images = []
+                for img in images:
+                    if img and img not in seen:
+                        seen.add(img)
+                        unique_images.append(img)
+                images = unique_images
             else:
                 images = [image_url] if image_url else []
 

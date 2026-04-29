@@ -124,7 +124,13 @@ export default function SafeImage({
       <Image
         {...imageProps}
         className={className}
-        unoptimized={hasError || !src.includes("cloudinary.com") || src.includes("rawnaqstoore.com")}
+        quality={90}
+        unoptimized={
+          hasError ||
+          src.includes("rawnaqstoore.com") ||
+          src.endsWith(".svg") ||
+          src.endsWith(".gif")
+        }
       />
     </div>
   );
