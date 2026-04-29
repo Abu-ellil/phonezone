@@ -59,6 +59,25 @@ export function getSafeImageUrl(
       return `${url}${separator}t=${timestamp}`;
     }
 
+    // Upgrade Amazon image URLs to higher resolution
+    if (urlObj.hostname.includes('media-amazon.com')) {
+      // Remove size suffixes like ._AC_UY400_ or ._AC_SL300_
+      let upgraded = url.replace(/\._[^.]*_/, '.');
+      // If no size suffix exists, ensure we get a decent size
+      if (upgraded === url && !url.includes('._')) {
+        // Try to insert high-res indicator before extension
+        upgraded = url.replace(/(\.jpg|\.png|\.jpeg|\.gif)/i, '._AC_SL1500_$1');
+      }
+      return upgraded;
+    }
+
+    // Upgrade Noon CDN image URLs
+    if (urlObj.hostname.includes('nooncdn') || urlObj.hostname.includes('noon.post')) {
+      let upgraded = url.replace(/\/w\d+\//, '/w1200/');
+      upgraded = upgraded.replace(/\/h\d+\//, '/h1200/');
+      return upgraded;
+    }
+
     return url;
   } catch {
     return fallbackUrl;
